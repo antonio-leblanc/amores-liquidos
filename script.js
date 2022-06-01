@@ -12,7 +12,21 @@ const currTime = document.querySelector('#currTime');
 const durTime = document.querySelector('#durTime');
 
 // Song titles
-const songs = ['sina', 'infiel'];
+const songs = [
+	'acima_do_sol',
+	'amor_perfeito',
+	'baianidade_nago',
+	'cilada',
+	'deusa_do_amor',
+	'festa',
+	'infiel',
+	'meia_lua',
+	'nao_precisa_mudar',
+	'sina',
+	'sorte_grande',
+	'vai_sacudir_vai_abalar',
+
+];
 
 // Keep track of song
 let songIndex = 0;

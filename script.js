@@ -14,10 +14,13 @@ const durTime = document.querySelector('#durTime');
 // Song titles
 const songs = [
 	'acima_do_sol',
+	'alo_paixao',
 	'amor_perfeito',
 	'baianidade_nago',
+	'beleza_rara',
 	'cilada',
 	'deusa_do_amor',
+	'eva',
 	'festa',
 	'infiel',
 	'meia_lua',
@@ -25,7 +28,6 @@ const songs = [
 	'sina',
 	'sorte_grande',
 	'vai_sacudir_vai_abalar',
-
 ];
 
 // Keep track of song
@@ -38,7 +40,7 @@ loadSong(songs[songIndex]);
 function loadSong(song) {
   title.innerText = song;
   audio.src = `music/${song}.mp3`;
-  cover.src = `images/${song}.jpg`;
+  // cover.src = `images/${song}.jpg`;
 }
 
 // Play song

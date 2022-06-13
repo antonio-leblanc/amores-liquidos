@@ -28,6 +28,7 @@ const songs = [
 	'sina',
 	'sorte_grande',
 	'vai_sacudir_vai_abalar',
+	'voa_voa',
 ];
 
 // Keep track of song

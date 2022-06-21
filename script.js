@@ -13,6 +13,7 @@ const durTime = document.querySelector('#durTime');
 
 // Song titles
 const songs = [
+	'100_voce',
 	'acima_do_sol',
 	'alo_paixao',
 	'amor_perfeito',
@@ -22,7 +23,9 @@ const songs = [
 	'deusa_do_amor',
 	'eva',
 	'festa',
+	'gatas_extraordinarias',
 	'infiel',
+	'me_abraca',
 	'meia_lua',
 	'nao_precisa_mudar',
 	'sina',

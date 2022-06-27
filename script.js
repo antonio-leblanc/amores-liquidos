@@ -20,7 +20,9 @@ const songs = [
 	'baianidade_nago',
 	'beleza_rara',
 	'cilada',
+	'deus_me_livre',
 	'deusa_do_amor',
+	'do_seu_lado',
 	'eva',
 	'festa',
 	'gatas_extraordinarias',
@@ -31,6 +33,7 @@ const songs = [
 	'sina',
 	'sorte_grande',
 	'vai_sacudir_vai_abalar',
+	'vem_meu_amor',
 	'voa_voa',
 ];
 

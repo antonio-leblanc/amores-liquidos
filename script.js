@@ -20,6 +20,7 @@ const songs = [
 	'baianidade_nago',
 	'beleza_rara',
 	'cilada',
+	'de_ladinho',
 	'deus_me_livre',
 	'deusa_do_amor',
 	'do_seu_lado',

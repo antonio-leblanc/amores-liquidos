@@ -32,6 +32,7 @@ const songs = [
 	'nao_precisa_mudar',
 	'sina',
 	'sorte_grande',
+	'toda_forma_de_amor',
 	'vai_sacudir_vai_abalar',
 	'vem_meu_amor',
 	'voa_voa',

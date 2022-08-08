@@ -34,6 +34,7 @@ const songs = [
 	'me_abraca',
 	'meia_lua',
 	'nao_precisa_mudar',
+	'pintura_intima',
 	'sina',
 	'sorte_grande',
 	'toda_forma_de_amor',

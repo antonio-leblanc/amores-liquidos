@@ -31,6 +31,7 @@ const songs = [
 	'flor_do_reggae',
 	'gatas_extraordinarias',
 	'infiel',
+	'mal_acostumado',
 	'me_abraca',
 	'meia_lua',
 	'nao_precisa_mudar',

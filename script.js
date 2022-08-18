@@ -33,6 +33,7 @@ const songs = [
 	'infiel',
 	'mal_acostumado',
 	'me_abraca',
+	'me_deixa',
 	'meia_lua',
 	'nao_precisa_mudar',
 	'pintura_intima',

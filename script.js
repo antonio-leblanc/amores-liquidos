@@ -42,6 +42,8 @@ const songs = [
 	'sina',
 	'sombra_da_maldade',
 	'sorte_grande',
+	'swing_da_cor',
+	'temporal',
 	'tempos_modernos',
 	'toda_forma_de_amor',
 	'vai_sacudir_vai_abalar',

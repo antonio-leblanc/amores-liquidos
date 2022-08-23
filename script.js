@@ -39,6 +39,7 @@ const songs = [
 	'meia_lua',
 	'nao_precisa_mudar',
 	'pintura_intima',
+	'princesa',
 	'sina',
 	'sombra_da_maldade',
 	'sorte_grande',

@@ -22,6 +22,7 @@ const songs = [
 	'cant_take_my_eyes_off_you',
 	'cilada',
 	'de_ladinho',
+	'depois_do_prazer',
 	'deus_me_livre',
 	'deusa_do_amor',
 	'do_seu_lado',

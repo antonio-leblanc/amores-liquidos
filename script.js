@@ -32,6 +32,7 @@ const songs = [
 	'exagerado',
 	'festa',
 	'final_feliz',
+	'flor_do_maracuja',
 	'flor_do_reggae',
 	'gatas_extraordinarias',
 	'infiel',

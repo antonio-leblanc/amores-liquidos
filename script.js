@@ -58,6 +58,7 @@ const songs = [
 	'tempos_modernos',
 	'tieta',
 	'toda_forma_de_amor',
+	'tremendo_vacilao',
 	'tu_ta_na_gaiola',
 	'uma_noite_e_meia',
 	'vai_sacudir_vai_abalar',

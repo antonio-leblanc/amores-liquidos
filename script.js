@@ -47,7 +47,6 @@ const songs = [
 	'milla',
 	'nao_precisa_mudar',
 	'nao_quero_dinheiro',
-	'parado_no_bailao',
 	'pintura_intima',
 	'princesa',
 	'sina',

@@ -22,6 +22,7 @@ const songs = [
 	'bailao',
 	'baile_da_gaiola',
 	'beleza_rara',
+	'bola_de_sabao',
 	'cant_take_my_eyes_off_you',
 	'cilada',
 	'de_ladinho',

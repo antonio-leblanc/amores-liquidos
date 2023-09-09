@@ -41,6 +41,7 @@ const songs = [
 	'ja_sei_namorar',
 	'lucro',
 	'mal_acostumado',
+	'mania_de_voce',
 	'me_abraca_me_beija',
 	'me_deixa',
 	'meia_lua',

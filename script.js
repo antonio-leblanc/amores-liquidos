@@ -18,6 +18,7 @@ const songs = [
 	'alo_paixao',
 	'amor_perfeito',
 	'andanca',
+	'assim_caminha_a_humanidade_malhacao',
 	'baianidade_nago',
 	'bailao',
 	'baile_da_gaiola',

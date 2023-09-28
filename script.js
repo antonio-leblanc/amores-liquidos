@@ -68,6 +68,7 @@ const songs = [
 	'varias_queixas',
 	'vem_meu_amor',
 	'voa_voa',
+	'voce_nao_entende_nada'
 ];
 
 // Keep track of song

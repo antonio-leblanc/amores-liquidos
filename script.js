@@ -41,6 +41,7 @@ const songs = [
 	'gatas_extraordinarias',
 	'infiel',
 	'ja_sei_namorar',
+	'lua_de_cristal',
 	'lucro',
 	'mal_acostumado',
 	'mania_de_voce',

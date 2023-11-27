@@ -39,6 +39,7 @@ const songs = [
 	'flor_do_maracuja',
 	'flor_do_reggae',
 	'gatas_extraordinarias',
+	'hey_jude',
 	'infiel',
 	'ja_sei_namorar',
 	'lua_de_cristal',

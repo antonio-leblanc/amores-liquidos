@@ -70,6 +70,7 @@ const songs = [
 	'varias_queixas',
 	'vem_meu_amor',
 	'voa_voa',
+	'voce_me_vira_a_cabeca',
 	'voce_nao_entende_nada'
 ];
 

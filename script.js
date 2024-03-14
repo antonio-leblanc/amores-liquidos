@@ -46,6 +46,7 @@ const songs = [
 	'lucro',
 	'mal_acostumado',
 	'mania_de_voce',
+	'maria_maria',
 	'me_abraca_me_beija',
 	'me_deixa',
 	'meia_lua',

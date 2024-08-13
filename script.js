@@ -2,6 +2,7 @@ const musicContainer = document.getElementById('music-container');
 const playBtn = document.getElementById('play');
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
+const randomBtn = document.getElementById('random');
 
 const audio = document.getElementById('audio');
 const progress = document.getElementById('progress');
@@ -134,6 +135,20 @@ function nextSong() {
   playSong();
 }
 
+// Play a random song
+function playRandomSong() {
+  // Generate a random index within the range of the songs array
+  const randomIndex = Math.floor(Math.random() * songs.length);
+  
+  // Update the song index to the random index
+  songIndex = randomIndex;
+  
+  // Load the random song and play it
+  loadSong(songs[songIndex]);
+  playSong();
+}
+
+
 // Update progress bar
 function updateProgress(e) {
   const { duration, currentTime } = e.srcElement;
@@ -227,6 +242,7 @@ playBtn.addEventListener('click', () => {
 // Change song
 prevBtn.addEventListener('click', prevSong);
 nextBtn.addEventListener('click', nextSong);
+randomBtn.addEventListener('click', playRandomSong);
 
 // Time/song update
 audio.addEventListener('timeupdate', updateProgress);

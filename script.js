@@ -52,6 +52,7 @@ const songs = [
 	'me_abraca_me_beija',
 	'me_deixa',
 	'meia_lua',
+	'meu_sangue_ferve_por_voce',
 	'milla',
 	'nao_precisa_mudar',
 	'nao_quero_dinheiro',

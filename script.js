@@ -17,6 +17,7 @@ const songs = [
 	'100_voce',
 	'acima_do_sol',
 	'alo_paixao',
+	'amor_de_chocolate',
 	'amor_i_love_you',
 	'amor_perfeito',
 	'andanca',

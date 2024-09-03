@@ -32,6 +32,7 @@ const songs = [
 	'depois_do_prazer',
 	'deus_me_livre',
 	'deusa_do_amor',
+	'diga_que_valeu',
 	'do_seu_lado',
 	'dont_stop',
 	'eva',

@@ -61,6 +61,7 @@ const songs = [
 	'pintura_intima',
 	'princesa',
 	'sina',
+	'so_love',
 	'sombra_da_maldade',
 	'sorte_grande',
 	'swing_da_cor',

@@ -28,6 +28,7 @@ const songs = [
 	'beleza_rara',
 	'bola_de_sabao',
 	'cilada',
+	'coracao_radiante',
 	'de_ladinho',
 	'depois_do_prazer',
 	'deus_me_livre',

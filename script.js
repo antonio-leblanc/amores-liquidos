@@ -45,7 +45,6 @@ const songs = [
 	'gatas_extraordinarias',
 	'hey_jude',
 	'i_love_you_baby_cant_take_my_eyes_off_you',
-	'infiel',
 	'ja_sei_namorar',
 	'lua_de_cristal',
 	'lucro',

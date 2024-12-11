@@ -3,6 +3,7 @@ const playBtn = document.getElementById('play');
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
 const randomBtn = document.getElementById('random');
+const switchModeBtn = document.getElementById('switch-mode');
 
 const audio = document.getElementById('audio');
 const progress = document.getElementById('progress');
@@ -13,7 +14,7 @@ const currTime = document.querySelector('#currTime');
 const durTime = document.querySelector('#durTime');
 
 // Song titles
-const songs = [
+const songsAlphabetical = [
 	'100_voce',
 	'acima_do_sol',
 	'alo_paixao',
@@ -82,11 +83,29 @@ const songs = [
 	'voce_nao_entende_nada'
 ];
 
-// Keep track of song
+
+// Initialize songs to alphabetical mode
+let currentSongs = [...songsAlphabetical];
+let isAlphabetical = true;
 let songIndex = 0;
 
 // Initially load song details into DOM
-loadSong(songs[songIndex]);
+loadSong(currentSongs[songIndex]);
+
+
+function switchMode() {
+  if (isAlphabetical) {
+    currentSongs = [...eventSetlist];
+    isAlphabetical = false;
+    alert('Tocando as músicas na ordem das GIG');
+  } else {
+    currentSongs = [...songsAlphabetical];
+    isAlphabetical = true;
+    alert('Tocando as músicas em ordem alfabética');
+  }
+  songIndex = 0; // Reset to first song
+  loadSong(currentSongs[songIndex]);
+}
 
 // Update song details
 function loadSong(song) {
@@ -118,10 +137,10 @@ function prevSong() {
   songIndex--;
 
   if (songIndex < 0) {
-    songIndex = songs.length - 1;
+    songIndex = currentSongs.length - 1;
   }
 
-  loadSong(songs[songIndex]);
+  loadSong(currentSongs[songIndex]);
 
   playSong();
 }
@@ -130,11 +149,11 @@ function prevSong() {
 function nextSong() {
   songIndex++;
 
-  if (songIndex > songs.length - 1) {
+  if (songIndex > currentSongs.length - 1) {
     songIndex = 0;
   }
 
-  loadSong(songs[songIndex]);
+  loadSong(currentSongs[songIndex]);
 
   playSong();
 }
@@ -142,13 +161,13 @@ function nextSong() {
 // Play a random song
 function playRandomSong() {
   // Generate a random index within the range of the songs array
-  const randomIndex = Math.floor(Math.random() * songs.length);
+  const randomIndex = Math.floor(Math.random() * currentSongs.length);
   
   // Update the song index to the random index
   songIndex = randomIndex;
   
   // Load the random song and play it
-  loadSong(songs[songIndex]);
+  loadSong(currentSongs[songIndex]);
   playSong();
 }
 
@@ -247,6 +266,7 @@ playBtn.addEventListener('click', () => {
 prevBtn.addEventListener('click', prevSong);
 nextBtn.addEventListener('click', nextSong);
 randomBtn.addEventListener('click', playRandomSong);
+switchModeBtn.addEventListener('click', switchMode);
 
 // Time/song update
 audio.addEventListener('timeupdate', updateProgress);

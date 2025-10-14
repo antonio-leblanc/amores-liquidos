@@ -139,3 +139,55 @@ body {
   width: 0%;
   transition: width 0.1s linear;
 }
+
+
+/* --- Estilos para Playlist e Busca --- */
+
+.playlist-search-container {
+  width: 90%;
+  max-width: 400px; /* Tente manter a mesma largura do player */
+  margin-bottom: 20px;
+}
+
+#search-input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#playlist {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+  max-height: 250px; /* Altura máxima antes de aparecer a barra de rolagem */
+  overflow-y: auto;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#playlist li {
+  padding: 12px 15px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  text-transform: capitalize; /* Deixa os nomes mais bonitos */
+}
+
+#playlist li:last-child {
+  border-bottom: none;
+}
+
+#playlist li:hover {
+  background-color: rgba(0,0,0,0.05);
+}
+
+/* Estilo para a música que está tocando no momento */
+#playlist li.active {
+  background-color: #dfdbdf; /* Cor parecida com a dos botões */
+  font-weight: bold;
+  color: #8c7894;
+}

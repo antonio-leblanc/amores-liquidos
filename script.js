@@ -4,7 +4,7 @@ const playBtn = document.getElementById('play');
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
 const randomBtn = document.getElementById('random');
-const switchModeBtn = document.getElementById('switch-mode');
+const modeToggle = document.getElementById('mode-toggle');
 
 const audio = document.getElementById('audio');
 const progress = document.getElementById('progress');
@@ -104,15 +104,14 @@ function playRandomSong() {
 
 // Troca entre o modo alfabético e o setlist, e recarrega a playlist
 function switchMode() {
-  if (isAlphabetical) {
+  if (modeToggle.checked) {
     currentSongs = [...eventSetlist];
     isAlphabetical = false;
-    alert('Tocando as músicas na ordem das GIG');
   } else {
     currentSongs = [...songsAlphabetical];
     isAlphabetical = true;
-    alert('Tocando as músicas em ordem alfabética');
   }
+  
   songIndex = 0; // Reseta para a primeira música
   loadSong(currentSongs[songIndex]);
   generatePlaylist(currentSongs); // Recarrega a lista com a nova ordem
@@ -153,7 +152,7 @@ playBtn.addEventListener('click', () => {
 prevBtn.addEventListener('click', prevSong);
 nextBtn.addEventListener('click', nextSong);
 randomBtn.addEventListener('click', playRandomSong);
-switchModeBtn.addEventListener('click', switchMode);
+modeToggle.addEventListener('change', switchMode);
 
 // Atualizações do áudio
 audio.addEventListener('timeupdate', updateProgress);

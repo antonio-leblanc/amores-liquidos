@@ -23,6 +23,16 @@
 
     <div class="playlist-search-container">
       <input type="text" id="search-input" placeholder="Buscar música...">
+
+      <div class="toggle-container">
+        <span class="mode-label">Alfabética</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="mode-toggle">
+          <span class="slider round"></span>
+        </label>
+        <span class="mode-label">GIG</span>
+      </div>
+
       <ul id="playlist"></ul>
     </div>
 
@@ -52,10 +62,6 @@
 
         <button id="random" class="action-btn">
           <i class="fas fa-random"></i>
-        </button>
-
-        <button id="switch-mode" class="action-btn">
-          <i class="fas fa-list"></i>
         </button>
 
       </div>

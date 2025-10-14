@@ -191,3 +191,25 @@ body {
   font-weight: bold;
   color: #8c7894;
 }
+
+/* --- Estilos para o Countdown de Carnaval --- */
+
+#countdown {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px; /* Adiciona um espaço antes da busca */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  color: #5c5261; /* Um roxo/cinza escuro */
+  font-size: 16px;
+}
+
+#timer {
+  font-size: 22px;
+  font-weight: bold;
+  color: #30c8ff; /* A mesma cor da barra de progresso para dar destaque */
+  margin-top: 5px;
+  letter-spacing: 2px; /* Espaça um pouco os números */
+}

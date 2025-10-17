@@ -4,48 +4,107 @@
   box-sizing: border-box;
 }
 
+/* --- ESTRUTURA PRINCIPAL E LAYOUT --- */
 body {
   background-image: linear-gradient(
     0deg,
     rgb(255, 148, 216) 23.8%,
     rgba(252, 221, 221, 1) 92%
   );
-  justify-content: flex-start;
-  padding-top: 20px;
-  height: 100vh;
+  height: 100vh; /* Ocupa a tela inteira */
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Organiza header e main-container verticalmente */
   align-items: center;
   font-family: 'Lato', sans-serif;
   margin: 0;
+  padding: 20px;
 }
 
 .header {
   width: 100%;
   text-align: center;
+  flex-shrink: 0; /* Impede que o header encolha */
   margin-bottom: 20px;
 }
 
+.main-container {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  max-width: 1400px;
+  flex-grow: 1; /* Faz este container crescer para ocupar o espaço restante */
+  min-height: 0; /* Correção crucial para o Flexbox funcionar em todas as situações */
+}
+
+/* --- COLUNA DA ESQUERDA (PLAYER & PLAYLIST) --- */
+.player-column {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Ocupa 1 parte do espaço */
+  min-width: 0; /* Correção de Flexbox */
+}
+
+.playlist-search-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Ocupa o espaço restante na coluna */
+  min-height: 0;
+}
+
+#playlist {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+  flex-grow: 1; /* Faz a lista crescer para preencher o container */
+  overflow-y: auto; /* Adiciona rolagem se o conteúdo for maior que o espaço */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* --- COLUNA DA DIREITA (MELODIA) --- */
+.melody-column {
+  flex: 1.8; /* Ocupa 1.8 partes do espaço (maior) */
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  padding: 20px;
+  overflow-y: auto;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* --- COMPONENTES DO PLAYER --- */
 .music-container {
   background-color: #ffffff;
   border-radius: 15px;
   box-shadow: 0 5px 5px 0 rgb(194, 72, 255);
-  position: relative;
-  z-index: 10;
-  margin: 0 0 20px 0; /* Margem apenas na parte de baixo */
-  display: block; /* Mudar de flex para block simplifica */
   padding: 20px;
+  margin-bottom: 20px;
+  flex-shrink: 0; /* Impede que o player encolha */
+}
+
+/* CORREÇÃO DO BOTÃO: .music-info não é mais absoluto */
+.music-info {
+  position: relative; /* Mudou de 'absolute' para 'relative' */
+  opacity: 1; /* Sempre visível */
+  width: 100%;
+  padding: 0 0 10px 0; /* Apenas um espaçamento inferior */
+  /* Removemos as propriedades que causavam o problema: top, left, transform, etc. */
+}
+
+.music-info h4 {
+  margin: 0;
+  text-transform: capitalize;
 }
 
 .navigation {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1;
 }
 
 .action-btn {
-  background-color: #fff;
+  background-color: transparent;
   border: 0;
   color: #dfdbdf;
   font-size: 20px;
@@ -63,35 +122,12 @@ body {
   outline: 0;
 }
 
-.music-info {
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 15px 15px 0 0;
-  position: absolute;
-  top: 0;
-  left: 20px;
-  width: calc(100% - 40px);
-  padding: 10px 10px 10px 150px;
-  opacity: 0;
-  transform: translateY(0%);
-  transition: transform 0.3s ease-in, opacity 0.3s ease-in;
-  z-index: 0;
-}
-
-.music-container.play .music-info {
-  opacity: 1;
-  transform: translateY(-100%);
-}
-
-.music-info h4 {
-  margin: 0;
-}
-
 .progress-container {
-  background: #fff;
+  background: #e4e4e4;
   border-radius: 5px;
   cursor: pointer;
   margin: 10px 0;
-  height: 4px;
+  height: 5px;
   width: 100%;
 }
 
@@ -103,16 +139,7 @@ body {
   transition: width 0.1s linear;
 }
 
-
-/* --- Estilos para Playlist e Busca --- */
-
-.playlist-search-container {
-  width: 100%;
-  flex-grow: 1; /* Faz este container crescer para ocupar o espaço restante */
-  display: flex;
-  flex-direction: column;
-}
-
+/* --- OUTROS ESTILOS (Busca, Toggle, Playlist Items) --- */
 #search-input {
   width: 100%;
   padding: 10px;
@@ -123,22 +150,19 @@ body {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-#playlist {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 5px;
-  flex-grow: 1; /* Faz a lista crescer para ocupar o espaço restante */
-  overflow-y: auto;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+.toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  gap: 10px;
 }
 
 #playlist li {
   padding: 12px 15px;
   cursor: pointer;
   border-bottom: 1px solid rgba(0,0,0,0.1);
-  text-transform: capitalize; /* Deixa os nomes mais bonitos */
+  text-transform: capitalize;
 }
 
 #playlist li:last-child {
@@ -149,132 +173,13 @@ body {
   background-color: rgba(0,0,0,0.05);
 }
 
-/* Estilo para a música que está tocando no momento */
 #playlist li.active {
-  background-color: #dfdbdf; /* Cor parecida com a dos botões */
+  background-color: #dfdbdf;
   font-weight: bold;
   color: #8c7894;
 }
 
-
-/* --- Estilos para o Toggle de Modo --- */
-
-.toggle-container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end; /* Alinha o toggle à direita */
-  margin-bottom: 10px;
-  gap: 10px; /* Espaço entre os elementos */
-}
-
-.mode-label {
-  font-size: 14px;
-  color: #5c5261;
-}
-
-.toggle-switch {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 24px;
-}
-
-.toggle-switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 18px;
-  width: 18px;
-  left: 3px;
-  bottom: 3px;
-  background-color: white;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: #30c8ff; /* Cor ativa */
-}
-
-input:checked + .slider:before {
-  transform: translateX(26px); /* Move o círculo */
-}
-
-.slider.round {
-  border-radius: 24px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-/* --- Estilos para o Countdown de Carnaval --- */
-
-#countdown {
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px; /* Adiciona um espaço antes da busca */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  color: #5c5261; /* Um roxo/cinza escuro */
-  font-size: 16px;
-}
-
-#timer {
-  font-size: 22px;
-  font-weight: bold;
-  color: #30c8ff; /* A mesma cor da barra de progresso para dar destaque */
-  margin-top: 5px;
-  letter-spacing: 2px; /* Espaça um pouco os números */
-}
-
-/* --- ESTILOS PARA O LAYOUT DE DUAS COLUNAS E MELODIA --- */
-
-.main-container {
-  display: flex;
-  gap: 30px; /* Espaço entre as colunas */
-  align-items: flex-start; /* Alinha os topos das colunas */
-  width: 95%; /* Ocupa quase a tela toda */
-  max-width: 1400px; /* Um limite generoso para telas grandes */
-  height: calc(95vh - 60px);
-}
-
-.player-column {
-  display: flex;
-  flex-direction: column; /* Organiza player e lista verticalmente */
-  flex: 1;
-  max-height: 60vh;
-}
-
-.melody-column {
-  flex: 1.8; /* Dando um pouco mais de espaço para a melodia */
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 15px;
-  padding: 20px;
-  min-height: 550px; /* Altura mínima para alinhar com o player */
-  height: fit-content; /* Altura se ajusta ao conteúdo */
-  max-height: 100%; /* Altura máxima antes de rolar */
-  overflow-y: auto;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
+/* --- ESTILOS DA MELODIA --- */
 .melody-column .placeholder {
   display: flex;
   align-items: center;
@@ -288,11 +193,10 @@ input:checked + .slider:before {
   font-size: 24px;
   font-weight: bold;
   margin-top: 0;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
   color: #5c5261;
   text-transform: capitalize;
 }
-
 
 #instrument-selector {
   width: 100%;
@@ -326,12 +230,23 @@ input:checked + .slider:before {
   font-family: 'Courier New', Courier, monospace;
   font-size: 16px;
   font-weight: 600;
-  white-space: pre-wrap; /* Garante que a melodia quebre a linha se for muito longa */
+  white-space: pre-wrap;
 }
 
 .melody-column .arrangement {
   font-style: italic;
   color: #666;
   text-align: right;
-  white-space: nowrap; /* Evita que o arranjo quebre a linha */
+  white-space: nowrap;
 }
+
+/* (As regras do toggle switch e slider continuam as mesmas, não precisam ser adicionadas se já estiverem lá, mas não faz mal se forem substituídas) */
+.mode-label { font-size: 14px; color: #5c5261; }
+.toggle-switch { position: relative; display: inline-block; width: 50px; height: 24px; }
+.toggle-switch input { opacity: 0; width: 0; height: 0; }
+.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; }
+.slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; background-color: white; transition: .4s; }
+input:checked + .slider { background-color: #30c8ff; }
+input:checked + .slider:before { transform: translateX(26px); }
+.slider.round { border-radius: 24px; }
+.slider.round:before { border-radius: 50%; }

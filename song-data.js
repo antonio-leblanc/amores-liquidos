@@ -71,7 +71,7 @@ const songsAlphabetical = [
 	'voce_nao_entende_nada'
 ];
 
-const defaultPlaylistName = 'Ordem Alfabética';
+const defaultPlaylistName = 'Novas 2026';
 
 
 const playlists = {

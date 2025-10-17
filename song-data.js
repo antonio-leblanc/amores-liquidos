@@ -55,6 +55,7 @@ const songsAlphabetical = [
 	'temporal',
 	'tempos_modernos',
 	'tieta',
+	'to_nem_ai',
 	'toda_forma_de_amor',
 	'tremendo_vacilao',
 	'tu_ta_na_gaiola',
@@ -70,6 +71,10 @@ const songsAlphabetical = [
 
 
 const eventSetlist = [
+	'to_nem_ai',
+]
+
+const eventSetlist1 = [
 	'deusa_do_amor',
 	'100_voce',
 	'amor_perfeito',

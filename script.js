@@ -224,7 +224,7 @@ function renderMelody(data) {
 
   // Constrói o HTML para o dropdown de instrumentos
   const instrumentOptions = data.instruments.map((inst, index) => 
-    `<option value="${index}">${inst.name} (${inst.clef})</option>`
+    `<option value="${index}">${inst.name}</option>`
   ).join('');
 
   // Pega o primeiro instrumento como padrão
@@ -233,7 +233,6 @@ function renderMelody(data) {
   // Insere a estrutura principal na coluna da direita
   melodyContainer.innerHTML = `
     <h3 class="song-title">${data.songTitle.replace(/_/g, ' ')}</h3>
-    <p class="real-tone">Tom Real: ${data.realTone}</p>
     <select id="instrument-selector">
       ${instrumentOptions}
     </select>

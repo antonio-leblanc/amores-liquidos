@@ -1,11 +1,9 @@
 {
   "songTitle": "Depois do Prazer",
-  "realTone": "Dm",
   "structure": ["1", "2", "Refrão"],
   "instruments": [
     {
       "name": "Trombone",
-      "clef": "C",
       "sections": [
         {
           "name": "1",

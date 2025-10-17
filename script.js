@@ -51,11 +51,28 @@ function updatePlaylistHighlight() {
   });
 }
 
-// Carrega os detalhes da música e atualiza o destaque na playlist
-function loadSong(song) {
-  title.innerText = song.replace(/_/g, ' '); // Deixa o título do player mais legível também
+// ATENÇÃO: Substitua sua função loadSong() antiga por esta.
+
+// Guarda os dados da melodia atual para fácil acesso
+let currentMelodyData = null; 
+
+async function loadSong(song) {
+  title.innerText = song.replace(/_/g, ' ');
   audio.src = `music/${song}.mp3`;
-  updatePlaylistHighlight(); // Atualiza o item ativo na lista
+  updatePlaylistHighlight();
+
+  // --- LÓGICA PARA CARREGAR MELODIA ---
+  try {
+    const res = await fetch(`melodies/${song}.json`);
+    if (!res.ok) {
+      throw new Error('Melody not found');
+    }
+    currentMelodyData = await res.json();
+    renderMelody(currentMelodyData); // Chama a função para renderizar
+  } catch (error) {
+    clearMelodyColumn(); // Limpa a coluna se o JSON não for encontrado
+    currentMelodyData = null;
+  }
 }
 
 // Tocar a música
@@ -187,3 +204,83 @@ searchInput.addEventListener('input', (e) => {
     }
   });
 });
+
+
+// --- NOVAS FUNÇÕES PARA EXIBIR MELODIA ---
+
+const melodyContainer = document.getElementById('melody-display-container');
+
+function clearMelodyColumn() {
+  if (melodyContainer) {
+    melodyContainer.innerHTML = `
+      <div class="placeholder">
+          <p>Melodia não disponível para esta música.</p>
+      </div>`;
+  }
+}
+
+function renderMelody(data) {
+  if (!melodyContainer) return; // Segurança: não faz nada se o container não existir
+
+  // Constrói o HTML para o dropdown de instrumentos
+  const instrumentOptions = data.instruments.map((inst, index) => 
+    `<option value="${index}">${inst.name} (${inst.clef})</option>`
+  ).join('');
+
+  // Pega o primeiro instrumento como padrão
+  const firstInstrument = data.instruments[0];
+  
+  // Insere a estrutura principal na coluna da direita
+  melodyContainer.innerHTML = `
+    <h3 class="song-title">${data.songTitle.replace(/_/g, ' ')}</h3>
+    <p class="real-tone">Tom Real: ${data.realTone}</p>
+    <select id="instrument-selector">
+      ${instrumentOptions}
+    </select>
+    <div id="melody-content">
+      <!-- O conteúdo da melodia será inserido aqui -->
+    </div>
+  `;
+  
+  // Chama a função para renderizar a melodia do primeiro instrumento
+  renderInstrumentMelody(firstInstrument);
+
+  // Adiciona o event listener para o dropdown recém-criado
+  const selector = document.getElementById('instrument-selector');
+  if (selector) {
+    selector.addEventListener('change', handleInstrumentChange);
+  }
+}
+
+// Função que renderiza a melodia de um instrumento específico
+function renderInstrumentMelody(instrumentData) {
+  const melodyContentDiv = document.getElementById('melody-content');
+  if (!melodyContentDiv) return;
+
+  const melodyHTML = instrumentData.sections.map(section => `
+    <div class="section">
+      <h4>${section.name}</h4>
+      ${section.lines.map(line => `
+        <div class="line">
+          <span class="melody">${line.melody}</span>
+          ${line.arrangement ? `<span class="arrangement">${line.arrangement}</span>` : ''}
+          ${line.comment ? `<span class="arrangement">(${line.comment})</span>` : ''}
+        </div>
+      `).join('')}
+    </div>
+  `).join('');
+  
+  melodyContentDiv.innerHTML = melodyHTML;
+}
+
+// Função chamada quando o usuário troca de instrumento no dropdown
+function handleInstrumentChange(e) {
+  if (!currentMelodyData) return;
+  
+  const selectedIndex = e.target.value;
+  const selectedInstrument = currentMelodyData.instruments[selectedIndex];
+  
+  if (selectedInstrument) {
+    renderInstrumentMelody(selectedInstrument);
+  }
+}

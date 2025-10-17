@@ -246,7 +246,12 @@ function renderMelody(data) {
   
   // Insere a estrutura principal na coluna da direita
   melodyContainer.innerHTML = `
-    <h3 class="song-title">${data.songTitle.replace(/_/g, ' ')}</h3>
+    
+    <h3 class="song-title">
+      ${data.songTitle.replace(/_/g, ' ')}
+      ${(data.review_needed && data.review_needed.length > 0) ? ' *' : ''}
+    </h3>
+
     <select id="instrument-selector">
       ${instrumentOptions}
     </select>
@@ -255,10 +260,8 @@ function renderMelody(data) {
     </div>
   `;
   
-  // Chama a função para renderizar a melodia do primeiro instrumento
   renderInstrumentMelody(firstInstrument);
 
-  // Adiciona o event listener para o dropdown recém-criado
   const selector = document.getElementById('instrument-selector');
   if (selector) {
     selector.addEventListener('change', handleInstrumentChange);

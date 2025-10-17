@@ -47,6 +47,7 @@ const songsAlphabetical = [
 	'pintura_intima',
 	'princesa',
 	'sina',
+	'sinais_de_fogo',
 	'so_love',
 	'sombra_da_maldade',
 	'sorte_grande',
@@ -71,7 +72,11 @@ const songsAlphabetical = [
 
 
 const eventSetlist = [
+	'sinais_de_fogo',
 	'to_nem_ai',
+	'amor_i_love_you',
+	'vem_meu_amor',
+	'i_miss_her'
 ]
 
 const eventSetlist1 = [

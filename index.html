@@ -13,12 +13,8 @@
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   </head>
   <body>
-    <h1>💕Amores Liquidos💦</h1>
-
-    <div id="countdown">
-      <span>Faltam</span>
-      <span id="timer"></span>
-      <span>para o cortejo 2026</span>
+    <div class="header">
+      <h1>💕Amores Liquidos💦</h1>
     </div>
 
     <!-- CONTAINER PRINCIPAL PARA AS DUAS COLUNAS -->
@@ -26,19 +22,8 @@
       
       <!-- COLUNA DA ESQUERDA: PLAYER E PLAYLIST -->
       <div class="player-column">
-        <div class="playlist-search-container">
-          <input type="text" id="search-input" placeholder="Buscar música...">
-          <div class="toggle-container">
-            <span class="mode-label">Alfabética</span>
-            <label class="toggle-switch">
-              <input type="checkbox" id="mode-toggle">
-              <span class="slider round"></span>
-            </label>
-            <span class="mode-label">Novas</span>
-          </div>
-          <ul id="playlist"></ul>
-        </div>
-
+        
+        <!-- O Player agora fica em cima, em posição fixa dentro da coluna -->
         <div class="music-container" id="music-container">
           <div class="music-info">
             <h4 id="title"></h4>
@@ -47,9 +32,9 @@
             </div>
           </div>
           <audio src="music/acima_do_sol.mp3" id="audio"></audio>
-          <div class="img-container">
-            <img src="images/amores.jpg" alt="music-cover" id="cover" />
-          </div>
+          
+          <!-- REMOVEMOS O .img-container INTEIRO -->
+
           <div class="navigation">
             <button id="prev" class="action-btn">
               <i class="fas fa-backward"></i>
@@ -65,6 +50,21 @@
             </button>
           </div>
         </div>
+
+        <!-- A busca e a playlist ficam abaixo do player -->
+        <div class="playlist-search-container">
+          <input type="text" id="search-input" placeholder="Buscar música...">
+          <div class="toggle-container">
+            <span class="mode-label">Alfabética</span>
+            <label class="toggle-switch">
+              <input type="checkbox" id="mode-toggle">
+              <span class="slider round"></span>
+            </label>
+            <span class="mode-label">Novas</span>
+          </div>
+          <ul id="playlist"></ul>
+        </div>
+
       </div>
 
       <!-- COLUNA DA DIREITA: MELODIA (CONTEÚDO DINÂMICO) -->
@@ -78,6 +78,7 @@
 
     <script src="song-data.js"></script>
     <script src="countdown.js"></script>
+    <!-- eventualmente recolocar o countdown -->
     <script src="script.js"></script>
   </body>
 </html>

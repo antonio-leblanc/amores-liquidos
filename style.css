@@ -10,68 +10,31 @@ body {
     rgb(255, 148, 216) 23.8%,
     rgba(252, 221, 221, 1) 92%
   );
+  justify-content: flex-start;
+  padding-top: 20px;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-family: 'Lato', sans-serif;
   margin: 0;
+}
+
+.header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .music-container {
   background-color: #ffffff;
   border-radius: 15px;
-  box-shadow: 0 20px 20px 0 rgb(194, 72, 255);
-  display: flex;
-  padding: 20px 30px;
+  box-shadow: 0 5px 5px 0 rgb(194, 72, 255);
   position: relative;
-  margin: 100px 0;
   z-index: 10;
-}
-
-.img-container {
-  position: relative;
-  width: 110px;
-}
-
-.img-container::after {
-  content: '';
-  background-color: #fff;
-  border-radius: 50%;
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  width: 20px;
-  height: 20px;
-  transform: translate(-50%, 50%);
-}
-
-.img-container img {
-  border-radius: 50%;
-  object-fit: cover;
-  height: 110px;
-  width: inherit;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  animation: rotate 3s linear infinite;
-
-  animation-play-state: paused;
-}
-
-.music-container.play .img-container img {
-  animation-play-state: running;
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+  margin: 0 0 20px 0; /* Margem apenas na parte de baixo */
+  display: block; /* Mudar de flex para block simplifica */
+  padding: 20px;
 }
 
 .navigation {
@@ -144,9 +107,10 @@ body {
 /* --- Estilos para Playlist e Busca --- */
 
 .playlist-search-container {
-  width: 90%;
-  max-width: 400px; /* Tente manter a mesma largura do player */
-  margin-bottom: 20px;
+  width: 100%;
+  flex-grow: 1; /* Faz este container crescer para ocupar o espaço restante */
+  display: flex;
+  flex-direction: column;
 }
 
 #search-input {
@@ -165,7 +129,7 @@ body {
   margin: 0;
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 5px;
-  max-height: 250px; /* Altura máxima antes de aparecer a barra de rolagem */
+  flex-grow: 1; /* Faz a lista crescer para ocupar o espaço restante */
   overflow-y: auto;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
@@ -286,31 +250,27 @@ input:checked + .slider:before {
 .main-container {
   display: flex;
   gap: 30px; /* Espaço entre as colunas */
-  width: 90%;
-  max-width: 1100px; /* Aumentar a largura máxima para acomodar as colunas */
   align-items: flex-start; /* Alinha os topos das colunas */
-  margin-top: 20px;
+  width: 95%; /* Ocupa quase a tela toda */
+  max-width: 1400px; /* Um limite generoso para telas grandes */
+  height: calc(95vh - 60px);
 }
 
 .player-column {
-  flex: 1; 
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* Remove a margem do music-container para que a coluna controle o espaçamento */
-  & .music-container {
-    margin: 0; 
-  }
+  flex-direction: column; /* Organiza player e lista verticalmente */
+  flex: 1;
+  max-height: 60vh;
 }
 
 .melody-column {
-  flex: 1.5; /* Dando um pouco mais de espaço para a melodia */
+  flex: 1.8; /* Dando um pouco mais de espaço para a melodia */
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 15px;
   padding: 20px;
   min-height: 550px; /* Altura mínima para alinhar com o player */
   height: fit-content; /* Altura se ajusta ao conteúdo */
-  max-height: 70vh; /* Altura máxima antes de rolar */
+  max-height: 100%; /* Altura máxima antes de rolar */
   overflow-y: auto;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }

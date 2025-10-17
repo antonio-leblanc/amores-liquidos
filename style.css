@@ -280,3 +280,103 @@ input:checked + .slider:before {
   margin-top: 5px;
   letter-spacing: 2px; /* Espaça um pouco os números */
 }
+
+/* --- ESTILOS PARA O LAYOUT DE DUAS COLUNAS E MELODIA --- */
+
+.main-container {
+  display: flex;
+  gap: 30px; /* Espaço entre as colunas */
+  width: 90%;
+  max-width: 1100px; /* Aumentar a largura máxima para acomodar as colunas */
+  align-items: flex-start; /* Alinha os topos das colunas */
+  margin-top: 20px;
+}
+
+.player-column {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Remove a margem do music-container para que a coluna controle o espaçamento */
+  & .music-container {
+    margin: 0; 
+  }
+}
+
+.melody-column {
+  flex: 1.5; /* Dando um pouco mais de espaço para a melodia */
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  padding: 20px;
+  min-height: 550px; /* Altura mínima para alinhar com o player */
+  height: fit-content; /* Altura se ajusta ao conteúdo */
+  max-height: 70vh; /* Altura máxima antes de rolar */
+  overflow-y: auto;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.melody-column .placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #8c7894;
+  font-style: italic;
+}
+
+.melody-column .song-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: #5c5261;
+  text-transform: capitalize;
+}
+
+.melody-column .real-tone {
+  font-style: italic;
+  margin-bottom: 20px;
+  color: #8c7894;
+}
+
+#instrument-selector {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  background-color: #fff;
+}
+
+.melody-column .section h4 {
+  background-color: #e8e2ea;
+  padding: 8px 12px;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #5c5261;
+}
+
+.melody-column .line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5px;
+  border-bottom: 1px solid #eee;
+  gap: 15px;
+}
+
+.melody-column .melody {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  font-weight: 600;
+  white-space: pre-wrap; /* Garante que a melodia quebre a linha se for muito longa */
+}
+
+.melody-column .arrangement {
+  font-style: italic;
+  color: #666;
+  text-align: right;
+  white-space: nowrap; /* Evita que o arranjo quebre a linha */
+}

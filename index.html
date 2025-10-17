@@ -21,50 +21,59 @@
       <span>para o cortejo 2026</span>
     </div>
 
-    <div class="playlist-search-container">
-      <input type="text" id="search-input" placeholder="Buscar música...">
+    <!-- CONTAINER PRINCIPAL PARA AS DUAS COLUNAS -->
+    <div class="main-container">
+      
+      <!-- COLUNA DA ESQUERDA: PLAYER E PLAYLIST -->
+      <div class="player-column">
+        <div class="playlist-search-container">
+          <input type="text" id="search-input" placeholder="Buscar música...">
+          <div class="toggle-container">
+            <span class="mode-label">Alfabética</span>
+            <label class="toggle-switch">
+              <input type="checkbox" id="mode-toggle">
+              <span class="slider round"></span>
+            </label>
+            <span class="mode-label">Novas</span>
+          </div>
+          <ul id="playlist"></ul>
+        </div>
 
-      <div class="toggle-container">
-        <span class="mode-label">Alfabética</span>
-        <label class="toggle-switch">
-          <input type="checkbox" id="mode-toggle">
-          <span class="slider round"></span>
-        </label>
-        <span class="mode-label">Novas</span>
-      </div>
-
-      <ul id="playlist"></ul>
-    </div>
-
-    <div class="music-container" id="music-container">
-      <div class="music-info">
-        <h4 id="title"></h4>
-        <div class="progress-container" id="progress-container">
-          <div class="progress" id="progress"></div>
+        <div class="music-container" id="music-container">
+          <div class="music-info">
+            <h4 id="title"></h4>
+            <div class="progress-container" id="progress-container">
+              <div class="progress" id="progress"></div>
+            </div>
+          </div>
+          <audio src="music/acima_do_sol.mp3" id="audio"></audio>
+          <div class="img-container">
+            <img src="images/amores.jpg" alt="music-cover" id="cover" />
+          </div>
+          <div class="navigation">
+            <button id="prev" class="action-btn">
+              <i class="fas fa-backward"></i>
+            </button>
+            <button id="play" class="action-btn action-btn-big">
+              <i class="fas fa-play"></i>
+            </button>
+            <button id="next" class="action-btn">
+              <i class="fas fa-forward"></i>
+            </button>
+            <button id="random" class="action-btn">
+              <i class="fas fa-random"></i>
+            </button>
+          </div>
         </div>
       </div>
 
-      <audio src="music/acima_do_sol.mp3" id="audio"></audio>
-
-      <div class="img-container">
-        <img src="images/amores.jpg" alt="music-cover" id="cover" />
+      <!-- COLUNA DA DIREITA: MELODIA (CONTEÚDO DINÂMICO) -->
+      <div class="melody-column" id="melody-display-container">
+        <div class="placeholder">
+          <p>Selecione uma música com melodia disponível para vê-la aqui.</p>
+        </div>
       </div>
-      <div class="navigation">
-        <button id="prev" class="action-btn">
-          <i class="fas fa-backward"></i>
-        </button>
-        <button id="play" class="action-btn action-btn-big">
-          <i class="fas fa-play"></i>
-        </button>
-        <button id="next" class="action-btn">
-          <i class="fas fa-forward"></i>
-        </button>
 
-        <button id="random" class="action-btn">
-          <i class="fas fa-random"></i>
-        </button>
-
-      </div>
     </div>
 
     <script src="song-data.js"></script>

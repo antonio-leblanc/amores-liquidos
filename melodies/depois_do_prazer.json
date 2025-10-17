@@ -1,0 +1,50 @@
+{
+  "songTitle": "Depois do Prazer",
+  "realTone": "Dm",
+  "structure": ["1", "2", "Refrão"],
+  "instruments": [
+    {
+      "name": "Trombone",
+      "clef": "C",
+      "sections": [
+        {
+          "name": "1",
+          "lines": [
+            { "melody": "La Fa La Fa La", "arrangement": "Fa...." },
+            { "melody": "La DO Sib La Sol Fa", "arrangement": "Re...." },
+            { "melody": "Re Mi Fa Sol Re", "arrangement": "Fa Sib" },
+            { "melody": "Sib La Sol Fa / Sol Sol Mi", "arrangement": "Re do" }
+          ]
+        },
+        {
+          "name": "2",
+          "lines": [
+            { "melody": "La Sib DO / La Sib DO" },
+            { "melody": "La Sib DO / La Sib DO" },
+            { "melody": "La Sib DO / La Sib DO" },
+            { "melody": "La Sib DO / Sib La Sol Fa#" },
+            { "melody": "Sol La Sib / Sol La Sib" },
+            { "melody": "Sol La Sib / Sol La Sib" },
+            { "melody": "Sol La Sib / Sol La Sib" },
+            { "melody": "Sol La Sib / Sol La Sib" },
+            { "melody": "Sol La Sib / La Sol Fa Mi", "comment": "1ª vez" },
+            { "melody": "Sol La Sib / La Sol DO....", "comment": "2ª vez" }
+          ]
+        },
+        {
+          "name": "Refrão",
+          "lines": [
+            { "melody": "La La La La La La", "arrangement": "La Sol La Fa#" },
+            { "melody": "La La La Sib DO DO Sib La" },
+            { "melody": "Sib Sib Sib Sib Sib Sib Sib...", "arrangement": "Sol Fa Sol Mi" },
+            { "melody": "Sib Sib Sib La Sol Sib La Sol" },
+            { "melody": "La La La La La La", "arrangement": "La Sol La Fa#" },
+            { "melody": "La La La Sib DO DO Sib La" },
+            { "melody": "Sib Sib Sib Sib Sib Sib Sib...", "arrangement": "do do Do Sib La (Sol Sol)" },
+            { "melody": "Sib Sib Sib La Sol Sib La Sol" }
+          ]
+        }
+      ]
+    }
+  ]
+}

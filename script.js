@@ -157,11 +157,10 @@ generatePlaylist(currentSongs); // Gera a playlist inicial
 
 // Tocar/Pausar
 playBtn.addEventListener('click', () => {
-  const isPlaying = musicContainer.classList.contains('play');
-  if (isPlaying) {
-    pauseSong();
-  } else {
+  if (audio.paused) {
     playSong();
+  } else {
+    pauseSong();
   }
 });
 

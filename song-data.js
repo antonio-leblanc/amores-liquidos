@@ -71,40 +71,44 @@ const songsAlphabetical = [
 	'voce_nao_entende_nada'
 ];
 
+const defaultPlaylistName = 'Ordem Alfabética';
 
-const eventSetlist = [
-	'sinais_de_fogo',
-	'to_nem_ai',
-	'amor_i_love_you',
-	'vem_meu_amor',
-	'i_miss_her'
-]
 
-const eventSetlist1 = [
-	'deusa_do_amor',
-	'100_voce',
-	'amor_perfeito',
-	'depois_do_prazer',
-	'meu_sangue_ferve_por_voce',
-	'tempos_modernos',
-	'nao_precisa_mudar',
-	'varias_queixas',
-	'bola_de_sabao',
-	'temporal',
-	'final_feliz',
-	'ja_sei_namorar',
-	'pintura_intima',
-	'uma_noite_e_meia',
-	'mania_de_voce',
-	'tremendo_vacilao',
-	'i_love_you_baby_cant_take_my_eyes_off_you',
-	'dont_stop',
-	'baianidade_nago',
-	'princesa',
-	'amor_de_chocolate',
-	'bailao',
-	'baile_da_gaiola',
-	'nao_quero_dinheiro',
-	'assim_caminha_a_humanidade_malhacao',
-	'toda_forma_de_amor'
-]
+const playlists = {
+	'Ordem Alfabética': [...songsAlphabetical].sort(),
+	'Novas 2026': [
+		'sinais_de_fogo',
+		'to_nem_ai',
+		'amor_i_love_you',
+		'vem_meu_amor',
+		'i_miss_her'
+	],
+	'GIG': [
+		'deusa_do_amor',
+		'100_voce',
+		'amor_perfeito',
+		'depois_do_prazer',
+		'meu_sangue_ferve_por_voce',
+		'tempos_modernos',
+		'nao_precisa_mudar',
+		'varias_queixas',
+		'bola_de_sabao',
+		'temporal',
+		'final_feliz',
+		'ja_sei_namorar',
+		'pintura_intima',
+		'uma_noite_e_meia',
+		'mania_de_voce',
+		'tremendo_vacilao',
+		'i_love_you_baby_cant_take_my_eyes_off_you',
+		'dont_stop',
+		'baianidade_nago',
+		'princesa',
+		'amor_de_chocolate',
+		'bailao',
+		'baile_da_gaiola',
+		'nao_quero_dinheiro',
+		'assim_caminha_a_humanidade_malhacao',
+		'toda_forma_de_amor'
+	]
+};

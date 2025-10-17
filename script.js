@@ -4,7 +4,7 @@ const playBtn = document.getElementById('play');
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
 const randomBtn = document.getElementById('random');
-const modeToggle = document.getElementById('mode-toggle');
+const playlistSelector = document.getElementById('playlist-selector'); 
 
 const audio = document.getElementById('audio');
 const progress = document.getElementById('progress');
@@ -17,8 +17,7 @@ const playlist = document.getElementById('playlist');
 
 
 // --- Estado da Aplicação ---
-let currentSongs = [...songsAlphabetical];
-let isAlphabetical = true;
+let currentSongs = playlists[defaultPlaylistName];
 let songIndex = 0;
 
 // --- FUNÇÕES ---
@@ -119,19 +118,33 @@ function playRandomSong() {
   playSong();
 }
 
-// Troca entre o modo alfabético e o setlist, e recarrega a playlist
-function switchMode() {
-  if (modeToggle.checked) {
-    currentSongs = [...eventSetlist];
-    isAlphabetical = false;
-  } else {
-    currentSongs = [...songsAlphabetical];
-    isAlphabetical = true;
-  }
+// --- NOVAS FUNÇÕES PARA O DROPDOWN ---
+
+// Popula o dropdown com as chaves do nosso objeto de playlists
+function populatePlaylistSelector() {
+  // Pega os nomes de todas as playlists (ex: "Ordem Alfabética", "Setlist Novas")
+  const playlistNames = Object.keys(playlists);
   
-  songIndex = 0; // Reseta para a primeira música
+  playlistNames.forEach(name => {
+    const option = document.createElement('option');
+    option.value = name;
+    option.innerText = name;
+    playlistSelector.appendChild(option);
+  });
+  
+  // Garante que o dropdown comece com a playlist padrão selecionada
+  playlistSelector.value = defaultPlaylistName;
+}
+
+// Lida com a troca de playlists no dropdown
+function handlePlaylistChange() {
+  const selectedPlaylistName = playlistSelector.value;
+  currentSongs = playlists[selectedPlaylistName];
+  
+  songIndex = 0; // Reseta para a primeira música da nova lista
+  generatePlaylist(currentSongs);
   loadSong(currentSongs[songIndex]);
-  generatePlaylist(currentSongs); // Recarrega a lista com a nova ordem
+  pauseSong(); // Pausa a música para evitar que continue tocando a antiga
 }
 
 // Atualiza a barra de progresso
@@ -150,8 +163,10 @@ function setProgress(e) {
 }
 
 // --- Inicialização da Página ---
+populatePlaylistSelector(); // Popula o dropdown primeiro
 loadSong(currentSongs[songIndex]);
-generatePlaylist(currentSongs); // Gera a playlist inicial
+generatePlaylist(currentSongs);
+
 
 // --- Event Listeners ---
 
@@ -168,7 +183,7 @@ playBtn.addEventListener('click', () => {
 prevBtn.addEventListener('click', prevSong);
 nextBtn.addEventListener('click', nextSong);
 randomBtn.addEventListener('click', playRandomSong);
-modeToggle.addEventListener('change', switchMode);
+playlistSelector.addEventListener('change', handlePlaylistChange);
 
 // Atualizações do áudio
 audio.addEventListener('timeupdate', updateProgress);

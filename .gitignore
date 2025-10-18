@@ -4,3 +4,6 @@
 # OS-generated files
 .DS_Store
 Thumbs.db
+
+raw_songbook/
+divided_songs/

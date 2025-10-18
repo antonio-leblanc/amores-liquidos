@@ -1,73 +1,73 @@
 # Amores Líquidos Music Player
 
-Music player and sheet music viewer for the carnival bloco "Amores Líquidos". Features a complete repertoire with interactive melody display for different instruments.
+Player de música e visualizador de partituras para o bloco de carnaval "Amores Líquidos". Possui um repertório completo com exibição interativa de melodias para diferentes instrumentos.
 
-## Features
+## Funcionalidades
 
-### Music Player
-* **Multiple Playlists:** Alphabetical order, "Novas 2026", and "GIG" setlist
-* **Playback Controls:** Play, pause, next, previous, and random song selection
-* **Search:** Real-time search through the song list
-* **Progress Bar:** Click to jump to any point in the song
+### Player de Música
+* **Múltiplas Playlists:** Ordem alfabética, "Novas 2026" e setlist "GIG"
+* **Controles de Reprodução:** Play, pause, próxima, anterior e seleção aleatória
+* **Busca:** Pesquisa em tempo real na lista de músicas
+* **Barra de Progresso:** Clique para pular para qualquer ponto da música
 
-### Sheet Music Display
-* **Multi-Instrument Support:** View melodies for Sax Alto, Trombone, and Trumpet/Sax Tenor
-* **Section Navigation:** Browse through different song sections (Intro, Verse, Chorus, etc.)
-* **Interactive Display:** Switch between instruments with dropdown selector
-* **Review System:** Songs with review notes are marked with asterisk (*)
+### Exibição de Partituras
+* **Suporte Multi-Instrumento:** Visualize melodias para Sax Alto, Trombone e Trompete/Sax Tenor
+* **Navegação por Seções:** Navegue pelas diferentes seções da música (Intro, Verso, Refrão, etc.)
+* **Exibição Interativa:** Alterne entre instrumentos com seletor dropdown
+* **Sistema de Revisão:** Músicas com notas de revisão são marcadas com asterisco (*)
 
-## Project Structure
+## Estrutura do Projeto
 
 ```
 amores-liquidos/
-├── index.html          # Main application
-├── script.js           # Core functionality
-├── style.css           # Styling
-├── song-data.js        # Playlist definitions
-├── countdown.js        # Carnival countdown
-├── music/              # MP3 audio files (72 songs)
-├── melodies/           # JSON sheet music files
+├── index.html          # Aplicação principal
+├── script.js           # Funcionalidade principal
+├── style.css           # Estilos
+├── song-data.js        # Definições de playlists
+├── countdown.js        # Contagem regressiva para o carnaval
+├── music/              # Arquivos de áudio MP3 (72 músicas)
+├── melodies/           # Arquivos JSON de partituras
 │   ├── amor_i_love_you.json
 │   ├── depois_do_prazer.json
 │   ├── to_nem_ai.json
 │   ├── varias_queixas.json
 │   └── vem_meu_amor.json
-└── prompts/            # Documentation and automation tools
+└── prompts/            # Documentação e ferramentas de automação
     ├── criador_de_json.md
     ├── especialista_amores.md
     └── plano_todas_as_musicas_em_json.md
 ```
 
-## How to Use
+## Como Usar
 
-1. **Open the Application:** Open `index.html` in a web browser
-2. **Select Playlist:** Use the dropdown to choose between playlists
-3. **Play Music:** Click play button or select a song from the list
-4. **View Sheet Music:** When a song with melody data is selected, the right panel shows the sheet music
-5. **Switch Instruments:** Use the instrument dropdown to view different parts
+1. **Abrir a Aplicação:** Abra `index.html` em um navegador web
+2. **Selecionar Playlist:** Use o dropdown para escolher entre as playlists
+3. **Tocar Música:** Clique no botão play ou selecione uma música da lista
+4. **Ver Partitura:** Quando uma música com dados de melodia é selecionada, o painel direito mostra a partitura
+5. **Trocar Instrumentos:** Use o dropdown de instrumentos para ver diferentes partes
 
-## Adding New Songs
+## Adicionando Novas Músicas
 
-### Audio Files
-1. Add MP3 file to `music/` folder with underscore naming (e.g., `nova_musica.mp3`)
-2. Add song name to `songsAlphabetical` array in `song-data.js`
-3. Add to desired playlist in `playlists` object
+### Arquivos de Áudio
+1. Adicione arquivo MP3 na pasta `music/` com nomenclatura com underscore (ex: `nova_musica.mp3`)
+2. Adicione o nome da música no array `songsAlphabetical` em `song-data.js`
+3. Adicione à playlist desejada no objeto `playlists`
 
-### Sheet Music
-1. Create JSON file in `melodies/` folder with same name as audio file
-2. Follow the structure defined in existing JSON files:
+### Partituras
+1. Crie arquivo JSON na pasta `melodies/` com o mesmo nome do arquivo de áudio
+2. Siga a estrutura definida nos arquivos JSON existentes:
 
 ```json
 {
-  "songTitle": "Song Name",
-  "review_needed": ["Optional review notes"],
-  "structure": ["Section1", "Section2", "Chorus"],
+  "songTitle": "Nome da Música",
+  "review_needed": ["Notas de revisão opcionais"],
+  "structure": ["Seção1", "Seção2", "Refrão"],
   "instruments": [
     {
       "name": "Sax Alto",
       "sections": [
         {
-          "name": "Section1",
+          "name": "Seção1",
           "lines": [
             {"melody": "Do Re Mi Fa Sol"},
             {"melody": "La Si Do Re Mi"}
@@ -79,23 +79,23 @@ amores-liquidos/
 }
 ```
 
-## Automation Project
+## Projeto de Automação
 
-This repository includes tools for automating the conversion of sheet music from PDF/Word documents to structured JSON files. See `prompts/` folder for:
-- **JSON Creator Prompt:** AI prompt for converting text to structured JSON
-- **Music Expert Prompt:** Specialized prompt for transposition and arrangement
-- **Automation Plan:** Strategy for bulk conversion of songbook
+Este repositório inclui ferramentas para automatizar a conversão de partituras de documentos PDF/Word para arquivos JSON estruturados. Veja a pasta `prompts/` para:
+- **Prompt Criador de JSON:** Prompt de IA para converter texto em JSON estruturado
+- **Prompt Especialista Musical:** Prompt especializado para transposição e arranjo
+- **Plano de Automação:** Estratégia para conversão em massa do songbook
 
-## Technical Details
+## Detalhes Técnicos
 
-- **Frontend:** Vanilla HTML/CSS/JavaScript
-- **Audio:** HTML5 Audio API
-- **Data:** JSON files for sheet music
-- **Styling:** Custom CSS with gradient background
-- **Responsive:** Two-column layout (player + sheet music)
+- **Frontend:** HTML/CSS/JavaScript vanilla
+- **Áudio:** HTML5 Audio API
+- **Dados:** Arquivos JSON para partituras
+- **Estilização:** CSS customizado com fundo gradiente
+- **Responsivo:** Layout de duas colunas (player + partitura)
 
-## Requirements
+## Requisitos
 
-- Modern web browser with HTML5 Audio support
-- Local web server (for file access) or serve via HTTP
-- No external dependencies required
+- Navegador web moderno com suporte a HTML5 Audio
+- Servidor web local (para acesso a arquivos) ou servir via HTTP
+- Nenhuma dependência externa necessária

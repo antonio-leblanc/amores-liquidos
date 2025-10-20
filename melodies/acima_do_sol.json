@@ -1,23 +1,11 @@
 {
-  "songTitle": "Acima do Sol",
-  "review_needed": [
-    "The 'Trombone' instrument data is presented as a single Markdown table row where all sections' content is concatenated within the 'Melodia' and 'Arranjo' cells. This format makes it challenging to accurately segment and align melodies and arrangements for each section, especially for sections '3' and '4' where the content in 'Arranjo' appears significantly different and shorter than 'Melodia'. Additionally, section '4' in 'Arranjo' in the source is not bolded. The parsing attempts to extract unique sections based on bolded headers, but the line-by-line alignment (Rule 4 & 5) is compromised due to the lack of explicit line breaks within the cells for each distinct musical line. Embedded annotations like '**Final:**' in the Trombone melody/arrangement strings are not extracted as comments, as the rule for annotations implies leading annotations."
-  ],
+  "songTitle": "Acima Do Sol",
   "structure": [
     "Intro",
     "1",
     "2",
     "3",
-    "4",
-    "2",
-    "Intro",
-    "4",
-    "2",
-    "Intro",
-    "3",
-    "4",
-    "2",
-    "Intro"
+    "4"
   ],
   "instruments": [
     {
@@ -100,8 +88,21 @@
           "name": "Intro",
           "lines": [
             {
-              "melody": "sol sib Do Re Do sib sol Re Do sib sib **Final:** Sib Sol Fa Re sib",
-              "arrangement": "... ... Do-Mib-Sol ... ... ... Do-Mib-Sol ... ... ... Sib-Re-Fa **Final:** Sib Sol Fa Re sib"
+              "melody": "sol sib Do",
+              "arrangement": "... ... Do-Mib-Sol"
+            },
+            {
+              "melody": "Re Do sib sol",
+              "arrangement": "... ... ... Do-Mib-Sol"
+            },
+            {
+              "melody": "Re Do sib sib",
+              "arrangement": "... ... ... Sib-Re-Fa"
+            },
+            {
+              "melody": "Sib Sol Fa Re sib",
+              "comment": "Final",
+              "arrangement": "Final: Sib Sol Fa Re sib"
             }
           ]
         },
@@ -109,8 +110,13 @@
           "name": "1",
           "lines": [
             {
-              "melody": "sib Do Do sib Re Do sol sib Do Re Do sib sol Re Do Re Do sib sol / Do sib sol fa sol",
-              "arrangement": "sib Do Do sib Re Do sol sib Do Re Do sib sol Re Do Re Do sib sol / Do sib sol fa sol"
+              "melody": "sib Do Do sib Re Do"
+            },
+            {
+              "melody": "sol sib Do Re Do sib sol Re Do"
+            },
+            {
+              "melody": "Re Do sib sol / Do sib sol fa sol"
             }
           ]
         },
@@ -118,8 +124,13 @@
           "name": "2",
           "lines": [
             {
-              "melody": "Re / sib Do Do sib Re Do sol sib Do Re Do sib sol Re Do Re Do sib sol / Do sib",
-              "arrangement": "Re / sib Do Do sib Re Do sol sib Do Re Do sib sol Re Do Re Do sib sol / Do sib"
+              "melody": "Re / sib Do Do sib Re Do"
+            },
+            {
+              "melody": "sol sib Do Re Do sib sol Re Do"
+            },
+            {
+              "melody": "Re Do sib sol / Do sib"
             }
           ]
         },
@@ -127,8 +138,16 @@
           "name": "3",
           "lines": [
             {
-              "melody": "Sol Sib Sol Sib Sol Sol Sol Sib Sib Sol Sib Sol Sol Sol Fa Re / Sol Fa Re Do Re",
-              "arrangement": "...Do-Mib-Sol ...Do-Mib-Sol ... ... ... / Sib-Re-Fa"
+              "melody": "Sol Sib Sol Sib Sol Sol",
+              "arrangement": "...Do-Mib-Sol"
+            },
+            {
+              "melody": "Sol Sib Sib Sol Sib Sol Sol",
+              "arrangement": "...Do-Mib-Sol"
+            },
+            {
+              "melody": "Sol Fa Re / Sol Fa Re Do Re",
+              "arrangement": "... ... ... / Sib-Re-Fa"
             }
           ]
         },
@@ -136,8 +155,16 @@
           "name": "4",
           "lines": [
             {
-              "melody": "Sib Sol Sib Sib Sol Sib Sol Sol Fa Sib Sol Sib Sib Sol Sib Sol Sol Fa Sol Fa Re / Sol Fa Re Do Re",
-              "arrangement": "... ... Do-Mib-Sol ... ... Do-Mib-Sol ... ... ... / Sib-Re-Fa"
+              "melody": "Sib Sol Sib Sib Sol Sib Sol Sol Fa",
+              "arrangement": "... ... Do-Mib-Sol"
+            },
+            {
+              "melody": "Sib Sol Sib Sib Sol Sib Sol Sol Fa",
+              "arrangement": "... ... Do-Mib-Sol"
+            },
+            {
+              "melody": "Sol Fa Re / Sol Fa Re Do Re",
+              "arrangement": "... ... ... / Sib-Re-Fa"
             }
           ]
         }

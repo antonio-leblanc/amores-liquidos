@@ -3,8 +3,6 @@
   "structure": [
     "Intro",
     "1",
-    "1ª",
-    "2ª",
     "2",
     "Refrão"
   ],
@@ -40,28 +38,20 @@
             },
             {
               "melody": "Mi Fa# Fa# / Mi Fa# Fa# Mi Re"
-            }
-          ]
-        },
-        {
-          "name": "1ª",
-          "lines": [
+            },
             {
-              "melody": "Sol Fa# Sol Sol / Fa# Sol Sol"
+              "melody": "Sol Fa# Sol Sol / Fa# Sol Sol",
+              "comment": "1ª"
             },
             {
               "melody": "Fa# Mi do# / Sol Sol Fa#"
-            }
-          ]
-        },
-        {
-          "name": "2ª",
-          "lines": [
-            {
-              "melody": "Fa# Sol Sol / Fa# Sol Sol"
             },
             {
-              "melody": "Fa# Mi do# / la Mi Re",
+              "melody": "Fa# Sol Sol / Fa# Sol Sol",
+              "comment": "2ª"
+            },
+            {
+              "melody": "la Mi Re",
               "comment": "(la)"
             }
           ]
@@ -138,28 +128,20 @@
             },
             {
               "melody": "Sol La La / Sol La La Sol Fa"
-            }
-          ]
-        },
-        {
-          "name": "1ª",
-          "lines": [
+            },
             {
-              "melody": "Sib La Sib Sib / La Sib Sib"
+              "melody": "Sib La Sib Sib / La Sib Sib",
+              "comment": "1ª"
             },
             {
               "melody": "La Sol Mi / Sib Sib La"
-            }
-          ]
-        },
-        {
-          "name": "2ª",
-          "lines": [
-            {
-              "melody": "La Sib Sib / La Sib Sib"
             },
             {
-              "melody": "La Sol Mi / do Sol Fa",
+              "melody": "La Sib Sib / La Sib Sib",
+              "comment": "2ª"
+            },
+            {
+              "melody": "do Sol Fa",
               "comment": "(do)"
             }
           ]
@@ -236,28 +218,20 @@
             },
             {
               "melody": "la si si / la si si la sol"
-            }
-          ]
-        },
-        {
-          "name": "1ª",
-          "lines": [
+            },
             {
-              "melody": "do si do do / si do do"
+              "melody": "do si do do / si do do",
+              "comment": "1ª"
             },
             {
               "melody": "si la fa# / do do si"
-            }
-          ]
-        },
-        {
-          "name": "2ª",
-          "lines": [
-            {
-              "melody": "si do do / si do do"
             },
             {
-              "melody": "si la fa# / re la sol",
+              "melody": "si do do / si do do",
+              "comment": "2ª"
+            },
+            {
+              "melody": "re la sol",
               "comment": "(re)"
             }
           ]

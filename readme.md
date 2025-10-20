@@ -12,7 +12,6 @@ Player de música e visualizador de partituras para o bloco de carnaval "Amores 
 
 ### Exibição de Partituras
 * **Suporte Multi-Instrumento:** Visualize melodias para Sax Alto, Trombone e Trompete/Sax Tenor
-* **Navegação por Seções:** Navegue pelas diferentes seções da música (Intro, Verso, Refrão, etc.)
 * **Exibição Interativa:** Alterne entre instrumentos com seletor dropdown
 * **Sistema de Revisão:** Músicas com notas de revisão são marcadas com asterisco (*)
 

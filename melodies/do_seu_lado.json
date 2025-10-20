@@ -1,0 +1,277 @@
+{
+  "songTitle": "Do seu lado",
+  "structure": [
+    "Intro 1",
+    "Intro 2",
+    "1",
+    "2",
+    "Refrão",
+    "3"
+  ],
+  "instruments": [
+    {
+      "name": "Sax Alto",
+      "sections": [
+        {
+          "name": "Intro 1",
+          "lines": [
+            {
+              "melody": "Mi Mi / Re Mi / Re Mi Mi / Re Mi"
+            },
+            {
+              "melody": "Re Mi Mi / Re Mi / Re Mi..."
+            }
+          ]
+        },
+        {
+          "name": "Intro 2",
+          "lines": [
+            {
+              "melody": "Mi.......Si La Sol# Mi / Si La Sol# Mi"
+            },
+            {
+              "melody": "Mi Mi Sol# Sol# Mi..."
+            }
+          ]
+        },
+        {
+          "name": "1",
+          "lines": [
+            {
+              "melody": "Mi Si Si Si Si / Si Si DO# Si"
+            },
+            {
+              "melody": "Sol# Sol# Sol# Sol# Sol# Fa# Fa#... Mi"
+            },
+            {
+              "melody": "do# Mi Mi Mi Mi / Mi Mi Fa# Sol#"
+            },
+            {
+              "melody": "Sol# Sol# Sol# Sol# Sol# / DO# Si... Sol#",
+              "comment": "1ª"
+            },
+            {
+              "melody": "Sol# Sol# Sol# Sol# Si Sol# Mi.. Mi",
+              "comment": "2ª"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "lines": [
+            {
+              "melody": "Si / RE RE / RE RE / RE RE / RE DO#"
+            },
+            {
+              "melody": "La La La La Si La Si.. Si"
+            },
+            {
+              "melody": "Si / RE RE / RE RE / RE RE / RE DO#",
+              "comment": "1ª"
+            },
+            {
+              "melody": "DO# DO# DO# DO# MI DO# MI MI"
+            },
+            {
+              "melody": "do# Mi Sol# Fa# / do# Mi La...Si Sol# Mi.. Mi",
+              "comment": "2ª"
+            }
+          ]
+        },
+        {
+          "name": "Refrão",
+          "lines": [
+            {
+              "melody": "do# Mi Sol#...do# Mi Fa#"
+            },
+            {
+              "melody": "do# Mi Fa# Mi...Mi do# si"
+            },
+            {
+              "melody": "do# Mi Sol#...do# Mi Fa#"
+            },
+            {
+              "melody": "do# Mi Fa# Mi...do# Mi Mi Mi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Trombone",
+      "sections": [
+        {
+          "name": "Intro 1",
+          "lines": [
+            {
+              "melody": "Sol Sol / Fa Sol / Fa Sol Sol / Fa Sol"
+            },
+            {
+              "melody": "Fa Sol Sol / Fa Sol / Fa Sol"
+            }
+          ]
+        },
+        {
+          "name": "Intro 2",
+          "lines": [
+            {
+              "melody": "Sol.....Re do si sol / Re do si sol"
+            },
+            {
+              "melody": "sol sol si si sol...."
+            }
+          ]
+        },
+        {
+          "name": "1",
+          "lines": [
+            {
+              "melody": "sol Re Re Re Re / Re Re Mi Re"
+            },
+            {
+              "melody": "si si si si si la la...sol"
+            },
+            {
+              "melody": "mi sol sol sol sol / sol sol la si"
+            },
+            {
+              "melody": "si si si si si / Mi Re...si",
+              "comment": "1ª"
+            },
+            {
+              "melody": "si si si si Re si sol...sol",
+              "comment": "2ª"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "lines": [
+            {
+              "melody": "Re / Fa Fa / Fa Fa / Fa Fa / Fa Mi"
+            },
+            {
+              "melody": "do do do do Re do Re..Re"
+            },
+            {
+              "melody": "Re / Fa Fa / Fa Fa / Fa Fa / Fa Mi",
+              "comment": "1ª"
+            },
+            {
+              "melody": "Mi Mi Mi Mi Sol Mi Sol Sol"
+            },
+            {
+              "melody": "mi sol si la / mi sol do...Re si sol...sol",
+              "comment": "2ª"
+            }
+          ]
+        },
+        {
+          "name": "Refrão",
+          "lines": [
+            {
+              "melody": "mi sol si...mi sol la"
+            },
+            {
+              "melody": "mi sol la sol.../ sol mi re"
+            },
+            {
+              "melody": "mi sol si... / mi sol la.."
+            },
+            {
+              "melody": "mi sol la sol... / mi sol sol sol"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Trompete / Sax Tenor",
+      "sections": [
+        {
+          "name": "Intro 1",
+          "lines": [
+            {
+              "melody": "la la / sol la / sol la la / sol la"
+            },
+            {
+              "melody": "sol la la / sol la / sol la"
+            }
+          ]
+        },
+        {
+          "name": "Intro 2",
+          "lines": [
+            {
+              "melody": "la....Mi Re do# la / Mi Re do# la"
+            },
+            {
+              "melody": "la la do# do# la...."
+            }
+          ]
+        },
+        {
+          "name": "1",
+          "lines": [
+            {
+              "melody": "la Mi Mi Mi Mi / Mi Mi Fa# Mi"
+            },
+            {
+              "melody": "do# do# do# do# do# si si...la"
+            },
+            {
+              "melody": "fa# la la la la / la la si do#"
+            },
+            {
+              "melody": "do# do# do# do# do# / Fa# Mi...Re",
+              "comment": "1ª"
+            },
+            {
+              "melody": "do# do# do# do# Mi do# la..la",
+              "comment": "2ª"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "lines": [
+            {
+              "melody": "Mi / Sol Sol / Sol Sol / Sol Sol / Sol Fa#"
+            },
+            {
+              "melody": "Re Re Re Re Mi Re Mi...Re"
+            },
+            {
+              "melody": "Mi / Sol Sol / Sol Sol / Sol Sol / Sol Fa#",
+              "comment": "1ª"
+            },
+            {
+              "melody": "Fa# Fa# Fa# Fa# La Fa# La La"
+            },
+            {
+              "melody": "fa# la do# si / fa# la Re...Mi do# la...la",
+              "comment": "2ª"
+            }
+          ]
+        },
+        {
+          "name": "3",
+          "lines": [
+            {
+              "melody": "fa# la do#...fa# la si.."
+            },
+            {
+              "melody": "fa# la si la.../ la fa# mi"
+            },
+            {
+              "melody": "fa# la do#...fa# la si.."
+            },
+            {
+              "melody": "fa# la si la.../ fa# la la la"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

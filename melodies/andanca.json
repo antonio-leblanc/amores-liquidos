@@ -1,0 +1,149 @@
+{
+  "songTitle": "Andança",
+  "review_needed": [
+    "A linha 'Estrutura: 1-1-2-2' foi interpretada como a ordem de execução das seções, mas a chave 'structure' lista apenas as seções únicas ('1', '2') encontradas no texto. A intenção pode precisar de verificação manual.",
+    "As linhas de melodia marcadas com '1ª' e '2ª' (indicando primeira e segunda vez) foram processadas, extraindo apenas a melodia. As marcações foram ignoradas na melodia, mas podem indicar uma instrução de repetição ou variação que precisa ser considerada.",
+    "As linhas 'Contracanto: ...' foram identificadas como comentários ou melodias de outros instrumentos e foram ignoradas para as linhas de melodia do instrumento principal. A intenção pode precisar de verificação."
+  ],
+  "structure": [
+    "1",
+    "2"
+  ],
+  "instruments": [
+    {
+      "name": "Sax Alto",
+      "sections": [
+        {
+          "name": "1",
+          "lines": [
+            {
+              "melody": "Re Do# la Re Do# la"
+            },
+            {
+              "melody": "Do sib fa Do sib sib"
+            },
+            {
+              "melody": "Do sib sol Do sib sib la"
+            },
+            {
+              "melody": "Do sib sol Do sib Re Mi / Fa Mi Re"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "lines": [
+            {
+              "melody": "Fa# Fa# Fa# Fa# Sol Fa# Mi Re si la"
+            },
+            {
+              "melody": "Fa# Fa# Fa# Fa# Sol Fa# Mi Re Re Mi"
+            },
+            {
+              "melody": "Mi Mi Mi Mi Fa# Mi Re Do# si la"
+            },
+            {
+              "melody": "Mi Mi Mi Mi Fa# Mi Re Do# si la"
+            },
+            {
+              "melody": "Mi Do# Re Mi"
+            },
+            {
+              "melody": "Mi Re Do# Mi Re"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Trombone",
+      "sections": [
+        {
+          "name": "1",
+          "lines": [
+            {
+              "melody": "Fa Mi Do Fa Mi Do"
+            },
+            {
+              "melody": "Mib Reb lab Mib Reb Reb"
+            },
+            {
+              "melody": "Mib Reb sib Mib Reb Reb Do"
+            },
+            {
+              "melody": "Mib Reb sib Mib Reb Fa Sol / Lab Sol Fa"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "lines": [
+            {
+              "melody": "La La La La Sib La Sol Fa Re Do"
+            },
+            {
+              "melody": "La La La La Sib La Sol Fa Fa Sol"
+            },
+            {
+              "melody": "Sol Sol Sol Sol La Sol Fa Mi Re Do"
+            },
+            {
+              "melody": "Sol Sol Sol Sol La Sol Fa Mi Re Do"
+            },
+            {
+              "melody": "Sol Mi Fa Sol"
+            },
+            {
+              "melody": "Sol Fa Mi Sol Fa"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Trompete / Sax Tenor",
+      "sections": [
+        {
+          "name": "1",
+          "lines": [
+            {
+              "melody": "Sol Fa# Re Sol Fa# Re"
+            },
+            {
+              "melody": "Fa Mib sib Fa Mib Mib"
+            },
+            {
+              "melody": "Fa Mib Do Fa Mib Mib Re"
+            },
+            {
+              "melody": "Fa Mib Do Fa Mib Sol La / Sib La Sol"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "lines": [
+            {
+              "melody": "Si Si Si Si DO Si La Sol Mi Re"
+            },
+            {
+              "melody": "Si Si Si Si DO Si La Sol Sol La"
+            },
+            {
+              "melody": "La La La La Si La Sol Fa# Mi Re"
+            },
+            {
+              "melody": "La La La La Si La Sol Fa# Mi Re"
+            },
+            {
+              "melody": "La Fa# Sol La"
+            },
+            {
+              "melody": "La Sol Fa# La Sol"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

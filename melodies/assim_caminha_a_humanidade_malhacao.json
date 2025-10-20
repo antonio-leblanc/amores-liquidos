@@ -1,0 +1,251 @@
+{
+  "songTitle": "Assim Caminha A Humanidade (Malhação)",
+  "review_needed": [
+    "A seção 'Intro' continha o comentário '(x4)', que foi ignorado na linha da melodia. A intenção pode precisar de verificação manual."
+  ],
+  "structure": [
+    "Intro",
+    "1",
+    "2",
+    "3"
+  ],
+  "instruments": [
+    {
+      "name": "Sax Alto",
+      "sections": [
+        {
+          "name": "Intro",
+          "lines": [
+            {
+              "melody": "Re Re / la Re Re / la Re Re"
+            },
+            {
+              "melody": "la Mi Fa#"
+            }
+          ]
+        },
+        {
+          "name": "1",
+          "lines": [
+            {
+              "melody": "Fa# La La La Fa# La Fa# Mi Re"
+            },
+            {
+              "melody": "Fa# La La Fa# Si La Sol La Fa# Re"
+            },
+            {
+              "melody": "Re Re Re si La Sol Fa#"
+            },
+            {
+              "melody": "Re Re Re si La Sol Re Mi Fa#"
+            },
+            {
+              "melody": "Fa# La La La Fa# La Fa# Mi Re"
+            },
+            {
+              "melody": "Fa# Fa# La La Fa# Si La Sol Fa#"
+            },
+            {
+              "melody": "Re Re Re Re si La Sol Fa# Re"
+            },
+            {
+              "melody": "Re Re Re Re si La Sol Re Mi Mi Re"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "lines": [
+            {
+              "melody": "Re Fa# Fa# Fa# Fa# Sol La Fa#"
+            },
+            {
+              "melody": "Fa# Fa Fa Fa Fa Mi Re Fa#"
+            },
+            {
+              "melody": "Re Fa# Fa# Fa# Fa# Sol La Si Fa# Mi Re"
+            },
+            {
+              "melody": "Re Fa Fa Fa Fa Mi Re..."
+            }
+          ]
+        },
+        {
+          "name": "3",
+          "lines": [
+            {
+              "melody": "La....La Si Re Si Re"
+            },
+            {
+              "melody": "Mi Mi Re.../ Si La..."
+            },
+            {
+              "melody": "La Si Re Si Re"
+            },
+            {
+              "melody": "Mi Mi Re...Re..."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Trombone",
+      "sections": [
+        {
+          "name": "Intro",
+          "lines": [
+            {
+              "melody": "Fa Fa / Do Fa Fa / Do Fa Fa"
+            },
+            {
+              "melody": "Do Sol La"
+            }
+          ]
+        },
+        {
+          "name": "1",
+          "lines": [
+            {
+              "melody": "La Do Do Do La Do La Sol Fa"
+            },
+            {
+              "melody": "La Do Do La Re Do Sib Do La Fa"
+            },
+            {
+              "melody": "Fa Fa Fa Re Do Sib La"
+            },
+            {
+              "melody": "Fa Fa Fa Re Do Sib Fa Sol La"
+            },
+            {
+              "melody": "La Do Do Do La Do La Sol Fa"
+            },
+            {
+              "melody": "La La Do Do La Re Do Sib La"
+            },
+            {
+              "melody": "Fa Fa Fa Fa Re Do Sib La Fa"
+            },
+            {
+              "melody": "Fa Fa Fa Fa Re Do Sib Fa Sol Sol Fa"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "lines": [
+            {
+              "melody": "Fa La La La La Sib Do La"
+            },
+            {
+              "melody": "La Sol# Sol# Sol# Sol# Sol Fa La"
+            },
+            {
+              "melody": "Fa La La La La Sib Do Re La Sol Fa"
+            },
+            {
+              "melody": "Fa Sol# Sol# Sol# Sol# Sol Fa..."
+            }
+          ]
+        },
+        {
+          "name": "3",
+          "lines": [
+            {
+              "melody": "Do....Do Re Fa Re Fa"
+            },
+            {
+              "melody": "Sol Sol Fa.../ Re Do..."
+            },
+            {
+              "melody": "Do Re Fa Re Fa"
+            },
+            {
+              "melody": "Sol Sol Fa...Fa..."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Trompete / Sax Tenor",
+      "sections": [
+        {
+          "name": "Intro",
+          "lines": [
+            {
+              "melody": "Sol Sol / Re Sol Sol / Re Sol Sol"
+            },
+            {
+              "melody": "Re La Si"
+            }
+          ]
+        },
+        {
+          "name": "1",
+          "lines": [
+            {
+              "melody": "Si Re Re Re Si Re Si La Sol"
+            },
+            {
+              "melody": "Si Re Re Si Mi Re Do Re Si Sol"
+            },
+            {
+              "melody": "Sol Sol Sol Mi Re Do Si"
+            },
+            {
+              "melody": "Sol Sol Sol Mi Re Do Sol La Si"
+            },
+            {
+              "melody": "Si Re Re Re Si Re Si La Sol"
+            },
+            {
+              "melody": "Si Si Re Re Si Mi Re Do Si"
+            },
+            {
+              "melody": "Sol Sol Sol Sol Mi Re Do Si Sol"
+            },
+            {
+              "melody": "Sol Sol Sol Sol Mi Re Do Sol La La Sol"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "lines": [
+            {
+              "melody": "Sol Si Si Si Si Do Re Si"
+            },
+            {
+              "melody": "Si Sib Sib Sib Sib La Sol Si"
+            },
+            {
+              "melody": "Sol Si Si Si Si Do Re Mi Si La Sol"
+            },
+            {
+              "melody": "Sol Sib Sib Sib Sib La Sol..."
+            }
+          ]
+        },
+        {
+          "name": "3",
+          "lines": [
+            {
+              "melody": "Re....Re Mi Sol Mi Sol"
+            },
+            {
+              "melody": "La La Sol.../ Mi Re..."
+            },
+            {
+              "melody": "Re Mi Sol Mi Sol"
+            },
+            {
+              "melody": "La La Sol...Sol…"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

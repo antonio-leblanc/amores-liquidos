@@ -7,5 +7,6 @@ Thumbs.db
 
 raw_songbook/
 divided_songs/
+song_chunks_grouped/
 
 .env

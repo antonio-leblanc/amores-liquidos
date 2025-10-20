@@ -1,0 +1,207 @@
+{
+  "songTitle": "Não Precisa Mudar",
+  "structure": [
+    "1",
+    "1",
+    "2",
+    "3",
+    "3"
+  ],
+  "instruments": [
+    {
+      "name": "Sax Alto",
+      "sections": [
+        {
+          "name": "1",
+          "lines": [
+            {
+              "melody": "mi fa# la la fa# la"
+            },
+            {
+              "melody": "Do# Do# si la la / la fa# la"
+            },
+            {
+              "melody": "Do# Do# si la / Mi Do# la"
+            },
+            {
+              "melody": "la la la la la si fa# mi / la la si fa# mi",
+              "comment": "1ª"
+            },
+            {
+              "melody": "la la la la la si fa# mi / la la si fa# sol#",
+              "comment": "2ª"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "lines": [
+            {
+              "melody": "fa# fa# fa# fa# la si Do# / Do# Do# si la si"
+            },
+            {
+              "melody": "fa# fa# fa# Do# si la"
+            },
+            {
+              "melody": "fa# fa# fa# Do# si la"
+            },
+            {
+              "melody": "fa# fa# fa# Do# Re Re"
+            },
+            {
+              "melody": "Re Re Re Mi Mi"
+            }
+          ]
+        },
+        {
+          "name": "3",
+          "lines": [
+            {
+              "melody": "Fa# Mi / la la la si la fa#"
+            },
+            {
+              "melody": "Fa# Mi / la la la si si Do#"
+            },
+            {
+              "melody": "Fa# Mi / la la la si la"
+            },
+            {
+              "melody": "fa# la fa# la fa# Do# (si)",
+              "comment": "na 2ª vez repete e inclui o si"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Trombone",
+      "sections": [
+        {
+          "name": "1",
+          "lines": [
+            {
+              "melody": "sol la Do Do la Do"
+            },
+            {
+              "melody": "Mi Mi Re Do Do / Do la Do"
+            },
+            {
+              "melody": "Mi Mi Re Do / Sol Mi Do"
+            },
+            {
+              "melody": "Do Do Do Do Do Re la sol / Do Do Re la sol",
+              "comment": "1ª"
+            },
+            {
+              "melody": "Do Do Do Do Do Re la sol / Do Do Re la si",
+              "comment": "2ª"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "lines": [
+            {
+              "melody": "la la la la Do Re Mi / Mi Mi Re Do Re"
+            },
+            {
+              "melody": "la la la Mi Re Do"
+            },
+            {
+              "melody": "la la la Mi Re Do"
+            },
+            {
+              "melody": "la la la Mi Fa Fa"
+            },
+            {
+              "melody": "Fa Fa Fa Sol Sol"
+            }
+          ]
+        },
+        {
+          "name": "3",
+          "lines": [
+            {
+              "melody": "La Sol / Do Do Do Re Do la"
+            },
+            {
+              "melody": "La Sol / Do Do Do Re Re Mi"
+            },
+            {
+              "melody": "La Sol / Do Do Do Re Do"
+            },
+            {
+              "melody": "la do la do la Mi (Re)",
+              "comment": "na 2ª vez repete e inclui o Re"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Trompete / Sax Tenor",
+      "sections": [
+        {
+          "name": "1",
+          "lines": [
+            {
+              "melody": "la si Re Re si Re"
+            },
+            {
+              "melody": "Fa# Fa# Mi Re Re / Re si Re"
+            },
+            {
+              "melody": "Fa# Fa# Mi Re / La Fa# Re"
+            },
+            {
+              "melody": "Re Re Re Re Re Mi si la / Re Re Mi si la",
+              "comment": "1ª"
+            },
+            {
+              "melody": "Re Re Re Re Re Mi si la / Re Re Mi si do#",
+              "comment": "2ª"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "lines": [
+            {
+              "melody": "si si si si Re Mi Fa# / Fa# Fa# Mi Re Mi"
+            },
+            {
+              "melody": "si si si Fa# Mi Re"
+            },
+            {
+              "melody": "si si si Fa# Mi Re"
+            },
+            {
+              "melody": "si si si Fa# Sol Sol"
+            },
+            {
+              "melody": "Sol Sol Sol La La"
+            }
+          ]
+        },
+        {
+          "name": "3",
+          "lines": [
+            {
+              "melody": "Si La / Re Re Re Mi Re si"
+            },
+            {
+              "melody": "Si La / Re Re Re Mi Mi Fa#"
+            },
+            {
+              "melody": "Si La / Re Re Re Mi Re"
+            },
+            {
+              "melody": "si Re si Re si Fa# (Mi)",
+              "comment": "na 2ª vez repete e inclui o Mi"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

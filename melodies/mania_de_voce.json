@@ -1,0 +1,164 @@
+{
+  "songTitle": "Mania de você",
+  "review_needed": [
+    "The input Markdown for 'Melodia' and 'Arranjo' cells often contains multiple section markers (e.g., `**1** ... **2** ...`) on a single Markdown line. To adhere to Rule 7 (remove section names from cells) and provide a structured output, I've interpreted these markers as delimiters for new sections, effectively splitting the single Markdown line into multiple logical sections and `lines` objects. This might conflict with a strict interpretation of 'QUEBRA DE LINHA É SAGRADA' if it implies one `lines` object per physical Markdown line in a cell. Please confirm this splitting behavior is desired.",
+    "For the 'Sax Alto' instrument, the second column in the table has an empty header, so it's not explicitly 'Arranjo'. Its content (lyrics) has been ignored as per Rule 5, which states that if a cell is empty, the key should not be included. Please confirm if this is correct or if this lyrical content should be captured under a different key."
+  ],
+  "structure": [
+    "Intro",
+    "1",
+    "2",
+    "3",
+    "4"
+  ],
+  "instruments": [
+    {
+      "name": "Sax Alto",
+      "sections": [
+        {
+          "name": "Intro - espera",
+          "lines": [
+            {
+              "melody": ""
+            }
+          ]
+        },
+        {
+          "name": "1",
+          "lines": [
+            {
+              "melody": "si RE si RE si MI__ MI RE DO# DO# si si RE si RE si LA SOL#__ SOL# FA# MI FA#__ MI MI FA# LA_ FA# FA# MI___ MI RE DO# DO# RE LA__ FA# SI___ si DO# RE DO# RE DO# si si___LA#"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "lines": [
+            {
+              "melody": "si RE si RE si MI__ MI RE DO# DO# si si RE si RE si LA SOL#__ SOL# FA# MI FA#__ MI MI FA# LA_ FA# FA# MI___ MI RE DO# DO# RE LA__ FA# SI___ si DO# RE DO# RE DO# si si___LA#"
+            }
+          ]
+        },
+        {
+          "name": "3",
+          "lines": [
+            {
+              "melody": "RE DO# SI DO#__SI LA SI__LA FA# LA FA# RE DO# SI DO#__SI LA SI__SI RE SI__ RE DO# SI DO#__SI LA SI__LA FA# LA FA# RE DO# SI DO#__SI LA SI__SI RE SI__"
+            }
+          ]
+        },
+        {
+          "name": "4",
+          "lines": [
+            {
+              "melody": "SI RE SI___SI RE SI___"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Trombone",
+      "sections": [
+        {
+          "name": "Intro (nada) 1",
+          "lines": [
+            {
+              "melody": "RE FA RE FA RE SOL__ SOL FA MI MI",
+              "arrangement": "Re__ Fa Sol__ Sol Fa mi re___ Fa Sol__",
+              "comment": "(nada)"
+            }
+          ]
+        },
+        {
+          "name": "RE",
+          "lines": [
+            {
+              "melody": "Meu bem , você me dá água na boca RE FA RE FA RE DO SI___ SI LA SOL LA__ SOL Vestindo fantasias , tirando a roupa SOL LA DO__ LA LA SOL__SOL FA MI MI FA DO LA RE__ Molhada de suor de tanto a gente se beijar RE MI FA MI FA MI__ RE RE DO# De tanto imaginar __loucuras",
+              "arrangement": "Fa Sol__ Sol Fa mi re___ Fa Sol__ La sol fa Re__ Fa Sol__ Re__Fa Sol___Sol Fa Mi mi___re RE Mi Fa Mi Fa Mi__ Re Re Do#",
+              "comment": "(silencio, entra no último Re)"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "lines": [
+            {
+              "melody": "RE FA RE FA RE SOL__ SOL FA MI MI RE A gente faz amor por telepatia RE FA RE FA RE DO SI___ SI LA SOL LA__ SOL No chão , no mar , na lua , na melodia SOL LA DO__ LA LA SOL__SOL FA MI MI FA DO LA RE__ Mania de você De tanto a gente se beijar RE MI FA MI FA MI__ RE RE DO# De tanto imaginar loucuras",
+              "arrangement": "Re__ Fa Sol__Sol Fa mi re___ Fa Sol__ La sol fa Re__ Fa Sol__ Sol Fa mi re___ Fa Sol__ Re__ Fa Sol___Sol Fa Mi mi___re RE Mi Fa Mi Fa Mi__ Re Re Do#"
+            }
+          ]
+        },
+        {
+          "name": "3",
+          "lines": [
+            {
+              "melody": "FA MI RE MI__RE DO RE__DO LA DO LA Nada melhor do que não fazer nada FA MI RE MI__RE DO RE__ RE FA RE__ Só pra deitar e rolar com você FA MI RE MI__RE DO RE__DO LA DO LA Nada melhor do que não fazer nada FA MI RE MI__RE DO RE__ RE FA RE__ Só pra deitar e rolar com você",
+              "arrangement": "LA LA DO LA FA RE___FA SOL__ LA LA DO LA FA RE___FA SOL__ LA LA DO LA FA RE___FA SOL__ LA LA DO LA FA RE___FA SOL__",
+              "comment": "(bass entra primeiro 2x)"
+            }
+          ]
+        },
+        {
+          "name": "4",
+          "lines": [
+            {
+              "melody": "RE FA RE__ RE FA RE__ Com você , com você"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Trompete / Sax Tenor",
+      "sections": [
+        {
+          "name": "Intro - espera",
+          "lines": [
+            {
+              "melody": "",
+              "arrangement": "Mi__Sol La__ La Sol Fa# Mi__Sol La__",
+              "comment": "(x2)"
+            }
+          ]
+        },
+        {
+          "name": "1",
+          "lines": [
+            {
+              "melody": "MI SOL MI SOL MI LA__LA SOL FA# FA# MI__ MI SOL MI SOL MI RE DO#__DO# SI LA SI__LA LA SI RE__SI SI LA LA SOL FA# FA# SOL RE SI MI___ MI FA# SOL FA# SOL FA#___MI MI__RE#",
+              "arrangement": "Meu bem , você me dá água na boca Vestindo fantasias , tirando a roupa Molhada de suor de tanto a gente se beijar De tanto imaginar loucuras A gente faz amor por telepatia No chão , no mar , na lua , na melodia Mania de você De tanto a gente se beijar De tanto imaginar loucuras"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "lines": [
+            {
+              "melody": "MI SOL MI SOL MI LA__LA SOL FA# FA# MI__ MI SOL MI SOL MI RE DO#__DO# SI LA SI__LA LA SI RE__SI SI LA LA SOL FA# FA# SOL RE SI MI___ MI FA# SOL FA# SOL FA#___MI MI__RE#"
+            }
+          ]
+        },
+        {
+          "name": "3",
+          "lines": [
+            {
+              "melody": "SOL FA# MI FA#__MI RE MI__RE SI RE SI SOL FA# MI FA#__MI RE MI__MI SOL MI__ SOL FA# MI FA#__MI RE MI__RE SI RE SI SOL FA# MI FA#__MI RE MI__MI SOL MI__",
+              "arrangement": "SI SI RE SI SOL MI___SOL LA___ SI SI RE SI SOL MI___SOL LA___ (Repete)",
+              "comment": "(sax tenor - grave)"
+            }
+          ]
+        },
+        {
+          "name": "4",
+          "lines": [
+            {
+              "melody": "MI SOL MI__MI SOL MI__",
+              "arrangement": "Com você , com você"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

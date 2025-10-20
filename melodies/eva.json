@@ -1,0 +1,244 @@
+{
+  "songTitle": "Eva",
+  "structure": [
+    "Intro",
+    "1",
+    "Refrão"
+  ],
+  "instruments": [
+    {
+      "name": "Sax Alto",
+      "sections": [
+        {
+          "name": "Intro",
+          "lines": [
+            {
+              "melody": "do...Mi...Sol...La..."
+            },
+            {
+              "melody": "Sol La Si / Si Do Re Mi Re Do Si"
+            },
+            {
+              "melody": "Si DO RE MI Si La Sol"
+            },
+            {
+              "melody": "Sol Si La Sol La"
+            },
+            {
+              "melody": "La Sol Sol / La Sol Fa#"
+            }
+          ]
+        },
+        {
+          "name": "1",
+          "lines": [
+            {
+              "melody": "Sol Fa# Mi / Re Mi Mi"
+            },
+            {
+              "melody": "Re Mi Mi / Re Mi Mi Fa# Fa#"
+            },
+            {
+              "melody": "Sol Fa# Mi / Re Mi Mi"
+            },
+            {
+              "melody": "Re Mi Mi / Re Re Re si"
+            },
+            {
+              "melody": "Sol Sol Sol / Sol Fa# Mi"
+            },
+            {
+              "melody": "Re Mi Mi / Re Mi Mi / Re Mi Mi Fa# Fa#"
+            },
+            {
+              "melody": "Sol Sol Sol Sol / Sol Fa# Mi"
+            },
+            {
+              "melody": "Re Mi Mi / Re Mi Mi / Re Re Re si"
+            },
+            {
+              "melody": "si si si si si si la do...."
+            }
+          ]
+        },
+        {
+          "name": "Refrão",
+          "lines": [
+            {
+              "melody": "La La La La La La Sol / DO Si"
+            },
+            {
+              "melody": "La La Sol Re"
+            },
+            {
+              "melody": "Sol Si La Sol / La La Sol / DO Si"
+            },
+            {
+              "melody": "La La Sol Re / Sol Si La Sol / La Sol"
+            },
+            {
+              "melody": "Sol Sol La Si DO La",
+              "comment": "[Sol Fa# Mi]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Trombone",
+      "sections": [
+        {
+          "name": "Intro",
+          "lines": [
+            {
+              "melody": "mib...sol...sib...do..."
+            },
+            {
+              "melody": "sib do Re / Re Mib Fa Sol Fa Mib Re"
+            },
+            {
+              "melody": "Re Mib Fa Sol Re do sib"
+            },
+            {
+              "melody": "sib Re do sib do"
+            },
+            {
+              "melody": "do sib sib / do sib la"
+            }
+          ]
+        },
+        {
+          "name": "1",
+          "lines": [
+            {
+              "melody": "Sib La Sol / Fa Sol Sol"
+            },
+            {
+              "melody": "Fa Sol Sol / Fa Sol Sol La La"
+            },
+            {
+              "melody": "Sib La Sol / Fa Sol Sol"
+            },
+            {
+              "melody": "Fa Sol Sol / Fa Fa Fa Re"
+            },
+            {
+              "melody": "Sib Sib Sib / Sib La Sol"
+            },
+            {
+              "melody": "Fa Sol Sol / Fa Sol Sol/ Fa Sol Sol La La"
+            },
+            {
+              "melody": "Sib Sib Sib Sib / Sib La Sol"
+            },
+            {
+              "melody": "Fa Sol Sol / Fa Sol Sol / Fa Fa Fa Re"
+            },
+            {
+              "melody": "Re Re Re Re Re Re do Mib..."
+            }
+          ]
+        },
+        {
+          "name": "Refrão",
+          "lines": [
+            {
+              "melody": "do do do do do do sib / Mib Re"
+            },
+            {
+              "melody": "do do sib fa"
+            },
+            {
+              "melody": "sib Re do sib / do do sib / Mib Re"
+            },
+            {
+              "melody": "do do sib fa / sib Re do sib / do la"
+            },
+            {
+              "melody": "sib sib do Re Mib do",
+              "comment": "[sib la sol]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Trompete / Sax Tenor",
+      "sections": [
+        {
+          "name": "Intro",
+          "lines": [
+            {
+              "melody": "fa...la...do...Re..."
+            },
+            {
+              "melody": "do Re Mi / Mi Fa Sol La Sol Fa Mi"
+            },
+            {
+              "melody": "Mi fa Sol La Mi Re do"
+            },
+            {
+              "melody": "do Mi Re do Re"
+            },
+            {
+              "melody": "Re do do / Re do si"
+            }
+          ]
+        },
+        {
+          "name": "1",
+          "lines": [
+            {
+              "melody": "do si la / sol la la"
+            },
+            {
+              "melody": "sol la la / sol la la si si"
+            },
+            {
+              "melody": "do si la / sol la la"
+            },
+            {
+              "melody": "sol la la / sol sol sol mi"
+            },
+            {
+              "melody": "do do do / do si la"
+            },
+            {
+              "melody": "sol la la / sol la la / sol la la si si"
+            },
+            {
+              "melody": "do do do do / do si la"
+            },
+            {
+              "melody": "sol la la / sol la la / sol sol sol mi"
+            },
+            {
+              "melody": "Mi Mi Mi Mi Mi Mi Re Fa...."
+            }
+          ]
+        },
+        {
+          "name": "Refrão",
+          "lines": [
+            {
+              "melody": "Re Re Re Re Re Re do / Fa Mi"
+            },
+            {
+              "melody": "Re Re do sol"
+            },
+            {
+              "melody": "do Mi Re do / Re Re do / Fa Mi"
+            },
+            {
+              "melody": "Re Re do sol / do Mi Re do / Re si"
+            },
+            {
+              "melody": "do do Re Mi Fa Re",
+              "comment": "[do si la]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

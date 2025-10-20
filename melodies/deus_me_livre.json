@@ -1,0 +1,153 @@
+{
+  "songTitle": "Deus Me Livre",
+  "structure": [
+    "1",
+    "1",
+    "2",
+    "2"
+  ],
+  "instruments": [
+    {
+      "name": "Sax Alto",
+      "sections": [
+        {
+          "name": "1",
+          "lines": [
+            {
+              "melody": "la la si la si la"
+            },
+            {
+              "melody": "si Do# Re Do# si fa# la"
+            },
+            {
+              "melody": "la la sol fa# mi"
+            },
+            {
+              "melody": "sol fa# mi re sol fa# mi fa# mi re"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "lines": [
+            {
+              "melody": "Re Re Mi Fa# Mi / Mi Re Do# / Do# Re Mi"
+            },
+            {
+              "melody": "Do# Do# Re Mi Re / Re Do# si fa#"
+            },
+            {
+              "melody": "si si Do# Re sol / si si si Do# Re Do#"
+            },
+            {
+              "melody": "Do# Do# Re Mi Mi Fa#",
+              "comment": "1ª"
+            },
+            {
+              "melody": "Do# Re Mi Mi Re",
+              "comment": "2ª"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Trombone",
+      "sections": [
+        {
+          "name": "1",
+          "lines": [
+            {
+              "melody": "Do Do Re Do Re Do",
+              "comment": "(Do# Re)"
+            },
+            {
+              "melody": "Re Mi Fa Mi Re la Do"
+            },
+            {
+              "melody": "Do Do sib la sol"
+            },
+            {
+              "melody": "sib la sol fa sib la sol la sol fa",
+              "comment": "(do re mi do fa)"
+            },
+            {
+              "melody": "(Do Re Mi Do Fa)"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "lines": [
+            {
+              "melody": "Fa Fa Sol La Sol / Sol Fa Mi / Mi Fa Sol"
+            },
+            {
+              "melody": "Mi Mi Fa Sol Fa / Fa Mi Re la"
+            },
+            {
+              "melody": "Re Re Mi Fa sib / Re Re Re Mi Fa Mi"
+            },
+            {
+              "melody": "Mi Mi Fa Sol Sol La",
+              "comment": "1ª"
+            },
+            {
+              "melody": "Mi Fa Sol Sol Fa",
+              "comment": "2ª"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Trompete / Sax Tenor",
+      "sections": [
+        {
+          "name": "1",
+          "lines": [
+            {
+              "melody": "Re Re Mi Re Mi Re",
+              "comment": "(Re# Mi)"
+            },
+            {
+              "melody": "Mi Fa# Sol Fa# Mi si Re"
+            },
+            {
+              "melody": "Re Re Do si la"
+            },
+            {
+              "melody": "Do si la sol Do si la si la sol",
+              "comment": "(re mi fa# re sol)"
+            },
+            {
+              "melody": "(Re Mi Fa# Re Sol)"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "lines": [
+            {
+              "melody": "Sol Sol La Si La / La Sol Fa# / Fa# Sol La"
+            },
+            {
+              "melody": "Fa# Fa# Sol La Sol / Sol Fa# Mi si"
+            },
+            {
+              "melody": "Mi Mi Fa# Sol Do / Mi Mi Mi Fa# Sol Fa#"
+            },
+            {
+              "melody": "Fa# Fa# Sol La La Sol",
+              "comment": "1ª"
+            },
+            {
+              "melody": "Fa# Sol La La Sol",
+              "comment": "2ª"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

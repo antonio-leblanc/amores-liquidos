@@ -193,16 +193,21 @@
           "name": "Intro",
           "lines": [
             {
-              "melody": "re re re / re# re# re# re"
+              "melody": "re re re / re# re# re# re",
+              "arrangement": "Sol Sol Sol / Sol# Sol# Sol# Sol"
             },
             {
-              "melody": "re re re / re# re# re# re"
+              "melody": "re re re / re# re# re# re",
+              "arrangement": "Sol Sol Sol / Sol# Sol# Sol# Sol"
+
             },
             {
-              "melody": "re re re / re# re# re# re"
+              "melody": "re re re / re# re# re# re",
+              "arrangement": "Sol Sol Sol / Sol# Sol# Sol# Sol"
             },
             {
-              "melody": "mi re do si"
+              "melody": "mi re do si",
+              "arrangement": "mi re do si"
             }
           ]
         },

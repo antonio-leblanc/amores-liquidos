@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 
 # --- CONFIGURAÇÃO ---
 IS_TEST_MODE = True
-TEST_MODE_INIT = 10
+TEST_MODE_INIT = 30
 TEST_MODE_LIMIT = 10
 
 INPUT_DIR = "song_chunks"

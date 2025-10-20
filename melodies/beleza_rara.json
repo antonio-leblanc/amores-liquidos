@@ -1,26 +1,5 @@
 {
   "songTitle": "Beleza Rara",
-  "review_needed": [
-    "As seções '1ª' e '2ª' foram interpretadas como seções distintas. Seus nomes podem indicar variações de seções anteriores ('1' e '2'), o que pode precisar de verificação manual.",
-    "A seção '1ª' do 'Sax Alto' continha o nome da seção e a primeira linha de melodia na mesma linha ('**1ª** Sol Fa# Sol Sol / Fa# Sol Sol'). Isso foi dividido em um nome de seção e uma linha de melodia, mas a formatação pode precisar de verificação manual.",
-    "A seção '2ª' do 'Sax Alto' continha o nome da seção e a primeira linha de melodia na mesma linha ('**2ª** Fa# Sol Sol / Fa# Sol Sol'). Isso foi dividido em um nome de seção e uma linha de melodia, mas a formatação pode precisar de verificação manual.",
-    "A linha de melodia 'Fa# Mi do# / (la) la Mi Re' na seção '2ª' do 'Sax Alto' continha um comentário '(la)', que foi removido. A intenção pode precisar de verificação manual.",
-    "A seção '1ª' (após a seção '2') do 'Sax Alto' continha o nome da seção e a primeira linha de melodia na mesma linha ('1ª Fa# Sol Sol Sol Sol / Fa# Mi / Sol Sol Fa#'). Isso foi dividido em um nome de seção e uma linha de melodia, mas a formatação pode precisar de verificação manual.",
-    "A seção '2ª' (após a seção '2') do 'Sax Alto' continha o nome da seção e a primeira linha de melodia na mesma linha ('2ª Fa# Sol Sol Sol Sol / Fa# Mi / do# si la Mi Re'). Isso foi dividido em um nome de seção e uma linha de melodia, mas a formatação pode precisar de verificação manual.",
-    "A seção 'Refrão' do 'Sax Alto' continha a anotação '(Si La / Fa# Si La)' após as linhas de melodia, que foi ignorada. A intenção pode precisar de verificação manual.",
-    "A seção '1ª' do 'Trombone' continha o nome da seção e a primeira linha de melodia na mesma linha ('**1ª** Sib La Sib Sib / La Sib Sib'). Isso foi dividido em um nome de seção e uma linha de melodia, mas a formatação pode precisar de verificação manual.",
-    "A seção '2ª' do 'Trombone' continha o nome da seção e a primeira linha de melodia na mesma linha ('**2ª** La Sib Sib / La Sib Sib'). Isso foi dividido em um nome de seção e uma linha de melodia, mas a formatação pode precisar de verificação manual.",
-    "A linha de melodia 'La Sol Mi / (do) do Sol Fa' na seção '2ª' do 'Trombone' continha um comentário '(do)', que foi removido. A intenção pode precisar de verificação manual.",
-    "A seção '1ª' (após a seção '2') do 'Trombone' continha o nome da seção e a primeira linha de melodia na mesma linha ('1ª la sib sib sib sib / la sol / sib sib la'). Isso foi dividido em um nome de seção e uma linha de melodia, mas a formatação pode precisar de verificação manual.",
-    "A seção '2ª' (após a seção '2') do 'Trombone' continha o nome da seção e a primeira linha de melodia na mesma linha ('2ª la sib sib sib sib / la sol / mi re do Sol Fa'). Isso foi dividido em um nome de seção e uma linha de melodia, mas a formatação pode precisar de verificação manual.",
-    "A seção 'Refrão' do 'Trombone' continha a anotação '(RE DO / La RE DO)' após as linhas de melodia, que foi ignorada. A intenção pode precisar de verificação manual.",
-    "A seção '1ª' do 'Trompete / Sax Tenor' continha o nome da seção e a primeira linha de melodia na mesma linha ('**1ª** do si do do / si do do'). Isso foi dividido em um nome de seção e uma linha de melodia, mas a formatação pode precisar de verificação manual.",
-    "A seção '2ª' do 'Trompete / Sax Tenor' continha o nome da seção e a primeira linha de melodia na mesma linha ('**2ª** si do do / si do do'). Isso foi dividido em um nome de seção e uma linha de melodia, mas a formatação pode precisar de verificação manual.",
-    "A linha de melodia 'si la fa# / (re) re la sol' na seção '2ª' do 'Trompete / Sax Tenor' continha um comentário '(re)', que foi removido. A intenção pode precisar de verificação manual.",
-    "A seção '1ª' (após a seção '2') do 'Trompete / Sax Tenor' continha o nome da seção e a primeira linha de melodia na mesma linha ('1ª si do do do do / si la / do do si'). Isso foi dividido em um nome de seção e uma linha de melodia, mas a formatação pode precisar de verificação manual.",
-    "A seção '2ª' (após a seção '2') do 'Trompete / Sax Tenor' continha o nome da seção e a primeira linha de melodia na mesma linha ('2ª si do do do do / si la / fa# mi re la sol'). Isso foi dividido em um nome de seção e uma linha de melodia, mas a formatação pode precisar de verificação manual.",
-    "A seção 'Refrão' do 'Trompete / Sax Tenor' continha a anotação '(MI RE / Si MI RE)' após as linhas de melodia, que foi ignorada. A intenção pode precisar de verificação manual."
-  ],
   "structure": [
     "Intro",
     "1",
@@ -82,7 +61,8 @@
               "melody": "Fa# Sol Sol / Fa# Sol Sol"
             },
             {
-              "melody": "Fa# Mi do# / la Mi Re"
+              "melody": "Fa# Mi do# / la Mi Re",
+              "comment": "(la)"
             }
           ]
         },
@@ -94,22 +74,14 @@
             },
             {
               "melody": "Fa# La La La La / La Sol Fa#"
-            }
-          ]
-        },
-        {
-          "name": "1ª",
-          "lines": [
+            },
             {
-              "melody": "Fa# Sol Sol Sol Sol / Fa# Mi / Sol Sol Fa#"
-            }
-          ]
-        },
-        {
-          "name": "2ª",
-          "lines": [
+              "melody": "Fa# Sol Sol Sol Sol / Fa# Mi / Sol Sol Fa#",
+              "comment": "1ª"
+            },
             {
-              "melody": "Fa# Sol Sol Sol Sol / Fa# Mi / do# si la Mi Re"
+              "melody": "Fa# Sol Sol Sol Sol / Fa# Mi / do# si la Mi Re",
+              "comment": "2ª"
             }
           ]
         },
@@ -127,6 +99,9 @@
             },
             {
               "melody": "Sol Sol Sol Fa# Mi Re do# / Mi Re"
+            },
+            {
+              "melody": "(Si La / Fa# Si La)"
             }
           ]
         }
@@ -184,7 +159,8 @@
               "melody": "La Sib Sib / La Sib Sib"
             },
             {
-              "melody": "La Sol Mi / do Sol Fa"
+              "melody": "La Sol Mi / do Sol Fa",
+              "comment": "(do)"
             }
           ]
         },
@@ -196,22 +172,14 @@
             },
             {
               "melody": "la do do do do do / do sib la"
-            }
-          ]
-        },
-        {
-          "name": "1ª",
-          "lines": [
+            },
             {
-              "melody": "la sib sib sib sib / la sol / sib sib la"
-            }
-          ]
-        },
-        {
-          "name": "2ª",
-          "lines": [
+              "melody": "la sib sib sib sib / la sol / sib sib la",
+              "comment": "1ª"
+            },
             {
-              "melody": "la sib sib sib sib / la sol / mi re do Sol Fa"
+              "melody": "la sib sib sib sib / la sol / mi re do Sol Fa",
+              "comment": "2ª"
             }
           ]
         },
@@ -229,6 +197,9 @@
             },
             {
               "melody": "Sib Sib Sib La Sol Fa Mi / Sol Fa"
+            },
+            {
+              "melody": "(RE DO / La RE DO)"
             }
           ]
         }
@@ -286,7 +257,8 @@
               "melody": "si do do / si do do"
             },
             {
-              "melody": "si la fa# / re la sol"
+              "melody": "si la fa# / re la sol",
+              "comment": "(re)"
             }
           ]
         },
@@ -298,22 +270,14 @@
             },
             {
               "melody": "si Re Re Re Re Re / Re do si"
-            }
-          ]
-        },
-        {
-          "name": "1ª",
-          "lines": [
+            },
             {
-              "melody": "si do do do do / si la / do do si"
-            }
-          ]
-        },
-        {
-          "name": "2ª",
-          "lines": [
+              "melody": "si do do do do / si la / do do si",
+              "comment": "1ª"
+            },
             {
-              "melody": "si do do do do / si la / fa# mi re la sol"
+              "melody": "si do do do do / si la / fa# mi re la sol",
+              "comment": "2ª"
             }
           ]
         },
@@ -331,6 +295,9 @@
             },
             {
               "melody": "DO DO DO Si La Sol Fa# / La Sol"
+            },
+            {
+              "melody": "(MI RE / Si MI RE)"
             }
           ]
         }

@@ -1,7 +1,7 @@
 {
-  "songTitle": "Assim Caminha A Humanidade (Malhação)",
+  "songTitle": "Assim caminha a humanidade (Malhação)",
   "review_needed": [
-    "A seção 'Intro' continha o comentário '(x4)', que foi ignorado na linha da melodia. A intenção pode precisar de verificação manual."
+    "The annotation '(x4)' in section headings like '**Intro (x4)**' indicates a section-level repetition. The current JSON schema only supports 'comment' at the 'lines' level. This annotation has been omitted to maintain schema validity, but its intent is noted here for review."
   ],
   "structure": [
     "Intro",

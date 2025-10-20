@@ -1,9 +1,5 @@
 {
   "songTitle": "Alô Paixão",
-  "review_needed": [
-    "Algumas seções continham comentários entre parênteses (ex: '(Fa# Mi)') que foram removidos das linhas de melodia. A intenção original pode precisar de verificação manual.",
-    "A seção 'Refrão' continha indicadores de variação ('1ª', '2ª') que foram removidos das linhas de melodia. A estrutura de repetição ou variação pode precisar de verificação manual."
-  ],
   "structure": [
     "Intro",
     "1",
@@ -83,7 +79,7 @@
               "melody": "La Fa# Mi Mi Fa# / Mi Re Re"
             },
             {
-              "melody": "Fa# Mi"
+              "melody": "(Fa# Mi)"
             }
           ]
         },
@@ -100,10 +96,12 @@
               "melody": "Re Re Re Re"
             },
             {
-              "melody": "Re Re Re Fa# Mi"
+              "melody": "Re Re Re Fa# Mi",
+              "comment": "1ª"
             },
             {
-              "melody": "Re Sol Fa# Re"
+              "melody": "Re Sol Fa# Re",
+              "comment": "2ª"
             }
           ]
         },
@@ -194,7 +192,7 @@
               "melody": "DO La Sol Sol La / Sol Fa Fa"
             },
             {
-              "melody": "La Sol"
+              "melody": "(La Sol)"
             }
           ]
         },
@@ -211,10 +209,12 @@
               "melody": "Fa Fa Fa Fa"
             },
             {
-              "melody": "Fa Fa Fa La Sol"
+              "melody": "Fa Fa Fa La Sol",
+              "comment": "1ª"
             },
             {
-              "melody": "Fa Sib La Fa"
+              "melody": "Fa Sib La Fa",
+              "comment": "2ª"
             }
           ]
         },
@@ -305,7 +305,7 @@
               "melody": "RE Si La La Si / La Sol Sol"
             },
             {
-              "melody": "Si La"
+              "melody": "(Si La)"
             }
           ]
         },
@@ -322,10 +322,12 @@
               "melody": "Sol Sol Sol Sol"
             },
             {
-              "melody": "Sol Sol Sol Si La"
+              "melody": "Sol Sol Sol Si La",
+              "comment": "1ª"
             },
             {
-              "melody": "Sol DO Si Sol"
+              "melody": "Sol DO Si Sol",
+              "comment": "2ª"
             }
           ]
         },

@@ -1,8 +1,5 @@
 {
   "songTitle": "Assim caminha a humanidade (Malhação)",
-  "review_needed": [
-    "The annotation '(x4)' in section headings like '**Intro (x4)**' indicates a section-level repetition. The current JSON schema only supports 'comment' at the 'lines' level. This annotation has been omitted to maintain schema validity, but its intent is noted here for review."
-  ],
   "structure": [
     "Intro",
     "1",

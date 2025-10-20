@@ -1,8 +1,6 @@
 {
   "songTitle": "Baianidade Nagô",
   "structure": [
-    "Refrão",
-    "3",
     "1",
     "Refrão",
     "3"
@@ -33,8 +31,7 @@
               "melody": "Fa# Sol Sol / La Sol Fa# Mi Fa# Mi"
             },
             {
-              "melody": "Re",
-              "comment": "(Mi Re / Re do# do....)"
+              "melody": "Re (Mi Re / Re do# do....)"
             }
           ]
         },
@@ -51,7 +48,7 @@
               "melody": "Sol Sib / Sib Sib Sib Sib / La La La La Fa#"
             },
             {
-              "comment": "(Fa# Mi Fa# Si La Si La)"
+              "melody": "(Fa# Mi Fa# Si La Si La)"
             },
             {
               "melody": "Si Si RE / Si RE.../ RE / RE RE RE RE / DO# / DO# DO# DO# DO# La"
@@ -99,8 +96,7 @@
               "melody": "la sib sib / do sib la sol la sol"
             },
             {
-              "melody": "fa",
-              "comment": "(sol fa / fa mi mib)"
+              "melody": "fa (sol fa / fa mi mib)"
             }
           ]
         },
@@ -117,7 +113,7 @@
               "melody": "sib do# / do# do# do# do# / do do do do la"
             },
             {
-              "comment": "(la sol la Re do Re do)"
+              "melody": "(la sol la Re do Re do)"
             },
             {
               "melody": "Re Re Fa / Re Fa../ Fa / Fa Fa Fa Fa / Mi / Mi Mi Mi Mi do"
@@ -165,8 +161,7 @@
               "melody": "si do do / Re do si la si la"
             },
             {
-              "melody": "sol",
-              "comment": "(la sol / sol fa# fa)"
+              "melody": "sol (la sol / sol fa# fa)"
             }
           ]
         },
@@ -183,7 +178,7 @@
               "melody": "do Re# / Re# Re# Re# Re# / Re Re Re Re si"
             },
             {
-              "comment": "(si la si Mi Re Mi Re)"
+              "melody": "(si la si Mi Re Mi Re)"
             },
             {
               "melody": "Mi Mi Sol / Mi Sol.. / Sol / Sol Sol Sol Sol / Fa# / Fa# Fa# Fa# Fa# Re"

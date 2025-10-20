@@ -9,6 +9,7 @@ from pathlib import Path
 from google import genai
 from google.genai import types
 from dotenv import load_dotenv
+import re
 
 # Carregar variáveis do .env
 load_dotenv()
@@ -23,6 +24,16 @@ def load_prompt_master():
     
     with open(prompt_file, 'r', encoding='utf-8') as f:
         return f.read()
+    
+def clean_llm_response(text):
+    """
+    Limpa a resposta do LLM, removendo os blocos de código Markdown (```json ... ```)
+    para garantir que o texto seja um JSON puro.
+    """
+    match = re.search(r'\{.*\}', text, re.DOTALL)
+    if match:
+        return match.group(0)
+    return text.strip()
 
 def test_single_song():
     """Testa a conversão de uma única música."""
@@ -53,16 +64,16 @@ def test_single_song():
     # Inicializar cliente Gemini
     print("🔗 Conectando com Gemini API...")
     try:
-        client = genai.Client()
+        client = genai.Client(api_key=api_key)
         print("✅ Conectado com sucesso!")
     except Exception as e:
         print(f"❌ Erro ao conectar com Gemini: {e}")
         return
     
     # Escolher uma música para testar
-    test_song = "amor_i_love_you_-.txt"  # Música que já temos JSON de referência
+    test_song = "amor_i_love_you.txt"  # Música que já temos JSON de referência
     
-    txt_file = Path("divided_songs") / test_song
+    txt_file = Path("song_chunks") / test_song
     if not txt_file.exists():
         print(f"❌ Arquivo de teste não encontrado: {txt_file}")
         return
@@ -96,7 +107,9 @@ def test_single_song():
         )
         
         # Extrair JSON da resposta
-        json_text = response.text.strip()
+        raw_response_text = response.text
+
+        json_text = clean_llm_response(raw_response_text)
         
         print(f"\n📥 Resposta recebida ({len(json_text)} caracteres):")
         print("─" * 50)

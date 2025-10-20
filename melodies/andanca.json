@@ -1,13 +1,9 @@
 {
   "songTitle": "Andança",
-  "review_needed": [
-    "A linha 'Estrutura: 1-1-2-2' foi interpretada como a ordem de execução das seções, mas a chave 'structure' lista apenas as seções únicas ('1', '2') encontradas no texto. A intenção pode precisar de verificação manual.",
-    "As linhas de melodia marcadas com '1ª' e '2ª' (indicando primeira e segunda vez) foram processadas, extraindo apenas a melodia. As marcações foram ignoradas na melodia, mas podem indicar uma instrução de repetição ou variação que precisa ser considerada.",
-    "As linhas 'Contracanto: ...' foram identificadas como comentários ou melodias de outros instrumentos e foram ignoradas para as linhas de melodia do instrumento principal. A intenção pode precisar de verificação."
-  ],
   "structure": [
     "1",
-    "2"
+    "2",
+    "Contracanto"
   ],
   "instruments": [
     {
@@ -23,10 +19,12 @@
               "melody": "Do sib fa Do sib sib"
             },
             {
-              "melody": "Do sib sol Do sib sib la"
+              "melody": "Do sib sol Do sib sib la",
+              "comment": "1ª vez"
             },
             {
-              "melody": "Do sib sol Do sib Re Mi / Fa Mi Re"
+              "melody": "Do sib sol Do sib Re Mi / Fa Mi Re",
+              "comment": "2ª vez"
             }
           ]
         },
@@ -52,6 +50,14 @@
               "melody": "Mi Re Do# Mi Re"
             }
           ]
+        },
+        {
+          "name": "Contracanto",
+          "lines": [
+            {
+              "melody": "Fa# Fa#.../ Fa# Sol#.../ Sol# Sol Mi Do#..."
+            }
+          ]
         }
       ]
     },
@@ -68,10 +74,12 @@
               "melody": "Mib Reb lab Mib Reb Reb"
             },
             {
-              "melody": "Mib Reb sib Mib Reb Reb Do"
+              "melody": "Mib Reb sib Mib Reb Reb Do",
+              "comment": "1ª vez"
             },
             {
-              "melody": "Mib Reb sib Mib Reb Fa Sol / Lab Sol Fa"
+              "melody": "Mib Reb sib Mib Reb Fa Sol / Lab Sol Fa",
+              "comment": "2ª vez"
             }
           ]
         },
@@ -97,6 +105,14 @@
               "melody": "Sol Fa Mi Sol Fa"
             }
           ]
+        },
+        {
+          "name": "Contracanto",
+          "lines": [
+            {
+              "melody": "La La... / La Si..../ Si Sib Sol Mi..."
+            }
+          ]
         }
       ]
     },
@@ -113,10 +129,12 @@
               "melody": "Fa Mib sib Fa Mib Mib"
             },
             {
-              "melody": "Fa Mib Do Fa Mib Mib Re"
+              "melody": "Fa Mib Do Fa Mib Mib Re",
+              "comment": "1ª vez"
             },
             {
-              "melody": "Fa Mib Do Fa Mib Sol La / Sib La Sol"
+              "melody": "Fa Mib Do Fa Mib Sol La / Sib La Sol",
+              "comment": "2ª vez"
             }
           ]
         },
@@ -140,6 +158,14 @@
             },
             {
               "melody": "La Sol Fa# La Sol"
+            }
+          ]
+        },
+        {
+          "name": "Contracanto",
+          "lines": [
+            {
+              "melody": "Si Si..../ Si DO#..../ DO# DO La Fa#...."
             }
           ]
         }

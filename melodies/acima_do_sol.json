@@ -1,19 +1,23 @@
 {
-  "songTitle": "Acima Do Sol",
+  "songTitle": "Acima do Sol",
   "review_needed": [
-    "A linha 'Estrutura: Intro-1-2-3-4-2-Intro-4-2-Intro-3-4-2-Intro' foi identificada como a sequência geral da música, mas o array 'structure' contém apenas os nomes únicos das seções encontradas como cabeçalhos no texto. A intenção da linha 'Estrutura' pode precisar de verificação.",
-    "Dentro da seção 'Intro' para o 'Sax Alto', foi encontrada uma linha de melodia precedida por 'Final:'. Interpretei 'Final' como um nome de seção distinto para essa melodia, mas sua colocação pode indicar uma instrução diferente.",
-    "A seção do 'Trombone' contém uma tabela markdown onde todas as melodias estão concatenadas em uma única célula da coluna 'Melodia'. As melodias foram extraídas e separadas por marcadores de seção, mas a formatação original é inesperada e pode precisar de verificação.",
-    "Dentro da seção 'Intro' para o 'Trombone', foi encontrada uma linha de melodia precedida por 'Final:'. Interpretei 'Final' como um nome de seção distinto para essa melodia, mas sua colocação pode indicar uma instrução diferente.",
-    "Dentro da seção 'Intro' para o 'Trompete / Sax Tenor', foi encontrada uma linha de melodia precedida por 'Final:'. Interpretei 'Final' como um nome de seção distinto para essa melodia, mas sua colocação pode indicar uma instrução diferente."
+    "The 'Trombone' instrument data is presented as a single Markdown table row where all sections' content is concatenated within the 'Melodia' and 'Arranjo' cells. This format makes it challenging to accurately segment and align melodies and arrangements for each section, especially for sections '3' and '4' where the content in 'Arranjo' appears significantly different and shorter than 'Melodia'. Additionally, section '4' in 'Arranjo' in the source is not bolded. The parsing attempts to extract unique sections based on bolded headers, but the line-by-line alignment (Rule 4 & 5) is compromised due to the lack of explicit line breaks within the cells for each distinct musical line. Embedded annotations like '**Final:**' in the Trombone melody/arrangement strings are not extracted as comments, as the rule for annotations implies leading annotations."
   ],
   "structure": [
     "Intro",
-    "Final",
     "1",
     "2",
     "3",
-    "4"
+    "4",
+    "2",
+    "Intro",
+    "4",
+    "2",
+    "Intro",
+    "3",
+    "4",
+    "2",
+    "Intro"
   ],
   "instruments": [
     {
@@ -24,14 +28,10 @@
           "lines": [
             {
               "melody": "mi sol la / si la sol mi / si la sol sol"
-            }
-          ]
-        },
-        {
-          "name": "Final",
-          "lines": [
+            },
             {
-              "melody": "Sol Mi Re si sol"
+              "melody": "Sol Mi Re si sol",
+              "comment": "Final"
             }
           ]
         },
@@ -100,15 +100,8 @@
           "name": "Intro",
           "lines": [
             {
-              "melody": "sol sib Do Re Do sib sol Re Do sib sib"
-            }
-          ]
-        },
-        {
-          "name": "Final",
-          "lines": [
-            {
-              "melody": "Sib Sol Fa Re sib"
+              "melody": "sol sib Do Re Do sib sol Re Do sib sib **Final:** Sib Sol Fa Re sib",
+              "arrangement": "... ... Do-Mib-Sol ... ... ... Do-Mib-Sol ... ... ... Sib-Re-Fa **Final:** Sib Sol Fa Re sib"
             }
           ]
         },
@@ -116,7 +109,8 @@
           "name": "1",
           "lines": [
             {
-              "melody": "sib Do Do sib Re Do sol sib Do Re Do sib sol Re Do Re Do sib sol / Do sib sol fa sol"
+              "melody": "sib Do Do sib Re Do sol sib Do Re Do sib sol Re Do Re Do sib sol / Do sib sol fa sol",
+              "arrangement": "sib Do Do sib Re Do sol sib Do Re Do sib sol Re Do Re Do sib sol / Do sib sol fa sol"
             }
           ]
         },
@@ -124,7 +118,8 @@
           "name": "2",
           "lines": [
             {
-              "melody": "Re / sib Do Do sib Re Do sol sib Do Re Do sib sol Re Do Re Do sib sol / Do sib"
+              "melody": "Re / sib Do Do sib Re Do sol sib Do Re Do sib sol Re Do Re Do sib sol / Do sib",
+              "arrangement": "Re / sib Do Do sib Re Do sol sib Do Re Do sib sol Re Do Re Do sib sol / Do sib"
             }
           ]
         },
@@ -132,7 +127,8 @@
           "name": "3",
           "lines": [
             {
-              "melody": "Sol Sib Sol Sib Sol Sol Sol Sib Sib Sol Sib Sol Sol Sol Fa Re / Sol Fa Re Do Re"
+              "melody": "Sol Sib Sol Sib Sol Sol Sol Sib Sib Sol Sib Sol Sol Sol Fa Re / Sol Fa Re Do Re",
+              "arrangement": "...Do-Mib-Sol ...Do-Mib-Sol ... ... ... / Sib-Re-Fa"
             }
           ]
         },
@@ -140,7 +136,8 @@
           "name": "4",
           "lines": [
             {
-              "melody": "Sib Sol Sib Sib Sol Sib Sol Sol Fa Sib Sol Sib Sib Sol Sib Sol Sol Fa Sol Fa Re / Sol Fa Re Do Re"
+              "melody": "Sib Sol Sib Sib Sol Sib Sol Sol Fa Sib Sol Sib Sib Sol Sib Sol Sol Fa Sol Fa Re / Sol Fa Re Do Re",
+              "arrangement": "... ... Do-Mib-Sol ... ... Do-Mib-Sol ... ... ... / Sib-Re-Fa"
             }
           ]
         }
@@ -154,14 +151,10 @@
           "lines": [
             {
               "melody": "la Do Re / Mi Re Do la / Mi Re Do Do"
-            }
-          ]
-        },
-        {
-          "name": "Final",
-          "lines": [
+            },
             {
-              "melody": "DO La Sol Mi do"
+              "melody": "DO La Sol Mi do",
+              "comment": "Final"
             }
           ]
         },

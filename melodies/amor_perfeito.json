@@ -1,16 +1,5 @@
 {
   "songTitle": "Amor Perfeito",
-  "review_needed": [
-    "A seção '1' do instrumento 'Sax Alto' continha o comentário '(x2)', que foi ignorado na linha da melodia. A intenção pode precisar de verificação manual.",
-    "A seção '2' do instrumento 'Sax Alto' contém linhas de melodia prefixadas com '1ª' ou '2ª'. Estes prefixos foram incluídos na melodia, mas podem indicar variações que necessitam de revisão.",
-    "A seção '3' do instrumento 'Sax Alto' contém linhas de melodia prefixadas com '1ª' ou '2ª'. Estes prefixos foram incluídos na melodia, mas podem indicar variações que necessitam de revisão.",
-    "A seção '1' do instrumento 'Trombone' continha o comentário '(x2)', que foi ignorado na linha da melodia. A intenção pode precisar de verificação manual.",
-    "A seção '2' do instrumento 'Trombone' contém linhas de melodia prefixadas com '1ª' ou '2ª'. Estes prefixos foram incluídos na melodia, mas podem indicar variações que necessitam de revisão.",
-    "A seção '3' do instrumento 'Trombone' contém linhas de melodia prefixadas com '1ª' ou '2ª'. Estes prefixos foram incluídos na melodia, mas podem indicar variações que necessitam de revisão.",
-    "A seção '1' do instrumento 'Trompete / Sax Tenor' continha o comentário '(x2)', que foi ignorado na linha da melodia. A intenção pode precisar de verificação manual.",
-    "A seção '2' do instrumento 'Trompete / Sax Tenor' contém linhas de melodia prefixadas com '1ª' ou '2ª'. Estes prefixos foram incluídos na melodia, mas podem indicar variações que necessitam de revisão.",
-    "A seção '3' do instrumento 'Trompete / Sax Tenor' contém linhas de melodia prefixadas com '1ª' ou '2ª'. Estes prefixos foram incluídos na melodia, mas podem indicar variações que necessitam de revisão."
-  ],
   "structure": [
     "1",
     "2",
@@ -29,7 +18,8 @@
               "melody": "Sol Sol Sol Sol Sol Sol Sol Sol Fa# Fa# Mi Mi Re"
             },
             {
-              "melody": "Sol Sol Sol Sol Sol La Fa#"
+              "melody": "Sol Sol Sol Sol Sol La Fa#",
+              "comment": "(x2)"
             },
             {
               "melody": "Mi Fa# Sol"
@@ -49,10 +39,12 @@
               "melody": "Sol La Si DO Si La Sol La Sol Fa# Mi Fa#"
             },
             {
-              "melody": "1ª Mi Re Mi"
+              "melody": "Mi Re Mi",
+              "comment": "1ª"
             },
             {
-              "melody": "2ª Mi Re Mi Fa# Sol La Sol"
+              "melody": "Mi Re Mi Fa# Sol La Sol",
+              "comment": "2ª"
             }
           ]
         },
@@ -81,10 +73,12 @@
               "melody": "Sol La Si Si La Sol Fa# Sol"
             },
             {
-              "melody": "1ª Sol La Si DO RE Si La Sol Si"
+              "melody": "Sol La Si DO RE Si La Sol Si",
+              "comment": "1ª"
             },
             {
-              "melody": "2ª Sol La Si DO RE Si La Sol Sol"
+              "melody": "Sol La Si DO RE Si La Sol Sol",
+              "comment": "2ª"
             }
           ]
         }
@@ -100,7 +94,8 @@
               "melody": "Sib Sib Sib Sib Sib Sib Sib Sib La La Sol Sol Fa"
             },
             {
-              "melody": "Sib Sib Sib Sib Sib DO La"
+              "melody": "Sib Sib Sib Sib Sib DO La",
+              "comment": "(x2)"
             },
             {
               "melody": "Sol La Sib"
@@ -120,10 +115,12 @@
               "melody": "sib do Re Mib Re do sib do sib la sol la"
             },
             {
-              "melody": "1ª sol fa sol"
+              "melody": "sol fa sol",
+              "comment": "1ª"
             },
             {
-              "melody": "2ª sol fa sol la sib do sib"
+              "melody": "sol fa sol la sib do sib",
+              "comment": "2ª"
             }
           ]
         },
@@ -152,10 +149,12 @@
               "melody": "sib do Re Re do sib la sib"
             },
             {
-              "melody": "1ª sib do Re Mib Fa Mib Re do Re"
+              "melody": "sib do Re Mib Fa Mib Re do Re",
+              "comment": "1ª"
             },
             {
-              "melody": "2ª sib do Re Mib Fa Re do sib sib"
+              "melody": "sib do Re Mib Fa Re do sib sib",
+              "comment": "2ª"
             }
           ]
         }
@@ -171,7 +170,8 @@
               "melody": "do do do do do do do do si si la la sol"
             },
             {
-              "melody": "do do do do do Re si"
+              "melody": "do do do do do Re si",
+              "comment": "(x2)"
             },
             {
               "melody": "la si do"
@@ -191,10 +191,12 @@
               "melody": "do Re Mi Fa Mi Re do Re do si la si"
             },
             {
-              "melody": "1ª la sol la"
+              "melody": "la sol la",
+              "comment": "1ª"
             },
             {
-              "melody": "2ª la sol la si do Re do"
+              "melody": "la sol la si do Re do",
+              "comment": "2ª"
             }
           ]
         },
@@ -223,10 +225,12 @@
               "melody": "Do Re Mi Mi Re do si do"
             },
             {
-              "melody": "1ª do Re Mi Fa Sol Fa Mi Re Mi"
+              "melody": "do Re Mi Fa Sol Fa Mi Re Mi",
+              "comment": "1ª"
             },
             {
-              "melody": "2ª do Re Mi Fa Sol Mi Re do do"
+              "melody": "do Re Mi Fa Sol Mi Re do do",
+              "comment": "2ª"
             }
           ]
         }

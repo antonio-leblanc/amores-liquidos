@@ -1,0 +1,251 @@
+{
+  "songTitle": "100 % Voce",
+  "review_needed": [
+    "O instrumento 'Trombone' foi fornecido em formato de tabela Markdown. Apenas o conteúdo da coluna 'Melodia' foi extraído, e cada seção (Intro, 1, 2, 3) foi interpretada como uma única linha de melodia. A coluna 'Arranjo' foi ignorada, o que pode não corresponder à intenção original."
+  ],
+  "structure": [
+    "Intro",
+    "1",
+    "2",
+    "3"
+  ],
+  "instruments": [
+    {
+      "name": "Sax Alto",
+      "sections": [
+        {
+          "name": "Intro",
+          "lines": [
+            {
+              "melody": "La Fa# / La La La La Sol Fa# / La Fa#"
+            },
+            {
+              "melody": "La La La La Sol Fa# / Sol Fa# Re"
+            },
+            {
+              "melody": "La La La La Sol Fa# / Si La"
+            }
+          ]
+        },
+        {
+          "name": "1",
+          "lines": [
+            {
+              "melody": "Fa# Fa# Fa# Mi Mi Re"
+            },
+            {
+              "melody": "Fa# Fa# Fa# Fa# Mi Mi"
+            },
+            {
+              "melody": "Sol Sol Sol Fa# Fa# Mi"
+            },
+            {
+              "melody": "Sol Sol Sol La Mi"
+            },
+            {
+              "melody": "Fa# Fa# Fa# Mi Mi Re"
+            },
+            {
+              "melody": "Fa# Fa# Fa# La do#"
+            },
+            {
+              "melody": "Sol Sol Sol Sol Fa# Fa# Mi"
+            },
+            {
+              "melody": "Sol Sol Sol Sol La Mi"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "lines": [
+            {
+              "melody": "Re Re / si Re si Re si Re"
+            },
+            {
+              "melody": "Re Re / Si La La Si Fa#"
+            },
+            {
+              "melody": "Fa# Fa# / Mi Fa# Mi Fa# Mi Fa# Re"
+            },
+            {
+              "melody": "Re Re / Si La La Si Sol"
+            },
+            {
+              "melody": "Sol Fa# Sol Fa# Sol Fa# Sol"
+            },
+            {
+              "melody": "Sol Sol Fa# Sol / Fa# Sol La La"
+            }
+          ]
+        },
+        {
+          "name": "3",
+          "lines": [
+            {
+              "melody": "Re Fa# / La Fa#"
+            },
+            {
+              "melody": "Mi Re Fa# / Fa# La Fa#"
+            },
+            {
+              "melody": "Fa# La La Sol"
+            },
+            {
+              "melody": "si si Fa# Fa# Fa# Fa# Mi Re"
+            },
+            {
+              "melody": "Re Fa# / La Fa#"
+            },
+            {
+              "melody": "Mi Re Fa# / Fa# La Fa#"
+            },
+            {
+              "melody": "Fa# La La Sol"
+            },
+            {
+              "melody": "si Fa# Fa# Mi / Re Mi Re"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Trombone",
+      "sections": [
+        {
+          "name": "Intro",
+          "lines": [
+            {
+              "melody": "DO La / DO DO DO DO Sib La / DO La DO DO DO DO Sib La / Sib La Fa DO DO DO DO Sib La / RE DO"
+            }
+          ]
+        },
+        {
+          "name": "1",
+          "lines": [
+            {
+              "melody": "La La La Sol Sol Fa La La La La Sol Sol Sib Sib Sib La La Sol Sib Sib Sib DO Sol La La La Sol Sol Fa La La La DO Mi Sib Sib Sib Sib La La Sol Sib Sib Sib Sib DO Sol"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "lines": [
+            {
+              "melody": "Fa Fa / Re Fa Re Fa Re Fa Fa Fa / RE DO DO RE La La La / Sol La Sol La Sol La Fa Fa Fa / RE DO DO RE Sib Sib La Sib La Sib La Sib Sib Sib La Sib / La Sib DO DO"
+            }
+          ]
+        },
+        {
+          "name": "3",
+          "lines": [
+            {
+              "melody": "Fa La / DO La Sol Fa La / La DO La La DO DO Sib Re Re La La La La Sol Fa Fa La / DO La Sol Fa La / La DO DO Sib Re La La Sol / Fa Sol Fa"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Trompete / Sax Tenor",
+      "sections": [
+        {
+          "name": "Intro",
+          "lines": [
+            {
+              "melody": "Re si / Re Re Re Re do si / Re si"
+            },
+            {
+              "melody": "Re Re Re Re do si / do si sol"
+            },
+            {
+              "melody": "Re Re Re Re do si / Mi Re"
+            }
+          ]
+        },
+        {
+          "name": "1",
+          "lines": [
+            {
+              "melody": "si si si la la sol"
+            },
+            {
+              "melody": "si si si si la la"
+            },
+            {
+              "melody": "do do do si si la"
+            },
+            {
+              "melody": "do do do Re la"
+            },
+            {
+              "melody": "si si si la la sol"
+            },
+            {
+              "melody": "si si si Re fa#"
+            },
+            {
+              "melody": "do do do do si si la"
+            },
+            {
+              "melody": "do do do do Re la"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "lines": [
+            {
+              "melody": "sol sol / mi sol mi sol mi sol"
+            },
+            {
+              "melody": "sol sol / Mi Re Re Mi si"
+            },
+            {
+              "melody": "si si / la si la si la si sol"
+            },
+            {
+              "melody": "sol sol / Mi Re Re Mi do"
+            },
+            {
+              "melody": "do si do si do si do"
+            },
+            {
+              "melody": "do do si do / si do Re Re"
+            }
+          ]
+        },
+        {
+          "name": "3",
+          "lines": [
+            {
+              "melody": "sol si / Re si"
+            },
+            {
+              "melody": "la sol si / si Re si"
+            },
+            {
+              "melody": "si Re Re do"
+            },
+            {
+              "melody": "mi mi si si si si la sol"
+            },
+            {
+              "melody": "sol si / Re si"
+            },
+            {
+              "melody": "la sol si / si Re si"
+            },
+            {
+              "melody": "si Re Re do"
+            },
+            {
+              "melody": "mi si si la / sol la sol"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

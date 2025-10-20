@@ -2,11 +2,12 @@ import re
 import os
 from collections import defaultdict
 
-# --- FUNÇÕES DE NORMALIZAÇÃO (VERSÃO 4 - FINAL) ---
+# --- FUNÇÕES DE NORMALIZAÇÃO E SLUGIFY (Versão Final e Correta) ---
 
-def normalize_song_title_v4(raw_title):
+def normalize_song_title(raw_title):
     """
-    Versão final e robusta que lida com todas as variações encontradas.
+    Versão final que limpa o título para agrupamento, mas preserva a informação
+    original para a IA.
     """
     title = re.sub(r'^#+\s*|\s*{.*}\s*$', '', raw_title).strip()
     title = title.replace('**', '')
@@ -15,7 +16,6 @@ def normalize_song_title_v4(raw_title):
     instrument_regex = r'(\s*-\s*|\s*\()[\w\s/]*?(sax|alto|trombone|trompete|tenor)[\w\s/]*?\)?\s*$'
     title = re.sub(instrument_regex, '', title, flags=re.IGNORECASE)
     
-    # CORREÇÃO CRÍTICA: Remove hífens, espaços E a barra invertida que sobrava.
     return title.strip(' -\\')
 
 def slugify(text):
@@ -36,8 +36,8 @@ def slugify(text):
 
 # --- CONFIGURAÇÃO ---
 INPUT_FILE = "raw_songbook/songbook.md"
-OUTPUT_DIR = "song_chunks_grouped"
-OUTPUT_EXTENSION = ".txt" # MUDANÇA ESTRATÉGICA PARA .TXT
+OUTPUT_DIR = "song_chunks" 
+OUTPUT_EXTENSION = ".txt"
 
 # --- LÓGICA PRINCIPAL ---
 
@@ -52,27 +52,28 @@ with open(INPUT_FILE, 'r', encoding='utf-8') as f:
 
 match = re.search(r'^#\s.*', full_text, re.MULTILINE)
 if not match:
-    print("Erro: Nenhum título de música encontrado.")
+    print("Erro: Nenhum título de música encontrado no formato '# Título'.")
     exit()
 
 music_content = full_text[match.start():]
 instrument_parts = re.split(r'\n(?=#\s)', music_content)
 songs_grouped = defaultdict(list)
 
-print("--- Iniciando processo de normalização e agrupamento (V4) ---")
+print("--- Iniciando processo de agrupamento (V6 - Final) ---")
 for part in instrument_parts:
     part = part.strip()
     if not part:
         continue
     
     first_line = part.split('\n')[0]
-    normalized_name = normalize_song_title_v4(first_line)
+    normalized_name = normalize_song_title(first_line)
     
     if not normalized_name:
         print(f"  [AVISO] Título ignorado: '{first_line}'")
         continue
-    
-    print(f"  '{first_line}'  ==>  Normalizado para: '{normalized_name}'")
+
+    print(f"  Agrupando '{first_line}' sob a chave: '{normalized_name}'")
+    # Adiciona o bloco de texto MARKDOWN ORIGINAL à lista.
     songs_grouped[normalized_name].append(part)
 
 print(f"\n--- Salvando {len(songs_grouped)} arquivos de música únicos ---")
@@ -80,16 +81,13 @@ for normalized_name, parts_list in songs_grouped.items():
     filename = slugify(normalized_name) + OUTPUT_EXTENSION
     output_path = os.path.join(OUTPUT_DIR, filename)
     
-    full_song_content = "\n\n---\n\n".join(parts_list)
+    # Junta todas as partes dos diferentes instrumentos, mantendo o Markdown original.
+    full_song_content_md = "\n\n---\n\n".join(parts_list)
     
-    # MECANISMO DE SEGURANÇA: Usa 'a' (append) para evitar sobrescritas acidentais
-    with open(output_path, 'a', encoding='utf-8') as f:
-        # Se o arquivo já existe (por causa de um bug de normalização),
-        # adiciona um separador extra para maior clareza.
-        if f.tell() > 0:
-            f.write("\n\n==== APPEND DE EMERGÊNCIA ====\n\n")
-        f.write(full_song_content)
+    # Salva o arquivo de texto com o conteúdo Markdown dentro.
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write(full_song_content_md)
         
-    print(f"  Agrupado '{normalized_name}': {len(parts_list)} partes -> Salvo em {output_path}")
+    print(f"  Salvo '{normalized_name}': {len(parts_list)} partes -> em {output_path}")
 
-print(f"\nProcesso concluído! {len(songs_grouped)} arquivos de música criados em '{OUTPUT_DIR}'.")
+print(f"\nProcesso concluído! {len(songs_grouped)} arquivos de entrada para a IA criados em '{OUTPUT_DIR}'.")

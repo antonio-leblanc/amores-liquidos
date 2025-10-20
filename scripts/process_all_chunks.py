@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 
 # --- CONFIGURAÇÃO ---
 IS_TEST_MODE = True
+TEST_MODE_INIT = 10
 TEST_MODE_LIMIT = 10
 
 INPUT_DIR = "song_chunks"
@@ -105,8 +106,8 @@ def main():
         return
 
     if IS_TEST_MODE:
-        print(f"🔬 MODO DE TESTE: Processando apenas as primeiras {TEST_MODE_LIMIT} músicas.")
-        files_to_process = files_to_process[:TEST_MODE_LIMIT]
+        print(f"🔬 MODO DE TESTE: Processando apenas as {TEST_MODE_INIT}:{TEST_MODE_INIT+TEST_MODE_LIMIT} músicas.")
+        files_to_process = files_to_process[TEST_MODE_INIT:TEST_MODE_INIT+TEST_MODE_LIMIT]
 
     total_files = len(files_to_process)
     print(f"🎵 Encontradas {total_files} músicas para processar.")

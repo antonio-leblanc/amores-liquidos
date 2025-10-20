@@ -1,13 +1,13 @@
 {
   "songTitle": "Bola de Sabão",
   "review_needed": [
-    "Arrangement data for section 4 (Alto Sax, Trombone) and the end of section 2 (Trombone) was provided in separate blocks. I have merged this data with the corresponding melody lines based on line order, but this interpretation requires verification as the format was ambiguous."
+    "The input for this song provided arrangement data in separate, non-tabular blocks for several sections (Alto Sax section 4, Trombone sections 2 and 4). I have attempted to merge this data line-by-line, but mismatches in the number of lines required interpretation. This mapping should be verified for accuracy."
   ],
   "structure": [
     "Intro",
     "1",
     "2",
-    "3 - Refrão",
+    "3 - REFRÃO",
     "4"
   ],
   "instruments": [
@@ -35,7 +35,7 @@
           "name": "1",
           "lines": [
             {
-              "melody": "Re Re si la / la la la Re la si la si"
+              "melody": "Re Re si la /  la la la Re la si la si"
             },
             {
               "melody": "si si si do# Re do# si"
@@ -73,12 +73,13 @@
               "melody": "Re Re Re Mi Mi / Re si"
             },
             {
-              "melody": "Mi Mi Mi Re Fa# / Mi Sol / Fa# Mi (Re Fa# Mi)"
+              "melody": "Mi Mi Mi Re Fa# / Mi Sol / Fa# Mi",
+              "arrangement": "Re Fa# Mi"
             }
           ]
         },
         {
-          "name": "3 - Refrão",
+          "name": "3 - REFRÃO",
           "lines": [
             {
               "melody": "Re Re / la Re / Mi Fa# / Mi Re / si Re"
@@ -87,7 +88,8 @@
               "melody": "Re Mi Fa# / Mi Re / si Re"
             },
             {
-              "melody": "Re Mi Fa# / Mi Re / Mi Mi (Fa# Mi / Re Re Mi)"
+              "melody": "Re Mi Fa# / Mi Re / Mi Mi",
+              "arrangement": "Fa# Mi / Re Re Mi"
             },
             {
               "melody": "Re Re / la Re / Mi Fa# / Mi Sol Fa# Mi Re"
@@ -96,7 +98,8 @@
               "melody": "Re Mi Fa# / Mi Re / si Re"
             },
             {
-              "melody": "Re Mi Fa# / Mi Sol Fa# Mi (Fa# Mi Re Mi)"
+              "melody": "Re Mi Fa# / Mi Sol Fa# Mi",
+              "arrangement": "Fa# Mi Re Mi"
             }
           ]
         },
@@ -128,11 +131,10 @@
               "arrangement": "RE RE SI RE RE"
             },
             {
-              "melody": "La Sol Fa# Re",
+              "melody": "La Sol Fa# Mi / Fa# Sol / La Si DO# La",
               "arrangement": "RE RE SI RE RE"
             },
             {
-              "melody": "La Sol Fa# Mi / Fa# Sol / La Si DO# La",
               "arrangement": "MI"
             }
           ]
@@ -186,37 +188,28 @@
           "name": "2",
           "lines": [
             {
-              "melody": "do La Sol La / La La Sib La Sol Fa Sol Fa"
+              "melody": "do La Sol La / La La Sib La Sol Fa Sol Fa",
+              "arrangement": "La Sol"
             },
             {
-              "melody": "Fa Fa Fa Sol Fa Sol Fa Re"
+              "melody": "Fa Fa Fa Sol Fa Sol Fa Re",
+              "arrangement": "Fa Re"
             },
             {
-              "melody": "Sol Sol Sol Sol Fa La Sol Fa Do"
+              "melody": "Sol Sol Sol Sol Fa La Sol Fa Do",
+              "arrangement": "La Re"
             },
             {
-              "melody": "La Sol La / La La La La / La Sol La Fa"
+              "melody": "La Sol La / La La La La / La Sol La Fa",
+              "arrangement": "La Sol"
             },
             {
-              "melody": "Fa Fa Fa Sol Sol / Fa Re"
+              "melody": "Fa Fa Fa Sol Sol / Fa Re",
+              "arrangement": "Fa Re"
             },
             {
-              "melody": "Sol Sol Sol Fa La / Sol Sib / La Sol (Fa La Sol)"
-            },
-            {
-              "arrangement": "La____ Sol___"
-            },
-            {
-              "arrangement": "Fa___Re___"
-            },
-            {
-              "arrangement": "La___Re___"
-            },
-            {
-              "arrangement": "La___ Sol__"
-            },
-            {
-              "arrangement": "Fa___ Re__"
+              "melody": "Sol Sol Sol Fa La / Sol Sib / La Sol",
+              "arrangement": "Fa La Sol"
             },
             {
               "arrangement": "Do La Do La Re Do La Sol"
@@ -224,7 +217,7 @@
           ]
         },
         {
-          "name": "3 - Refrão",
+          "name": "3 - REFRÃO",
           "lines": [
             {
               "melody": "Fa Fa / do Fa / Sol La / Sol Fa / Re Fa"
@@ -233,7 +226,8 @@
               "melody": "Fa Sol La / Sol Fa / Re Fa"
             },
             {
-              "melody": "Fa Sol La / Sol Fa / Sol Sol (La Sol / Fa Fa Sol)"
+              "melody": "Fa Sol La / Sol Fa / Sol Sol",
+              "arrangement": "La Sol / Fa Fa Sol"
             },
             {
               "melody": "Fa Fa / do Fa / Sol La / Sol Sib La Sol Fa"
@@ -242,7 +236,8 @@
               "melody": "Fa Sol La / Sol Fa / Re Fa"
             },
             {
-              "melody": "Fa Sol La / Sol Sib La Sol (La Sol Fa Sol)"
+              "melody": "Fa Sol La / Sol Sib La Sol",
+              "arrangement": "La Sol Fa Sol"
             }
           ]
         },
@@ -250,15 +245,15 @@
           "name": "4",
           "lines": [
             {
-              "melody": "DO SIB LA FA__",
+              "melody": "DO SIB LA FA",
               "arrangement": "FA FA FA"
             },
             {
-              "melody": "DO SIB LA FA__",
+              "melody": "DO SIB LA FA",
               "arrangement": "FA FA FA"
             },
             {
-              "melody": "DO SIB LA SOL__",
+              "melody": "DO SIB LA SOL",
               "arrangement": "FA FA FA"
             },
             {
@@ -266,19 +261,18 @@
               "arrangement": "SOL SOL SOL"
             },
             {
-              "melody": "DO SIB LA FA__",
+              "melody": "DO SIB LA FA",
               "arrangement": "FA FA RE FA FA"
             },
             {
-              "melody": "DO SIB LA FA__",
+              "melody": "DO SIB LA FA",
               "arrangement": "FA FA RE FA FA"
             },
             {
-              "melody": "DO SIB LA SOL__",
+              "melody": "DO SIB LA SOL LA SIB DO RE MI DO",
               "arrangement": "FA FA RE FA FA"
             },
             {
-              "melody": "LA SIB__DO RE MI DO",
               "arrangement": "SOL"
             }
           ]
@@ -347,12 +341,13 @@
               "melody": "Sol Sol Sol La La / Sol Mi"
             },
             {
-              "melody": "La La La Sol Si / La DO / Si La (Sol Si La)"
+              "melody": "La La La Sol Si / La DO / Si La",
+              "arrangement": "Sol Si La"
             }
           ]
         },
         {
-          "name": "3 - Refrão",
+          "name": "3 - REFRÃO",
           "lines": [
             {
               "melody": "Sol Sol / Re Sol / La Si / La Sol / Mi Sol"
@@ -361,7 +356,8 @@
               "melody": "Sol La Si / La Sol / Mi Sol"
             },
             {
-              "melody": "Sol La Si / La Sol / La La (Si La / Sol Sol La)"
+              "melody": "Sol La Si / La Sol / La La",
+              "arrangement": "Si La / Sol Sol La"
             },
             {
               "melody": "Sol Sol / Re Sol / La Si / La DO Si La Sol"
@@ -370,7 +366,8 @@
               "melody": "Sol La Si / La Sol / Mi Sol"
             },
             {
-              "melody": "Sol La Si / La DO Si La (Si La Sol La)"
+              "melody": "Sol La Si / La DO Si La",
+              "arrangement": "Si La Sol La"
             }
           ]
         },

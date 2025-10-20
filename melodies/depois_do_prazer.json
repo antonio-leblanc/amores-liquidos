@@ -1,45 +1,301 @@
 {
-  "songTitle": "Depois do Prazer",
-  "structure": ["1", "2", "Refrão"],
+  "songTitle": "Depois Do Prazer",
+  "review_needed": [
+    "The input for Trombone and Trompete used a severely broken two-column layout for arrangement data, requiring manual line-by-line mapping which should be verified.",
+    "Separate parts were provided for 'Trompete' and 'Tenor'. They have been merged into a single 'Trompete / Sax Tenor' part. The tenor melody, which contained a minor variation, was used as the base. The arrangement data was taken from the Trompete part."
+  ],
+  "structure": [
+    "1",
+    "2",
+    "Refrão"
+  ],
   "instruments": [
+    {
+      "name": "Sax Alto",
+      "sections": [
+        {
+          "name": "1",
+          "lines": [
+            {
+              "melody": "Fa# Re Fa# Re Fa#"
+            },
+            {
+              "melody": "Fa# La Sol Fa# Mi Re"
+            },
+            {
+              "melody": "si do# Re Mi si"
+            },
+            {
+              "melody": "Sol Fa# Mi Re / Mi Mi do#"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "lines": [
+            {
+              "melody": "Fa# Sol La / Fa# Sol La"
+            },
+            {
+              "melody": "Fa# Sol La / Fa# Sol La"
+            },
+            {
+              "melody": "Fa# Sol La / Fa# Sol La"
+            },
+            {
+              "melody": "Fa# Sol La / Fa# Sol La"
+            },
+            {
+              "melody": "Fa# Sol La / Sol Fa# Mi Re#"
+            },
+            {
+              "melody": "Mi Fa# Sol / Mi Fa# Sol"
+            },
+            {
+              "melody": "Mi Fa# Sol / Mi Fa# Sol"
+            },
+            {
+              "melody": "Mi Fa# Sol / Mi Fa# Sol"
+            },
+            {
+              "melody": "Mi Fa# Sol / Mi Fa# Sol"
+            },
+            {
+              "melody": "Mi Fa# Sol / Fa# Mi Re do#",
+              "comment": "1ª vez"
+            },
+            {
+              "melody": "Mi Fa# Sol / Fa# Mi La...",
+              "comment": "2ª vez"
+            }
+          ]
+        },
+        {
+          "name": "Refrão",
+          "lines": [
+            {
+              "melody": "Fa# Fa# Fa# Fa# Fa# Fa# Fa#"
+            },
+            {
+              "melody": "Fa# Fa# Fa# Sol La La Sol Fa#"
+            },
+            {
+              "melody": "Sol Sol Sol Sol Sol Sol Sol.."
+            },
+            {
+              "melody": "Sol Sol Sol Fa# Mi Sol Fa# Mi"
+            },
+            {
+              "melody": "Fa# Fa# Fa# Fa# Fa# Fa# Fa#"
+            },
+            {
+              "melody": "Fa# Fa# Fa# Sol La La Sol# Fa#"
+            },
+            {
+              "melody": "Sol Sol Sol Sol Sol Sol Sol.."
+            },
+            {
+              "melody": "Sol Sol Sol Fa# Mi Sol Fa# Mi"
+            },
+            {
+              "melody": "la la La Sol Fa Mi Mi"
+            }
+          ]
+        }
+      ]
+    },
     {
       "name": "Trombone",
       "sections": [
         {
           "name": "1",
           "lines": [
-            { "melody": "La Fa La Fa La", "arrangement": "Fa...." },
-            { "melody": "La DO Sib La Sol Fa", "arrangement": "Re...." },
-            { "melody": "Re Mi Fa Sol Re", "arrangement": "Fa Sib" },
-            { "melody": "Sib La Sol Fa / Sol Sol Mi", "arrangement": "Re do" }
+            {
+              "melody": "La Fa La Fa La",
+              "arrangement": "Fa…."
+            },
+            {
+              "melody": "La DO Sib La Sol Fa",
+              "arrangement": "Re…."
+            },
+            {
+              "melody": "Re Mi Fa Sol Re",
+              "arrangement": "Fa Sib"
+            },
+            {
+              "melody": "Sib La Sol Fa / Sol Sol Mi",
+              "arrangement": "Re do"
+            }
           ]
         },
         {
           "name": "2",
           "lines": [
-            { "melody": "La Sib DO / La Sib DO" },
-            { "melody": "La Sib DO / La Sib DO" },
-            { "melody": "La Sib DO / La Sib DO" },
-            { "melody": "La Sib DO / Sib La Sol Fa#" },
-            { "melody": "Sol La Sib / Sol La Sib" },
-            { "melody": "Sol La Sib / Sol La Sib" },
-            { "melody": "Sol La Sib / Sol La Sib" },
-            { "melody": "Sol La Sib / Sol La Sib" },
-            { "melody": "Sol La Sib / La Sol Fa Mi", "comment": "1ª vez" },
-            { "melody": "Sol La Sib / La Sol DO....", "comment": "2ª vez" }
+            {
+              "melody": "La Sib DO / La Sib DO"
+            },
+            {
+              "melody": "La Sib DO / La Sib DO"
+            },
+            {
+              "melody": "La Sib DO / La Sib DO"
+            },
+            {
+              "melody": "La Sib DO / La Sib DO"
+            },
+            {
+              "melody": "La Sib DO / Sib La Sol Fa#"
+            },
+            {
+              "melody": "Sol La Sib / Sol La Sib"
+            },
+            {
+              "melody": "Sol La Sib / Sol La Sib"
+            },
+            {
+              "melody": "Sol La Sib / Sol La Sib"
+            },
+            {
+              "melody": "Sol La Sib / Sol La Sib"
+            },
+            {
+              "melody": "Sol La Sib / La Sol Fa Mi",
+              "comment": "1ª vez"
+            },
+            {
+              "melody": "Sol La Sib / La Sol DO....",
+              "comment": "2ª vez"
+            }
           ]
         },
         {
           "name": "Refrão",
           "lines": [
-            { "melody": "La La La La La La", "arrangement": "La Sol La Fa#" },
-            { "melody": "La La La Sib DO DO Sib La" },
-            { "melody": "Sib Sib Sib Sib Sib Sib Sib...", "arrangement": "Sol Fa Sol Mi" },
-            { "melody": "Sib Sib Sib La Sol Sib La Sol" },
-            { "melody": "La La La La La La", "arrangement": "La Sol La Fa#" },
-            { "melody": "La La La Sib DO DO Sib La" },
-            { "melody": "Sib Sib Sib Sib Sib Sib Sib...", "arrangement": "do do Do Sib La (Sol Sol)" },
-            { "melody": "Sib Sib Sib La Sol Sib La Sol" }
+            {
+              "melody": "La La La La La La La"
+            },
+            {
+              "melody": "La La La Sib DO DO Sib La",
+              "arrangement": "Resposta: La Sol La Fa#"
+            },
+            {
+              "melody": "Sib Sib Sib Sib Sib Sib Sib..."
+            },
+            {
+              "melody": "Sib Sib Sib La Sol Sib La Sol",
+              "arrangement": "Resposta: Sol Fa Sol Mi"
+            },
+            {
+              "melody": "La La La La La La La"
+            },
+            {
+              "melody": "La La La Sib DO DO Sib La",
+              "arrangement": "Resposta: La Sol La Fa#"
+            },
+            {
+              "melody": "Sib Sib Sib Sib Sib Sib Sib..."
+            },
+            {
+              "melody": "Sib Sib Sib La Sol Sib La Sol",
+              "arrangement": "Resposta: do do Do Sib La (Sol Sol)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Trompete / Sax Tenor",
+      "sections": [
+        {
+          "name": "1",
+          "lines": [
+            {
+              "melody": "si sol si sol si"
+            },
+            {
+              "melody": "si Re do si la sol"
+            },
+            {
+              "melody": "mi fa# sol la mi",
+              "arrangement": "sol Do"
+            },
+            {
+              "melody": "do si la sol / la la fa#",
+              "arrangement": "Mi Re"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "lines": [
+            {
+              "melody": "si do Re / si do Re"
+            },
+            {
+              "melody": "si do Re / si do (Mi) Re"
+            },
+            {
+              "melody": "si do Re / si do Re"
+            },
+            {
+              "melody": "si do Re / si do Re"
+            },
+            {
+              "melody": "si do Re / do si la sol#"
+            },
+            {
+              "melody": "la si do / la si do"
+            },
+            {
+              "melody": "la si do / la si do"
+            },
+            {
+              "melody": "la si do / la si do"
+            },
+            {
+              "melody": "la si do / la si do"
+            },
+            {
+              "melody": "la si do / si la sol fa#",
+              "comment": "1ª vez"
+            },
+            {
+              "melody": "la si do / si la Re...",
+              "comment": "2ª vez"
+            }
+          ]
+        },
+        {
+          "name": "Refrão",
+          "lines": [
+            {
+              "melody": "si si si si si si si"
+            },
+            {
+              "melody": "si si si do Re Re do si",
+              "arrangement": "Resposta: Re Mi si Re Mi"
+            },
+            {
+              "melody": "do do do do do do do..."
+            },
+            {
+              "melody": "do do do si la do si la",
+              "arrangement": "Resposta: re Re do si"
+            },
+            {
+              "melody": "si si si si si si si"
+            },
+            {
+              "melody": "si si si do Re Re do si",
+              "arrangement": "Resposta: Re Mi si Re Mi"
+            },
+            {
+              "melody": "do do do do do do do..."
+            },
+            {
+              "melody": "do do do si la do si la",
+              "arrangement": "Resposta: re re Re do si (la la)"
+            }
           ]
         }
       ]

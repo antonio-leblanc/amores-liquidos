@@ -14,7 +14,6 @@ const songsAlphabetical = [
 	'beleza_rara',
 	'bola_de_sabao',
 	'cilada',
-	'coracao_radiante',
 	'de_ladinho',
 	'depois_do_prazer',
 	'deus_me_livre',
@@ -71,7 +70,7 @@ const songsAlphabetical = [
 	'voce_nao_entende_nada'
 ];
 
-const defaultPlaylistName = 'Novas 2026';
+const defaultPlaylistName = 'Ordem Alfabética';
 
 
 const playlists = {
@@ -112,3 +111,7 @@ const playlists = {
 		'toda_forma_de_amor'
 	]
 };
+
+const caiu = [
+	'coracao_radiante',
+]

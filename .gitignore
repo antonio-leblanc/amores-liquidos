@@ -10,4 +10,7 @@ divided_songs/
 melodies_generated/
 song_chunks/
 
+#NOVO
+markdown
+
 .env

@@ -227,8 +227,14 @@ const songData = [
     }
   },
   {
-    "id": "i_love_you_baby_cant_take_my_eyes_off_you",
-    "title": "I Love You Baby Cant Take My Eyes Off You"
+    "id": "i_love_you_baby",
+    "title": "I Love You Baby",
+    "melodies": {
+      "Sax Alto": "markdown/i_love_you_baby_sax_alto.md",
+      "Sax Tenor": "markdown/i_love_you_baby_sax_tenor.md",
+      "Trombone": "markdown/i_love_you_baby_trombone.md",
+      "Trompete": "markdown/i_love_you_baby_trompete.md"
+    }
   },
   {
     "id": "i_miss_her",

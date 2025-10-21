@@ -58,7 +58,7 @@ def slugify(text):
     text = re.sub(r'[óôõ]', 'o', text)
     text = re.sub(r'[úü]', 'u', text)
     text = re.sub(r'[ç]', 'c', text)
-    text = text.replace('%', 'pc')
+    text = text.replace('%', 'porcento')
     text = re.sub(r'[^a-z0-9\s/|-]', '', text)
     text = re.sub(r'[\s-]+', '_', text).strip('_')
     text = text.replace('/', '_')

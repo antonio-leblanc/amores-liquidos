@@ -11,39 +11,47 @@ Player de música e visualizador de partituras para o bloco de carnaval "Amores 
 * **Barra de Progresso:** Clique para pular para qualquer ponto da música
 
 ### Exibição de Partituras
-* **Suporte Multi-Instrumento:** Visualize melodias para Sax Alto, Trombone e Trompete/Sax Tenor
+* **Suporte Multi-Instrumento:** Visualize melodias para Sax Alto, Trombone, Trompete e Sax Tenor
 * **Exibição Interativa:** Alterne entre instrumentos com seletor dropdown
-* **Sistema de Revisão:** Músicas com notas de revisão são marcadas com asterisco (*)
+* **Partituras Markdown:** Renderização nativa com formatação rica
+* **Persistência:** Estado do instrumento salvo entre sessões
+* **Suporte Completo:** 2-4 instrumentos por música (trompete e tenor separados quando necessário)
 
 ## Estrutura do Projeto
 
 ```
 amores-liquidos/
-├── index.html          # Aplicação principal
-├── script.js           # Funcionalidade principal
-├── style.css           # Estilos
-├── song-data.js        # Definições de playlists
-├── countdown.js        # Contagem regressiva para o carnaval
-├── music/              # Arquivos de áudio MP3 (72 músicas)
-├── melodies/           # Arquivos JSON de partituras
-│   ├── amor_i_love_you.json
-│   ├── depois_do_prazer.json
-│   ├── to_nem_ai.json
-│   ├── varias_queixas.json
-│   └── vem_meu_amor.json
-└── prompts/            # Documentação e ferramentas de automação
+├── index.html              # Aplicação principal (player + partituras)
+├── script.js               # Funcionalidade principal integrada
+├── style.css               # Estilos
+├── song-data.js            # Definições de playlists
+├── song-data-final.js      # Dados unificados de músicas e partituras
+├── countdown.js            # Contagem regressiva para o carnaval
+├── music/                  # Arquivos de áudio MP3 (72 músicas)
+├── markdown/               # Arquivos markdown de partituras (164 arquivos)
+│   ├── meu_sangue_ferve_por_voce_sax_alto.md
+│   ├── meu_sangue_ferve_por_voce_trombone.md
+│   ├── meu_sangue_ferve_por_voce_trompete.md
+│   ├── meu_sangue_ferve_por_voce_sax_tenor.md
+│   └── ... (160 outros arquivos)
+├── scripts/                # Scripts de processamento
+│   ├── process.markdown.py # Processa songbook e gera markdown
+│   └── build_song_data.py  # Gera dados finais unificados
+└── prompts/                # Documentação e ferramentas de automação
     ├── criador_de_json.md
     ├── especialista_amores.md
-    └── plano_todas_as_musicas_em_json.md
+    └── ai-agent.md
 ```
 
 ## Como Usar
 
 1. **Abrir a Aplicação:** Abra `index.html` em um navegador web
-2. **Selecionar Playlist:** Use o dropdown para escolher entre as playlists
+2. **Selecionar Playlist:** Use o dropdown para escolher entre as playlists (Ordem Alfabética, Novas 2026, GIG)
 3. **Tocar Música:** Clique no botão play ou selecione uma música da lista
-4. **Ver Partitura:** Quando uma música com dados de melodia é selecionada, o painel direito mostra a partitura
-5. **Trocar Instrumentos:** Use o dropdown de instrumentos para ver diferentes partes
+4. **Ver Partitura:** Quando uma música com partitura está selecionada, o painel direito mostra a partitura em markdown
+5. **Trocar Instrumentos:** Use o dropdown de instrumentos para ver diferentes partes (2-4 instrumentos disponíveis)
+6. **Buscar Música:** Digite na caixa de busca para filtrar músicas em tempo real
+7. **Controles:** Use os botões para navegar (anterior/próxima), reproduzir aleatoriamente ou pular na música
 
 ## Adicionando Novas Músicas
 
@@ -89,9 +97,12 @@ Este repositório inclui ferramentas para automatizar a conversão de partituras
 
 - **Frontend:** HTML/CSS/JavaScript vanilla
 - **Áudio:** HTML5 Audio API
-- **Dados:** Arquivos JSON para partituras
+- **Partituras:** Arquivos Markdown renderizados com biblioteca `marked`
+- **Dados:** Sistema unificado com `song-data.js` (playlists) + `song-data-final.js` (partituras)
+- **Persistência:** localStorage para estado do instrumento
 - **Estilização:** CSS customizado com fundo gradiente
 - **Responsivo:** Layout de duas colunas (player + partitura)
+- **Processamento:** Scripts Python para extrair e processar partituras do songbook
 
 ## Requisitos
 

@@ -1,5 +1,7 @@
 # Amores Líquidos Music Player
 
+> ⚠️ **IMPORTANTE:** Esta documentação pode estar desatualizada. Sempre verifique os arquivos reais do projeto para confirmar o estado atual. Os arquivos são a fonte da verdade.
+
 Player de música e visualizador de partituras para o bloco de carnaval "Amores Líquidos". Possui um repertório completo com exibição interativa de melodias para diferentes instrumentos.
 
 ## Funcionalidades
@@ -55,36 +57,43 @@ amores-liquidos/
 
 ## Adicionando Novas Músicas
 
-### Arquivos de Áudio
-1. Adicione arquivo MP3 na pasta `music/` com nomenclatura com underscore (ex: `nova_musica.mp3`)
-2. Adicione o nome da música no array `songsAlphabetical` em `song-data.js`
-3. Adicione à playlist desejada no objeto `playlists`
+### Processo Completo para Atualizar o Songbook
 
-### Partituras
-1. Crie arquivo JSON na pasta `melodies/` com o mesmo nome do arquivo de áudio
-2. Siga a estrutura definida nos arquivos JSON existentes:
+**1. Atualizar o Songbook Original:**
+- Edite o documento Word/Google Docs com as novas músicas e partituras
 
-```json
-{
-  "songTitle": "Nome da Música",
-  "review_needed": ["Notas de revisão opcionais"],
-  "structure": ["Seção1", "Seção2", "Refrão"],
-  "instruments": [
-    {
-      "name": "Sax Alto",
-      "sections": [
-        {
-          "name": "Seção1",
-          "lines": [
-            {"melody": "Do Re Mi Fa Sol"},
-            {"melody": "La Si Do Re Mi"}
-          ]
-        }
-      ]
-    }
-  ]
-}
+**2. Converter para Markdown:**
+```bash
+pandoc -f docx -t gfm -o "raw_songbook/songbook.md" "raw_songbook/songbook.docx"
 ```
+
+**3. Processar as Partituras:**
+```bash
+uv run .\scripts\process.markdown.py
+```
+
+**4. Gerar Dados Finais:**
+```bash
+uv run .\scripts\build_song_data.py
+```
+
+**5. Adicionar Arquivos de Áudio:**
+- Adicione arquivo MP3 na pasta `music/` com nomenclatura com underscore (ex: `nova_musica.mp3`)
+- Adicione o nome da música no array `songsAlphabetical` em `song-data.js`
+- Adicione à playlist desejada no objeto `playlists`
+
+### Estrutura das Partituras no Songbook
+
+As partituras devem estar organizadas no songbook com títulos como:
+- `# **Nome da Música (Sax Alto)**`
+- `# **Nome da Música (Trombone)**`
+- `# **Nome da Música (Trompete)**` ou `# **Nome da Música (Tenor)**`
+- `# **Nome da Música (Trompete/Tenor)**` (quando for a mesma partitura)
+
+O script automaticamente:
+- Detecta se trompete e tenor são separados ou agrupados
+- Gera arquivos markdown individuais
+- Mapeia para o sistema de dados final
 
 ## Projeto de Automação
 

@@ -142,10 +142,6 @@ const songData = [
     }
   },
   {
-    "id": "diga_que_valeu",
-    "title": "Diga Que Valeu"
-  },
-  {
     "id": "do_seu_lado",
     "title": "Do Seu Lado",
     "melodies": {
@@ -508,10 +504,6 @@ const songData = [
       "Trombone": "markdown/vem_meu_amor_trombone.md",
       "Trompete   Sax Tenor": "markdown/vem_meu_amor_trompete___sax_tenor.md"
     }
-  },
-  {
-    "id": "voa_voa",
-    "title": "Voa Voa"
   },
   {
     "id": "voce_me_vira_a_cabeca",

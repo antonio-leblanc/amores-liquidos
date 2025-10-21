@@ -119,8 +119,9 @@ const songData = [
     "title": "Depois Do Prazer",
     "melodies": {
       "Sax Alto": "markdown/depois_do_prazer_sax_alto.md",
+      "Sax Tenor": "markdown/depois_do_prazer_sax_tenor.md",
       "Trombone": "markdown/depois_do_prazer_trombone.md",
-      "Trompete   Sax Tenor": "markdown/depois_do_prazer_trompete___sax_tenor.md"
+      "Trompete": "markdown/depois_do_prazer_trompete.md"
     }
   },
   {
@@ -313,8 +314,9 @@ const songData = [
     "title": "Meu Sangue Ferve Por Voce",
     "melodies": {
       "Sax Alto": "markdown/meu_sangue_ferve_por_voce_sax_alto.md",
+      "Sax Tenor": "markdown/meu_sangue_ferve_por_voce_sax_tenor.md",
       "Trombone": "markdown/meu_sangue_ferve_por_voce_trombone.md",
-      "Trompete   Sax Tenor": "markdown/meu_sangue_ferve_por_voce_trompete___sax_tenor.md"
+      "Trompete": "markdown/meu_sangue_ferve_por_voce_trompete.md"
     }
   },
   {
@@ -349,8 +351,9 @@ const songData = [
     "title": "Pintura Intima",
     "melodies": {
       "Sax Alto": "markdown/pintura_intima_sax_alto.md",
+      "Sax Tenor": "markdown/pintura_intima_sax_tenor.md",
       "Trombone": "markdown/pintura_intima_trombone.md",
-      "Trompete   Sax Tenor": "markdown/pintura_intima_trompete___sax_tenor.md"
+      "Trompete": "markdown/pintura_intima_trompete.md"
     }
   },
   {

@@ -18,7 +18,6 @@ const songsAlphabetical = [
 	'depois_do_prazer',
 	'deus_me_livre',
 	'deusa_do_amor',
-	'diga_que_valeu',
 	'do_seu_lado',
 	'dont_stop',
 	'eva',
@@ -65,7 +64,6 @@ const songsAlphabetical = [
 	'vai_sacudir_vai_abalar',
 	'varias_queixas',
 	'vem_meu_amor',
-	'voa_voa',
 	'voce_me_vira_a_cabeca',
 	'voce_nao_entende_nada'
 ];
@@ -114,4 +112,7 @@ const playlists = {
 
 const caiu = [
 	'coracao_radiante',
+	'diga_que_valeu',
+	'voa_voa',
+
 ]

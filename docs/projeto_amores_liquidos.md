@@ -1,5 +1,8 @@
 # Projeto Amores Líquidos - Documentação
 
+## ⚠️ **IMPORTANTE - Sempre Verifique os Arquivos**
+**Esta documentação pode estar desatualizada. Sempre verifique os arquivos reais do projeto para confirmar o estado atual. Não confie 100% na documentação - ela serve como guia, mas os arquivos são a fonte da verdade.**
+
 ## 📋 Visão Geral
 Player de música e visualizador de partituras para o bloco de carnaval "Amores Líquidos".
 
@@ -79,6 +82,35 @@ uv run .\scripts\process.markdown.py
 # Gerar dados finais
 uv run .\scripts\build_song_data.py
 ```
+
+## 🔍 Como Verificar o Estado Real do Projeto
+
+**Para confirmar o estado atual, sempre verifique:**
+
+1. **Arquivos principais:**
+   - `index.html` - Interface principal
+   - `script.js` - Funcionalidades
+   - `song-data-final.js` - Dados de músicas e partituras
+
+2. **Contar arquivos reais:**
+   ```bash
+   # Contar músicas MP3
+   ls music/*.mp3 | wc -l
+   
+   # Contar partituras markdown
+   ls markdown/*.md | wc -l
+   ```
+
+3. **Verificar funcionalidades:**
+   - Abrir `index.html` no navegador
+   - Testar player, playlists, busca
+   - Verificar se partituras carregam
+   - Testar seleção de instrumentos
+
+4. **Verificar dados:**
+   - Abrir `song-data-final.js` e contar músicas
+   - Verificar se músicas têm propriedade `melodies`
+   - Confirmar nomes dos instrumentos
 
 ## 📊 Status Atual
 

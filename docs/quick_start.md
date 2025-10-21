@@ -2,53 +2,35 @@
 
 ## Para Nova IA Continuar o Projeto
 
-### **1. Contexto Rápido:**
-- Projeto: Player de música + visualizador de partituras
-- Status: Sistema Markdown funcionando, precisa integrar player
-- Próximo passo: Adicionar controles de áudio ao `newsite.html`
+### **1. Contexto:**
+- **Objetivo:** Player de música + visualizador de partituras
+- **Fonte:** Songbook no Google Docs (~180 páginas)
+- **Conversão:** `pandoc -f docx -t gfm -o "raw_songbook/songbook.md" "raw_songbook/songbook.docx"`
+- **Desafio:** Unificar player + partituras em uma interface
 
-### **2. Arquivos Principais:**
-- `newsite.html` - Protótipo atual (partituras funcionando)
-- `prototipo.js` - Lógica do protótipo
-- `song-data-final.js` - Dados gerados automaticamente
-- `index.html` + `script.js` - Site antigo (copiar player de lá)
+### **2. Estado Atual:**
+- `index.html` - Site com player funcional
+- `newsite.html` - Protótipo com partituras funcionando
+- Scripts Python para processar songbook
+- ~55 músicas identificadas
 
-### **3. Comandos Essenciais:**
+### **3. Comandos:**
 ```bash
-# Regenerar dados (se necessário)
+# Converter songbook
+pandoc -f docx -t gfm -o "raw_songbook/songbook.md" "raw_songbook/songbook.docx"
+
+# Processar dados
 uv run .\scripts\process.markdown.py
 uv run .\scripts\build_song_data.py
 ```
 
-### **4. Plano de Integração:**
-1. **Copiar player** do `index.html` para `newsite.html`
-2. **Integrar controles** com `song-data-final.js`
-3. **Aplicar estilos** do `style.css`
-4. **Testar** funcionalidade completa
+### **4. Desafios:**
+- Algumas músicas têm partituras faltando
+- Trompete/tenor às vezes são separados
+- Nem todas as músicas têm MP3
 
-### **5. Estrutura de Dados:**
-```json
-{
-  "id": "nome_musica",
-  "title": "Nome Musica", 
-  "melodies": {
-    "Sax Alto": "markdown/musica_sax_alto.md",
-    "Trombone": "markdown/musica_trombone.md",
-    "Trompete   Sax Tenor": "markdown/musica_trompete___sax_tenor.md"
-  }
-}
-```
-
-### **6. Status Atual:**
-- ✅ 55 músicas extraídas
-- ✅ 160 arquivos Markdown
-- ✅ JSON gerado automaticamente
-- ✅ Partituras renderizando
-- ❌ Player de música (próximo passo)
-
-### **7. Objetivo:**
-Criar sistema unificado com player + partituras em Markdown, substituindo o sistema JSON complexo atual.
+### **5. Objetivo:**
+Criar interface onde usuário escolhe música e vê partituras disponíveis (2-4 instrumentos por música).
 
 ---
-**Tempo estimado:** 1h30 para integração completa
-**Prioridade:** Fase 1 - Adicionar player básico
+**Status:** Protótipos funcionais, integração pendente

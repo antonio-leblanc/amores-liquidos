@@ -1,170 +1,102 @@
-# Projeto Amores Líquidos - Documentação Completa
+# Projeto Amores Líquidos - Documentação
 
 ## 📋 Visão Geral
-Player de música e visualizador de partituras para o bloco de carnaval "Amores Líquidos". Sistema híbrido que combina player de áudio com renderização de partituras em Markdown.
+Player de música e visualizador de partituras para o bloco de carnaval "Amores Líquidos".
 
-## 🏗️ Arquitetura Atual
+## 🎯 Objetivo
+Criar um player onde:
+- Usuário escolhe uma música
+- Aparecem as partituras disponíveis para essa música
+- Geralmente são 3 instrumentos (Sax Alto, Trombone, Trompete/Sax Tenor)
+- Podem variar de 2 a 4 partituras (quando trompete e tenor são separados)
 
-### **Sistema de Dados:**
-- **Songbook original:** `raw_songbook/songbook.md` (180 páginas)
-- **Scripts Python:** `scripts/` (processamento automatizado)
-- **Dados finais:** `song-data-final.js` (JSON com todas as músicas)
-- **Partituras:** `markdown/` (arquivos .md por instrumento)
+## 📚 Fonte da Verdade
+- **Songbook original:** Documento no Google Docs
+- **Conteúdo:** ~180 páginas com partituras organizadas por música e instrumento
+- **Conversão:** `pandoc -f docx -t gfm -o "raw_songbook/songbook.md" "raw_songbook/songbook.docx"`
+- **Formato final:** Markdown estruturado com títulos e seções
 
-### **Fluxo de Processamento:**
-1. `process.markdown.py` → Converte songbook em arquivos Markdown individuais
-2. `build_song_data.py` → Gera JSON com mapeamento de melodias
-3. Frontend → Carrega JSON e renderiza partituras dinamicamente
+## 📁 Estado Atual do Projeto
 
-## 📁 Estrutura de Arquivos
+### **Arquivos Principais:**
+- `raw_songbook/songbook.md` - Songbook convertido do Google Docs
+- `music/` - Arquivos MP3 das músicas
+- `scripts/` - Scripts Python para processamento
+- `index.html` - Site atual (funcional mas com limitações)
+- `newsite.html` - Protótipo em desenvolvimento
 
-```
-amores-liquidos/
-├── index.html              # Site antigo (JSONs complexos)
-├── newsite.html            # Protótipo novo (Markdown)
-├── prototipo.js            # Lógica do protótipo
-├── song-data-final.js      # JSON gerado automaticamente
-├── scripts/
-│   ├── process.markdown.py # Converte songbook → Markdown
-│   └── build_song_data.py  # Gera JSON final
-├── markdown/               # Partituras por instrumento
-│   ├── musica_instrumento.md
-│   └── ...
-├── music/                  # Arquivos MP3
-├── melodies/               # JSONs antigos (legado)
-└── docs/                   # Documentação
-```
+### **Dados Processados:**
+- **~55 músicas** identificadas no songbook
+- **Partituras por instrumento** extraídas
+- **Sistema de mapeamento** entre músicas e partituras
 
-## 🎵 Dados das Músicas
+### **Desafios Identificados:**
+- Algumas músicas têm partituras faltando (principalmente trombone)
+- Trompete e tenor às vezes são partituras separadas
+- Nem todas as músicas do songbook têm arquivo MP3 correspondente
 
-### **Estatísticas:**
-- **55 músicas** extraídas do songbook
-- **3 instrumentos:** Sax Alto, Trombone, Trompete/Sax Tenor
-- **~160 arquivos** Markdown gerados
-- **68 músicas** na lista principal (algumas sem MP3)
+## 🛠️ Ferramentas Disponíveis
 
-### **Estrutura JSON:**
-```json
-{
-  "id": "nome_da_musica",
-  "title": "Nome Da Musica",
-  "melodies": {
-    "Sax Alto": "markdown/musica_sax_alto.md",
-    "Trombone": "markdown/musica_trombone.md",
-    "Trompete   Sax Tenor": "markdown/musica_trompete___sax_tenor.md"
-  }
-}
-```
+### **Scripts Python:**
+- Scripts para processar o songbook e extrair partituras
+- Comando: `uv run .\scripts\process.markdown.py`
+- Comando: `uv run .\scripts\build_song_data.py`
 
-## 🛠️ Scripts Python
+### **Sites Existentes:**
+- `index.html` - Site atual com player funcional
+- `newsite.html` - Protótipo com visualização de partituras
 
-### **process.markdown.py:**
-- **Função:** Converte songbook em arquivos Markdown individuais
-- **Comando:** `uv run .\scripts\process.markdown.py`
-- **Output:** 160 arquivos em `markdown/`
-- **Status:** ✅ Funcionando perfeitamente
+## 🎨 Estado dos Frontends
 
-### **build_song_data.py:**
-- **Função:** Gera JSON com mapeamento de melodias
-- **Comando:** `uv run .\scripts\build_song_data.py`
-- **Output:** `song-data-final.js`
-- **Status:** ✅ Funcionando perfeitamente
+### **Site Atual (index.html):**
+- ✅ Player de música completo
+- ✅ Controles de reprodução
+- ✅ Playlists e busca
+- ❌ Sistema de partituras limitado
 
-## 🎨 Frontend
+### **Protótipo (newsite.html):**
+- ✅ Visualização de partituras
+- ✅ Seleção dinâmica de instrumentos
+- ❌ Sem player de música
+- ❌ Interface básica
 
-### **Sistema Atual (newsite.html):**
-- **Player:** ❌ Não implementado
-- **Partituras:** ✅ Funcionando (Markdown)
-- **Interface:** ✅ Básica mas funcional
-- **Dados:** ✅ Integrado com JSON gerado
+## 🎯 Objetivos Pendentes
 
-### **Sistema Antigo (index.html):**
-- **Player:** ✅ Completo com controles
-- **Partituras:** ❌ JSONs complexos (legado)
-- **Interface:** ✅ Profissional
-- **Dados:** ❌ Sistema rígido
-
-## 🚀 Próximos Passos (Plano de Integração)
-
-### **FASE 1: Adicionar Player (30-45 min)**
-- Copiar controles de áudio do `index.html`
-- Integrar com `song-data-final.js`
-- Manter funcionalidade de partituras
-
-### **FASE 2: Melhorar Interface (20-30 min)**
-- Aplicar estilos do `style.css`
-- Layout de duas colunas (player + partitura)
-- Responsividade
-
-### **FASE 3: Funcionalidades Extras (15-20 min)**
-- Playlists (opcional)
-- Busca (opcional)
-- Controles avançados
+1. **Unificar funcionalidades** - Combinar player + partituras
+2. **Melhorar interface** - Design mais profissional
+3. **Resolver inconsistências** - Partituras faltando
+4. **Otimizar experiência** - Fluxo intuitivo para músicos
 
 ## 🔧 Comandos Úteis
 
 ```bash
+# Converter songbook do Google Docs para Markdown
+pandoc -f docx -t gfm -o "raw_songbook/songbook.md" "raw_songbook/songbook.docx"
+
 # Processar songbook
 uv run .\scripts\process.markdown.py
 
-# Gerar JSON final
+# Gerar dados finais
 uv run .\scripts\build_song_data.py
-
-# Verificar arquivos gerados
-Get-ChildItem markdown\*.md | Measure-Object
 ```
 
-## 📊 Status do Projeto
+## 📊 Status Atual
 
-### **✅ Concluído:**
+### **✅ Funcionando:**
 - Extração de músicas do songbook
-- Geração de arquivos Markdown
-- Sistema de mapeamento JSON
-- Protótipo funcional de partituras
+- Visualização de partituras
+- Player de música básico
 
-### **🔄 Em Andamento:**
-- Integração player + partituras
-- Melhoria da interface
+### **🔄 Em Desenvolvimento:**
+- Integração completa
+- Interface unificada
 
-### **📋 Pendente:**
-- Sistema completo unificado
-- Testes finais
-- Deploy/produção
-
-## 🎯 Objetivos Finais
-
-1. **Sistema unificado** com player + partituras
-2. **Interface moderna** e responsiva
-3. **Dados flexíveis** (Markdown)
-4. **Fácil manutenção** e expansão
-
-## 💡 Decisões Técnicas
-
-### **Por que Markdown > JSON:**
-- ✅ Mais fácil de editar
-- ✅ Estrutura flexível
-- ✅ Versionamento Git
-- ✅ Músicos podem editar diretamente
-
-### **Por que Integrar no Protótipo:**
-- ✅ Menos trabalho
-- ✅ Sistema mais limpo
-- ✅ Arquitetura melhor
-- ✅ Futuro-proof
-
-## 🆘 Troubleshooting
-
-### **Problemas Conhecidos:**
-- Algumas músicas podem ter instrumentos faltando
-- Duplicações foram resolvidas
-- Mapeamento de instrumentos corrigido
-
-### **Soluções:**
-- Rodar scripts novamente se necessário
-- Verificar logs de processamento
-- Validar arquivos Markdown gerados
+### **❓ Questões em Aberto:**
+- Melhor abordagem para unificar player + partituras
+- Como lidar com partituras faltando
+- Interface ideal para músicos
 
 ---
 
 **Última atualização:** $(Get-Date)
-**Status:** Sistema funcional, integração em andamento
+**Status:** Protótipos funcionais, integração pendente

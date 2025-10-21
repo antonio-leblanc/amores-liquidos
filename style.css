@@ -17,14 +17,22 @@ body {
   align-items: center;
   font-family: 'Lato', sans-serif;
   margin: 0;
-  padding: 20px;
+  padding: 15px;
 }
 
 .header {
   width: 100%;
-  text-align: center;
+  text-align: left;
   flex-shrink: 0; /* Impede que o header encolha */
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  height: 10vh; /* 10% da altura da tela */
+  display: flex;
+  align-items: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2.5rem;
 }
 
 .main-container {
@@ -34,6 +42,7 @@ body {
   max-width: 1400px;
   flex-grow: 1; /* Faz este container crescer para ocupar o espaço restante */
   min-height: 0; /* Correção crucial para o Flexbox funcionar em todas as situações */
+  height: 90vh; /* 90% da altura da tela (resto após header) */
 }
 
 /* --- COLUNA DA ESQUERDA (PLAYER & PLAYLIST) --- */
@@ -95,9 +104,10 @@ body {
   flex: 1.8; /* Ocupa 1.8 partes do espaço (maior) */
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 15px;
-  padding: 20px;
+  padding: 15px;
   overflow-y: auto;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  height: 100%; /* Ocupa toda altura disponível */
 }
 
 /* --- COMPONENTES DO PLAYER --- */

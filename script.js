@@ -37,11 +37,22 @@ function updatePlaylistHighlight() {
 }
 
 let currentMelodyData = null;
+let currentInstrument = null;
 
 // Função para buscar dados de partituras no song-data-final.js
 function getMelodyData(songId) {
   const melodyData = songData.find(song => song.id === songId);
   return melodyData && melodyData.melodies ? melodyData : null;
+}
+
+// Funções para gerenciar estado do instrumento
+function saveInstrumentState(instrument) {
+  localStorage.setItem('selectedInstrument', instrument);
+  currentInstrument = instrument;
+}
+
+function loadInstrumentState() {
+  return localStorage.getItem('selectedInstrument');
 }
 
 async function loadSong(song) {
@@ -195,11 +206,16 @@ function clearMelodyColumn() {
 function renderMelodyMarkdown(data) {
   if (!melodyContainer) return;
 
-  const instrumentOptions = Object.keys(data.melodies).map(instrument => 
+  const availableInstruments = Object.keys(data.melodies);
+  const instrumentOptions = availableInstruments.map(instrument => 
     `<option value="${instrument}">${instrument}</option>`
   ).join('');
 
-  const firstInstrument = Object.keys(data.melodies)[0];
+  // Tenta usar o instrumento salvo, senão usa o primeiro disponível
+  const savedInstrument = loadInstrumentState();
+  const selectedInstrument = (savedInstrument && availableInstruments.includes(savedInstrument)) 
+    ? savedInstrument 
+    : availableInstruments[0];
   
   melodyContainer.innerHTML = `
     <h3 class="song-title">
@@ -213,15 +229,20 @@ function renderMelodyMarkdown(data) {
     </div>
   `;
   
-  loadInstrumentMarkdown(firstInstrument, data.melodies[firstInstrument]);
-
+  // Define o valor selecionado no dropdown
   const selector = document.getElementById('instrument-selector');
   if (selector) {
+    selector.value = selectedInstrument;
+    
     selector.addEventListener('change', (e) => {
-      const selectedInstrument = e.target.value;
-      loadInstrumentMarkdown(selectedInstrument, data.melodies[selectedInstrument]);
+      const newInstrument = e.target.value;
+      saveInstrumentState(newInstrument);
+      loadInstrumentMarkdown(newInstrument, data.melodies[newInstrument]);
     });
   }
+  
+  // Carrega a partitura do instrumento selecionado
+  loadInstrumentMarkdown(selectedInstrument, data.melodies[selectedInstrument]);
 }
 
 function loadInstrumentMarkdown(instrumentName, markdownFile) {

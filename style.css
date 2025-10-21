@@ -63,12 +63,23 @@ body {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* --- Estilos para o novo Dropdown de Playlist --- */
-.playlist-selector-container {
+/* --- Barra de Controles com Dropdowns Lado a Lado --- */
+.controls-bar {
+  display: flex;
+  gap: 10px;
   margin-bottom: 10px;
 }
 
-#playlist-selector {
+.playlist-selector-container {
+  flex: 1;
+}
+
+.instrument-selector-container {
+  flex: 1;
+}
+
+#playlist-selector,
+#instrument-selector {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
@@ -214,15 +225,6 @@ body {
   text-transform: capitalize;
 }
 
-#instrument-selector {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  background-color: #fff;
-}
 
 .melody-column .section h4 {
   background-color: #e8e2ea;

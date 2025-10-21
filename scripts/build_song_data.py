@@ -5,72 +5,81 @@ import json
 # --- CONFIGURAÇÃO ---
 SONG_DATA_INPUT_FILE = 'song-data.js'
 MARKDOWN_DIR = 'markdown'
-SONG_DATA_OUTPUT_FILE = 'song-data-final.js' # O novo arquivo que o index.html vai usar
+SONG_DATA_OUTPUT_FILE = 'song-data-final.js'
 
 def slug_to_title(slug):
     """Converte um slug_de_musica para um Título De Música."""
-    return slug.replace('_', ' ').title()
+    # Adicionado tratamento para 'pc' -> '%'
+    title = slug.replace('_', ' ').replace('pc', '%').title()
+    return title
 
-def get_instrument_from_filename(filename):
-    """Extrai o nome do instrumento do nome do arquivo."""
-    # Ex: 'depois_do_prazer_sax_alto.md' -> 'sax_alto' -> 'Sax Alto'
+def get_instrument_from_filename(filename, song_slug):
+    """
+    (MODIFICADO) Extrai o nome do instrumento do arquivo, sabendo qual é o slug da música.
+    """
+    # Remove a extensão .md
     base_name = filename.rsplit('.', 1)[0]
-    instrument_slug = base_name.rsplit('_', 1)[-1]
-    return instrument_slug.replace('_', ' ').replace('/', ' / ').title()
+    # Remove o slug da música e o underscore inicial. Ex: "acima_do_sol_sax_alto" -> "sax_alto"
+    instrument_slug = base_name.replace(f"{song_slug}_", "", 1)
+    
+    # Converte o slug do instrumento para um nome legível
+    # Ex: "sax_alto" -> "Sax Alto"
+    instrument_name = instrument_slug.replace('_', ' ').replace('___', ' / ').title()
+    return instrument_name
 
-# --- PASSO 1 & 2: LER O ARQUIVO JS ORIGINAL E EXTRAIR A LISTA ---
+# --- PASSO 1: LER O ARQUIVO JS ORIGINAL E EXTRAIR A LISTA DE SLUGS ---
 print(f"Lendo o arquivo de base: {SONG_DATA_INPUT_FILE}")
-with open(SONG_DATA_INPUT_FILE, 'r', encoding='utf-8') as f:
-    content = f.read()
-
-# Regex para encontrar o array 'songsAlphabetical' e capturar seu conteúdo
-match = re.search(r'const\s+songsAlphabetical\s*=\s*\[([^\]]+)\]', content, re.DOTALL)
-
-if not match:
-    print("ERRO: Array 'songsAlphabetical' não encontrado em song-data.js")
+try:
+    with open(SONG_DATA_INPUT_FILE, 'r', encoding='utf-8') as f:
+        content = f.read()
+except FileNotFoundError:
+    print(f"ERRO: Arquivo de entrada '{SONG_DATA_INPUT_FILE}' não encontrado.")
     exit()
 
-# Limpa e cria a lista de slugs
+match = re.search(r'const\s+songsAlphabetical\s*=\s*\[([^\]]+)\]', content, re.DOTALL)
+if not match:
+    print(f"ERRO: Array 'songsAlphabetical' não encontrado em '{SONG_DATA_INPUT_FILE}'")
+    exit()
+
 song_slugs_text = match.group(1)
-song_slugs = [slug.strip().strip("'\"") for slug in song_slugs_text.split(',') if slug.strip()]
+song_slugs = sorted([slug.strip().strip("'\"") for slug in song_slugs_text.split(',') if slug.strip()])
 print(f"Encontradas {len(song_slugs)} músicas na lista principal.")
 
-
-# --- PASSO 3: ESCANEAR OS MARKDOWNS E MONTAR O MAPA DE MELODIAS ---
+# --- PASSO 2: ESCANEAR OS MARKDOWNS UMA VEZ ---
 print(f"Escaneando diretório de melodias: {MARKDOWN_DIR}")
-melodies_map = {}
+markdown_files = []
 if os.path.exists(MARKDOWN_DIR):
-    for filename in os.listdir(MARKDOWN_DIR):
-        if filename.endswith('.md'):
-            song_slug = filename.rsplit('_', 1)[0]
-            instrument_name = get_instrument_from_filename(filename)
-            
-            if song_slug not in melodies_map:
-                melodies_map[song_slug] = {}
-            
-            melodies_map[song_slug][instrument_name] = os.path.join(MARKDOWN_DIR, filename).replace('\\', '/')
+    markdown_files = [f for f in os.listdir(MARKDOWN_DIR) if f.endswith('.md')]
 
-# --- PASSO 4: CONSTRUIR A ESTRUTURA DE DADOS FINAL ---
+# --- PASSO 3: (LÓGICA CORRIGIDA) CONSTRUIR A ESTRUTURA DE DADOS ---
 print("Construindo a estrutura de dados final...")
 final_song_data = []
-for slug in sorted(song_slugs): # Ordena para garantir consistência
+
+for slug in song_slugs:
     song_object = {
         'id': slug,
         'title': slug_to_title(slug)
     }
     
-    # Se encontrarmos melodias para este slug, adicionamos
-    if slug in melodies_map:
-        song_object['melodies'] = melodies_map[slug]
+    melodies_for_this_song = {}
+    
+    # Itera sobre os arquivos encontrados e verifica se eles pertencem a este slug
+    for filename in markdown_files:
+        if filename.startswith(f"{slug}_"):
+            instrument_name = get_instrument_from_filename(filename, slug)
+            # Normaliza o caminho do arquivo para ser sempre com barras '/'
+            file_path = os.path.join(MARKDOWN_DIR, filename).replace('\\', '/')
+            melodies_for_this_song[instrument_name] = file_path
+            
+    # Se encontrou alguma melodia, adiciona o objeto ao song_object
+    if melodies_for_this_song:
+        song_object['melodies'] = melodies_for_this_song
     
     final_song_data.append(song_object)
 
-# --- PASSO 5: GERAR O NOVO ARQUIVO JS ---
+# --- PASSO 4: GERAR O NOVO ARQUIVO JS ---
 print(f"Gerando o novo arquivo de dados: {SONG_DATA_OUTPUT_FILE}")
-# Converte a lista python para uma string JSON bem formatada
 json_string = json.dumps(final_song_data, indent=2, ensure_ascii=False)
-
-# Adiciona o prefixo para ser um arquivo JS válido
 output_content = f"const songData = {json_string};\n"
 
 with open(SONG_DATA_OUTPUT_FILE, 'w', encoding='utf-8') as f:

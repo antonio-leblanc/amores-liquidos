@@ -10,6 +10,7 @@ const progressContainer = document.getElementById('progress-container');
 const title = document.getElementById('title');
 const searchInput = document.getElementById('search-input');
 const playlist = document.getElementById('playlist');
+const melodyContainer = document.getElementById('melody-display-container');
 
 let currentSongs = playlists[defaultPlaylistName];
 let songIndex = 0;
@@ -190,8 +191,6 @@ searchInput.addEventListener('input', (e) => {
     }
   });
 });
-
-const melodyContainer = document.getElementById('melody-display-container');
 
 function clearMelodyColumn() {
   if (melodyContainer) {

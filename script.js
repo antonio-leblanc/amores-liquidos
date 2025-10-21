@@ -201,6 +201,11 @@ function clearMelodyColumn() {
           <p>Melodia não disponível para esta música.</p>
       </div>`;
   }
+  // Esconde o dropdown de instrumentos quando não há partitura
+  const instrumentSelectorContainer = document.querySelector('.instrument-selector-container');
+  if (instrumentSelectorContainer) {
+    instrumentSelectorContainer.style.display = 'none';
+  }
 }
 
 function renderMelodyMarkdown(data) {
@@ -218,16 +223,18 @@ function renderMelodyMarkdown(data) {
     : availableInstruments[0];
   
   melodyContainer.innerHTML = `
-    <h3 class="song-title">
-      ${data.title}
-    </h3>
-
-    <select id="instrument-selector">
-      ${instrumentOptions}
-    </select>
     <div id="melody-content">
     </div>
   `;
+  
+  // Move o dropdown de instrumentos para a barra de controles
+  const instrumentSelectorContainer = document.querySelector('.instrument-selector-container');
+  const instrumentSelector = document.createElement('select');
+  instrumentSelector.id = 'instrument-selector';
+  instrumentSelector.innerHTML = instrumentOptions;
+  instrumentSelectorContainer.innerHTML = '';
+  instrumentSelectorContainer.appendChild(instrumentSelector);
+  instrumentSelectorContainer.style.display = 'block';
   
   // Define o valor selecionado no dropdown
   const selector = document.getElementById('instrument-selector');

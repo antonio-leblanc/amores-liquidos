@@ -31,7 +31,7 @@ mi mi si si si / la sol fa# sol fa# sol fa# mi
 Mi Mi Mi Mi Re / Fa# Fa# Fa# Fa# Fa# Fa# Fa# Sol
 
 Sol Fa# Sol Fa# Sol
-Mi<img src="media/image2.png" style="width:0.22917in;height:0.53125in" />
+Mi<img src="media/image1.png" style="width:0.22917in;height:0.53125in" />
 
 La Sol Fa# Fa# Sol Mi **2x**
 

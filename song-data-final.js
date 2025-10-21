@@ -28,7 +28,12 @@ const songData = [
   },
   {
     "id": "amor_de_chocolate",
-    "title": "Amor De Chocolate"
+    "title": "Amor De Chocolate",
+    "melodies": {
+      "Sax Alto": "markdown/amor_de_chocolate_sax_alto.md",
+      "Trombone": "markdown/amor_de_chocolate_trombone.md",
+      "Trompete   Sax Tenor": "markdown/amor_de_chocolate_trompete___sax_tenor.md"
+    }
   },
   {
     "id": "amor_i_love_you",
@@ -77,11 +82,21 @@ const songData = [
   },
   {
     "id": "bailao",
-    "title": "Bailao"
+    "title": "Bailao",
+    "melodies": {
+      "Sax Alto": "markdown/bailao_sax_alto.md",
+      "Trombone": "markdown/bailao_trombone.md",
+      "Trompete   Sax Tenor": "markdown/bailao_trompete___sax_tenor.md"
+    }
   },
   {
     "id": "baile_da_gaiola",
-    "title": "Baile Da Gaiola"
+    "title": "Baile Da Gaiola",
+    "melodies": {
+      "Sax Alto": "markdown/baile_da_gaiola_sax_alto.md",
+      "Trombone": "markdown/baile_da_gaiola_trombone.md",
+      "Trompete   Sax Tenor": "markdown/baile_da_gaiola_trompete___sax_tenor.md"
+    }
   },
   {
     "id": "beleza_rara",
@@ -184,7 +199,12 @@ const songData = [
   },
   {
     "id": "festa",
-    "title": "Festa"
+    "title": "Festa",
+    "melodies": {
+      "Sax Alto": "markdown/festa_sax_alto.md",
+      "Trombone": "markdown/festa_trombone.md",
+      "Trompete   Sax Tenor": "markdown/festa_trompete___sax_tenor.md"
+    }
   },
   {
     "id": "fico_assim_sem_voce",

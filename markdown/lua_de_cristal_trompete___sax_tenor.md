@@ -59,25 +59,7 @@ MI FA# SOL SI LA LA<br />
 <mark>LA SOL SOL </mark>MI<mark> SOL<br />
 LA SOL SOL MI SOL<br />
 LA SOL SOL MI SOL SOL . SI LA LA SOL SI</mark></p></th>
-<th><p><strong><mark>1 / 2</mark></strong></p>
-<p><mark>Tudo que eu fizer</mark></p>
-<p><mark>Eu vou tentar melhor do que já fiz</mark></p>
-<p><mark>Esteja o meu destino onde estiver</mark></p>
-<p><mark>Eu vou buscar a sorte e ser feliz</mark></p>
-<p><strong><mark>3</mark></strong></p>
-<p><mark>Vamos com você</mark></p>
-<p><mark>Nós somos invencíveis , pode crer</mark></p>
-<p><mark>Todos somos um</mark></p>
-<p><mark>E juntos não existe mal nenhum</mark></p>
-<p><strong><mark>4</mark></strong></p>
-<p><mark>Vamos com você</mark></p>
-<p><mark>Nós somos invencíveis , pode crer</mark></p>
-<p><mark>O sonho está no ar</mark></p>
-<p><mark>O amor me faz cantar</mark></p>
-<p><strong><mark>5</mark></strong></p>
-<p><mark>Lua de cristal</mark> <mark>,</mark></p>
-<p><mark>que</mark> <mark>me</mark> <mark>faz</mark> <mark>sonhar</mark></p>
-<p><mark>Faz</mark> <mark>de</mark> <mark>mim</mark> <mark>estrela</mark> <mark>que</mark> <mark>eu</mark> <mark>já</mark> <mark>sei</mark> <mark>brilhar</mark></p></th>
+<th></th>
 </tr>
 </thead>
 <tbody>

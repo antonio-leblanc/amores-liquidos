@@ -17,10 +17,9 @@ Sol La Si.../ Sol Fa# Mi...Sol La Si...
 
 **1**
 
-Mi / (si) si si do si do si do
-si<img src="media/image2.png" style="width:0.20172in;height:0.42708in" />
+Mi / (si) si si do si do si do si
 
-do si la fa# sol la si **4x**
+do si la fa# sol la si (**4x)**
 
 Mi / si si si do si do si do si...
 

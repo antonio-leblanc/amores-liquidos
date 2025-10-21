@@ -18,9 +18,8 @@ Re Mi Fa#.../ Re do# si.../ Re Mi Fa#...
 **1**
 
 Si / (Fa#) Fa# Fa# Sol Fa# Sol Fa# Sol Fa#
-<img src="media/image2.png" style="width:0.20172in;height:0.51042in" />
 
-Sol Fa# Mi do# Re Mi Fa# **4x**
+Sol Fa# Mi do# Re Mi Fa# (**4x)**
 
 Si / Fa# Fa# Fa# Sol Fa# Sol Fa# Sol Fa#...
 

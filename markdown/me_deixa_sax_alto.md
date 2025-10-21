@@ -31,7 +31,7 @@ si si Fa# Fa# Fa# / Mi Re do# Re do# Re do# si
 Si Si Si Si La / DO# DO# DO# DO# DO# DO# DO# RE
 
 RE DO# RE DO# RE
-Si<img src="media/image2.png" style="width:0.22917in;height:0.53125in" />
+Si<img src="media/image1.png" style="width:0.22917in;height:0.53125in" />
 
 MI RE DO# DO# RE Si **2x**
 

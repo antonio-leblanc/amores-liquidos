@@ -17,10 +17,9 @@ Fa Sol La.../ Fa Mi Re...Fa Sol La...
 
 **1**
 
-Re / (la) la la sib la sib la sib
-la<img src="media/image2.png" style="width:0.20172in;height:0.4375in" />
+Re / (la) la la sib la sib la sib la
 
-Sib la sol mi fa sol la **4x**
+Sib la sol mi fa sol la (**4x)**
 
 Re / la la la sib la sib la sib la..
 

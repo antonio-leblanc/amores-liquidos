@@ -19,7 +19,7 @@ Si La Sol Fa# Re Mi
 Sol La Sol Sol / Fa# Sol Fa# Re Re
 
 Sol Sol Sol La Sol / Fa# Sol Fa# Re
-do<img src="media/image2.png" style="width:0.50347in;height:0.38681in" />
+do<img src="media/image1.png" style="width:0.50347in;height:0.38681in" />
 
 Sol Sol Sol La Sol / Fa# Sol Fa# Re do
 

@@ -191,7 +191,6 @@ searchInput.addEventListener('input', (e) => {
   });
 });
 
-
 const melodyContainer = document.getElementById('melody-display-container');
 
 function clearMelodyColumn() {

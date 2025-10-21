@@ -38,19 +38,24 @@ function updatePlaylistHighlight() {
 
 let currentMelodyData = null;
 
+// Função para buscar dados de partituras no song-data-final.js
+function getMelodyData(songId) {
+  const melodyData = songData.find(song => song.id === songId);
+  return melodyData && melodyData.melodies ? melodyData : null;
+}
+
 async function loadSong(song) {
   title.innerText = song.replace(/_/g, ' ');
   audio.src = `music/${song}.mp3`;
   updatePlaylistHighlight();
 
-  try {
-    const res = await fetch(`melodies/${song}.json`);
-    if (!res.ok) {
-      throw new Error('Melody not found');
-    }
-    currentMelodyData = await res.json();
-    renderMelody(currentMelodyData);
-  } catch (error) {
+  // Busca dados de partituras no song-data-final.js
+  const melodyData = getMelodyData(song);
+  
+  if (melodyData && melodyData.melodies) {
+    currentMelodyData = melodyData;
+    renderMelodyMarkdown(currentMelodyData);
+  } else {
     clearMelodyColumn();
     currentMelodyData = null;
   }
@@ -187,19 +192,18 @@ function clearMelodyColumn() {
   }
 }
 
-function renderMelody(data) {
+function renderMelodyMarkdown(data) {
   if (!melodyContainer) return;
 
-  const instrumentOptions = data.instruments.map((inst, index) => 
-    `<option value="${index}">${inst.name}</option>`
+  const instrumentOptions = Object.keys(data.melodies).map(instrument => 
+    `<option value="${instrument}">${instrument}</option>`
   ).join('');
 
-  const firstInstrument = data.instruments[0];
+  const firstInstrument = Object.keys(data.melodies)[0];
   
   melodyContainer.innerHTML = `
     <h3 class="song-title">
-      ${data.songTitle.replace(/_/g, ' ')}
-      ${(data.review_needed && data.review_needed.length > 0) ? ' *' : ''}
+      ${data.title}
     </h3>
 
     <select id="instrument-selector">
@@ -209,41 +213,38 @@ function renderMelody(data) {
     </div>
   `;
   
-  renderInstrumentMelody(firstInstrument);
+  loadInstrumentMarkdown(firstInstrument, data.melodies[firstInstrument]);
 
   const selector = document.getElementById('instrument-selector');
   if (selector) {
-    selector.addEventListener('change', handleInstrumentChange);
+    selector.addEventListener('change', (e) => {
+      const selectedInstrument = e.target.value;
+      loadInstrumentMarkdown(selectedInstrument, data.melodies[selectedInstrument]);
+    });
   }
 }
 
-function renderInstrumentMelody(instrumentData) {
+function loadInstrumentMarkdown(instrumentName, markdownFile) {
   const melodyContentDiv = document.getElementById('melody-content');
   if (!melodyContentDiv) return;
 
-  const melodyHTML = instrumentData.sections.map(section => `
-    <div class="section">
-      <h4>${section.name}</h4>
-      ${section.lines.map(line => `
-        <div class="line">
-          <span class="melody">${line.melody}</span>
-          ${line.arrangement ? `<span class="arrangement">${line.arrangement}</span>` : ''}
-          ${line.comment ? `<span class="arrangement">(${line.comment})</span>` : ''}
-        </div>
-      `).join('')}
-    </div>
-  `).join('');
-  
-  melodyContentDiv.innerHTML = melodyHTML;
-}
-
-function handleInstrumentChange(e) {
-  if (!currentMelodyData) return;
-  
-  const selectedIndex = e.target.value;
-  const selectedInstrument = currentMelodyData.instruments[selectedIndex];
-  
-  if (selectedInstrument) {
-    renderInstrumentMelody(selectedInstrument);
-  }
+  // Carrega e renderiza o arquivo markdown
+  fetch(markdownFile)
+    .then(response => {
+      if (!response.ok) throw new Error(`Arquivo não encontrado: ${markdownFile}`);
+      return response.text();
+    })
+    .then(markdownText => {
+      // Usa a biblioteca marked para converter markdown em HTML
+      if (typeof marked !== 'undefined') {
+        melodyContentDiv.innerHTML = marked.parse(markdownText);
+      } else {
+        // Fallback: exibe o markdown como texto simples
+        melodyContentDiv.innerHTML = `<pre>${markdownText}</pre>`;
+      }
+    })
+    .catch(error => {
+      console.error('Erro ao carregar partitura:', error);
+      melodyContentDiv.innerHTML = `<p style="color: red;">Erro ao carregar partitura: ${error.message}</p>`;
+    });
 }

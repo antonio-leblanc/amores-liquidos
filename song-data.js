@@ -1,6 +1,6 @@
 // Song titles
 const songsAlphabetical = [
-	'100_voce',
+	'100_porcento_voce',
 	'acima_do_sol',
 	'alo_paixao',
 	'amor_de_chocolate',
@@ -82,7 +82,7 @@ const playlists = {
 	],
 	'GIG': [
 		'deusa_do_amor',
-		'100_voce',
+		'100_porcento_voce',
 		'amor_perfeito',
 		'depois_do_prazer',
 		'meu_sangue_ferve_por_voce',

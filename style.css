@@ -226,6 +226,40 @@ body {
   font-style: italic;
 }
 
+/* --- ESTILOS DO MARKDOWN RENDERIZADO --- */
+.melody-column h1 {
+  font-size: 1.8rem !important; /* Reduz tamanho do título principal */
+  margin-top: 0 !important;
+  margin-bottom: 15px !important;
+  color: #5c5261 !important;
+  border-bottom: 2px solid #e8e2ea !important;
+  padding-bottom: 8px !important;
+}
+
+.melody-column h2 {
+  font-size: 1.4rem !important;
+  margin-top: 20px !important;
+  margin-bottom: 10px !important;
+  color: #6b5b73 !important;
+}
+
+.melody-column h3 {
+  font-size: 1.2rem !important;
+  margin-top: 15px !important;
+  margin-bottom: 8px !important;
+  color: #7a6b82 !important;
+}
+
+.melody-column p {
+  margin-bottom: 12px !important;
+  line-height: 1.6 !important;
+}
+
+.melody-column strong {
+  color: #5c5261 !important;
+  font-weight: 600 !important;
+}
+
 .melody-column .song-title {
   font-size: 24px;
   font-weight: bold;

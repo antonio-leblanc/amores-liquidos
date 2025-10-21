@@ -445,7 +445,12 @@ const songData = [
   },
   {
     "id": "to_nem_ai",
-    "title": "To Nem Ai"
+    "title": "To Nem Ai",
+    "melodies": {
+      "Sax Alto": "markdown/to_nem_ai_sax_alto.md",
+      "Trombone": "markdown/to_nem_ai_trombone.md",
+      "Trompete   Sax Tenor": "markdown/to_nem_ai_trompete___sax_tenor.md"
+    }
   },
   {
     "id": "toda_forma_de_amor",

@@ -8,6 +8,6 @@ Thumbs.db
 raw_songbook/
 
 #NOVO
-markdown
+# markdown  # Comentado para GitHub Pages
 
 .env

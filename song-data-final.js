@@ -407,7 +407,12 @@ const songData = [
   },
   {
     "id": "sinais_de_fogo",
-    "title": "Sinais De Fogo"
+    "title": "Sinais De Fogo",
+    "melodies": {
+      "Sax Alto": "markdown/sinais_de_fogo_sax_alto.md",
+      "Trombone": "markdown/sinais_de_fogo_trombone.md",
+      "Trompete   Sax Tenor": "markdown/sinais_de_fogo_trompete___sax_tenor.md"
+    }
   },
   {
     "id": "so_love",

@@ -5,9 +5,9 @@
 .DS_Store
 Thumbs.db
 
+#virtual env
+.env
+
+#folders
 raw_songbook/
 
-#NOVO
-# markdown  # Comentado para GitHub Pages
-
-.env

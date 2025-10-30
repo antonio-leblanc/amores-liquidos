@@ -274,3 +274,30 @@ function loadInstrumentMarkdown(instrumentName, markdownFile) {
       melodyContentDiv.innerHTML = `<p style="color: red;">Erro ao carregar partitura: ${error.message}</p>`;
     });
 }
+
+document.addEventListener('keydown', (e) => {
+  if (e.target.tagName === 'INPUT') return;
+
+  switch (e.code) {
+    case 'Space':
+      e.preventDefault();
+      if (audio.paused) {
+        playSong();
+      } else {
+        pauseSong();
+      }
+      break;
+    case 'ArrowRight':
+      e.preventDefault();
+      nextSong();
+      break;
+    case 'ArrowLeft':
+      e.preventDefault();
+      prevSong();
+      break;
+    case 'KeyA':
+      e.preventDefault();
+      playRandomSong();
+      break;
+  }
+});

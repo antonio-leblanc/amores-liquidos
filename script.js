@@ -22,9 +22,49 @@ const player = {
 
   init: function() {
     this.populatePlaylistSelector();
-    this.loadSong(this.currentSongs[this.songIndex]);
-    this.generatePlaylist(this.currentSongs);
     this.addEventListeners();
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const songId = urlParams.get('song');
+    const timeParam = urlParams.get('t');
+
+    if (timeParam) {
+        const time = parseInt(timeParam);
+        if (!isNaN(time)) {
+            const onCanPlay = () => {
+                const isCorrectSong = songId && this.audio.src.includes(`/${songId}.mp3`);
+                const isDefaultSongWithTime = !songId;
+
+                if (isCorrectSong || isDefaultSongWithTime) {
+                    this.audio.currentTime = time;
+                    this.audio.removeEventListener('canplay', onCanPlay);
+                }
+            };
+            this.audio.addEventListener('canplay', onCanPlay);
+        }
+    }
+
+    let songHandledByUrl = false;
+    if (songId && songsAlphabetical.includes(songId)) {
+        if (this.playlistSelector.value !== defaultPlaylistName) {
+            this.playlistSelector.value = defaultPlaylistName;
+            this.handlePlaylistChange();
+        } else {
+            this.generatePlaylist(this.currentSongs);
+        }
+
+        const songIndex = this.currentSongs.findIndex(s => s === songId);
+        if (songIndex !== -1) {
+            this.songIndex = songIndex;
+            this.loadSong(this.currentSongs[this.songIndex]);
+            songHandledByUrl = true;
+        }
+    }
+
+    if (!songHandledByUrl) {
+        this.generatePlaylist(this.currentSongs);
+        this.loadSong(this.currentSongs[this.songIndex]);
+    }
   },
 
   addEventListeners: function() {

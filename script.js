@@ -1,303 +1,284 @@
-const musicContainer = document.getElementById('music-container');
-const playBtn = document.getElementById('play');
-const prevBtn = document.getElementById('prev');
-const nextBtn = document.getElementById('next');
-const randomBtn = document.getElementById('random');
-const playlistSelector = document.getElementById('playlist-selector');
-const audio = document.getElementById('audio');
-const progress = document.getElementById('progress');
-const progressContainer = document.getElementById('progress-container');
-const title = document.getElementById('title');
-const searchInput = document.getElementById('search-input');
-const playlist = document.getElementById('playlist');
-const melodyContainer = document.getElementById('melody-display-container');
+const player = {
+  // Elementos da DOM
+  musicContainer: document.getElementById('music-container'),
+  playBtn: document.getElementById('play'),
+  prevBtn: document.getElementById('prev'),
+  nextBtn: document.getElementById('next'),
+  randomBtn: document.getElementById('random'),
+  playlistSelector: document.getElementById('playlist-selector'),
+  audio: document.getElementById('audio'),
+  progress: document.getElementById('progress'),
+  progressContainer: document.getElementById('progress-container'),
+  title: document.getElementById('title'),
+  searchInput: document.getElementById('search-input'),
+  playlist: document.getElementById('playlist'),
+  melodyContainer: document.getElementById('melody-display-container'),
 
-let currentSongs = playlists[defaultPlaylistName];
-let songIndex = 0;
+  // Estado do Player
+  currentSongs: playlists[defaultPlaylistName],
+  songIndex: 0,
+  currentMelodyData: null,
+  currentInstrument: null,
 
-function generatePlaylist(songs) {
-  playlist.innerHTML = '';
-  songs.forEach((song) => {
-    const li = document.createElement('li');
-    li.dataset.songName = song;
-    li.textContent = song.replace(/_/g, ' ');
-    playlist.appendChild(li);
-  });
-}
+  init: function() {
+    this.populatePlaylistSelector();
+    this.loadSong(this.currentSongs[this.songIndex]);
+    this.generatePlaylist(this.currentSongs);
+    this.addEventListeners();
+  },
 
-function updatePlaylistHighlight() {
-  const allSongs = playlist.querySelectorAll('li');
-  allSongs.forEach(li => {
-    if (li.dataset.songName === currentSongs[songIndex]) {
-      li.classList.add('active');
-      li.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  addEventListeners: function() {
+    this.playBtn.addEventListener('click', () => {
+      if (this.audio.paused) {
+        this.playSong();
+      } else {
+        this.pauseSong();
+      }
+    });
+
+    this.prevBtn.addEventListener('click', this.prevSong.bind(this));
+    this.nextBtn.addEventListener('click', this.nextSong.bind(this));
+    this.randomBtn.addEventListener('click', this.playRandomSong.bind(this));
+    this.playlistSelector.addEventListener('change', this.handlePlaylistChange.bind(this));
+
+    this.audio.addEventListener('timeupdate', this.updateProgress.bind(this));
+    this.progressContainer.addEventListener('click', this.setProgress.bind(this));
+    this.audio.addEventListener('ended', this.nextSong.bind(this));
+
+    this.playlist.addEventListener('click', (e) => {
+      if (e.target.tagName === 'LI') {
+        const clickedSongName = e.target.dataset.songName;
+        this.songIndex = this.currentSongs.findIndex(song => song === clickedSongName);
+        this.loadSong(this.currentSongs[this.songIndex]);
+        this.playSong();
+      }
+    });
+
+    this.searchInput.addEventListener('input', (e) => {
+      const searchTerm = e.target.value.toLowerCase().replace(/ /g, '_');
+      const listItems = this.playlist.querySelectorAll('li');
+      listItems.forEach(li => {
+        const songName = li.dataset.songName.toLowerCase();
+        li.style.display = songName.includes(searchTerm) ? 'block' : 'none';
+      });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.target.tagName === 'INPUT') return;
+      e.preventDefault(); // Evita comportamento padrão para as teclas usadas
+
+      switch (e.code) {
+        case 'Space':
+          this.audio.paused ? this.playSong() : this.pauseSong();
+          break;
+        case 'ArrowRight':
+          this.nextSong();
+          break;
+        case 'ArrowLeft':
+          this.prevSong();
+          break;
+        case 'KeyA':
+          this.playRandomSong();
+          break;
+      }
+    });
+  },
+
+  generatePlaylist: function(songs) {
+    this.playlist.innerHTML = '';
+    songs.forEach((song) => {
+      const li = document.createElement('li');
+      li.dataset.songName = song;
+      li.textContent = song.replace(/_/g, ' ');
+      this.playlist.appendChild(li);
+    });
+  },
+
+  updatePlaylistHighlight: function() {
+    const allSongs = this.playlist.querySelectorAll('li');
+    allSongs.forEach(li => {
+      if (li.dataset.songName === this.currentSongs[this.songIndex]) {
+        li.classList.add('active');
+        li.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      } else {
+        li.classList.remove('active');
+      }
+    });
+  },
+
+  getMelodyData: function(songId) {
+    const melodyData = songData.find(song => song.id === songId);
+    return melodyData && melodyData.melodies ? melodyData : null;
+  },
+
+  saveInstrumentState: function(instrument) {
+    localStorage.setItem('selectedInstrument', instrument);
+    this.currentInstrument = instrument;
+  },
+
+  loadInstrumentState: function() {
+    return localStorage.getItem('selectedInstrument');
+  },
+
+  loadSong: async function(song) {
+    this.title.innerText = song.replace(/_/g, ' ');
+    this.audio.src = `music/${song}.mp3`;
+    this.updatePlaylistHighlight();
+
+    const melodyData = this.getMelodyData(song);
+    if (melodyData && melodyData.melodies) {
+      this.currentMelodyData = melodyData;
+      this.renderMelodyMarkdown(this.currentMelodyData);
     } else {
-      li.classList.remove('active');
+      this.clearMelodyColumn();
+      this.currentMelodyData = null;
     }
-  });
-}
+  },
 
-let currentMelodyData = null;
-let currentInstrument = null;
+  playSong: function() {
+    this.musicContainer.classList.add('play');
+    this.playBtn.querySelector('i.fas').classList.remove('fa-play');
+    this.playBtn.querySelector('i.fas').classList.add('fa-pause');
+    this.audio.play();
+  },
 
-// Função para buscar dados de partituras no song-data-final.js
-function getMelodyData(songId) {
-  const melodyData = songData.find(song => song.id === songId);
-  return melodyData && melodyData.melodies ? melodyData : null;
-}
+  pauseSong: function() {
+    this.musicContainer.classList.remove('play');
+    this.playBtn.querySelector('i.fas').classList.add('fa-play');
+    this.playBtn.querySelector('i.fas').classList.remove('fa-pause');
+    this.audio.pause();
+  },
 
-// Funções para gerenciar estado do instrumento
-function saveInstrumentState(instrument) {
-  localStorage.setItem('selectedInstrument', instrument);
-  currentInstrument = instrument;
-}
-
-function loadInstrumentState() {
-  return localStorage.getItem('selectedInstrument');
-}
-
-async function loadSong(song) {
-  title.innerText = song.replace(/_/g, ' ');
-  audio.src = `music/${song}.mp3`;
-  updatePlaylistHighlight();
-
-  // Busca dados de partituras no song-data-final.js
-  const melodyData = getMelodyData(song);
-  
-  if (melodyData && melodyData.melodies) {
-    currentMelodyData = melodyData;
-    renderMelodyMarkdown(currentMelodyData);
-  } else {
-    clearMelodyColumn();
-    currentMelodyData = null;
-  }
-}
-
-function playSong() {
-  musicContainer.classList.add('play');
-  playBtn.querySelector('i.fas').classList.remove('fa-play');
-  playBtn.querySelector('i.fas').classList.add('fa-pause');
-  audio.play();
-}
-
-function pauseSong() {
-  musicContainer.classList.remove('play');
-  playBtn.querySelector('i.fas').classList.add('fa-play');
-  playBtn.querySelector('i.fas').classList.remove('fa-pause');
-  audio.pause();
-}
-
-function prevSong() {
-  songIndex--;
-  if (songIndex < 0) {
-    songIndex = currentSongs.length - 1;
-  }
-  loadSong(currentSongs[songIndex]);
-  playSong();
-}
-
-function nextSong() {
-  songIndex++;
-  if (songIndex > currentSongs.length - 1) {
-    songIndex = 0;
-  }
-  loadSong(currentSongs[songIndex]);
-  playSong();
-}
-
-function playRandomSong() {
-  const randomIndex = Math.floor(Math.random() * currentSongs.length);
-  songIndex = randomIndex;
-  loadSong(currentSongs[songIndex]);
-  playSong();
-}
-
-function populatePlaylistSelector() {
-  const playlistNames = Object.keys(playlists);
-  
-  playlistNames.forEach(name => {
-    const option = document.createElement('option');
-    option.value = name;
-    option.innerText = name;
-    playlistSelector.appendChild(option);
-  });
-  
-  playlistSelector.value = defaultPlaylistName;
-}
-
-function handlePlaylistChange() {
-  const selectedPlaylistName = playlistSelector.value;
-  currentSongs = playlists[selectedPlaylistName];
-  
-  songIndex = 0;
-  generatePlaylist(currentSongs);
-  loadSong(currentSongs[songIndex]);
-  pauseSong();
-}
-
-function updateProgress(e) {
-  const { duration, currentTime } = e.srcElement;
-  const progressPercent = (currentTime / duration) * 100;
-  progress.style.width = `${progressPercent}%`;
-}
-
-function setProgress(e) {
-  const width = this.clientWidth;
-  const clickX = e.offsetX;
-  const duration = audio.duration;
-  audio.currentTime = (clickX / width) * duration;
-}
-
-populatePlaylistSelector();
-loadSong(currentSongs[songIndex]);
-generatePlaylist(currentSongs);
-
-playBtn.addEventListener('click', () => {
-  if (audio.paused) {
-    playSong();
-  } else {
-    pauseSong();
-  }
-});
-
-prevBtn.addEventListener('click', prevSong);
-nextBtn.addEventListener('click', nextSong);
-randomBtn.addEventListener('click', playRandomSong);
-playlistSelector.addEventListener('change', handlePlaylistChange);
-
-audio.addEventListener('timeupdate', updateProgress);
-progressContainer.addEventListener('click', setProgress);
-audio.addEventListener('ended', nextSong);
-
-playlist.addEventListener('click', (e) => {
-  if (e.target.tagName === 'LI') {
-    const clickedSongName = e.target.dataset.songName;
-    songIndex = currentSongs.findIndex(song => song === clickedSongName);
-    loadSong(currentSongs[songIndex]);
-    playSong();
-  }
-});
-
-searchInput.addEventListener('input', (e) => {
-  const searchTerm = e.target.value.toLowerCase().replace(/ /g, '_');
-  const listItems = playlist.querySelectorAll('li');
-  
-  listItems.forEach(li => {
-    const songName = li.dataset.songName.toLowerCase();
-    if (songName.includes(searchTerm)) {
-      li.style.display = 'block';
-    } else {
-      li.style.display = 'none';
+  prevSong: function() {
+    this.songIndex--;
+    if (this.songIndex < 0) {
+      this.songIndex = this.currentSongs.length - 1;
     }
-  });
-});
+    this.loadSong(this.currentSongs[this.songIndex]);
+    this.playSong();
+  },
 
-function clearMelodyColumn() {
-  if (melodyContainer) {
-    melodyContainer.innerHTML = `
-      <div class="placeholder">
-          <p>Melodia não disponível para esta música.</p>
-      </div>`;
-  }
-  // Esconde o dropdown de instrumentos quando não há partitura
-  const instrumentSelectorContainer = document.querySelector('.instrument-selector-container');
-  if (instrumentSelectorContainer) {
-    instrumentSelectorContainer.style.display = 'none';
-  }
-}
+  nextSong: function() {
+    this.songIndex++;
+    if (this.songIndex > this.currentSongs.length - 1) {
+      this.songIndex = 0;
+    }
+    this.loadSong(this.currentSongs[this.songIndex]);
+    this.playSong();
+  },
 
-function renderMelodyMarkdown(data) {
-  if (!melodyContainer) return;
+  playRandomSong: function() {
+    const randomIndex = Math.floor(Math.random() * this.currentSongs.length);
+    this.songIndex = randomIndex;
+    this.loadSong(this.currentSongs[this.songIndex]);
+    this.playSong();
+  },
 
-  const availableInstruments = Object.keys(data.melodies);
-  const instrumentOptions = availableInstruments.map(instrument => 
-    `<option value="${instrument}">${instrument}</option>`
-  ).join('');
+  populatePlaylistSelector: function() {
+    const playlistNames = Object.keys(playlists);
+    playlistNames.forEach(name => {
+      const option = document.createElement('option');
+      option.value = name;
+      option.innerText = name;
+      this.playlistSelector.appendChild(option);
+    });
+    this.playlistSelector.value = defaultPlaylistName;
+  },
 
-  // Tenta usar o instrumento salvo, senão usa o primeiro disponível
-  const savedInstrument = loadInstrumentState();
-  const selectedInstrument = (savedInstrument && availableInstruments.includes(savedInstrument)) 
-    ? savedInstrument 
-    : availableInstruments[0];
-  
-  melodyContainer.innerHTML = `
-    <div id="melody-content">
-    </div>
-  `;
-  
-  // Move o dropdown de instrumentos para a barra de controles
-  const instrumentSelectorContainer = document.querySelector('.instrument-selector-container');
-  const instrumentSelector = document.createElement('select');
-  instrumentSelector.id = 'instrument-selector';
-  instrumentSelector.innerHTML = instrumentOptions;
-  instrumentSelectorContainer.innerHTML = '';
-  instrumentSelectorContainer.appendChild(instrumentSelector);
-  instrumentSelectorContainer.style.display = 'block';
-  
-  // Define o valor selecionado no dropdown
-  const selector = document.getElementById('instrument-selector');
-  if (selector) {
-    selector.value = selectedInstrument;
+  handlePlaylistChange: function() {
+    const selectedPlaylistName = this.playlistSelector.value;
+    this.currentSongs = playlists[selectedPlaylistName];
+    this.songIndex = 0;
+    this.generatePlaylist(this.currentSongs);
+    this.loadSong(this.currentSongs[this.songIndex]);
+    this.pauseSong();
+  },
+
+  updateProgress: function(e) {
+    const { duration, currentTime } = e.srcElement;
+    const progressPercent = (currentTime / duration) * 100;
+    this.progress.style.width = `${progressPercent}%`;
+  },
+
+  setProgress: function(e) {
+    const width = this.progressContainer.clientWidth;
+    const clickX = e.offsetX;
+    const duration = this.audio.duration;
+    this.audio.currentTime = (clickX / width) * duration;
+  },
+
+  clearMelodyColumn: function() {
+    if (this.melodyContainer) {
+      this.melodyContainer.innerHTML = `
+        <div class="placeholder">
+            <p>Melodia não disponível para esta música.</p>
+        </div>`;
+    }
+    const instrumentSelectorContainer = document.querySelector('.instrument-selector-container');
+    if (instrumentSelectorContainer) {
+      instrumentSelectorContainer.style.display = 'none';
+    }
+  },
+
+  renderMelodyMarkdown: function(data) {
+    if (!this.melodyContainer) return;
+
+    const availableInstruments = Object.keys(data.melodies);
+    const instrumentOptions = availableInstruments.map(instrument => 
+      `<option value="${instrument}">${instrument}</option>`
+    ).join('');
+
+    const savedInstrument = this.loadInstrumentState();
+    const selectedInstrument = (savedInstrument && availableInstruments.includes(savedInstrument)) 
+      ? savedInstrument 
+      : availableInstruments[0];
     
-    selector.addEventListener('change', (e) => {
-      const newInstrument = e.target.value;
-      saveInstrumentState(newInstrument);
-      loadInstrumentMarkdown(newInstrument, data.melodies[newInstrument]);
-    });
+    this.melodyContainer.innerHTML = `<div id="melody-content"></div>`;
+    
+    const instrumentSelectorContainer = document.querySelector('.instrument-selector-container');
+    const instrumentSelector = document.createElement('select');
+    instrumentSelector.id = 'instrument-selector';
+    instrumentSelector.innerHTML = instrumentOptions;
+    instrumentSelectorContainer.innerHTML = '';
+    instrumentSelectorContainer.appendChild(instrumentSelector);
+    instrumentSelectorContainer.style.display = 'block';
+    
+    const selector = document.getElementById('instrument-selector');
+    if (selector) {
+      selector.value = selectedInstrument;
+      selector.addEventListener('change', (e) => {
+        const newInstrument = e.target.value;
+        this.saveInstrumentState(newInstrument);
+        this.loadInstrumentMarkdown(newInstrument, data.melodies[newInstrument]);
+      });
+    }
+    
+    this.loadInstrumentMarkdown(selectedInstrument, data.melodies[selectedInstrument]);
+  },
+
+  loadInstrumentMarkdown: function(instrumentName, markdownFile) {
+    const melodyContentDiv = document.getElementById('melody-content');
+    if (!melodyContentDiv) return;
+
+    fetch(markdownFile)
+      .then(response => {
+        if (!response.ok) throw new Error(`Arquivo não encontrado: ${markdownFile}`);
+        return response.text();
+      })
+      .then(markdownText => {
+        if (typeof marked !== 'undefined') {
+          melodyContentDiv.innerHTML = marked.parse(markdownText);
+        } else {
+          melodyContentDiv.innerHTML = `<pre>${markdownText}</pre>`;
+        }
+      })
+      .catch(error => {
+        console.error('Erro ao carregar partitura:', error);
+        melodyContentDiv.innerHTML = `<p style="color: red;">Erro ao carregar partitura: ${error.message}</p>`;
+      });
   }
-  
-  // Carrega a partitura do instrumento selecionado
-  loadInstrumentMarkdown(selectedInstrument, data.melodies[selectedInstrument]);
-}
+};
 
-function loadInstrumentMarkdown(instrumentName, markdownFile) {
-  const melodyContentDiv = document.getElementById('melody-content');
-  if (!melodyContentDiv) return;
+// Inicializa o player
+player.init();
 
-  // Carrega e renderiza o arquivo markdown
-  fetch(markdownFile)
-    .then(response => {
-      if (!response.ok) throw new Error(`Arquivo não encontrado: ${markdownFile}`);
-      return response.text();
-    })
-    .then(markdownText => {
-      // Usa a biblioteca marked para converter markdown em HTML
-      if (typeof marked !== 'undefined') {
-        melodyContentDiv.innerHTML = marked.parse(markdownText);
-      } else {
-        // Fallback: exibe o markdown como texto simples
-        melodyContentDiv.innerHTML = `<pre>${markdownText}</pre>`;
-      }
-    })
-    .catch(error => {
-      console.error('Erro ao carregar partitura:', error);
-      melodyContentDiv.innerHTML = `<p style="color: red;">Erro ao carregar partitura: ${error.message}</p>`;
-    });
-}
-
-document.addEventListener('keydown', (e) => {
-  if (e.target.tagName === 'INPUT') return;
-
-  switch (e.code) {
-    case 'Space':
-      e.preventDefault();
-      if (audio.paused) {
-        playSong();
-      } else {
-        pauseSong();
-      }
-      break;
-    case 'ArrowRight':
-      e.preventDefault();
-      nextSong();
-      break;
-    case 'ArrowLeft':
-      e.preventDefault();
-      prevSong();
-      break;
-    case 'KeyA':
-      e.preventDefault();
-      playRandomSong();
-      break;
-  }
-});

@@ -9,19 +9,19 @@
 ## 🔄 **Fluxo de Trabalho Atual**
 
 ### **1. Atualizar Songbook**
-```bash
+```ps1
 # Converter Word → Markdown
 pandoc -f docx -t gfm -o "raw_songbook/songbook.md" "raw_songbook/songbook.docx"
 ```
 
 ### **2. Processar Partituras**
-```bash
+```ps1
 # Extrair partituras individuais por instrumento
 uv run .\scripts\process.markdown.py
 ```
 
 ### **3. Gerar Dados Finais**
-```bash
+```ps1
 # Criar song-data-final.js com mapeamento completo
 uv run .\scripts\build_song_data.py
 ```
@@ -64,7 +64,7 @@ amores-liquidos/
 
 ## ⚙️ **Comandos Úteis**
 
-```bash
+```ps1
 # Setup inicial
 uv sync
 
@@ -78,7 +78,7 @@ python -m http.server 8000
 ```
 
 ## 🤖 **Para IA Assistente**
-
+- **Seguir prompt**: `ai-agent.md`
 - **Arquivos principais:** `index.html`, `script.js`, `style.css`
 - **Dados:** `song-data.js` (playlists) + `song-data-final.js` (partituras)
 - **Processamento:** Scripts Python em `scripts/`

@@ -2,10 +2,13 @@ import os
 import re
 import json
 
+# Obtém o diretório do projeto (um nível acima do diretório do script)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 # --- CONFIGURAÇÃO ---
-SONG_DATA_INPUT_FILE = 'song-data.js'
-MARKDOWN_DIR = 'markdown'
-SONG_DATA_OUTPUT_FILE = 'song-data-final.js'
+SONG_DATA_INPUT_FILE = os.path.join(PROJECT_ROOT, 'song-data.js')
+MARKDOWN_DIR = os.path.join(PROJECT_ROOT, 'markdown')
+SONG_DATA_OUTPUT_FILE = os.path.join(PROJECT_ROOT, 'song-data-final.js')
 
 def slug_to_title(slug):
     """Converte um slug_de_musica para um Título De Música."""
@@ -67,8 +70,8 @@ for slug in song_slugs:
     for filename in markdown_files:
         if filename.startswith(f"{slug}_"):
             instrument_name = get_instrument_from_filename(filename, slug)
-            # Normaliza o caminho do arquivo para ser sempre com barras '/'
-            file_path = os.path.join(MARKDOWN_DIR, filename).replace('\\', '/')
+            # O caminho no JS final deve ser relativo à raiz do projeto
+            file_path = os.path.join('markdown', filename).replace('\\', '/')
             melodies_for_this_song[instrument_name] = file_path
             
     # Se encontrou alguma melodia, adiciona o objeto ao song_object

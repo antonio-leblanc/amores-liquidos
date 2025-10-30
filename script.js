@@ -67,6 +67,28 @@ const player = {
     }
   },
 
+  generateShareableLink: function() {
+    const songId = this.currentSongs[this.songIndex];
+    const time = Math.floor(this.audio.currentTime);
+
+    if (!songId) return; // Não faz nada se nenhuma música estiver carregada
+
+    const newUrl = `${window.location.pathname}?song=${songId}&t=${time}`;
+    const fullUrl = `${window.location.origin}${newUrl}`;
+
+    // Atualiza a URL na barra de endereço sem recarregar a página
+    history.replaceState({ path: newUrl }, '', newUrl);
+
+    // Copia a URL completa para a área de transferência
+    navigator.clipboard.writeText(fullUrl).then(() => {
+        // Exibe uma mensagem de confirmação
+        alert(`Link para "${songId.replace(/_/g, ' ')}" aos ${time}s copiado!`);
+    }).catch(err => {
+        console.error('Erro ao copiar o link: ', err);
+        alert('Erro ao copiar o link.');
+    });
+  },
+
   addEventListeners: function() {
     this.playBtn.addEventListener('click', () => {
       if (this.audio.paused) {
@@ -119,6 +141,9 @@ const player = {
           break;
         case 'KeyA':
           this.playRandomSong();
+          break;
+        case 'KeyS':
+          this.generateShareableLink();
           break;
       }
     });

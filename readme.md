@@ -6,25 +6,19 @@
 - **`raw_songbook/songbook.docx`** - Documento Word com todas as partituras
 - **`raw_songbook/songbook.md`** - Versão markdown (gerada via pandoc)
 
-## 🔄 **Fluxo de Trabalho Atual**
+## 🔄 **Fluxo de Trabalho Principal**
 
-### **1. Atualizar Songbook**
+O processo de atualizar o songbook, extrair as partituras e gerar os dados para o site foi automatizado em um único script.
+
+### **1. Atualizar Tudo**
+
+Após modificar o `raw_songbook/songbook.docx`, simplesmente execute o script `convert.ps1` na raiz do projeto:
+
 ```ps1
-# Converter Word → Markdown
-pandoc -f docx -t gfm -o "raw_songbook/songbook.md" "raw_songbook/songbook.docx"
+.\convert.ps1
 ```
 
-### **2. Processar Partituras**
-```ps1
-# Extrair partituras individuais por instrumento
-uv run .\scripts\process.markdown.py
-```
-
-### **3. Gerar Dados Finais**
-```ps1
-# Criar song-data-final.js com mapeamento completo
-uv run .\scripts\build_song_data.py
-```
+Este comando irá cuidar de todas as etapas para você.
 
 ### **4. Adicionar Áudio**
 - Adicionar MP3 em `music/` (nomenclatura com underscore)
@@ -65,15 +59,15 @@ amores-liquidos/
 ## ⚙️ **Comandos Úteis**
 
 ```ps1
-# Setup inicial
+# Setup inicial do ambiente Python (só precisa rodar uma vez)
+cd scripts
 uv sync
+cd ..
 
-# Processamento completo (após editar songbook)
-pandoc -f docx -t gfm -o "raw_songbook/songbook.md" "raw_songbook/songbook.docx"
-uv run .\scripts\process.markdown.py
-uv run .\scripts\build_song_data.py
+# Processamento completo (após editar o songbook.docx)
+.\convert.ps1
 
-# Servir localmente
+# Servir o site localmente (na porta 8000)
 python -m http.server 8000
 ```
 

@@ -64,9 +64,12 @@ def slugify(text):
     text = text.replace('/', '_')
     return text
 
+# Obtém o diretório do projeto (um nível acima do diretório do script)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 # --- CONFIGURAÇÃO ---
-INPUT_FILE = "raw_songbook/songbook.md"
-OUTPUT_DIR = "markdown"
+INPUT_FILE = os.path.join(PROJECT_ROOT, "raw_songbook/songbook.md")
+OUTPUT_DIR = os.path.join(PROJECT_ROOT, "markdown")
 
 # --- LÓGICA PRINCIPAL ---
 

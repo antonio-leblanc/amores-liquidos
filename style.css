@@ -22,12 +22,12 @@ body {
 
 .header {
   width: 100%;
-  text-align: left;
   flex-shrink: 0; /* Impede que o header encolha */
   margin-bottom: 15px;
   height: 10vh; /* 10% da altura da tela */
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .header h1 {

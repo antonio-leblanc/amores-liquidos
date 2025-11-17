@@ -145,6 +145,12 @@ const player = {
         case 'KeyS':
           this.generateShareableLink();
           break;
+        case 'Digit0': // Key '0'
+          this.audio.currentTime = 0;
+          if (!this.audio.paused) { // If song was playing, keep it playing
+            this.playSong();
+          }
+          break;
       }
     });
   },

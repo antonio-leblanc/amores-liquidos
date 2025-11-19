@@ -68,19 +68,19 @@ const songsAlphabetical = [
 	'voce_nao_entende_nada'
 ];
 
-const defaultPlaylistName = 'Ordem Alfabética';
+const defaultPlaylistName = '🔤 Ordem Alfabética';
 
 
 const playlists = {
-	'Ordem Alfabética': [...songsAlphabetical].sort(),
-	'Novas 2026': [
+	'🔤 Ordem Alfabética': [...songsAlphabetical].sort(),
+	'✨ Novas 2026': [
 		'sinais_de_fogo',
 		'to_nem_ai',
 		'amor_i_love_you',
 		'vem_meu_amor',
 		'i_miss_her'
 	],
-	'GIG': [
+	'🥂 GIG': [
 		'deusa_do_amor',
 		'100_porcento_voce',
 		'amor_perfeito',
@@ -108,7 +108,7 @@ const playlists = {
 		'assim_caminha_a_humanidade_malhacao',
 		'toda_forma_de_amor'
 	],
-	'Carnaval': [
+	'🎭 Carnaval': [
 		'a_francesa',
 		'andei_so',
 		'anunciacao',

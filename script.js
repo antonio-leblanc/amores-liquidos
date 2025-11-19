@@ -195,7 +195,7 @@ const player = {
     this.title.innerText = song.replace(/_/g, ' ');
 
     const currentPlaylist = this.playlistSelector.value;
-    const folder = currentPlaylist === 'Carnaval' ? 'carnaval' : 'music';
+    const folder = currentPlaylist === '🎭 Carnaval' ? 'music_carnaval' : 'music';
     this.audio.src = `${folder}/${song}.mp3`;
 
     this.updatePlaylistHighlight();

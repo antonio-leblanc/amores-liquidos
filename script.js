@@ -69,6 +69,12 @@ const player = {
     }
     // Chamar handlePlaylistChange no init para aplicar o tema correto se a playlist inicial for Carnaval
     this.handlePlaylistChange();
+
+    // Recolher o player por padrão em mobile
+    if (window.innerWidth <= 768) {
+      this.musicContainer.classList.add('player-recolhido');
+      document.body.classList.add('player-is-recolhido');
+    }
   },
 
   generateShareableLink: function () {

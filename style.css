@@ -274,12 +274,23 @@ body.carnaval-theme {
   font-weight: 600 !important;
 }
 
+#toggle-player-btn {
+  display: none; /* Oculta por padrão em telas grandes */
+}
+
 @media (max-width: 768px) {
   body {
     padding: 10px;
-    padding-bottom: 180px;
+    padding-bottom: 150px;
     /* Espaço para o player fixo */
     height: auto;
+    transition: padding-bottom 0.4s ease-in-out;
+    /* Anima a mudança de padding */
+  }
+
+  body.player-is-recolhido {
+    padding-bottom: 40px;
+    /* Espaço apenas para o puxador visível */
   }
 
   .header {
@@ -308,21 +319,52 @@ body.carnaval-theme {
     /* Arredonda apenas em cima */
     z-index: 1000;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-    padding: 15px;
+    padding: 10px;
     background-color: #fff;
+    transition: transform 0.4s ease-in-out;
+    /* Anima o deslize */
+  }
+
+  /* Estado Recolhido */
+  .music-container.player-recolhido {
+    transform: translateY(calc(100% - 40px));
+    /* Move o player para baixo, deixando 40px visíveis */
+  }
+
+  #toggle-player-btn {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 20px;
+    border-radius: 10px 10px 0 0;
+    background-color: #fff;
+    border: none;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8c7894;
+    font-size: 16px;
+  }
+
+  /* Muda a seta quando o player está recolhido */
+  .music-container.player-recolhido #toggle-player-btn i {
+    transform: rotate(180deg);
   }
 
   .music-info {
-    margin-bottom: 5px;
+    margin-bottom: 0;
   }
 
   .navigation {
-    margin-top: 5px;
+    margin-top: 0;
   }
 
   .action-btn {
     margin: 0 15px;
-    font-size: 24px;
+    font-size: 20px;
     /* Aumenta um pouco a área de toque */
   }
 

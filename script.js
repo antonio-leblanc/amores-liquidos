@@ -14,6 +14,7 @@ const player = {
   playlist: document.getElementById('playlist'),
   melodyContainer: document.getElementById('melody-display-container'),
   headerTitle: document.querySelector('.header h1'), // Adicionado para referenciar o h1
+  togglePlayerBtn: document.getElementById('toggle-player-btn'), // Botão para recolher
 
   // Estado do Player
   currentSongs: playlists[defaultPlaylistName],
@@ -109,6 +110,11 @@ const player = {
     this.audio.addEventListener('timeupdate', this.updateProgress.bind(this));
     this.progressContainer.addEventListener('click', this.setProgress.bind(this));
     this.audio.addEventListener('ended', this.nextSong.bind(this));
+
+    this.togglePlayerBtn.addEventListener('click', () => {
+      this.musicContainer.classList.toggle('player-recolhido');
+      document.body.classList.toggle('player-is-recolhido');
+    });
 
     this.playlist.addEventListener('click', (e) => {
       if (e.target.tagName === 'LI') {

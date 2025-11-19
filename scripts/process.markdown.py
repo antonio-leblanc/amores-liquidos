@@ -34,7 +34,7 @@ def extract_instrument_name(raw_title):
     
     # Se tem trompete E tenor no mesmo título (ex: "Trompete/Tenor"), agrupa
     if 'trompete' in clean_title and 'tenor' in clean_title:
-        return 'Trompete / Sax Tenor'
+        return 'Trompete / Tenor'
     
     # Se tem só trompete, separa
     if 'trompete' in clean_title:

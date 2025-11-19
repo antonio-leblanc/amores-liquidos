@@ -21,7 +21,7 @@ body {
 }
 
 body.carnaval-theme {
-  background-image: linear-gradient(to right, #ff00cc, #3333ff, #00ffcc); /* Cores vibrantes de carnaval */
+  background-image: linear-gradient(to right, #00c6ff, #0072ff); /* Tons de verde e azul mais simples */
 }
 
 .header {

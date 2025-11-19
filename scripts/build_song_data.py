@@ -28,6 +28,15 @@ def get_instrument_from_filename(filename, song_slug):
     # Converte o slug do instrumento para um nome legível
     # Ex: "sax_alto" -> "Sax Alto"
     instrument_name = instrument_slug.replace('___', ' / ').replace('_', ' ').title()
+    
+    # Adiciona o emoji correspondente
+    if 'Sax' in instrument_name:
+        instrument_name = f"🎷 {instrument_name}"
+    elif 'Trombone' in instrument_name:
+        instrument_name = f"📯 {instrument_name}"
+    elif 'Trompete' in instrument_name:
+        instrument_name = f"🎺 {instrument_name}"
+        
     return instrument_name
 
 # --- PASSO 1: LER O ARQUIVO JS ORIGINAL E EXTRAIR A LISTA DE SLUGS ---

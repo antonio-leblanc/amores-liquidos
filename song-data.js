@@ -107,12 +107,27 @@ const playlists = {
 		'nao_quero_dinheiro',
 		'assim_caminha_a_humanidade_malhacao',
 		'toda_forma_de_amor'
+	],
+	'Carnaval': [
+		'a_francesa',
+		'andei_so',
+		'anunciacao',
+		'ara_ketu_bom_demais',
+		'asa_branca',
+		'azul',
+		'banho_de_folhas',
+		'bate_lata',
+		'bloco_na_rua',
+		'boa_sorte',
+		'canto_das_tres_racas',
+		'danca_da_manivela',
+		'eu_so_quero_um_xodo',
+		'mama_africa',
+		'o_canto_da_cidade',
+		'ombrin',
+		'palco',
+		'palpite',
+		'por_supuesto',
+		'tristeza'
 	]
 };
-
-const caiu = [
-	'coracao_radiante',
-	'diga_que_valeu',
-	'voa_voa',
-
-]

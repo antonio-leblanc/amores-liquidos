@@ -193,7 +193,11 @@ const player = {
 
   loadSong: async function (song) {
     this.title.innerText = song.replace(/_/g, ' ');
-    this.audio.src = `music/${song}.mp3`;
+
+    const currentPlaylist = this.playlistSelector.value;
+    const folder = currentPlaylist === 'Carnaval' ? 'carnaval' : 'music';
+    this.audio.src = `${folder}/${song}.mp3`;
+
     this.updatePlaylistHighlight();
 
     const melodyData = this.getMelodyData(song);

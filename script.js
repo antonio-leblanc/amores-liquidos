@@ -13,6 +13,7 @@ const player = {
   searchInput: document.getElementById('search-input'),
   playlist: document.getElementById('playlist'),
   melodyContainer: document.getElementById('melody-display-container'),
+  headerTitle: document.querySelector('.header h1'), // Adicionado para referenciar o h1
 
   // Estado do Player
   currentSongs: playlists[defaultPlaylistName],
@@ -65,6 +66,8 @@ const player = {
       this.generatePlaylist(this.currentSongs);
       this.loadSong(this.currentSongs[this.songIndex]);
     }
+    // Chamar handlePlaylistChange no init para aplicar o tema correto se a playlist inicial for Carnaval
+    this.handlePlaylistChange();
   },
 
   generateShareableLink: function () {
@@ -267,6 +270,15 @@ const player = {
     this.generatePlaylist(this.currentSongs);
     this.loadSong(this.currentSongs[this.songIndex]);
     this.pauseSong();
+
+    // Lógica para mudar o tema e o título
+    if (selectedPlaylistName === '🎭 Carnaval') {
+      document.body.classList.add('carnaval-theme');
+      this.headerTitle.innerText = '🎭 Carnaval 🎊';
+    } else {
+      document.body.classList.remove('carnaval-theme');
+      this.headerTitle.innerText = '💕Amores Liquidos💦';
+    }
   },
 
   updateProgress: function (e) {

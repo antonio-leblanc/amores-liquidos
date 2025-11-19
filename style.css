@@ -20,6 +20,10 @@ body {
   padding: 15px;
 }
 
+body.carnaval-theme {
+  background-image: linear-gradient(to right, #ff00cc, #3333ff, #00ffcc); /* Cores vibrantes de carnaval */
+}
+
 .header {
   width: 100%;
   flex-shrink: 0;

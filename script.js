@@ -20,7 +20,7 @@ const player = {
   currentMelodyData: null,
   currentInstrument: null,
 
-  init: function() {
+  init: function () {
     this.populatePlaylistSelector();
     this.addEventListeners();
 
@@ -29,45 +29,45 @@ const player = {
     const timeParam = urlParams.get('t');
 
     if (timeParam) {
-        const time = parseInt(timeParam);
-        if (!isNaN(time)) {
-            const onCanPlay = () => {
-                const isCorrectSong = songId && this.audio.src.includes(`/${songId}.mp3`);
-                const isDefaultSongWithTime = !songId;
+      const time = parseInt(timeParam);
+      if (!isNaN(time)) {
+        const onCanPlay = () => {
+          const isCorrectSong = songId && this.audio.src.includes(`/${songId}.mp3`);
+          const isDefaultSongWithTime = !songId;
 
-                if (isCorrectSong || isDefaultSongWithTime) {
-                    this.audio.currentTime = time;
-                    this.audio.removeEventListener('canplay', onCanPlay);
-                }
-            };
-            this.audio.addEventListener('canplay', onCanPlay);
-        }
+          if (isCorrectSong || isDefaultSongWithTime) {
+            this.audio.currentTime = time;
+            this.audio.removeEventListener('canplay', onCanPlay);
+          }
+        };
+        this.audio.addEventListener('canplay', onCanPlay);
+      }
     }
 
     let songHandledByUrl = false;
     if (songId && songsAlphabetical.includes(songId)) {
-        if (this.playlistSelector.value !== defaultPlaylistName) {
-            this.playlistSelector.value = defaultPlaylistName;
-            this.handlePlaylistChange();
-        } else {
-            this.generatePlaylist(this.currentSongs);
-        }
+      if (this.playlistSelector.value !== defaultPlaylistName) {
+        this.playlistSelector.value = defaultPlaylistName;
+        this.handlePlaylistChange();
+      } else {
+        this.generatePlaylist(this.currentSongs);
+      }
 
-        const songIndex = this.currentSongs.findIndex(s => s === songId);
-        if (songIndex !== -1) {
-            this.songIndex = songIndex;
-            this.loadSong(this.currentSongs[this.songIndex]);
-            songHandledByUrl = true;
-        }
+      const songIndex = this.currentSongs.findIndex(s => s === songId);
+      if (songIndex !== -1) {
+        this.songIndex = songIndex;
+        this.loadSong(this.currentSongs[this.songIndex]);
+        songHandledByUrl = true;
+      }
     }
 
     if (!songHandledByUrl) {
-        this.generatePlaylist(this.currentSongs);
-        this.loadSong(this.currentSongs[this.songIndex]);
+      this.generatePlaylist(this.currentSongs);
+      this.loadSong(this.currentSongs[this.songIndex]);
     }
   },
 
-  generateShareableLink: function() {
+  generateShareableLink: function () {
     const songId = this.currentSongs[this.songIndex];
     const time = Math.floor(this.audio.currentTime);
 
@@ -81,15 +81,15 @@ const player = {
 
     // Copia a URL completa para a área de transferência
     navigator.clipboard.writeText(fullUrl).then(() => {
-        // Exibe uma mensagem de confirmação
-        alert(`Link para "${songId.replace(/_/g, ' ')}" aos ${time}s copiado!`);
+      // Exibe uma mensagem de confirmação
+      alert(`Link para "${songId.replace(/_/g, ' ')}" aos ${time}s copiado!`);
     }).catch(err => {
-        console.error('Erro ao copiar o link: ', err);
-        alert('Erro ao copiar o link.');
+      console.error('Erro ao copiar o link: ', err);
+      alert('Erro ao copiar o link.');
     });
   },
 
-  addEventListeners: function() {
+  addEventListeners: function () {
     this.playBtn.addEventListener('click', () => {
       if (this.audio.paused) {
         this.playSong();
@@ -155,7 +155,7 @@ const player = {
     });
   },
 
-  generatePlaylist: function(songs) {
+  generatePlaylist: function (songs) {
     this.playlist.innerHTML = '';
     songs.forEach((song) => {
       const li = document.createElement('li');
@@ -165,7 +165,7 @@ const player = {
     });
   },
 
-  updatePlaylistHighlight: function() {
+  updatePlaylistHighlight: function () {
     const allSongs = this.playlist.querySelectorAll('li');
     allSongs.forEach(li => {
       if (li.dataset.songName === this.currentSongs[this.songIndex]) {
@@ -177,21 +177,21 @@ const player = {
     });
   },
 
-  getMelodyData: function(songId) {
+  getMelodyData: function (songId) {
     const melodyData = songData.find(song => song.id === songId);
     return melodyData && melodyData.melodies ? melodyData : null;
   },
 
-  saveInstrumentState: function(instrument) {
+  saveInstrumentState: function (instrument) {
     localStorage.setItem('selectedInstrument', instrument);
     this.currentInstrument = instrument;
   },
 
-  loadInstrumentState: function() {
+  loadInstrumentState: function () {
     return localStorage.getItem('selectedInstrument');
   },
 
-  loadSong: async function(song) {
+  loadSong: async function (song) {
     this.title.innerText = song.replace(/_/g, ' ');
     this.audio.src = `music/${song}.mp3`;
     this.updatePlaylistHighlight();
@@ -206,21 +206,21 @@ const player = {
     }
   },
 
-  playSong: function() {
+  playSong: function () {
     this.musicContainer.classList.add('play');
     this.playBtn.querySelector('i.fas').classList.remove('fa-play');
     this.playBtn.querySelector('i.fas').classList.add('fa-pause');
     this.audio.play();
   },
 
-  pauseSong: function() {
+  pauseSong: function () {
     this.musicContainer.classList.remove('play');
     this.playBtn.querySelector('i.fas').classList.add('fa-play');
     this.playBtn.querySelector('i.fas').classList.remove('fa-pause');
     this.audio.pause();
   },
 
-  prevSong: function() {
+  prevSong: function () {
     this.songIndex--;
     if (this.songIndex < 0) {
       this.songIndex = this.currentSongs.length - 1;
@@ -229,7 +229,7 @@ const player = {
     this.playSong();
   },
 
-  nextSong: function() {
+  nextSong: function () {
     this.songIndex++;
     if (this.songIndex > this.currentSongs.length - 1) {
       this.songIndex = 0;
@@ -238,14 +238,14 @@ const player = {
     this.playSong();
   },
 
-  playRandomSong: function() {
+  playRandomSong: function () {
     const randomIndex = Math.floor(Math.random() * this.currentSongs.length);
     this.songIndex = randomIndex;
     this.loadSong(this.currentSongs[this.songIndex]);
     this.playSong();
   },
 
-  populatePlaylistSelector: function() {
+  populatePlaylistSelector: function () {
     const playlistNames = Object.keys(playlists);
     playlistNames.forEach(name => {
       const option = document.createElement('option');
@@ -256,7 +256,7 @@ const player = {
     this.playlistSelector.value = defaultPlaylistName;
   },
 
-  handlePlaylistChange: function() {
+  handlePlaylistChange: function () {
     const selectedPlaylistName = this.playlistSelector.value;
     this.currentSongs = playlists[selectedPlaylistName];
     this.songIndex = 0;
@@ -265,20 +265,20 @@ const player = {
     this.pauseSong();
   },
 
-  updateProgress: function(e) {
+  updateProgress: function (e) {
     const { duration, currentTime } = e.srcElement;
     const progressPercent = (currentTime / duration) * 100;
     this.progress.style.width = `${progressPercent}%`;
   },
 
-  setProgress: function(e) {
+  setProgress: function (e) {
     const width = this.progressContainer.clientWidth;
     const clickX = e.offsetX;
     const duration = this.audio.duration;
     this.audio.currentTime = (clickX / width) * duration;
   },
 
-  clearMelodyColumn: function() {
+  clearMelodyColumn: function () {
     if (this.melodyContainer) {
       this.melodyContainer.innerHTML = `
         <div class="placeholder">
@@ -291,21 +291,21 @@ const player = {
     }
   },
 
-  renderMelodyMarkdown: function(data) {
+  renderMelodyMarkdown: function (data) {
     if (!this.melodyContainer) return;
 
     const availableInstruments = Object.keys(data.melodies);
-    const instrumentOptions = availableInstruments.map(instrument => 
+    const instrumentOptions = availableInstruments.map(instrument =>
       `<option value="${instrument}">${instrument}</option>`
     ).join('');
 
     const savedInstrument = this.loadInstrumentState();
-    const selectedInstrument = (savedInstrument && availableInstruments.includes(savedInstrument)) 
-      ? savedInstrument 
+    const selectedInstrument = (savedInstrument && availableInstruments.includes(savedInstrument))
+      ? savedInstrument
       : availableInstruments[0];
-    
+
     this.melodyContainer.innerHTML = `<div id="melody-content"></div>`;
-    
+
     const instrumentSelectorContainer = document.querySelector('.instrument-selector-container');
     const instrumentSelector = document.createElement('select');
     instrumentSelector.id = 'instrument-selector';
@@ -313,7 +313,7 @@ const player = {
     instrumentSelectorContainer.innerHTML = '';
     instrumentSelectorContainer.appendChild(instrumentSelector);
     instrumentSelectorContainer.style.display = 'block';
-    
+
     const selector = document.getElementById('instrument-selector');
     if (selector) {
       selector.value = selectedInstrument;
@@ -323,11 +323,11 @@ const player = {
         this.loadInstrumentMarkdown(newInstrument, data.melodies[newInstrument]);
       });
     }
-    
+
     this.loadInstrumentMarkdown(selectedInstrument, data.melodies[selectedInstrument]);
   },
 
-  loadInstrumentMarkdown: function(instrumentName, markdownFile) {
+  loadInstrumentMarkdown: function (instrumentName, markdownFile) {
     const melodyContentDiv = document.getElementById('melody-content');
     if (!melodyContentDiv) return;
 

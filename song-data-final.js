@@ -551,7 +551,12 @@ const songData = [
   },
   {
     "id": "voce_me_vira_a_cabeca",
-    "title": "Voce Me Vira A Cabeca"
+    "title": "Voce Me Vira A Cabeca",
+    "melodies": {
+      "Sax Alto": "markdown/voce_me_vira_a_cabeca_sax_alto.md",
+      "Trombone": "markdown/voce_me_vira_a_cabeca_trombone.md",
+      "Trompete   Sax Tenor": "markdown/voce_me_vira_a_cabeca_trompete___sax_tenor.md"
+    }
   },
   {
     "id": "voce_nao_entende_nada",

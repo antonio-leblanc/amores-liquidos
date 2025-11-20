@@ -148,11 +148,17 @@ const player = {
         case 'Space':
           this.audio.paused ? this.playSong() : this.pauseSong();
           break;
-        case 'ArrowRight':
+        case 'ArrowDown': // Next song
           this.nextSong();
           break;
-        case 'ArrowLeft':
+        case 'ArrowUp': // Previous song
           this.prevSong();
+          break;
+        case 'ArrowRight': // Fast forward 5 seconds
+          this.audio.currentTime += 5;
+          break;
+        case 'ArrowLeft': // Rewind 5 seconds
+          this.audio.currentTime -= 5;
           break;
         case 'KeyA':
           this.playRandomSong();

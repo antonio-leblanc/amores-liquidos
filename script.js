@@ -141,13 +141,20 @@ const player = {
     });
 
     document.addEventListener('keydown', (e) => {
-      // If an input is focused, only handle specific keys if we want to override default behavior
-      // For now, let normal input behavior (including browser Ctrl+F) work inside inputs
-      if (e.target.tagName === 'INPUT' && !(e.ctrlKey && e.code === 'KeyF')) {
-        return; // Don't process other shortcuts if in an input field, unless it's Ctrl+F
+      // If an input is focused, handle specific keys
+      if (e.target.tagName === 'INPUT') {
+        if (e.code === 'Escape') {
+          this.searchInput.blur(); // Unfocus the search input
+          e.preventDefault(); // Prevent default browser action
+          return; // Stop further processing
+        }
+        // Allow normal input behavior (including browser Ctrl+F) unless explicitly overridden
+        if (!(e.ctrlKey && e.code === 'KeyF')) {
+          return; // Don't process other shortcuts if in an input field, unless it's Ctrl+F
+        }
       }
 
-      // Handle Ctrl+F for search input focus
+      // Handle Ctrl+F for search input focus (if not already handled in an input)
       if (e.ctrlKey && e.code === 'KeyF') {
         e.preventDefault(); // Prevent browser's find dialog
         this.searchInput.focus();

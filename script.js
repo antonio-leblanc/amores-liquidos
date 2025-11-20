@@ -141,9 +141,34 @@ const player = {
     });
 
     document.addEventListener('keydown', (e) => {
-      if (e.target.tagName === 'INPUT') return;
-      e.preventDefault(); // Evita comportamento padrão para as teclas usadas
+      // If an input is focused, only handle specific keys if we want to override default behavior
+      // For now, let normal input behavior (including browser Ctrl+F) work inside inputs
+      if (e.target.tagName === 'INPUT' && !(e.ctrlKey && e.code === 'KeyF')) {
+        return; // Don't process other shortcuts if in an input field, unless it's Ctrl+F
+      }
 
+      // Handle Ctrl+F for search input focus
+      if (e.ctrlKey && e.code === 'KeyF') {
+        e.preventDefault(); // Prevent browser's find dialog
+        this.searchInput.focus();
+        return; // Stop further processing after focusing
+      }
+
+      // Only prevent default for keys we explicitly handle outside of inputs
+      switch (e.code) {
+        case 'Space':
+        case 'ArrowDown':
+        case 'ArrowUp':
+        case 'ArrowRight':
+        case 'ArrowLeft':
+        case 'KeyA':
+        case 'KeyS':
+        case 'Digit0':
+          e.preventDefault(); // Prevent default browser action for these keys
+          break;
+      }
+
+      // Process the shortcuts
       switch (e.code) {
         case 'Space':
           this.audio.paused ? this.playSong() : this.pauseSong();

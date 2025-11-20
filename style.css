@@ -397,3 +397,33 @@ body.carnaval-theme {
     background-color: rgba(255, 255, 255, 0.5);
   }
 }
+
+/* --- ESTILOS DOS MEDLEYS --- */
+#playlist li.medley-title {
+  font-weight: bold;
+  color: #5c5261;
+  background-color: rgba(0, 0, 0, 0.05);
+  cursor: default;
+  text-align: center;
+  font-style: italic;
+}
+
+#playlist li.medley-group-0 {
+  background-color: rgba(255, 255, 255, 0.7); /* Cor padrão ou um pouco mais clara */
+}
+
+#playlist li.medley-group-1 {
+  background-color: rgba(230, 240, 255, 0.8); /* Um tom azulado bem claro */
+}
+
+#playlist li.medley-group-0:hover,
+#playlist li.medley-group-1:hover {
+  background-color: rgba(0, 0, 0, 0.05); /* Efeito hover padrão */
+}
+
+/* O item ativo sobrepõe as cores de grupo */
+#playlist li.active {
+  background-color: #dfdbdf;
+  font-weight: bold;
+  color: #8c7894;
+}

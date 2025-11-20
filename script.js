@@ -22,7 +22,6 @@ const player = {
   currentMelodyData: null,
   currentInstrument: null,
   isInMedleyMode: false, // Flag para o modo medley
-  currentMedleyName: null, // Nome do medley atual
 
   init: function () {
     this.populatePlaylistSelector();
@@ -212,12 +211,36 @@ const player = {
 
   generatePlaylist: function (songs) {
     this.playlist.innerHTML = '';
-    songs.forEach((song) => {
-      const li = document.createElement('li');
-      li.dataset.songName = song;
-      li.textContent = song.replace(/_/g, ' ');
-      this.playlist.appendChild(li);
-    });
+
+    if (this.isInMedleyMode) {
+      let medleyIndex = 0;
+      for (const medleyName in medleys) {
+        // Adiciona um título para o medley
+        const titleLi = document.createElement('li');
+        titleLi.classList.add('medley-title');
+        titleLi.textContent = `— ${medleyName} —`;
+        this.playlist.appendChild(titleLi);
+
+        // Adiciona as músicas do medley
+        const medleySongs = medleys[medleyName];
+        medleySongs.forEach(song => {
+          const li = document.createElement('li');
+          li.dataset.songName = song;
+          li.textContent = song.replace(/_/g, ' ');
+          li.classList.add(`medley-group-${medleyIndex % 2}`); // Alterna cores (0 e 1)
+          this.playlist.appendChild(li);
+        });
+        medleyIndex++;
+      }
+    } else {
+      // Comportamento padrão para playlists normais
+      songs.forEach((song) => {
+        const li = document.createElement('li');
+        li.dataset.songName = song;
+        li.textContent = song.replace(/_/g, ' ');
+        this.playlist.appendChild(li);
+      });
+    }
   },
 
   updatePlaylistHighlight: function () {
@@ -281,59 +304,18 @@ const player = {
 
   prevSong: function () {
     this.songIndex--;
-
     if (this.songIndex < 0) {
-      if (this.isInMedleyMode) {
-        const medleyNames = Object.keys(medleys);
-        const currentMedleyIndex = medleyNames.indexOf(this.currentMedleyName);
-        let prevMedleyIndex = currentMedleyIndex - 1;
-        if (prevMedleyIndex < 0) {
-          prevMedleyIndex = medleyNames.length - 1;
-        }
-        
-        const prevMedleyName = medleyNames[prevMedleyIndex];
-        this.currentMedleyName = prevMedleyName;
-        this.currentSongs = medleys[prevMedleyName];
-        this.songIndex = this.currentSongs.length - 1; // Última música do medley anterior
-
-        // Atualiza a UI
-        this.playlistSelector.value = prevMedleyName;
-        this.generatePlaylist(this.currentSongs);
-
-      } else {
-        // Comportamento padrão para playlists normais
-        this.songIndex = this.currentSongs.length - 1;
-      }
+      this.songIndex = this.currentSongs.length - 1;
     }
-
     this.loadSong(this.currentSongs[this.songIndex]);
     this.playSong();
   },
 
   nextSong: function () {
     this.songIndex++;
-
-    if (this.songIndex >= this.currentSongs.length) {
-      if (this.isInMedleyMode) {
-        const medleyNames = Object.keys(medleys);
-        const currentMedleyIndex = medleyNames.indexOf(this.currentMedleyName);
-        const nextMedleyIndex = (currentMedleyIndex + 1) % medleyNames.length;
-        
-        const nextMedleyName = medleyNames[nextMedleyIndex];
-        this.currentMedleyName = nextMedleyName;
-        this.currentSongs = medleys[nextMedleyName];
-        this.songIndex = 0;
-
-        // Atualiza a UI
-        this.playlistSelector.value = nextMedleyName;
-        this.generatePlaylist(this.currentSongs);
-
-      } else {
-        // Comportamento padrão para playlists normais
-        this.songIndex = 0;
-      }
+    if (this.songIndex > this.currentSongs.length - 1) {
+      this.songIndex = 0;
     }
-
     this.loadSong(this.currentSongs[this.songIndex]);
     this.playSong();
   },
@@ -346,33 +328,22 @@ const player = {
   },
 
   populatePlaylistSelector: function () {
-    // Clear existing options
-    this.playlistSelector.innerHTML = '';
+    this.playlistSelector.innerHTML = ''; // Clear existing options
 
-    // Create and append the repertories optgroup
-    const repertoriesGroup = document.createElement('optgroup');
-    repertoriesGroup.label = 'Repertórios';
     const playlistNames = Object.keys(playlists);
     playlistNames.forEach(name => {
       const option = document.createElement('option');
       option.value = name;
       option.innerText = name;
-      repertoriesGroup.appendChild(option);
+      this.playlistSelector.appendChild(option);
     });
-    this.playlistSelector.appendChild(repertoriesGroup);
 
-    // Create and append the medleys optgroup
+    // Add the single "Medleys" option if medleys exist
     if (typeof medleys !== 'undefined' && Object.keys(medleys).length > 0) {
-      const medleysGroup = document.createElement('optgroup');
-      medleysGroup.label = 'Medleys';
-      const medleyNames = Object.keys(medleys);
-      medleyNames.forEach(name => {
-        const option = document.createElement('option');
-        option.value = name;
-        option.innerText = name;
-        medleysGroup.appendChild(option);
-      });
-      this.playlistSelector.appendChild(medleysGroup);
+      const option = document.createElement('option');
+      option.value = 'Medleys'; // A special value
+      option.innerText = 'Medleys';
+      this.playlistSelector.appendChild(option);
     }
 
     this.playlistSelector.value = defaultPlaylistName;
@@ -385,12 +356,11 @@ const player = {
     this.isInMedleyMode = false;
     this.currentMedleyName = null;
     
-    // Verifica se a seleção é um medley ou uma playlist normal
-    if (typeof medleys !== 'undefined' && medleys[selectedPlaylistName]) {
-      // É um medley
+    // Verifica se a seleção é a playlist de Medleys
+    if (selectedPlaylistName === 'Medleys' && typeof medleys !== 'undefined') {
       this.isInMedleyMode = true;
-      this.currentMedleyName = selectedPlaylistName;
-      this.currentSongs = medleys[selectedPlaylistName];
+      // Flatten all medley songs into one array for playback
+      this.currentSongs = Object.values(medleys).flat();
     } else {
       // É uma playlist normal
       this.currentSongs = playlists[selectedPlaylistName];

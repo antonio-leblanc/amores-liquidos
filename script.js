@@ -273,7 +273,7 @@ const player = {
     this.title.innerText = song.replace(/_/g, ' ');
 
     const currentPlaylist = this.playlistSelector.value;
-    const folder = currentPlaylist === '🎭 Carnaval' ? 'music_carnaval' : 'music';
+    const folder = currentPlaylist === '🎭 Outras Carnaval' ? 'music_carnaval' : 'music';
     this.audio.src = `${folder}/${song}.mp3`;
 
     this.updatePlaylistHighlight();
@@ -331,7 +331,12 @@ const player = {
     this.playlistSelector.innerHTML = ''; // Clear existing options
 
     const playlistNames = Object.keys(playlists);
+    const carnavalName = '🎭 Outras Carnaval';
+
+    // Add all playlists EXCEPT Carnaval
     playlistNames.forEach(name => {
+      if (name === carnavalName) return;
+
       const option = document.createElement('option');
       option.value = name;
       option.innerText = name;
@@ -343,6 +348,14 @@ const player = {
       const option = document.createElement('option');
       option.value = 'Medleys'; // A special value
       option.innerText = '🧩 Medleys';
+      this.playlistSelector.appendChild(option);
+    }
+
+    // Add Carnaval LAST
+    if (playlistNames.includes(carnavalName)) {
+      const option = document.createElement('option');
+      option.value = carnavalName;
+      option.innerText = carnavalName;
       this.playlistSelector.appendChild(option);
     }
 
@@ -372,9 +385,9 @@ const player = {
     this.pauseSong();
 
     // Lógica para mudar o tema e o título
-    if (selectedPlaylistName === '🎭 Carnaval') {
+    if (selectedPlaylistName === '🎭 Outras Carnaval') {
       document.body.classList.add('carnaval-theme');
-      this.headerTitle.innerText = '🎭 Carnaval 🎊';
+      this.headerTitle.innerText = '🎭 Outras Carnaval 🎊';
     } else {
       document.body.classList.remove('carnaval-theme');
       this.headerTitle.innerText = '💕Amores Liquidos💦';

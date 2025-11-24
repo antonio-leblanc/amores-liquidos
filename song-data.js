@@ -60,7 +60,7 @@ const songsAlphabetical = [
 	'tremendo_vacilao',
 	'tu_ta_na_gaiola',
 	'uma_noite_e_meia',
-	'vai_novinha',
+	// 'vai_novinha',
 	'vai_sacudir_vai_abalar',
 	'varias_queixas',
 	'vem_meu_amor',
@@ -78,7 +78,8 @@ const playlists = {
 		'to_nem_ai',
 		'amor_i_love_you',
 		'vem_meu_amor',
-		'i_miss_her'
+		'i_miss_her',
+		'coracao_partido'
 	],
 	'🥂 GIG': [
 		'deusa_do_amor',
@@ -185,5 +186,12 @@ const medleys = {
 	"Medley Claudinho & Buchecha": [
 		"fico_assim_sem_voce",
 		"so_love"
+	],
+	"Medley Funk": [
+		"princesa",
+		"amor_de_chocolate",
+		"bailao",
+		"baile_da_gaiola",
+
 	]
 };

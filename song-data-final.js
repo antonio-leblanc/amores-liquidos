@@ -568,8 +568,3 @@ const songData = [
     }
   }
 ];
-
-const medleys = {
-  "Medley Ivete": ["eva", "sorte_grande", "festa"],
-  "Medley Fritacao": ["baianidade_nago", "swing_da_cor"],
-};

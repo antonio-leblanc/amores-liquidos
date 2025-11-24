@@ -406,14 +406,14 @@ body.carnaval-theme {
   cursor: default;
   text-align: center;
   font-style: italic;
+  padding: 5px 15px; /* Reduced padding */
+  font-size: 0.9em; /* Slightly smaller font */
 }
 
-#playlist li.medley-group-0 {
-  background-color: rgba(255, 255, 255, 0.7); /* Cor padrão ou um pouco mais clara */
-}
-
+/* Removed alternating colors for medley groups */
+#playlist li.medley-group-0,
 #playlist li.medley-group-1 {
-  background-color: rgba(230, 240, 255, 0.8); /* Um tom azulado bem claro */
+  background-color: transparent; 
 }
 
 #playlist li.medley-group-0:hover,

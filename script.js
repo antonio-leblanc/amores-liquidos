@@ -342,7 +342,7 @@ const player = {
     if (typeof medleys !== 'undefined' && Object.keys(medleys).length > 0) {
       const option = document.createElement('option');
       option.value = 'Medleys'; // A special value
-      option.innerText = 'Medleys';
+      option.innerText = '🧩 Medleys';
       this.playlistSelector.appendChild(option);
     }
 
@@ -355,7 +355,7 @@ const player = {
     // Redefine o estado do medley
     this.isInMedleyMode = false;
     this.currentMedleyName = null;
-    
+
     // Verifica se a seleção é a playlist de Medleys
     if (selectedPlaylistName === 'Medleys' && typeof medleys !== 'undefined') {
       this.isInMedleyMode = true;

@@ -1,5 +1,5 @@
 const player = {
-  // Elementos da DOM
+
   musicContainer: document.getElementById('music-container'),
   playBtn: document.getElementById('play'),
   prevBtn: document.getElementById('prev'),
@@ -13,16 +13,16 @@ const player = {
   searchInput: document.getElementById('search-input'),
   playlist: document.getElementById('playlist'),
   melodyContainer: document.getElementById('melody-display-container'),
-  headerTitle: document.querySelector('.header h1'), // Adicionado para referenciar o h1
-  togglePlayerBtn: document.getElementById('toggle-player-btn'), // Botão para recolher
+  headerTitle: document.querySelector('.header h1'),
+  togglePlayerBtn: document.getElementById('toggle-player-btn'),
 
-  // Estado do Player
+
   currentSongs: playlists[defaultPlaylistName],
   songIndex: 0,
   currentMelodyData: null,
   currentInstrument: null,
   currentInstrument: null,
-  isInMedleyMode: false, // Flag para o modo medley
+  isInMedleyMode: false,
   isShuffleMode: false,
   originalSongs: [],
 
@@ -71,10 +71,9 @@ const player = {
       this.generatePlaylist(this.currentSongs);
       this.loadSong(this.currentSongs[this.songIndex]);
     }
-    // Chamar handlePlaylistChange no init para aplicar o tema correto se a playlist inicial for Carnaval
-    // this.handlePlaylistChange(); // REMOVIDO: Isso resetava a música carregada pela URL
 
-    // Recolher o player por padrão em mobile
+
+
     if (window.innerWidth <= 768) {
       this.musicContainer.classList.add('player-recolhido');
       document.body.classList.add('player-is-recolhido');
@@ -85,17 +84,17 @@ const player = {
     const songId = this.currentSongs[this.songIndex];
     const time = Math.floor(this.audio.currentTime);
 
-    if (!songId) return; // Não faz nada se nenhuma música estiver carregada
+    if (!songId) return;
 
     const newUrl = `${window.location.pathname}?song=${songId}&t=${time}`;
     const fullUrl = `${window.location.origin}${newUrl}`;
 
-    // Atualiza a URL na barra de endereço sem recarregar a página
+
     history.replaceState({ path: newUrl }, '', newUrl);
 
-    // Copia a URL completa para a área de transferência
+
     navigator.clipboard.writeText(fullUrl).then(() => {
-      // Exibe uma mensagem de confirmação
+
       alert(`Link para "${songId.replace(/_/g, ' ')}" aos ${time}s copiado!`);
     }).catch(err => {
       console.error('Erro ao copiar o link: ', err);
@@ -159,27 +158,27 @@ const player = {
     });
 
     document.addEventListener('keydown', (e) => {
-      // If an input is focused, handle specific keys
+
       if (e.target.tagName === 'INPUT') {
         if (e.code === 'Escape') {
-          this.searchInput.blur(); // Unfocus the search input
-          e.preventDefault(); // Prevent default browser action
-          return; // Stop further processing
+          this.searchInput.blur();
+          e.preventDefault();
+          return;
         }
         // Allow normal input behavior (including browser Ctrl+F) unless explicitly overridden
         if (!(e.ctrlKey && e.code === 'KeyF')) {
-          return; // Don't process other shortcuts if in an input field, unless it's Ctrl+F
+          return;
         }
       }
 
-      // Handle Ctrl+F for search input focus (if not already handled in an input)
+
       if (e.ctrlKey && e.code === 'KeyF') {
-        e.preventDefault(); // Prevent browser's find dialog
+        e.preventDefault();
         this.searchInput.focus();
-        return; // Stop further processing after focusing
+        return;
       }
 
-      // Only prevent default for keys we explicitly handle outside of inputs
+
       switch (e.code) {
         case 'Space':
         case 'ArrowDown':
@@ -189,25 +188,25 @@ const player = {
         case 'KeyA':
         case 'KeyS':
         case 'Digit0':
-          e.preventDefault(); // Prevent default browser action for these keys
+          e.preventDefault();
           break;
       }
 
-      // Process the shortcuts
+
       switch (e.code) {
         case 'Space':
           this.audio.paused ? this.playSong() : this.pauseSong();
           break;
-        case 'ArrowDown': // Next song
+        case 'ArrowDown':
           this.nextSong();
           break;
-        case 'ArrowUp': // Previous song
+        case 'ArrowUp':
           this.prevSong();
           break;
-        case 'ArrowRight': // Fast forward 5 seconds
+        case 'ArrowRight':
           this.audio.currentTime += 5;
           break;
-        case 'ArrowLeft': // Rewind 5 seconds
+        case 'ArrowLeft':
           this.audio.currentTime -= 5;
           break;
         case 'KeyA':
@@ -216,9 +215,9 @@ const player = {
         case 'KeyS':
           this.generateShareableLink();
           break;
-        case 'Digit0': // Key '0'
+        case 'Digit0':
           this.audio.currentTime = 0;
-          if (!this.audio.paused) { // If song was playing, keep it playing
+          if (!this.audio.paused) {
             this.playSong();
           }
           break;
@@ -233,25 +232,17 @@ const player = {
     const currentSongName = this.currentSongs[this.songIndex];
 
     if (this.isShuffleMode) {
-      // Ativar Shuffle
-      // 1. Salvar a ordem atual (seja alfabética ou medley) como original
-      // NOTA: Se já estivermos em shuffle e mudarmos de playlist, originalSongs será atualizado no handlePlaylistChange
       if (this.originalSongs.length === 0 || this.originalSongs.length !== this.currentSongs.length) {
         this.originalSongs = [...this.currentSongs];
       }
 
-      // 2. Embaralhar
       this.shuffleArray(this.currentSongs);
     } else {
-      // Desativar Shuffle
-      // Restaurar a ordem original
       this.currentSongs = [...this.originalSongs];
     }
 
-    // 3. Sincronizar o índice da música atual na nova lista
     this.songIndex = this.currentSongs.findIndex(s => s === currentSongName);
 
-    // 4. Regenerar a playlist visualmente
     this.generatePlaylist(this.currentSongs);
     this.updatePlaylistHighlight();
   },
@@ -269,25 +260,25 @@ const player = {
     if (this.isInMedleyMode) {
       let medleyIndex = 0;
       for (const medleyName in medleys) {
-        // Adiciona um título para o medley
+
         const titleLi = document.createElement('li');
         titleLi.classList.add('medley-title');
         titleLi.textContent = `— ${medleyName} —`;
         this.playlist.appendChild(titleLi);
 
-        // Adiciona as músicas do medley
+
         const medleySongs = medleys[medleyName];
         medleySongs.forEach(song => {
           const li = document.createElement('li');
           li.dataset.songName = song;
           li.textContent = song.replace(/_/g, ' ');
-          li.classList.add(`medley-group-${medleyIndex % 2}`); // Alterna cores (0 e 1)
+          li.classList.add(`medley-group-${medleyIndex % 2}`);
           this.playlist.appendChild(li);
         });
         medleyIndex++;
       }
     } else {
-      // Comportamento padrão para playlists normais
+
       songs.forEach((song) => {
         const li = document.createElement('li');
         li.dataset.songName = song;
@@ -374,16 +365,16 @@ const player = {
     this.playSong();
   },
 
-  // playRandomSong removido em favor do toggleShuffle
+
 
 
   populatePlaylistSelector: function () {
-    this.playlistSelector.innerHTML = ''; // Clear existing options
+    this.playlistSelector.innerHTML = '';
 
     const playlistNames = Object.keys(playlists);
     const carnavalName = '🎭 Outras Carnaval';
 
-    // Add all playlists EXCEPT Carnaval
+
     playlistNames.forEach(name => {
       if (name === carnavalName) return;
 
@@ -393,15 +384,15 @@ const player = {
       this.playlistSelector.appendChild(option);
     });
 
-    // Add the single "Medleys" option if medleys exist
+
     if (typeof medleys !== 'undefined' && Object.keys(medleys).length > 0) {
       const option = document.createElement('option');
-      option.value = 'Medleys'; // A special value
+      option.value = 'Medleys';
       option.innerText = '🧩 Medleys';
       this.playlistSelector.appendChild(option);
     }
 
-    // Add Carnaval LAST
+
     if (playlistNames.includes(carnavalName)) {
       const option = document.createElement('option');
       option.value = carnavalName;
@@ -415,24 +406,22 @@ const player = {
   handlePlaylistChange: function () {
     const selectedPlaylistName = this.playlistSelector.value;
 
-    // Redefine o estado do medley
+
     this.isInMedleyMode = false;
     this.currentMedleyName = null;
 
-    // Verifica se a seleção é a playlist de Medleys
+
     if (selectedPlaylistName === 'Medleys' && typeof medleys !== 'undefined') {
       this.isInMedleyMode = true;
-      // Flatten all medley songs into one array for playback
       this.currentSongs = Object.values(medleys).flat();
     } else {
-      // É uma playlist normal
       this.currentSongs = playlists[selectedPlaylistName];
     }
 
-    // Armazena a ordem original desta nova playlist
+
     this.originalSongs = [...this.currentSongs];
 
-    // Se o shuffle estiver ativo, embaralha imediatamente
+
     if (this.isShuffleMode) {
       this.shuffleArray(this.currentSongs);
     }
@@ -442,7 +431,7 @@ const player = {
     this.loadSong(this.currentSongs[this.songIndex]);
     this.pauseSong();
 
-    // Lógica para mudar o tema e o título
+
     if (selectedPlaylistName === '🎭 Outras Carnaval') {
       document.body.classList.add('carnaval-theme');
       this.headerTitle.innerText = '🎭 Outras Carnaval 🎊';
@@ -537,6 +526,6 @@ const player = {
   }
 };
 
-// Inicializa o player
+
 player.init();
 

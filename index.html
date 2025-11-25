@@ -1,87 +1,88 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="description" content="Player de música e partituras do bloco de carnaval Amores Líquidos. músicas com partituras para Sax Alto, Trombone, Trompete e Sax Tenor." />
-    <meta name="theme-color" content="#ff94d8" />
-    <meta name="keywords" content="carnaval, bloco, música, partituras, sax, trombone, trompete, amores líquidos" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <link rel="stylesheet" href="style.css" />
-    <title>Amores Liquidos</title>
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  </head>
-  <body>
-    <!-- CONTAINER PRINCIPAL PARA AS DUAS COLUNAS -->
-    <div class="main-container">
-      
-      <!-- COLUNA DA ESQUERDA: PLAYER E PLAYLIST -->
-      <div class="player-column">
-        <div class="header">
-          <h1>💕Amores Liquidos💦</h1>
-        </div>
-        
-        <!-- O Player agora fica em cima, em posição fixa dentro da coluna -->
-        <div class="music-container" id="music-container">
-          <button id="toggle-player-btn" class="action-btn">
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="music-info">
-            <h4 id="title"></h4>
-            <div class="progress-container" id="progress-container">
-              <div class="progress" id="progress"></div>
-            </div>
-          </div>
-          <audio src="music/acima_do_sol.mp3" id="audio"></audio>
 
-          <div class="navigation">
-            <button id="prev" class="action-btn">
-              <i class="fas fa-backward"></i>
-            </button>
-            <button id="play" class="action-btn action-btn-big">
-              <i class="fas fa-play"></i>
-            </button>
-            <button id="next" class="action-btn">
-              <i class="fas fa-forward"></i>
-            </button>
-            <button id="random" class="action-btn">
-              <i class="fas fa-random"></i>
-            </button>
-          </div>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="description"
+    content="Player de música e partituras do bloco de carnaval Amores Líquidos. músicas com partituras para Sax Alto, Trombone, Trompete e Sax Tenor." />
+  <meta name="theme-color" content="#ff94d8" />
+  <meta name="keywords" content="carnaval, bloco, música, partituras, sax, trombone, trompete, amores líquidos" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <title>Amores Liquidos</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
 
-        <!-- A busca e a playlist ficam abaixo do player -->
-        <div class="playlist-search-container">
-          <div class="controls-bar">
-            <div class="playlist-selector-container">
-              <select id="playlist-selector"></select>
-            </div>
-            <div class="instrument-selector-container">
-              <select id="instrument-selector" style="display: none;"></select>
-            </div>
-          </div>
-          <input type="text" id="search-input" placeholder="Buscar música...">
-          <ul id="playlist"></ul>
-        </div>
+<body>
 
+  <div class="main-container">
+
+
+    <div class="player-column">
+      <div class="header">
+        <h1>💕Amores Liquidos💦</h1>
       </div>
 
-      <!-- COLUNA DA DIREITA: MELODIA (CONTEÚDO DINÂMICO) -->
-      <div class="melody-column" id="melody-display-container">
-        <div class="placeholder">
-          <p>Selecione uma música com melodia disponível para vê-la aqui.</p>
+
+      <div class="music-container" id="music-container">
+        <button id="toggle-player-btn" class="action-btn">
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="music-info">
+          <h4 id="title"></h4>
+          <div class="progress-container" id="progress-container">
+            <div class="progress" id="progress"></div>
+          </div>
         </div>
+        <audio src="music/acima_do_sol.mp3" id="audio"></audio>
+
+        <div class="navigation">
+          <button id="prev" class="action-btn">
+            <i class="fas fa-backward"></i>
+          </button>
+          <button id="play" class="action-btn action-btn-big">
+            <i class="fas fa-play"></i>
+          </button>
+          <button id="next" class="action-btn">
+            <i class="fas fa-forward"></i>
+          </button>
+          <button id="random" class="action-btn">
+            <i class="fas fa-random"></i>
+          </button>
+        </div>
+      </div>
+
+
+      <div class="playlist-search-container">
+        <div class="controls-bar">
+          <div class="playlist-selector-container">
+            <select id="playlist-selector"></select>
+          </div>
+          <div class="instrument-selector-container">
+            <select id="instrument-selector" style="display: none;"></select>
+          </div>
+        </div>
+        <input type="text" id="search-input" placeholder="Buscar música...">
+        <ul id="playlist"></ul>
       </div>
 
     </div>
 
-    <script src="song-data.js"></script>
-    <script src="song-data-final.js"></script>
-    <script src="script.js"></script>
-  </body>
+
+    <div class="melody-column" id="melody-display-container">
+      <div class="placeholder">
+        <p>Selecione uma música com melodia disponível para vê-la aqui.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="song-data.js"></script>
+  <script src="song-data-final.js"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>

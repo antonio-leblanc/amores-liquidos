@@ -10,10 +10,10 @@ body {
       rgb(255, 148, 216) 23.8%,
       rgba(252, 221, 221, 1) 92%);
   height: 100vh;
-  /* Ocupa a tela inteira */
+
   display: flex;
   flex-direction: column;
-  /* Organiza header e main-container verticalmente */
+
   align-items: center;
   font-family: 'Lato', sans-serif;
   margin: 0;
@@ -22,16 +22,16 @@ body {
 
 body.carnaval-theme {
   background-image: linear-gradient(to right, #00c6ff, #0072ff);
-  /* Tons de verde e azul mais simples */
+
 }
 
 .header {
   width: 100%;
   flex-shrink: 0;
-  /* Impede que o header encolha */
+
   margin-bottom: 15px;
   height: 10vh;
-  /* 10% da altura da tela */
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,11 +48,11 @@ body.carnaval-theme {
   width: 100%;
   max-width: 1400px;
   flex-grow: 1;
-  /* Faz este container crescer para ocupar o espaço restante */
+
   min-height: 0;
-  /* Correção crucial para o Flexbox funcionar em todas as situações */
+
   height: 90vh;
-  /* 90% da altura da tela (resto após header) */
+
 }
 
 /* --- COLUNA DA ESQUERDA (PLAYER & PLAYLIST) --- */
@@ -60,9 +60,9 @@ body.carnaval-theme {
   display: flex;
   flex-direction: column;
   flex: 1;
-  /* Ocupa 1 parte do espaço */
+
   min-width: 0;
-  /* Correção de Flexbox */
+
 }
 
 .playlist-search-container {
@@ -70,7 +70,7 @@ body.carnaval-theme {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  /* Ocupa o espaço restante na coluna */
+
   min-height: 0;
 }
 
@@ -81,9 +81,9 @@ body.carnaval-theme {
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 5px;
   flex-grow: 1;
-  /* Faz a lista crescer para preencher o container */
+
   overflow-y: auto;
-  /* Adiciona rolagem se o conteúdo for maior que o espaço */
+
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -117,14 +117,14 @@ body.carnaval-theme {
 /* --- COLUNA DA DIREITA (MELODIA) --- */
 .melody-column {
   flex: 1.8;
-  /* Ocupa 1.8 partes do espaço (maior) */
+
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 15px;
   padding: 15px;
   overflow-y: auto;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   height: 100%;
-  /* Ocupa toda altura disponível */
+
 }
 
 /* --- COMPONENTES DO PLAYER --- */
@@ -135,19 +135,19 @@ body.carnaval-theme {
   padding: 20px;
   margin-bottom: 20px;
   flex-shrink: 0;
-  /* Impede que o player encolha */
+
 }
 
-/* CORREÇÃO DO BOTÃO: .music-info não é mais absoluto */
+
 .music-info {
   position: relative;
-  /* Mudou de 'absolute' para 'relative' */
+
   opacity: 1;
-  /* Sempre visível */
+
   width: 100%;
   padding: 0 0 10px 0;
-  /* Apenas um espaçamento inferior */
-  /* Removemos as propriedades que causavam o problema: top, left, transform, etc. */
+
+
 }
 
 .music-info h4 {
@@ -182,7 +182,7 @@ body.carnaval-theme {
 
 .action-btn.active {
   color: #c248ff;
-  /* Cor de destaque (roxo do tema) */
+
   text-shadow: 0 0 5px rgba(194, 72, 255, 0.5);
 }
 
@@ -249,7 +249,7 @@ body.carnaval-theme {
 /* --- ESTILOS DO MARKDOWN RENDERIZADO --- */
 .melody-column h1 {
   font-size: 1.8rem !important;
-  /* Reduz tamanho do título principal */
+
   margin-top: 0 !important;
   margin-bottom: 15px !important;
   color: #5c5261 !important;
@@ -283,22 +283,22 @@ body.carnaval-theme {
 
 #toggle-player-btn {
   display: none;
-  /* Oculta por padrão em telas grandes */
+
 }
 
 @media (max-width: 768px) {
   body {
     padding: 10px;
     padding-bottom: 150px;
-    /* Espaço para o player fixo */
+
     height: auto;
     transition: padding-bottom 0.4s ease-in-out;
-    /* Anima a mudança de padding */
+
   }
 
   body.player-is-recolhido {
     padding-bottom: 40px;
-    /* Espaço apenas para o puxador visível */
+
   }
 
   .header {
@@ -324,19 +324,19 @@ body.carnaval-theme {
     width: 100%;
     margin: 0;
     border-radius: 15px 15px 0 0;
-    /* Arredonda apenas em cima */
+
     z-index: 1000;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
     padding: 10px;
     background-color: #fff;
     transition: transform 0.4s ease-in-out;
-    /* Anima o deslize */
+
   }
 
-  /* Estado Recolhido */
+
   .music-container.player-recolhido {
     transform: translateY(calc(100% - 40px));
-    /* Move o player para baixo, deixando 40px visíveis */
+
   }
 
   #toggle-player-btn {
@@ -357,7 +357,7 @@ body.carnaval-theme {
     font-size: 16px;
   }
 
-  /* Muda a seta quando o player está recolhido */
+
   .music-container.player-recolhido #toggle-player-btn i {
     transform: rotate(180deg);
   }
@@ -373,31 +373,31 @@ body.carnaval-theme {
   .action-btn {
     margin: 0 15px;
     font-size: 20px;
-    /* Aumenta um pouco a área de toque */
+
   }
 
   /* --- AJUSTES DE LAYOUT DAS COLUNAS --- */
   .player-column {
     order: 2;
-    /* Playlist vai para baixo do conteúdo principal */
+
     margin-bottom: 20px;
   }
 
   .melody-column {
     order: 1;
-    /* Melodia/Partitura aparece primeiro */
+
     flex: 1 1 auto;
     min-height: 50vh;
-    /* Garante uma altura mínima visível */
+
     max-height: none;
-    /* Remove limite de altura para rolar a página inteira */
+
     overflow-y: visible;
-    /* Deixa o conteúdo expandir a div */
+
   }
 
   .playlist-search-container {
     max-height: 400px;
-    /* Limita altura da playlist para não ficar infinita */
+
     overflow-y: auto;
     border: 1px solid #eee;
     border-radius: 10px;
@@ -415,12 +415,12 @@ body.carnaval-theme {
   text-align: center;
   font-style: italic;
   padding: 5px 15px;
-  /* Reduced padding */
+
   font-size: 0.9em;
-  /* Slightly smaller font */
+
 }
 
-/* Removed alternating colors for medley groups */
+
 #playlist li.medley-group-0,
 #playlist li.medley-group-1 {
   background-color: transparent;
@@ -429,10 +429,10 @@ body.carnaval-theme {
 #playlist li.medley-group-0:hover,
 #playlist li.medley-group-1:hover {
   background-color: rgba(0, 0, 0, 0.05);
-  /* Efeito hover padrão */
+
 }
 
-/* O item ativo sobrepõe as cores de grupo */
+
 #playlist li.active {
   background-color: #dfdbdf;
   font-weight: bold;

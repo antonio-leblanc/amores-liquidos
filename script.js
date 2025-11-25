@@ -72,7 +72,7 @@ const player = {
       this.loadSong(this.currentSongs[this.songIndex]);
     }
     // Chamar handlePlaylistChange no init para aplicar o tema correto se a playlist inicial for Carnaval
-    this.handlePlaylistChange();
+    // this.handlePlaylistChange(); // REMOVIDO: Isso resetava a música carregada pela URL
 
     // Recolher o player por padrão em mobile
     if (window.innerWidth <= 768) {

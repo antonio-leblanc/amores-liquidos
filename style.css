@@ -21,7 +21,8 @@ body {
 }
 
 body.carnaval-theme {
-  background-image: linear-gradient(to right, #00c6ff, #0072ff); /* Tons de verde e azul mais simples */
+  background-image: linear-gradient(to right, #00c6ff, #0072ff);
+  /* Tons de verde e azul mais simples */
 }
 
 .header {
@@ -179,6 +180,12 @@ body.carnaval-theme {
   outline: 0;
 }
 
+.action-btn.active {
+  color: #c248ff;
+  /* Cor de destaque (roxo do tema) */
+  text-shadow: 0 0 5px rgba(194, 72, 255, 0.5);
+}
+
 .progress-container {
   background: #e4e4e4;
   border-radius: 5px;
@@ -275,7 +282,8 @@ body.carnaval-theme {
 }
 
 #toggle-player-btn {
-  display: none; /* Oculta por padrão em telas grandes */
+  display: none;
+  /* Oculta por padrão em telas grandes */
 }
 
 @media (max-width: 768px) {
@@ -406,19 +414,22 @@ body.carnaval-theme {
   cursor: default;
   text-align: center;
   font-style: italic;
-  padding: 5px 15px; /* Reduced padding */
-  font-size: 0.9em; /* Slightly smaller font */
+  padding: 5px 15px;
+  /* Reduced padding */
+  font-size: 0.9em;
+  /* Slightly smaller font */
 }
 
 /* Removed alternating colors for medley groups */
 #playlist li.medley-group-0,
 #playlist li.medley-group-1 {
-  background-color: transparent; 
+  background-color: transparent;
 }
 
 #playlist li.medley-group-0:hover,
 #playlist li.medley-group-1:hover {
-  background-color: rgba(0, 0, 0, 0.05); /* Efeito hover padrão */
+  background-color: rgba(0, 0, 0, 0.05);
+  /* Efeito hover padrão */
 }
 
 /* O item ativo sobrepõe as cores de grupo */

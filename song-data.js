@@ -130,7 +130,8 @@ const playlists = {
 		'palco',
 		'palpite',
 		'por_supuesto',
-		'tristeza'
+		'tristeza',
+		'vermelho'
 	]
 };
 

@@ -21,7 +21,10 @@ const player = {
   songIndex: 0,
   currentMelodyData: null,
   currentInstrument: null,
+  currentInstrument: null,
   isInMedleyMode: false, // Flag para o modo medley
+  isShuffleMode: false,
+  originalSongs: [],
 
   init: function () {
     this.populatePlaylistSelector();
@@ -125,7 +128,7 @@ const player = {
 
     this.prevBtn.addEventListener('click', this.prevSong.bind(this));
     this.nextBtn.addEventListener('click', this.nextSong.bind(this));
-    this.randomBtn.addEventListener('click', this.playRandomSong.bind(this));
+    this.randomBtn.addEventListener('click', this.toggleShuffle.bind(this));
     this.playlistSelector.addEventListener('change', this.handlePlaylistChange.bind(this));
 
     this.audio.addEventListener('timeupdate', this.updateProgress.bind(this));
@@ -208,7 +211,7 @@ const player = {
           this.audio.currentTime -= 5;
           break;
         case 'KeyA':
-          this.playRandomSong();
+          this.toggleShuffle();
           break;
         case 'KeyS':
           this.generateShareableLink();
@@ -221,6 +224,43 @@ const player = {
           break;
       }
     });
+  },
+
+  toggleShuffle: function () {
+    this.isShuffleMode = !this.isShuffleMode;
+    this.randomBtn.classList.toggle('active', this.isShuffleMode);
+
+    const currentSongName = this.currentSongs[this.songIndex];
+
+    if (this.isShuffleMode) {
+      // Ativar Shuffle
+      // 1. Salvar a ordem atual (seja alfabética ou medley) como original
+      // NOTA: Se já estivermos em shuffle e mudarmos de playlist, originalSongs será atualizado no handlePlaylistChange
+      if (this.originalSongs.length === 0 || this.originalSongs.length !== this.currentSongs.length) {
+        this.originalSongs = [...this.currentSongs];
+      }
+
+      // 2. Embaralhar
+      this.shuffleArray(this.currentSongs);
+    } else {
+      // Desativar Shuffle
+      // Restaurar a ordem original
+      this.currentSongs = [...this.originalSongs];
+    }
+
+    // 3. Sincronizar o índice da música atual na nova lista
+    this.songIndex = this.currentSongs.findIndex(s => s === currentSongName);
+
+    // 4. Regenerar a playlist visualmente
+    this.generatePlaylist(this.currentSongs);
+    this.updatePlaylistHighlight();
+  },
+
+  shuffleArray: function (array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
   },
 
   generatePlaylist: function (songs) {
@@ -334,12 +374,8 @@ const player = {
     this.playSong();
   },
 
-  playRandomSong: function () {
-    const randomIndex = Math.floor(Math.random() * this.currentSongs.length);
-    this.songIndex = randomIndex;
-    this.loadSong(this.currentSongs[this.songIndex]);
-    this.playSong();
-  },
+  // playRandomSong removido em favor do toggleShuffle
+
 
   populatePlaylistSelector: function () {
     this.playlistSelector.innerHTML = ''; // Clear existing options
@@ -391,6 +427,14 @@ const player = {
     } else {
       // É uma playlist normal
       this.currentSongs = playlists[selectedPlaylistName];
+    }
+
+    // Armazena a ordem original desta nova playlist
+    this.originalSongs = [...this.currentSongs];
+
+    // Se o shuffle estiver ativo, embaralha imediatamente
+    if (this.isShuffleMode) {
+      this.shuffleArray(this.currentSongs);
     }
 
     this.songIndex = 0;

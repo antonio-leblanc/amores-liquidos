@@ -1,4 +1,4 @@
-# **Don’t Stop / Michael Jackson (Alto Sax)**
+# **Don’t Stop Michael Jackson (Alto Sax)**
 
 Estrutura: Intro1-Intro2-1-2-1-2-3-Intro2-1-2-1-2-3
 

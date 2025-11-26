@@ -12,7 +12,7 @@ sol do si la sol
 
 **2**
 
-Re Re Re Re Mi / Re si
+Re Re Re Re Mi / Re do
 
 do do do do / Re Re do si
 

@@ -175,9 +175,9 @@ const songData = [
     "id": "dont_stop",
     "title": "Dont Stop",
     "melodies": {
-      "🎷   Michael Jackson Sax Alto": "markdown/dont_stop___michael_jackson_sax_alto.md",
-      "📯   Michael Jackson Trombone": "markdown/dont_stop___michael_jackson_trombone.md",
-      "🎺   Michael Jackson Trompete / Tenor": "markdown/dont_stop___michael_jackson_trompete___tenor.md"
+      "🎷 Michael Jackson Sax Alto": "markdown/dont_stop_michael_jackson_sax_alto.md",
+      "📯 Michael Jackson Trombone": "markdown/dont_stop_michael_jackson_trombone.md",
+      "🎺 Michael Jackson Trompete / Tenor": "markdown/dont_stop_michael_jackson_trompete___tenor.md"
     }
   },
   {
@@ -518,10 +518,6 @@ const songData = [
       "📯 Trombone": "markdown/uma_noite_e_meia_trombone.md",
       "🎺 Trompete / Tenor": "markdown/uma_noite_e_meia_trompete___tenor.md"
     }
-  },
-  {
-    "id": "vai_novinha",
-    "title": "Vai Novinha"
   },
   {
     "id": "vai_sacudir_vai_abalar",

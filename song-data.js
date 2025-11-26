@@ -60,7 +60,6 @@ const songsAlphabetical = [
 	'tremendo_vacilao',
 	'tu_ta_na_gaiola',
 	'uma_noite_e_meia',
-	// 'vai_novinha',
 	'vai_sacudir_vai_abalar',
 	'varias_queixas',
 	'vem_meu_amor',

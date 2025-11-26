@@ -12,7 +12,7 @@ Fa Sib La Sol Fa
 
 **2**
 
-Do Do Do Do Re / Do La
+Do Do Do Do Re / Do Sib
 
 Sib Sib Sib Sib / Do Do Sib La
 

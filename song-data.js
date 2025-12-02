@@ -121,6 +121,7 @@ const playlists = {
 		'bloco_na_rua',
 		'boa_sorte',
 		'canto_das_tres_racas',
+		'canto_de_xango',
 		'danca_da_manivela',
 		'eu_so_quero_um_xodo',
 		'mama_africa',

@@ -4,7 +4,7 @@
 
 Fa# Fa# Fa# Fa# Fa# La… La La Sol Fa# Sol….
 
-Sol Sol Sol…. Sol Sol Fa# Mi Sol Fa#
+Sol Sol Sol…. Sol Fa# Mi Sol Fa#
 
 Mi Fa#, Fa# Fa# Fa# Si La.. La La La Sol Fa# Re (Si Re)
 
@@ -22,7 +22,7 @@ Fa# Sol Fa# Sol Fa#….
 
 Mi Fa# Mi Re Si, Mi Fa# Mi Re Si
 
-Fa# Fa# Fa# Fa# Fa# Fa# Mi Re Fa#
+Fa# Fa#, Fa# Fa#, Fa# Fa#, Fa# Mi Re Fa#
 
 Fa# Sol Fa# La Sol Fa# Re…
 

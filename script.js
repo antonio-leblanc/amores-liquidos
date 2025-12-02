@@ -74,10 +74,10 @@ const player = {
 
 
 
-    if (window.innerWidth <= 768) {
-      this.musicContainer.classList.add('player-recolhido');
-      document.body.classList.add('player-is-recolhido');
-    }
+    // if (window.innerWidth <= 768) {
+    //   this.musicContainer.classList.add('player-recolhido');
+    //   document.body.classList.add('player-is-recolhido');
+    // }
   },
 
   generateShareableLink: function () {

@@ -72,6 +72,16 @@ const defaultPlaylistName = '🔤 Ordem Alfabética';
 
 const playlists = {
 	'🔤 Ordem Alfabética': [...songsAlphabetical].sort(),
+	'⭐ Assinatura': [
+		'sombra_da_maldade',
+		'tempos_modernos',
+		'uma_noite_e_meia',
+		'lua_de_cristal',
+		'me_deixa',
+		'exagerado',
+		'dont_stop',
+		'i_love_you_baby',
+	],
 	'✨ Novas 2026': [
 		'sinais_de_fogo',
 		'to_nem_ai',

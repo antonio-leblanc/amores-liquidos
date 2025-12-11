@@ -191,16 +191,32 @@ body.carnaval-theme {
   border-radius: 5px;
   cursor: pointer;
   margin: 10px 0;
-  height: 5px;
+  height: 8px;
   width: 100%;
 }
 
 .progress {
   background-color: #30c8ff;
   border-radius: 5px;
+  position: relative;
   height: 100%;
   width: 0%;
   transition: width 0.1s linear;
+}
+
+.progress::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  /* Metade da largura da bolinha para centralizar no fim */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  border: 2px solid #30c8ff;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 /* --- OUTROS ESTILOS (Busca, Toggle, Playlist Items) --- */

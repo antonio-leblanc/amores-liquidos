@@ -373,18 +373,22 @@ const player = {
 
     const playlistNames = Object.keys(playlists);
     const carnavalName = '🎭 Outras Carnaval';
+    const signaturePlaylistName = '⭐ Assinatura';
 
+    const signatureIndex = playlistNames.indexOf(signaturePlaylistName);
 
-    playlistNames.forEach(name => {
-      if (name === carnavalName) return;
+    // Add playlists up to and including 'Assinatura'
+    for (let i = 0; i <= signatureIndex; i++) {
+      const name = playlistNames[i];
+      if (name && name !== carnavalName) {
+        const option = document.createElement('option');
+        option.value = name;
+        option.innerText = name;
+        this.playlistSelector.appendChild(option);
+      }
+    }
 
-      const option = document.createElement('option');
-      option.value = name;
-      option.innerText = name;
-      this.playlistSelector.appendChild(option);
-    });
-
-
+    // Add Medleys as the third item
     if (typeof medleys !== 'undefined' && Object.keys(medleys).length > 0) {
       const option = document.createElement('option');
       option.value = 'Medleys';
@@ -392,7 +396,18 @@ const player = {
       this.playlistSelector.appendChild(option);
     }
 
+    // Add the rest of the playlists
+    for (let i = signatureIndex + 1; i < playlistNames.length; i++) {
+      const name = playlistNames[i];
+      if (name && name !== carnavalName) {
+        const option = document.createElement('option');
+        option.value = name;
+        option.innerText = name;
+        this.playlistSelector.appendChild(option);
+      }
+    }
 
+    // Add Carnaval at the end
     if (playlistNames.includes(carnavalName)) {
       const option = document.createElement('option');
       option.value = carnavalName;

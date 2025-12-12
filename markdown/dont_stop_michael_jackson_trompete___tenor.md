@@ -2,13 +2,7 @@
 
 Estrutura: Intro1-Intro2-1-2-1-2-3-Intro2-1-2-1-2-3
 
-**Intro 1**
-
-do do / do do / sib do do / do do
-
-do do / do do / sib do do / do do
-
-do do / do do / sib do do / do do
+**Intro 1 (x4)**
 
 do do / do do / sib do do / do do
 

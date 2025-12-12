@@ -172,12 +172,12 @@ const songData = [
     }
   },
   {
-    "id": "dont_stop",
-    "title": "Dont Stop",
+    "id": "dont_stop_michael_jackson",
+    "title": "Dont Stop Michael Jackson",
     "melodies": {
-      "🎷 Michael Jackson Sax Alto": "markdown/dont_stop_michael_jackson_sax_alto.md",
-      "📯 Michael Jackson Trombone": "markdown/dont_stop_michael_jackson_trombone.md",
-      "🎺 Michael Jackson Trompete / Tenor": "markdown/dont_stop_michael_jackson_trompete___tenor.md"
+      "🎷 Sax Alto": "markdown/dont_stop_michael_jackson_sax_alto.md",
+      "📯 Trombone": "markdown/dont_stop_michael_jackson_trombone.md",
+      "🎺 Trompete / Tenor": "markdown/dont_stop_michael_jackson_trompete___tenor.md"
     }
   },
   {

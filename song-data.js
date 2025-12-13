@@ -147,23 +147,23 @@ const playlists = {
 const medleys = {
   "Medley Fritação": ["final_feliz", "ja_sei_namorar", "pintura_intima"],
   "Medley Ivete": ["eva", "alo_paixao", "beleza_rara"],
-  "Medley Bahia": ["deusa_do_amor", "100_porcento_voce", "amor_perfeito"],
-  "Medley Gigantes MPB": [
+  "Medley Bahia/Deusa": ["deusa_do_amor", "100_porcento_voce", "amor_perfeito"],
+  "Medley Divas": ["mania_de_voce", "tremendo_vacilao", "lua_de_cristal"],
+  "Medley Lucro na Festa": ["lucro", "festa"],
+  "Medley Tim e Lulu (final)": [
     "nao_quero_dinheiro",
     "assim_caminha_a_humanidade_malhacao",
     "toda_forma_de_amor",
   ],
-  "Medley Suingueira": [
+  "Medley Tropicaliente": [
     "tambem_quero_beijar_flor_do_maracuja",
     "tieta",
     "mal_acostumado",
   ],
-  "Medley Festa Baiana": ["lucro", "festa"],
-  "Medley Rock Funk": ["mania_de_voce", "tremendo_vacilao", "lua_de_cristal"],
-  "Medley Pop MPB": ["nao_precisa_mudar", "varias_queixas"],
-  "Medley Axé 2000": ["de_ladinho", "me_abraca_me_beija"],
+  "Medley Banda Eva Classics": ["de_ladinho", "me_abraca_me_beija"],
   "Medley Funk": ["princesa", "amor_de_chocolate", "bailao", "baile_da_gaiola"],
   "Medley Claudinho & Buchecha": ["fico_assim_sem_voce", "so_love"],
   "Medley Caetano": ["meia_lua", "voce_nao_entende_nada"],
-  "Medley Ícones da MPB": ["sina", "gatas_extraordinarias"],
+  "Medley Balanço Calmo": ["nao_precisa_mudar", "varias_queixas"],
+  "Medley Beleza Pura": ["sina", "gatas_extraordinarias"],
 };

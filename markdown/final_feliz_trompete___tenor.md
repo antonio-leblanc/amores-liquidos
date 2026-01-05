@@ -4,9 +4,10 @@ Estrutura: Intro-1-2-3
 
 **Intro**
 
-...... la la la / .....la la si
+...... la la la / .....la la si *(alto: La Re Mi... / La Re Mi…)*
 
-...... si si la# / ..... la# la# la
+...... si si sib / ..... sib sib la *(alto: Si Re Fa#... / Sib Re
+Fa#...)*
 
 **1**
 

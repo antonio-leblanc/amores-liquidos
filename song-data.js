@@ -134,6 +134,7 @@ const playlists = {
     "danca_da_manivela",
     "eu_so_quero_um_xodo",
     "mama_africa",
+    "medo_bobo",
     "o_canto_da_cidade",
     "ombrin",
     "palco",

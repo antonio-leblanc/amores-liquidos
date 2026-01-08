@@ -131,6 +131,7 @@ const playlists = {
     "boa_sorte",
     "canto_das_tres_racas",
     "canto_de_xango",
+    "cheguei",
     "danca_da_manivela",
     "eu_so_quero_um_xodo",
     "mama_africa",

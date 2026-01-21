@@ -141,6 +141,7 @@ const playlists = {
     "palco",
     "palpite",
     "por_supuesto",
+    "purpurina",
     "tristeza",
     "vermelho",
   ],

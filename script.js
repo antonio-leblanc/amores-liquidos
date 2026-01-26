@@ -5,6 +5,7 @@ const player = {
   prevBtn: document.getElementById('prev'),
   nextBtn: document.getElementById('next'),
   randomBtn: document.getElementById('random'),
+  shareBtn: document.getElementById('share'),
   playlistSelector: document.getElementById('playlist-selector'),
   audio: document.getElementById('audio'),
   progress: document.getElementById('progress'),
@@ -128,6 +129,7 @@ const player = {
     this.prevBtn.addEventListener('click', this.prevSong.bind(this));
     this.nextBtn.addEventListener('click', this.nextSong.bind(this));
     this.randomBtn.addEventListener('click', this.toggleShuffle.bind(this));
+    this.shareBtn.addEventListener('click', this.generateShareableLink.bind(this));
     this.playlistSelector.addEventListener('change', this.handlePlaylistChange.bind(this));
 
     this.audio.addEventListener('timeupdate', this.updateProgress.bind(this));
@@ -449,10 +451,10 @@ const player = {
 
     if (selectedPlaylistName === '🎭 Outras Carnaval') {
       document.body.classList.add('carnaval-theme');
-      this.headerTitle.innerText = '🎭 Outras Carnaval 🎊';
+      this.headerTitle.innerText = 'Carnaval';
     } else {
       document.body.classList.remove('carnaval-theme');
-      this.headerTitle.innerText = '💕Amores Liquidos💦';
+      this.headerTitle.innerText = 'Amores Liquidos';
     }
   },
 

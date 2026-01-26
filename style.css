@@ -186,16 +186,40 @@ body.carnaval-theme {
 .action-btn {
   background-color: transparent;
   border: 0;
-  color: #dfdbdf;
+  color: #5c5261;
   font-size: 20px;
   cursor: pointer;
   padding: 10px;
-  margin: 0 20px;
+  margin: 0 10px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.action-btn:hover {
+  background-color: rgba(112, 0, 255, 0.1);
+  color: #7000ff;
+  transform: scale(1.1);
 }
 
 .action-btn.action-btn-big {
-  color: #cdc2d0;
-  font-size: 30px;
+  color: #fff;
+  background: linear-gradient(135deg, #00c6ff 0%, #7000ff 50%, #ff00d4 100%);
+  font-size: 26px;
+  width: 56px;
+  height: 56px;
+  box-shadow: 0 4px 15px rgba(112, 0, 255, 0.3);
+}
+
+.action-btn.action-btn-big:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(112, 0, 255, 0.4);
+  filter: brightness(1.1);
+  color: #fff;
 }
 
 .action-btn:focus {
@@ -203,9 +227,9 @@ body.carnaval-theme {
 }
 
 .action-btn.active {
-  color: #c248ff;
-
-  text-shadow: 0 0 5px rgba(194, 72, 255, 0.5);
+  color: #ff00d4;
+  background-color: rgba(255, 0, 212, 0.1);
+  text-shadow: 0 0 10px rgba(255, 0, 212, 0.3);
 }
 
 .progress-container {
@@ -403,9 +427,16 @@ body.carnaval-theme {
   }
 
   .action-btn {
-    margin: 0 15px;
-    font-size: 20px;
+    margin: 0 5px;
+    font-size: 18px;
+    width: 38px;
+    height: 38px;
+  }
 
+  .action-btn.action-btn-big {
+    font-size: 22px;
+    width: 48px;
+    height: 48px;
   }
 
   /* --- AJUSTES DE LAYOUT DAS COLUNAS --- */

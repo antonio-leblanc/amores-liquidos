@@ -16,15 +16,17 @@ const player = {
   melodyContainer: document.getElementById('melody-display-container'),
   headerTitle: document.querySelector('.header h1'),
   togglePlayerBtn: document.getElementById('toggle-player-btn'),
+  speedBtn: document.getElementById('speed-btn'),
 
 
   currentSongs: playlists[defaultPlaylistName],
   songIndex: 0,
   currentMelodyData: null,
   currentInstrument: null,
-  currentInstrument: null,
   isInMedleyMode: false,
   isShuffleMode: false,
+  playbackRate: 1,
+  speeds: [1, 0.75, 0.5, 1.25, 1.5],
   originalSongs: [],
 
   init: function () {
@@ -130,6 +132,7 @@ const player = {
     this.nextBtn.addEventListener('click', this.nextSong.bind(this));
     this.randomBtn.addEventListener('click', this.toggleShuffle.bind(this));
     this.shareBtn.addEventListener('click', this.generateShareableLink.bind(this));
+    this.speedBtn.addEventListener('click', this.cycleSpeed.bind(this));
     this.playlistSelector.addEventListener('change', this.handlePlaylistChange.bind(this));
 
     this.audio.addEventListener('timeupdate', this.updateProgress.bind(this));
@@ -189,6 +192,8 @@ const player = {
         case 'ArrowLeft':
         case 'KeyA':
         case 'KeyS':
+        case 'BracketLeft':
+        case 'BracketRight':
         case 'Digit0':
           e.preventDefault();
           break;
@@ -216,6 +221,12 @@ const player = {
           break;
         case 'KeyS':
           this.generateShareableLink();
+          break;
+        case 'BracketLeft':
+          this.adjustSpeed(-1);
+          break;
+        case 'BracketRight':
+          this.adjustSpeed(1);
           break;
         case 'Digit0':
           this.audio.currentTime = 0;
@@ -322,6 +333,7 @@ const player = {
     const currentPlaylist = this.playlistSelector.value;
     const folder = currentPlaylist === '🎭 Outras Carnaval' ? 'music_carnaval' : 'music';
     this.audio.src = `${folder}/${song}.mp3`;
+    this.audio.playbackRate = this.playbackRate;
 
     this.updatePlaylistHighlight();
 
@@ -367,8 +379,29 @@ const player = {
     this.playSong();
   },
 
+  cycleSpeed: function () {
+    const currentIndex = this.speeds.indexOf(this.playbackRate);
+    const nextIndex = (currentIndex + 1) % this.speeds.length;
+    this.playbackRate = this.speeds[nextIndex];
+    this.updateSpeedUI();
+  },
 
+  adjustSpeed: function (direction) {
+    const currentIndex = this.speeds.indexOf(this.playbackRate);
+    let nextIndex = currentIndex + direction;
 
+    if (nextIndex < 0) nextIndex = this.speeds.length - 1;
+    if (nextIndex >= this.speeds.length) nextIndex = 0;
+
+    this.playbackRate = this.speeds[nextIndex];
+    this.updateSpeedUI();
+  },
+
+  updateSpeedUI: function () {
+    this.audio.playbackRate = this.playbackRate;
+    this.speedBtn.innerText = `${this.playbackRate}x`;
+    this.speedBtn.classList.toggle('active', this.playbackRate !== 1);
+  },
 
   populatePlaylistSelector: function () {
     this.playlistSelector.innerHTML = '';

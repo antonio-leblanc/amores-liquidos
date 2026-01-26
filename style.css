@@ -232,6 +232,14 @@ body.carnaval-theme {
   text-shadow: 0 0 10px rgba(255, 0, 212, 0.3);
 }
 
+#speed-btn {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  min-width: 44px;
+  color: #5c5261;
+}
+
 .progress-container {
   background: rgba(0, 0, 0, 0.05);
   border-radius: 5px;
@@ -437,6 +445,10 @@ body.carnaval-theme {
     font-size: 22px;
     width: 48px;
     height: 48px;
+  }
+
+  #speed-btn {
+    font-size: 11px;
   }
 
   /* --- AJUSTES DE LAYOUT DAS COLUNAS --- */

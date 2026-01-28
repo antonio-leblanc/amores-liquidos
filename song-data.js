@@ -145,6 +145,7 @@ const playlists = {
     "palpite",
     "por_supuesto",
     "purpurina",
+    "ta_escrito",
     "tristeza",
     "uma_brasileira",
     "vermelho",

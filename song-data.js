@@ -123,6 +123,7 @@ const playlists = {
     "andei_so",
     "anunciacao",
     "ara_ketu_bom_demais",
+    "arere",
     "asa_branca",
     "azul",
     "banho_de_folhas",

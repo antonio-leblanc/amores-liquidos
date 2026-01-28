@@ -119,6 +119,7 @@ const playlists = {
   ],
   "🎭 Outras Carnaval": [
     "a_francesa",
+    "alma_boemia",
     "amor_maior",
     "andei_so",
     "anunciacao",

@@ -1,11 +1,11 @@
-# Este script automatiza todo o processo de conversão e geração de dados.
+# Este script automatiza todo o processo de conversao e geraçao de dados.
 
 # Passo 1: Encontrar o arquivo .docx mais recente
 $docxFile = Get-ChildItem "raw_songbook/*.docx" | Sort-Object LastWriteTime -Descending | Select-Object -First 1
 
 if ($docxFile) {
     Write-Host "Arquivo mais recente encontrado: $($docxFile.Name)"
-    Write-Host "Iniciando conversão do Word para Markdown..."
+    Write-Host "Iniciando conversao do Word para Markdown..."
     pandoc -f docx -t gfm -o "raw_songbook/songbook.md" "raw_songbook/$($docxFile.Name)"
 } else {
     Write-Error "Nenhum arquivo .docx encontrado em raw_songbook/"

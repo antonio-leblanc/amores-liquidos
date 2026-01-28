@@ -2,6 +2,8 @@
 
 Estrutura: Intro-1-1-Refrão(x2)
 
+Tom: Re
+
 **Intro**
 
 la Re Mi Fa# Re Mi / Re si
@@ -44,4 +46,4 @@ Fa# Fa# Fa# Fa# Mi Re / Fa# Fa# Mi Sol Mi
 
 Sol Sol Sol Sol Fa# Mi / Sol Sol Fa# Mi Re
 
-\[Fa# Fa# Fa La La Sol\]\*
+\[Fa# Fa# Fa# La Sol Fa#\]\*

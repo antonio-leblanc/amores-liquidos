@@ -154,6 +154,7 @@ const medleys = {
   "Medley Bahia/Deusa": ["deusa_do_amor", "100_porcento_voce", "amor_perfeito"],
   "Medley Divas": ["mania_de_voce", "tremendo_vacilao", "lua_de_cristal"],
   "Medley Lucro na Festa": ["lucro", "festa"],
+  "Medley Botafogo": ["depois_do_prazer", "meu_sangue_ferve_por_voce"],
   "Medley Tim e Lulu (final)": [
     "nao_quero_dinheiro",
     "assim_caminha_a_humanidade_malhacao",

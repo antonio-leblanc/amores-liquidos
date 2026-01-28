@@ -2,6 +2,8 @@
 
 Estrutura: Intro-1-1-Refrão(x2)
 
+Tom: Do
+
 **Intro**
 
 sol do Re Mi do Re / do la

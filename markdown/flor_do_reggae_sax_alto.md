@@ -2,6 +2,8 @@
 
 Estrutura: Intro-1-1-Refrão(x2)
 
+Tom: La
+
 **Intro**
 
 Mi La Si DO# La Si / La Fa#

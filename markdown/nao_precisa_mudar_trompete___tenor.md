@@ -1,5 +1,7 @@
 # **Não Precisa Mudar (Trompete/Tenor)**
 
+Tom: Re (D)
+
 Estrutura: 1-1-2-3-3
 
 **1**

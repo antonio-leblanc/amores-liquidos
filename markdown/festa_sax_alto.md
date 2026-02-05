@@ -1,5 +1,7 @@
 # Festa (Alto Sax)
 
+Tom: Si Menor (Bm)
+
 Estrutura: 1-2-3-4-5
 
 **1**

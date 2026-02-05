@@ -1,6 +1,14 @@
 # **Me Abraça, Me Beija (Trompete/Tenor)**
 
+Tom: Sol (G)
+
 Estrutura: 1-1-2-2-1-1-3
+
+**Intro**
+
+si Re Re si Mi Re si la sol, mi la si
+
+mi sol sol mi la sol sol Re Do sol
 
 **1**
 

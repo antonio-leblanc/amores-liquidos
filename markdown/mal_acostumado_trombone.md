@@ -1,5 +1,7 @@
 # **Mal Acostumado (Trombone)**
 
+Tom: Do menor (Cm)
+
 Estrutura: Intro-1-2-Refrão
 
 **Intro**

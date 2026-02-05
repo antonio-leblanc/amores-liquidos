@@ -1,5 +1,7 @@
 # **Já sei namorar (Trompete/Tenor)**
 
+Tom: Re (D)
+
 Estrutura: Intro-1-2-3-Intro-1-2-3-4-Intro
 
 **Intro**

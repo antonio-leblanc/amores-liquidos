@@ -1,5 +1,7 @@
 # **Do seu lado (Alto Sax)**
 
+Tom: Mi (E)
+
 Estrutura: Intro1-Intro2-1-1-2-2-Refrão
 
 **Intro 1**

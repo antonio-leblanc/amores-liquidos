@@ -1,5 +1,7 @@
 # **Já sei namorar (Trombone)**
 
+Tom: Do (C)
+
 Estrutura: Intro-1-2-3-Intro-1-2-3-4-Intro
 
 <table>

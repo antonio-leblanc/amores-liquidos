@@ -1,5 +1,7 @@
 # Só Love (Trompete/Tenor)
 
+Tom: Sol (G)
+
 **Intro**
 
 Si... / La... / Sol... / Fa#...

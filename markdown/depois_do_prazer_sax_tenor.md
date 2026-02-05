@@ -1,5 +1,7 @@
 # Depois do Prazer (Tenor)
 
+Tom: Sol (G)
+
 **1**
 
 si sol si sol si

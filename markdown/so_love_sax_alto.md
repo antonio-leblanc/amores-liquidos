@@ -1,5 +1,7 @@
 # Só Love (Alto Sax)
 
+Tom: Ré (D)
+
 **Intro**
 
 Fa#... / Mi... / Re... / do#...

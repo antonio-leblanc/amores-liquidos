@@ -1,5 +1,7 @@
 # **Meia Lua Inteira (Trompete/Tenor)**
 
+Tom: Sol (G)
+
 Estrutura: 1-2-2-3-4
 
 **1**

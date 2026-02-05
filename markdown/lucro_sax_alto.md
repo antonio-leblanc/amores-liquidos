@@ -1,5 +1,7 @@
 # **Lucro (Alto Sax)**
 
+Tom: Si menor (Bm)
+
 Estrutura:
 Intro1-Intro2-1-2-Refrão-Intro2-1-2-Refrão-Rapadura-Refrão-Intro1
 

@@ -1,5 +1,7 @@
 # **Meia Lua Inteira (Alto Sax)**
 
+Tom: Re (D)
+
 Estrutura: 1-2-2-3-4
 
 **1**

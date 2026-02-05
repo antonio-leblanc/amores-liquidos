@@ -1,5 +1,7 @@
 # Depois do Prazer (Trompete)
 
+Tom: Sol (G)
+
 <table style="width:94%;">
 <colgroup>
 <col style="width: 50%" />

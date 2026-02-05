@@ -1,5 +1,7 @@
 # Você não entende nada (Alto Sax)
 
+Tom: Ré (D)
+
 **1**
 
 Fa# Re Fa# Re / Sol Re Sol Re / Fa# / Re si la

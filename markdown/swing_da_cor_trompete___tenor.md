@@ -1,5 +1,7 @@
 # **Swing da Cor (Trompete/Tenor)**
 
+Tom: Ré Menor (Dm)
+
 Estrutura:
 1-1-2-Intro-1-1-2-2-3-4-4-5-Intro-1-1-2-2-3-3-4-4-5-Encerramento
 

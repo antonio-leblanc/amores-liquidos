@@ -1,6 +1,6 @@
 # To Nem Ai (Trombone)
 
-Tom: Fá Maior
+Tom: Fá (F)
 
 **1**
 

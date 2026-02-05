@@ -1,5 +1,7 @@
 # **Uma Noite e Meia - (Alto Sax)**
 
+Tom: Ré (D)
+
 Estrutura: 1+refrão (lento) – Bass – 1+refrao - 2+refrao – Bass (solo) -
 2+refrao – Final
 

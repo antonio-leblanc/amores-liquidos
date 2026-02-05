@@ -1,6 +1,6 @@
 # To Nem Ai (Tenor e Trompete)
 
-**Tom : sol Maior**
+Tom : Sol (G)
 
 **1**
 

@@ -1,5 +1,7 @@
 # **Você não entende nada (Trompete/Tenor)**
 
+Tom: Sol (G)
+
 **1**
 
 Si Sol Si Sol / Do Sol Do Sol / Si / Sol Mi Re

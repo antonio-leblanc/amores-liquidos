@@ -1,5 +1,7 @@
 # **Tempos Modernos (Alto Sax)**
 
+Tom: Ré (D)
+
 Estrutura: Intro-1-1-2-2-1-1-2-2-1-1-2(coral)-3
 
 **Intro**

@@ -1,5 +1,7 @@
 # **Sombra da Maldade (Trompete/Tenor)**
 
+Tom: Lá Menor (Am)
+
 Estrutura: Intro1-Intro2-1-Refrão-1-Refrão-3-Refrão-3-Intro2
 
 **Intro 1**

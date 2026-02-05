@@ -1,5 +1,7 @@
 # **Já sei namorar (Alto Sax)**
 
+Tom: La (A)
+
 Estrutura: Intro-1-2-3-Intro-1-2-3-4-Intro
 
 **Intro**

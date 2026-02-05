@@ -1,5 +1,7 @@
 # Depois do Prazer (Alto Sax)
 
+Tom: Re (D)
+
 **1**
 
 Fa# Re Fa# Re Fa#

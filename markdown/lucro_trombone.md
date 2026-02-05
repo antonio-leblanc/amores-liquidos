@@ -1,5 +1,7 @@
 # **Lucro (Trombone)**
 
+Tom: Re menor (Dm)
+
 Estrutura:
 Intro1-Intro2-1-2-Refrão-Intro2-1-2-Refrão-Rapadura-Refrão-Intro1
 

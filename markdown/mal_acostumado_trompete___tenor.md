@@ -1,5 +1,7 @@
 # **Mal Acostumado (Trompete/Tenor)**
 
+Tom: Re menor (Dm)
+
 Estrutura: Intro-1-2-Refrão
 
 **Intro**

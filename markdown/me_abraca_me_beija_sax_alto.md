@@ -1,6 +1,14 @@
 # **Me Abraça, Me Beija (Alto Sax)**
 
+Tom: Ré (D)
+
 Estrutura: 1-1-2-2-1-1-3
+
+**Intro**
+
+Fa# La La Fa# Si La Fa# Mi Re, Si Mi Fa#
+
+Si Re Re Si Mi Re Re La Sol Re
 
 **1**
 

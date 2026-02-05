@@ -1,5 +1,7 @@
 #  **Lucro (Trompete/Tenor)**
 
+Tom: Mi menor (Em)
+
 Estrutura:
 Intro1-Intro2-1-2-Refrão-Intro2-1-2-Refrão-Rapadura-Refrão-Intro1
 

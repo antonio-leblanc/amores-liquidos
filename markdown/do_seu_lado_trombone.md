@@ -1,5 +1,7 @@
 # **Do seu lado (Trombone)**
 
+Sol (G)
+
 Estrutura: Intro1-Intro2-1-1-2-2-Refrão
 
 **Intro 1**

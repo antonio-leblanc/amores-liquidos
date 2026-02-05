@@ -1,5 +1,7 @@
 # **Não Precisa Mudar (Trombone)**
 
+Tom: Do (C)
+
 Estrutura: 1-1-2-3-3
 
 **1**

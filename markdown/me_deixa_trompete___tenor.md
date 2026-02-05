@@ -1,5 +1,7 @@
 # **Me deixa (Trompete/Tenor)**
 
+Tom: Ré Menor (Dm)
+
 Estrutura: Intro1-Intro2-1-Refrão-Intro2-3-Refrão (x2)-Intro1
 
 **Intro 1**
@@ -30,8 +32,7 @@ mi mi si si si / la sol fa# sol fa# sol fa# mi
 
 Mi Mi Mi Mi Re / Fa# Fa# Fa# Fa# Fa# Fa# Fa# Sol
 
-Sol Fa# Sol Fa# Sol
-Mi<img src="media/image1.png" style="width:0.22917in;height:0.53125in" />
+Sol Fa# Sol Fa# Sol Mi
 
 La Sol Fa# Fa# Sol Mi **2x**
 

@@ -1,5 +1,7 @@
 # Festa (Trombone)
 
+Tom: Ré Menor (Dm)
+
 Estrutura: 1-2-3-4-5
 
 **1**

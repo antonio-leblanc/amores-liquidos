@@ -1,5 +1,7 @@
 # **Me Abraça, Me Beija (Trombone)**
 
+Tom: Fá (F)
+
 Estrutura: 1-1-2-2-1-1-3
 
 **1**

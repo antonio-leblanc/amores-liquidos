@@ -1,5 +1,7 @@
 # **Não Precisa Mudar (Alto Sax)**
 
+Tom: Lá (A)
+
 Estrutura: 1-1-2-3-3
 
 **1**

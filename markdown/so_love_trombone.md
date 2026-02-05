@@ -1,5 +1,7 @@
 # Só Love (Trombone)
 
+Tom: Fá (F)
+
 **Intro**
 
 La... / Sol... / Fa... / Mi…

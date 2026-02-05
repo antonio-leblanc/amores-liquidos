@@ -1,5 +1,7 @@
 # **Mal Acostumado (Alto Sax)**
 
+Tom: La menor (Am)
+
 Estrutura: Intro-1-2-Refrão
 
 **Intro**

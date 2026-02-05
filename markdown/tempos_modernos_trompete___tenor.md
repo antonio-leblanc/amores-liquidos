@@ -1,5 +1,7 @@
 # **Tempos Modernos (Trompete/Tenor)**
 
+Tom: Sol (G)
+
 Estrutura: Intro-1-1-2-2-1-1-2-2-1-1-2(coral)-3
 
 **Intro**

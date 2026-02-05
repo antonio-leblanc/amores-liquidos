@@ -38,7 +38,7 @@ const songsAlphabetical = [
   "maria_maria",
   "me_abraca_me_beija",
   "me_deixa",
-  "meia_lua",
+  "meia_lua_inteira",
   "meu_sangue_ferve_por_voce",
   "milla",
   "nao_precisa_mudar",
@@ -172,7 +172,7 @@ const medleys = {
   "Medley Banda Eva Classics": ["de_ladinho", "me_abraca_me_beija"],
   "Medley Funk": ["princesa", "amor_de_chocolate", "bailao", "baile_da_gaiola"],
   "Medley Claudinho & Buchecha": ["fico_assim_sem_voce", "so_love"],
-  "Medley Caetano": ["meia_lua", "voce_nao_entende_nada"],
+  "Medley Caetano": ["meia_lua_inteira", "voce_nao_entende_nada"],
   "Medley Balanço Calmo": ["nao_precisa_mudar", "varias_queixas"],
   "Medley Beleza Pura": ["sina", "gatas_extraordinarias"],
 };

@@ -332,12 +332,12 @@ const songData = [
     }
   },
   {
-    "id": "meia_lua",
-    "title": "Meia Lua",
+    "id": "meia_lua_inteira",
+    "title": "Meia Lua Inteira",
     "melodies": {
-      "🎷 Inteira Sax Alto": "markdown/meia_lua_inteira_sax_alto.md",
-      "📯 Inteira Trombone": "markdown/meia_lua_inteira_trombone.md",
-      "🎺 Inteira Trompete / Tenor": "markdown/meia_lua_inteira_trompete___tenor.md"
+      "🎷 Sax Alto": "markdown/meia_lua_inteira_sax_alto.md",
+      "📯 Trombone": "markdown/meia_lua_inteira_trombone.md",
+      "🎺 Trompete / Tenor": "markdown/meia_lua_inteira_trompete___tenor.md"
     }
   },
   {

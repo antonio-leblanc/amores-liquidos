@@ -1,6 +1,8 @@
 # Você me vira a cabeça (Alto Sax)
 
-Intro - 1 - 2 - 3 - Refrão - Intro - 2 - 3 - Refrão x2
+Tom: Si Menor (Bm)
+
+Estrutura Intro - 1 - 2 - 3 - Refrão - Intro - 2 - 3 - Refrão x2
 
 **Intro**
 

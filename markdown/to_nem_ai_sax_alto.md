@@ -1,6 +1,6 @@
 # To Nem Ai (Alto Sax)
 
-Tom: Ré Maior
+Tom: Ré (D)
 
 **1**
 

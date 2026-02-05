@@ -1,6 +1,8 @@
 # Você me vira a cabeça (Trompete/Tenor)
 
-Intro - 1 - 2 - 3 - Refrão - Intro - 2 - 3 - Refrão x2
+Tom: Mi Menor (Em)
+
+Estrutura: Intro - 1 - 2 - 3 - Refrão - Intro - 2 - 3 - Refrão x2
 
 **Intro**
 

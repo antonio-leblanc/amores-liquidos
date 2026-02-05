@@ -1,5 +1,7 @@
 # **Você não entende nada (Trombone)**
 
+Tom: Fá (F)
+
 **1**
 
 La Fa La Fa / Sib Fa Sib Fa / La / Fa Re Do

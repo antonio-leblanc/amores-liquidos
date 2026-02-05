@@ -1,5 +1,7 @@
 # Você me vira a cabeça (Trombone)
 
+Tom: Ré Menor (Dm)
+
 <table style="width:95%;">
 <colgroup>
 <col style="width: 43%" />

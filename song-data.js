@@ -120,6 +120,7 @@ const playlists = {
   "🎭 Outras Carnaval": [
     "a_francesa",
     "agua_de_chuva_no_mar",
+    "ai_que_saudade_d_oce",
     "alma_boemia",
     "amor_de_que",
     "amor_maior",
@@ -141,6 +142,7 @@ const playlists = {
     "danca_da_manivela",
     "eu_so_quero_um_xodo",
     "fricote",
+    "jesus_cristo",
     "mama_africa",
     "medo_bobo",
     "nosso_primeiro_beijo",

@@ -156,7 +156,6 @@ const playlists = {
     "tristeza",
     "uma_brasileira",
     "vermelho",
-    "vermelho",
     "whats_up",
     "whenever_wherever"
   ],

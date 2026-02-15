@@ -145,6 +145,7 @@ const playlists = {
     "eu_so_quero_um_xodo",
     "fricote",
     "jesus_cristo",
+    "jet_ski",
     "mama_africa",
     "medo_bobo",
     "nosso_primeiro_beijo",

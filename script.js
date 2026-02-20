@@ -486,9 +486,9 @@ const player = {
     this.pauseSong();
 
 
-    if (selectedPlaylistName === '🎭 Carnaval') {
+    if (selectedPlaylistName === '🎭 Carnaval' || selectedPlaylistName === '♾️ Todas as Músicas') {
       document.body.classList.add('carnaval-theme');
-      this.headerTitle.innerText = 'Carnaval';
+      this.headerTitle.innerText = selectedPlaylistName.includes('Carnaval') ? 'Carnaval' : 'Todas as Músicas';
     } else {
       document.body.classList.remove('carnaval-theme');
       this.headerTitle.innerText = 'Amores Liquidos';

@@ -48,9 +48,9 @@ except FileNotFoundError:
     print(f"ERRO: Arquivo de entrada '{SONG_DATA_INPUT_FILE}' não encontrado.")
     exit()
 
-match = re.search(r'const\s+songsAlphabetical\s*=\s*\[([^\]]+)\]', content, re.DOTALL)
+match = re.search(r'const\s+songsAmores\s*=\s*\[([^\]]+)\]', content, re.DOTALL)
 if not match:
-    print(f"ERRO: Array 'songsAlphabetical' não encontrado em '{SONG_DATA_INPUT_FILE}'")
+    print(f"ERRO: Array 'songsAmores' não encontrado em '{SONG_DATA_INPUT_FILE}'")
     exit()
 
 song_slugs_text = match.group(1)

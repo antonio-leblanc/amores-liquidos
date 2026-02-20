@@ -54,7 +54,7 @@ const player = {
     }
 
     let songHandledByUrl = false;
-    if (songId && songsAlphabetical.includes(songId)) {
+    if (songId && songsAmores.includes(songId)) {
       if (this.playlistSelector.value !== defaultPlaylistName) {
         this.playlistSelector.value = defaultPlaylistName;
         this.handlePlaylistChange();

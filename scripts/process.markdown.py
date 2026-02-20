@@ -69,7 +69,7 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # --- CONFIGURAÇÃO ---
 INPUT_FILE = os.path.join(PROJECT_ROOT, "raw_songbook/songbook.md")
-OUTPUT_DIR = os.path.join(PROJECT_ROOT, "arranjos")
+OUTPUT_DIR = os.path.join(PROJECT_ROOT, "arranjos/amores")
 
 # --- LÓGICA PRINCIPAL ---
 

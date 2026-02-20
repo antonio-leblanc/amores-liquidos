@@ -1,9 +1,11 @@
 apertou botao random
 select a primeira
 
+lista de todas as musicas e melhorar gestao de playlistas
+
 o botao de share nao seleciona a playlist..
 
-lista de todas as musicas
+
 
 
 1 melodia de musica carnaval

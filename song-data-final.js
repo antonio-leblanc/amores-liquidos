@@ -9,6 +9,10 @@ const songData = [
     }
   },
   {
+    "id": "a_francesa",
+    "title": "A Francesa"
+  },
+  {
     "id": "acima_do_sol",
     "title": "Acima Do Sol",
     "melodies": {
@@ -16,6 +20,18 @@ const songData = [
       "📯 Trombone": "arranjos/amores/acima_do_sol/trombone.md",
       "🎺 Trompete / Tenor": "arranjos/amores/acima_do_sol/trompete___tenor.md"
     }
+  },
+  {
+    "id": "agua_de_chuva_no_mar",
+    "title": "Agua De Chuva No Mar"
+  },
+  {
+    "id": "ai_que_saudade_d_oce",
+    "title": "Ai Que Saudade D Oce"
+  },
+  {
+    "id": "alma_boemia",
+    "title": "Alma Boemia"
   },
   {
     "id": "alo_paixao",
@@ -36,6 +52,10 @@ const songData = [
     }
   },
   {
+    "id": "amor_de_que",
+    "title": "Amor De Que"
+  },
+  {
     "id": "amor_i_love_you",
     "title": "Amor I Love You",
     "melodies": {
@@ -43,6 +63,10 @@ const songData = [
       "📯 Trombone": "arranjos/amores/amor_i_love_you/trombone.md",
       "🎺 Trompete / Tenor": "arranjos/amores/amor_i_love_you/trompete___tenor.md"
     }
+  },
+  {
+    "id": "amor_maior",
+    "title": "Amor Maior"
   },
   {
     "id": "amor_perfeito",
@@ -63,6 +87,26 @@ const songData = [
     }
   },
   {
+    "id": "andei_so",
+    "title": "Andei So"
+  },
+  {
+    "id": "anunciacao",
+    "title": "Anunciacao"
+  },
+  {
+    "id": "ara_ketu_bom_demais",
+    "title": "Ara Ketu Bom Demais"
+  },
+  {
+    "id": "arere",
+    "title": "Arere"
+  },
+  {
+    "id": "asa_branca",
+    "title": "Asa Branca"
+  },
+  {
     "id": "assim_caminha_a_humanidade_malhacao",
     "title": "Assim Caminha A Humanidade Malhacao",
     "melodies": {
@@ -70,6 +114,14 @@ const songData = [
       "📯 Trombone": "arranjos/amores/assim_caminha_a_humanidade_malhacao/trombone.md",
       "🎺 Trompete / Tenor": "arranjos/amores/assim_caminha_a_humanidade_malhacao/trompete___tenor.md"
     }
+  },
+  {
+    "id": "azul",
+    "title": "Azul"
+  },
+  {
+    "id": "baba_baby",
+    "title": "Baba Baby"
   },
   {
     "id": "baianidade_nago",
@@ -99,6 +151,14 @@ const songData = [
     }
   },
   {
+    "id": "banho_de_folhas",
+    "title": "Banho De Folhas"
+  },
+  {
+    "id": "bate_lata",
+    "title": "Bate Lata"
+  },
+  {
     "id": "beleza_rara",
     "title": "Beleza Rara",
     "melodies": {
@@ -106,6 +166,14 @@ const songData = [
       "📯 Trombone": "arranjos/amores/beleza_rara/trombone.md",
       "🎺 Trompete / Tenor": "arranjos/amores/beleza_rara/trompete___tenor.md"
     }
+  },
+  {
+    "id": "bloco_na_rua",
+    "title": "Bloco Na Rua"
+  },
+  {
+    "id": "boa_sorte",
+    "title": "Boa Sorte"
   },
   {
     "id": "bola_de_sabao",
@@ -117,6 +185,22 @@ const songData = [
     }
   },
   {
+    "id": "canto_das_tres_racas",
+    "title": "Canto Das Tres Racas"
+  },
+  {
+    "id": "canto_de_xango",
+    "title": "Canto De Xango"
+  },
+  {
+    "id": "carinito",
+    "title": "Carinito"
+  },
+  {
+    "id": "cheguei",
+    "title": "Cheguei"
+  },
+  {
     "id": "cilada",
     "title": "Cilada",
     "melodies": {
@@ -124,6 +208,14 @@ const songData = [
       "📯 Trombone": "arranjos/amores/cilada/trombone.md",
       "🎺 Trompete / Tenor": "arranjos/amores/cilada/trompete___tenor.md"
     }
+  },
+  {
+    "id": "cobra",
+    "title": "Cobra"
+  },
+  {
+    "id": "danca_da_manivela",
+    "title": "Danca Da Manivela"
   },
   {
     "id": "de_ladinho",
@@ -143,6 +235,10 @@ const songData = [
       "📯 Trombone": "arranjos/amores/depois_do_prazer/trombone.md",
       "🎺 Trompete": "arranjos/amores/depois_do_prazer/trompete.md"
     }
+  },
+  {
+    "id": "desliza",
+    "title": "Desliza"
   },
   {
     "id": "deus_me_livre",
@@ -179,6 +275,10 @@ const songData = [
       "📯 Trombone": "arranjos/amores/dont_stop_michael_jackson/trombone.md",
       "🎺 Trompete / Tenor": "arranjos/amores/dont_stop_michael_jackson/trompete___tenor.md"
     }
+  },
+  {
+    "id": "eu_so_quero_um_xodo",
+    "title": "Eu So Quero Um Xodo"
   },
   {
     "id": "eva",
@@ -234,6 +334,10 @@ const songData = [
     }
   },
   {
+    "id": "fricote",
+    "title": "Fricote"
+  },
+  {
     "id": "gatas_extraordinarias",
     "title": "Gatas Extraordinarias",
     "melodies": {
@@ -275,6 +379,14 @@ const songData = [
     }
   },
   {
+    "id": "jesus_cristo",
+    "title": "Jesus Cristo"
+  },
+  {
+    "id": "jet_ski",
+    "title": "Jet Ski"
+  },
+  {
     "id": "lua_de_cristal",
     "title": "Lua De Cristal",
     "melodies": {
@@ -300,6 +412,10 @@ const songData = [
       "📯 Trombone": "arranjos/amores/mal_acostumado/trombone.md",
       "🎺 Trompete / Tenor": "arranjos/amores/mal_acostumado/trompete___tenor.md"
     }
+  },
+  {
+    "id": "mama_africa",
+    "title": "Mama Africa"
   },
   {
     "id": "mania_de_voce",
@@ -332,6 +448,10 @@ const songData = [
     }
   },
   {
+    "id": "medo_bobo",
+    "title": "Medo Bobo"
+  },
+  {
     "id": "meia_lua_inteira",
     "title": "Meia Lua Inteira",
     "melodies": {
@@ -360,6 +480,13 @@ const songData = [
     }
   },
   {
+    "id": "nao_me_entrego_pros_caretas",
+    "title": "Nao Me Entrego Pros Caretas",
+    "melodies": {
+      "🎺 Trompete / Tenor": "arranjos/carnaval/nao_me_entrego_pros_caretas/trompete___tenor.md"
+    }
+  },
+  {
     "id": "nao_precisa_mudar",
     "title": "Nao Precisa Mudar",
     "melodies": {
@@ -378,6 +505,26 @@ const songData = [
     }
   },
   {
+    "id": "nosso_primeiro_beijo",
+    "title": "Nosso Primeiro Beijo"
+  },
+  {
+    "id": "o_canto_da_cidade",
+    "title": "O Canto Da Cidade"
+  },
+  {
+    "id": "ombrin",
+    "title": "Ombrin"
+  },
+  {
+    "id": "palco",
+    "title": "Palco"
+  },
+  {
+    "id": "palpite",
+    "title": "Palpite"
+  },
+  {
     "id": "pintura_intima",
     "title": "Pintura Intima",
     "melodies": {
@@ -388,6 +535,10 @@ const songData = [
     }
   },
   {
+    "id": "por_supuesto",
+    "title": "Por Supuesto"
+  },
+  {
     "id": "princesa",
     "title": "Princesa",
     "melodies": {
@@ -395,6 +546,10 @@ const songData = [
       "📯 Trombone": "arranjos/amores/princesa/trombone.md",
       "🎺 Trompete / Tenor": "arranjos/amores/princesa/trompete___tenor.md"
     }
+  },
+  {
+    "id": "purpurina",
+    "title": "Purpurina"
   },
   {
     "id": "sina",
@@ -448,6 +603,10 @@ const songData = [
       "📯 Trombone": "arranjos/amores/swing_da_cor/trombone.md",
       "🎺 Trompete / Tenor": "arranjos/amores/swing_da_cor/trompete___tenor.md"
     }
+  },
+  {
+    "id": "ta_escrito",
+    "title": "Ta Escrito"
   },
   {
     "id": "tambem_quero_beijar_flor_do_maracuja",
@@ -507,8 +666,16 @@ const songData = [
     }
   },
   {
+    "id": "tristeza",
+    "title": "Tristeza"
+  },
+  {
     "id": "tu_ta_na_gaiola",
     "title": "Tu Ta Na Gaiola"
+  },
+  {
+    "id": "uma_brasileira",
+    "title": "Uma Brasileira"
   },
   {
     "id": "uma_noite_e_meia",
@@ -546,6 +713,10 @@ const songData = [
     }
   },
   {
+    "id": "vermelho",
+    "title": "Vermelho"
+  },
+  {
     "id": "voce_me_vira_a_cabeca",
     "title": "Voce Me Vira A Cabeca",
     "melodies": {
@@ -562,5 +733,358 @@ const songData = [
       "📯 Trombone": "arranjos/amores/voce_nao_entende_nada/trombone.md",
       "🎺 Trompete / Tenor": "arranjos/amores/voce_nao_entende_nada/trompete___tenor.md"
     }
+  },
+  {
+    "id": "whats_up",
+    "title": "Whats Up"
+  },
+  {
+    "id": "whenever_wherever",
+    "title": "Whenever Wherever"
   }
 ];
+
+const playlists = {
+  "💕 Repertorio Amores": [
+    "100_porcento_voce",
+    "acima_do_sol",
+    "alo_paixao",
+    "amor_de_chocolate",
+    "amor_i_love_you",
+    "amor_perfeito",
+    "andanca",
+    "assim_caminha_a_humanidade_malhacao",
+    "baianidade_nago",
+    "bailao",
+    "baile_da_gaiola",
+    "beleza_rara",
+    "bola_de_sabao",
+    "cilada",
+    "de_ladinho",
+    "depois_do_prazer",
+    "deus_me_livre",
+    "deusa_do_amor",
+    "do_seu_lado",
+    "dont_stop_michael_jackson",
+    "eva",
+    "exagerado",
+    "festa",
+    "fico_assim_sem_voce",
+    "final_feliz",
+    "flor_do_reggae",
+    "gatas_extraordinarias",
+    "hey_jude",
+    "i_love_you_baby",
+    "i_miss_her",
+    "ja_sei_namorar",
+    "lua_de_cristal",
+    "lucro",
+    "mal_acostumado",
+    "mania_de_voce",
+    "maria_maria",
+    "me_abraca_me_beija",
+    "me_deixa",
+    "meia_lua_inteira",
+    "meu_sangue_ferve_por_voce",
+    "milla",
+    "nao_precisa_mudar",
+    "nao_quero_dinheiro",
+    "pintura_intima",
+    "princesa",
+    "sina",
+    "sinais_de_fogo",
+    "so_love",
+    "sombra_da_maldade",
+    "sorte_grande",
+    "swing_da_cor",
+    "tambem_quero_beijar_flor_do_maracuja",
+    "temporal",
+    "tempos_modernos",
+    "tieta",
+    "to_nem_ai",
+    "toda_forma_de_amor",
+    "tremendo_vacilao",
+    "tu_ta_na_gaiola",
+    "uma_noite_e_meia",
+    "vai_sacudir_vai_abalar",
+    "varias_queixas",
+    "vem_meu_amor",
+    "voce_me_vira_a_cabeca",
+    "voce_nao_entende_nada"
+  ],
+  "⭐ Assinatura": [
+    "sombra_da_maldade",
+    "tempos_modernos",
+    "uma_noite_e_meia",
+    "lua_de_cristal",
+    "me_deixa",
+    "exagerado",
+    "dont_stop_michael_jackson",
+    "i_love_you_baby"
+  ],
+  "✨ Novas 2026": [
+    "sinais_de_fogo",
+    "to_nem_ai",
+    "amor_i_love_you",
+    "vem_meu_amor",
+    "i_miss_her",
+    "coracao_partido"
+  ],
+  "🥂 GIG": [
+    "deusa_do_amor",
+    "100_porcento_voce",
+    "amor_perfeito",
+    "depois_do_prazer",
+    "meu_sangue_ferve_por_voce",
+    "tempos_modernos",
+    "nao_precisa_mudar",
+    "varias_queixas",
+    "bola_de_sabao",
+    "temporal",
+    "final_feliz",
+    "ja_sei_namorar",
+    "pintura_intima",
+    "uma_noite_e_meia",
+    "mania_de_voce",
+    "tremendo_vacilao",
+    "i_love_you_baby",
+    "dont_stop_michael_jackson",
+    "baianidade_nago",
+    "princesa",
+    "amor_de_chocolate",
+    "bailao",
+    "baile_da_gaiola",
+    "nao_quero_dinheiro",
+    "assim_caminha_a_humanidade_malhacao",
+    "toda_forma_de_amor"
+  ],
+  "🎭 Carnaval": [
+    "a_francesa",
+    "agua_de_chuva_no_mar",
+    "ai_que_saudade_d_oce",
+    "alma_boemia",
+    "amor_de_que",
+    "amor_maior",
+    "andei_so",
+    "anunciacao",
+    "ara_ketu_bom_demais",
+    "arere",
+    "asa_branca",
+    "azul",
+    "baba_baby",
+    "banho_de_folhas",
+    "bate_lata",
+    "bloco_na_rua",
+    "boa_sorte",
+    "canto_das_tres_racas",
+    "canto_de_xango",
+    "carinito",
+    "cheguei",
+    "cobra",
+    "danca_da_manivela",
+    "desliza",
+    "eu_so_quero_um_xodo",
+    "fricote",
+    "jesus_cristo",
+    "jet_ski",
+    "mama_africa",
+    "medo_bobo",
+    "nao_me_entrego_pros_caretas",
+    "nosso_primeiro_beijo",
+    "o_canto_da_cidade",
+    "ombrin",
+    "palco",
+    "palpite",
+    "por_supuesto",
+    "purpurina",
+    "ta_escrito",
+    "tristeza",
+    "uma_brasileira",
+    "vermelho",
+    "whats_up",
+    "whenever_wherever"
+  ],
+  "♾️ Todas as Músicas": [
+    "100_porcento_voce",
+    "a_francesa",
+    "acima_do_sol",
+    "agua_de_chuva_no_mar",
+    "ai_que_saudade_d_oce",
+    "alma_boemia",
+    "alo_paixao",
+    "amor_de_chocolate",
+    "amor_de_que",
+    "amor_i_love_you",
+    "amor_maior",
+    "amor_perfeito",
+    "andanca",
+    "andei_so",
+    "anunciacao",
+    "ara_ketu_bom_demais",
+    "arere",
+    "asa_branca",
+    "assim_caminha_a_humanidade_malhacao",
+    "azul",
+    "baba_baby",
+    "baianidade_nago",
+    "bailao",
+    "baile_da_gaiola",
+    "banho_de_folhas",
+    "bate_lata",
+    "beleza_rara",
+    "bloco_na_rua",
+    "boa_sorte",
+    "bola_de_sabao",
+    "canto_das_tres_racas",
+    "canto_de_xango",
+    "carinito",
+    "cheguei",
+    "cilada",
+    "cobra",
+    "danca_da_manivela",
+    "de_ladinho",
+    "depois_do_prazer",
+    "desliza",
+    "deus_me_livre",
+    "deusa_do_amor",
+    "do_seu_lado",
+    "dont_stop_michael_jackson",
+    "eu_so_quero_um_xodo",
+    "eva",
+    "exagerado",
+    "festa",
+    "fico_assim_sem_voce",
+    "final_feliz",
+    "flor_do_reggae",
+    "fricote",
+    "gatas_extraordinarias",
+    "hey_jude",
+    "i_love_you_baby",
+    "i_miss_her",
+    "ja_sei_namorar",
+    "jesus_cristo",
+    "jet_ski",
+    "lua_de_cristal",
+    "lucro",
+    "mal_acostumado",
+    "mama_africa",
+    "mania_de_voce",
+    "maria_maria",
+    "me_abraca_me_beija",
+    "me_deixa",
+    "medo_bobo",
+    "meia_lua_inteira",
+    "meu_sangue_ferve_por_voce",
+    "milla",
+    "nao_me_entrego_pros_caretas",
+    "nao_precisa_mudar",
+    "nao_quero_dinheiro",
+    "nosso_primeiro_beijo",
+    "o_canto_da_cidade",
+    "ombrin",
+    "palco",
+    "palpite",
+    "pintura_intima",
+    "por_supuesto",
+    "princesa",
+    "purpurina",
+    "sina",
+    "sinais_de_fogo",
+    "so_love",
+    "sombra_da_maldade",
+    "sorte_grande",
+    "swing_da_cor",
+    "ta_escrito",
+    "tambem_quero_beijar_flor_do_maracuja",
+    "temporal",
+    "tempos_modernos",
+    "tieta",
+    "to_nem_ai",
+    "toda_forma_de_amor",
+    "tremendo_vacilao",
+    "tristeza",
+    "tu_ta_na_gaiola",
+    "uma_brasileira",
+    "uma_noite_e_meia",
+    "vai_sacudir_vai_abalar",
+    "varias_queixas",
+    "vem_meu_amor",
+    "vermelho",
+    "voce_me_vira_a_cabeca",
+    "voce_nao_entende_nada",
+    "whats_up",
+    "whenever_wherever"
+  ]
+};
+
+const medleys = {
+  "Medley Fritação": [
+    "final_feliz",
+    "ja_sei_namorar",
+    "pintura_intima"
+  ],
+  "Medley Ivete": [
+    "eva",
+    "alo_paixao",
+    "beleza_rara"
+  ],
+  "Medley Bahia/Deusa": [
+    "deusa_do_amor",
+    "100_porcento_voce",
+    "amor_perfeito"
+  ],
+  "Medley Divas": [
+    "mania_de_voce",
+    "tremendo_vacilao",
+    "lua_de_cristal"
+  ],
+  "Medley Lucro na Festa": [
+    "lucro",
+    "festa"
+  ],
+  "Medley Botafogo": [
+    "depois_do_prazer",
+    "meu_sangue_ferve_por_voce"
+  ],
+  "Medley Tim e Lulu (final)": [
+    "nao_quero_dinheiro",
+    "assim_caminha_a_humanidade_malhacao",
+    "toda_forma_de_amor"
+  ],
+  "Medley Tropicaliente": [
+    "tambem_quero_beijar_flor_do_maracuja",
+    "tieta",
+    "mal_acostumado"
+  ],
+  "Medley Banda Eva Classics": [
+    "de_ladinho",
+    "me_abraca_me_beija"
+  ],
+  "Medley Funk": [
+    "princesa",
+    "amor_de_chocolate",
+    "bailao",
+    "baile_da_gaiola"
+  ],
+  "Medley Claudinho & Buchecha": [
+    "fico_assim_sem_voce",
+    "so_love"
+  ],
+  "Medley Caetano": [
+    "meia_lua_inteira",
+    "voce_nao_entende_nada"
+  ],
+  "Medley Balanço Calmo": [
+    "nao_precisa_mudar",
+    "varias_queixas"
+  ],
+  "Medley Beleza Pura": [
+    "sina",
+    "gatas_extraordinarias"
+  ]
+};
+
+// Variáveis auxiliares para compatibilidade
+const songsAlphabetical = playlists['💕 Repertorio Amores'] || [];
+const songsAmores = songsAlphabetical;
+const defaultPlaylistName = "💕 Repertorio Amores";

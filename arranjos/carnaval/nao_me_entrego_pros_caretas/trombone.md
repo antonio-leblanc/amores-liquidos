@@ -1,6 +1,6 @@
 # **Não Me Entrego Pros Caretas (Trombone)**
 
-*Cálculo: Para transpor de Trompete/Tenor (em Bb) para Trombone (Tom Real C), vou descer 2 semitons em cada nota.*
+Tom: Dm
 
 **Intro1**
 

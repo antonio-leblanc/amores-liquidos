@@ -53,10 +53,13 @@ const player = {
       }
     }
 
+    const allSongsPlaylist = '♾️ Todas as Músicas';
     let songHandledByUrl = false;
-    if (songId && songsAmores.includes(songId)) {
-      if (this.playlistSelector.value !== defaultPlaylistName) {
-        this.playlistSelector.value = defaultPlaylistName;
+    const allSongs = playlists[allSongsPlaylist] || [];
+
+    if (songId && allSongs.includes(songId)) {
+      if (this.playlistSelector.value !== allSongsPlaylist) {
+        this.playlistSelector.value = allSongsPlaylist;
         this.handlePlaylistChange();
       } else {
         this.generatePlaylist(this.currentSongs);

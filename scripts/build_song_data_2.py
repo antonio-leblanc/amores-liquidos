@@ -14,36 +14,55 @@ ARRANGEMENT_DIRS = {
     'carnaval': os.path.join(PROJECT_ROOT, 'arranjos', 'carnaval')
 }
 
+# Mapping specific filenames to instrument names if standard conversion fails or needs override
+INSTRUMENT_MAPPING = {
+    'sax_alto': '🎷 Sax Alto',
+    'sax_tenor': '🎷 Sax Tenor',
+    'trombone': '📯 Trombone',
+    'trompete': '🎺 Trompete',
+    'trompete___tenor': '🎺 Trompete / Tenor',
+    'base': '🎹 Base',
+    'bateria': '🥁 Bateria',
+}
+
 def slug_to_title(slug):
     """Converte um slug_de_musica para um Título De Música."""
     title = slug.replace('_', ' ').replace('pc', '%').title()
     return title
 
-def get_instrument_from_filename(filename, song_slug):
-    """Extrai o nome do instrumento do arquivo."""
-    base_name = filename.rsplit('.', 1)[0]
-    instrument_slug = base_name.replace(f"{song_slug}_", "", 1)
+def format_instrument_name(filename_slug):
+    """Formata o nome do instrumento a partir do slug do arquivo."""
+    # Check explicit mapping first
+    if filename_slug in INSTRUMENT_MAPPING:
+        return INSTRUMENT_MAPPING[filename_slug]
+
+    # Generic formatting fallback
+    name = filename_slug.replace('___', ' / ').replace('_', ' ').title()
     
-    instrument_name = instrument_slug.replace('___', ' / ').replace('_', ' ').title()
+    if 'Sax' in name:
+        return f"🎷 {name}"
+    elif 'Trombone' in name:
+        return f"📯 {name}"
+    elif 'Trompete' in name:
+        return f"🎺 {name}"
+    elif 'Bateria' in name or 'Drums' in name:
+        return f"🥁 {name}"
     
-    if 'Sax' in instrument_name:
-        instrument_name = f"🎷 {instrument_name}"
-    elif 'Trombone' in instrument_name:
-        instrument_name = f"📯 {instrument_name}"
-    elif 'Trompete' in instrument_name:
-        instrument_name = f"🎺 {instrument_name}"
-        
-    return instrument_name
+    return name
 
 # --- LÓGICA PRINCIPAL ---
 
 print("--- Iniciando build dos dados de músicas (YAML) ---")
 
-# 1. Carregar YAMLs
-all_songs_list = []
-combined_playlists = {}
-combined_medleys = {}
-song_source_map = {} # slug -> 'amores' ou 'carnaval'
+# 1. Carregar dados
+all_songs_data = {} # slug -> { source: 'amores'|'carnaval', ... }
+playlists_definitions = {}
+medleys_definitions = {}
+
+songs_by_source = {
+    'amores': [],
+    'carnaval': []
+}
 
 yaml_files = [f for f in os.listdir(PLAYLISTS_DIR) if f.endswith('.yml') or f.endswith('.yaml')]
 
@@ -53,97 +72,119 @@ for yf in yaml_files:
     with open(path, 'r', encoding='utf-8') as f:
         data = yaml.safe_load(f)
         
-        # Identificar origem (amores vs carnaval) baseado no nome do arquivo ou Título
-        # Assumindo que o nome do arquivo reflete a pasta de arranjos: amores.yml -> arranjos/amores
-        source_key = os.path.splitext(yf)[0] 
+        # Identificar origem (amores vs carnaval) baseado no nome do arquivo
+        source_key = os.path.splitext(yf)[0].lower()
         
+        # Load Songs
         songs = data.get('Songs', [])
-        playlists = data.get('Playlists', {})
-        medleys = data.get('Medleys', {})
-        
         if songs:
-            all_songs_list.extend(songs)
             for s in songs:
-                song_source_map[s] = source_key
+                # Ensure we track the source for finding files later
+                if s not in all_songs_data:
+                    all_songs_data[s] = {'source': source_key}
+                    songs_by_source[source_key].append(s)
+                else:
+                    # If song exists in both (unlikely but possible), prefer existing or merge?
+                    # For now, first come first served for source location unless overriden
+                    pass
                 
-        if playlists:
-            print(f"  -> Encontradas {len(playlists)} playlists")
-            combined_playlists.update(playlists)
-        else:
-            print("  -> Nenhuma playlist encontrada/carregada")
+        # Load Playlists
+        pl = data.get('Playlists', {})
+        if pl:
+            playlists_definitions.update(pl)
             
-        if medleys:
-            print(f"  -> Encontrados {len(medleys)} medleys")
-            combined_medleys.update(medleys)
+        # Load Medleys
+        md = data.get('Medleys', {})
+        if md:
+            medleys_definitions.update(md)
 
-# Remover duplicatas e ordenar
-all_songs_list = sorted(list(set(all_songs_list)))
-print(f"Total de músicas encontradas: {len(all_songs_list)}")
-print(f"Total de playlists combinadas: {len(combined_playlists)}")
-print(f"Total de medleys combinados: {len(combined_medleys)}")
+# Sort source lists
+for k in songs_by_source:
+    songs_by_source[k] = sorted(list(set(songs_by_source[k])))
 
-# Remover duplicatas e ordenar
-all_songs_list = sorted(list(set(all_songs_list)))
-print(f"Total de músicas encontradas: {len(all_songs_list)}")
+# 2. Construir objetos de música com caminhos de arquivo
+print("Construindo objetos de música...")
+final_song_objects = []
 
-# 2. Construir songData (com caminhos dos arquivos)
-final_song_data = []
+all_slugs = sorted(list(all_songs_data.keys()))
 
-for slug in all_songs_list:
-    song_object = {
+for slug in all_slugs:
+    song_info = all_songs_data[slug]
+    source = song_info['source']
+    
+    song_obj = {
         'id': slug,
         'title': slug_to_title(slug)
     }
     
-    melodies_for_this_song = {}
-    source = song_source_map.get(slug)
+    melodies = {}
     
-    if source and source in ARRANGEMENT_DIRS:
+    if source in ARRANGEMENT_DIRS:
         base_dir = ARRANGEMENT_DIRS[source]
         song_dir = os.path.join(base_dir, slug)
         
         if os.path.exists(song_dir) and os.path.isdir(song_dir):
             for filename in os.listdir(song_dir):
                 if filename.endswith('.md'):
-                    # Tenta extrair instrumento de forma mais genérica se possível, 
-                    # ou usa a lógica antiga se o arquivo for nomeado 'slug_instrumento.md'
-                    # Mas no novo padrão parece ser apenas 'instrumento.md' DENTRO da pasta slug?
-                    # O script anterior lidava com 'sax_alto.md' dentro de 'acima_do_sol/'.
+                    # Padrão esperado: instrumento.md ou slug_instrumento.md?
+                    # O script anterior assumia que o nome do arquivo ERA o instrumento
+                    # Ex: sax_alto.md -> instrumento "Sax Alto"
                     
-                    # Vamos assumir que o nome do arquivo É o slug do instrumento
-                    instrument_slug = filename.replace('.md', '')
-                    instrument_name = instrument_slug.replace('___', ' / ').replace('_', ' ').title()
-                    
-                    if 'Sax' in instrument_name:
-                        instrument_name = f"🎷 {instrument_name}"
-                    elif 'Trombone' in instrument_name:
-                        instrument_name = f"📯 {instrument_name}"
-                    elif 'Trompete' in instrument_name:
-                        instrument_name = f"🎺 {instrument_name}"
+                    file_slug = filename.replace('.md', '')
+                    # Se o arquivo começar com o nome da música, remove (redundância)
+                    if file_slug.startswith(f"{slug}_"):
+                        file_slug = file_slug.replace(f"{slug}_", "")
                         
-                    # Caminho relativo para o frontend
-                    file_path = os.path.join('arranjos', source, slug, filename).replace('\\', '/')
-                    melodies_for_this_song[instrument_name] = file_path
-    
-    if melodies_for_this_song:
-        song_object['melodies'] = melodies_for_this_song
-    
-    final_song_data.append(song_object)
+                    instrument_name = format_instrument_name(file_slug)
+                    
+                    # Caminho relativo para o frontend (sempre usar / web-style)
+                    rel_path = os.path.join('arranjos', source, slug, filename).replace('\\', '/')
+                    melodies[instrument_name] = rel_path
+                    
+    if melodies:
+        song_obj['melodies'] = melodies
+        
+    final_song_objects.append(song_obj)
 
-# 3. Gerar song-data-final.js
-# O frontend espera variáveis globais. 
-# Precisamos garantir que songsAlphabetical, playlists e medleys existam se o script.js usar.
+# 3. Construir Playlists Finais
+print("Organizando playlists...")
 
+final_playlists = {}
+
+# a) Playlists Padrão (Manuais do YAML)
+final_playlists.update(playlists_definitions)
+
+# b) Playlists Automáticas "System"
+# Todas as músicas (Combinadas)
+final_playlists["♾️ Todas as Músicas"] = all_slugs
+
+# Carnaval (Todas do Carnaval)
+if songs_by_source['carnaval']:
+    final_playlists["🎭 Carnaval"] = songs_by_source['carnaval']
+
+# Amores (Ordem Alfabética)
+if songs_by_source['amores']:
+    final_playlists["� Repertorio Amores"] = songs_by_source['amores']
+
+# 4. Gerar JS output
 print(f"Gerando {OUTPUT_FILE}")
+
+js_content = ""
+js_content += f"const songData = {json.dumps(final_song_objects, indent=2, ensure_ascii=False)};\n\n"
+js_content += f"const playlists = {json.dumps(final_playlists, indent=2, ensure_ascii=False)};\n\n"
+js_content += f"const medleys = {json.dumps(medleys_definitions, indent=2, ensure_ascii=False)};\n\n"
+
+# Variáveis legadas/auxiliares para garantir compatibilidade com script.js atual
+js_content += f"// Variáveis auxiliares para compatibilidade\n"
+js_content += f"const songsAlphabetical = playlists['� Repertorio Amores'] || [];\n"
+js_content += f"const songsAmores = songsAlphabetical;\n"
+
+# Definir qual playlist abre por padrão
+# Se quisermos que "Ordem Alfabética" seja a padrão:
+js_content += f"const defaultPlaylistName = \"� Repertorio Amores\";\n"
+
 with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
-    f.write(f"const songData = {json.dumps(final_song_data, indent=2, ensure_ascii=False)};\n\n")
-    f.write(f"const playlists = {json.dumps(combined_playlists, indent=2, ensure_ascii=False)};\n\n")
-    f.write(f"const medleys = {json.dumps(combined_medleys, indent=2, ensure_ascii=False)};\n\n")
+    f.write(js_content)
 
-    # Se precisar de songsAlphabetical (usado para popular a playlist default no código original)
-    amores_songs = [s for s in all_songs_list if song_source_map.get(s) == 'amores']
-    f.write(f"const songsAlphabetical = {json.dumps(amores_songs, indent=2, ensure_ascii=False)};\n\n")
-    f.write(f"const songsAmores = songsAlphabetical;\n\n")
-    f.write(f'const defaultPlaylistName = "🔤 Ordem Alfabética";\n')
-
-print("Processo concluído!")
+print(f"Sucesso! {len(final_song_objects)} músicas processadas.")
+print(f"Playlists geradas: {list(final_playlists.keys())}")

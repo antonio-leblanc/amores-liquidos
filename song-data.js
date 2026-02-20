@@ -148,7 +148,7 @@ const playlists = {
     "jet_ski",
     "mama_africa",
     "medo_bobo",
-    "nao_me_entreego_pros_caretas",
+    "nao_me_entrego_pros_caretas",
     "nosso_primeiro_beijo",
     "o_canto_da_cidade",
     "ombrin",

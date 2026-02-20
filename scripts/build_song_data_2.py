@@ -7,7 +7,7 @@ import yaml
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # --- CONFIGURAÇÃO ---
-PLAYLISTS_DIR = os.path.join(PROJECT_ROOT, 'arranjos', 'playlists')
+PLAYLISTS_DIR = os.path.join(PROJECT_ROOT, 'playlists')
 OUTPUT_FILE = os.path.join(PROJECT_ROOT, 'song-data-final.js')
 ARRANGEMENT_DIRS = {
     'amores': os.path.join(PROJECT_ROOT, 'arranjos', 'amores'),

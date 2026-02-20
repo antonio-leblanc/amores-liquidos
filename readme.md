@@ -46,38 +46,38 @@ amores-liquidos/
 ├── raw_songbook/           # Fonte da verdade (Amores)
 │   ├── songbook.docx       # Documento Word original
 │   └── songbook.md         # Markdown convertido
-├── arranjos/               # Melodias e Configurações
+├── arranjos/               # Melodias (Organizadas por Fonte)
 │   ├── amores/             # Partituras do repertório Amores
-│   ├── carnaval/           # Partituras do repertório Carnaval
-│   └── playlists/          # Fonte da verdade das Playlists (YAML)
-│       ├── amores.yml      # Configuração Amores
-│       └── carnaval.yml    # Configuração Carnaval
-├── scripts/                # Automação
-│   ├── process.markdown.py # Extrai partituras (Amores)
-│   └── build_song_data_2.py # Gera song-data-final.js via YAML
-├── music/                  # Arquivos MP3
-└── prompts/                # Documentação para IA
+│   └── carnaval/           # Partituras do repertório Carnaval
+├── playlists/              # Fonte da Verdade (Configurações YAML)
+│   ├── amores.yml          # Definição de Músicas, Playlists e Medleys
+│   └── carnaval.yml        # Configuração do repertório de Carnaval
+├── scripts/                # Motores de Automação
+│   ├── process.markdown.py # Processador de Songbook (Word -> Markdown)
+│   └── build_song_data_2.py # Gerador de Dados (YAML -> JS)
+├── music/                  # Biblioteca de Áudio (MP3)
+└── prompts/                # Inteligência e Protocolos
 ```
 
-## ⚙️ **Comandos Úteis**
+## ⚙️ **Manual de Operação**
 
 ```ps1
-# Setup inicial do ambiente Python
+# Setup de Ambiente
 cd scripts
 uv sync
 cd ..
 
-# Processamento completo
+# Sincronização e Geração de Dados
+# (Rode após editar Word ou YAMLs)
 .\convert.ps1
 
-# Servir o site localmente
+# Servidor de Desenvolvimento
 npx http-server .
 ```
 
-## 🤖 **Para IA Assistente**
-- **Seguir prompt**: `ai-agent.md`
-- **Fonte de Verdade**: `arranjos/playlists/*.yml` (Songs, Playlists, Medleys)
-- **Script de Build**: `scripts/build_song_data_2.py` (V2)
-- **Arranjos**: Pastas `arranjos/amores/` e `arranjos/carnaval/`
-- **Output**: `song-data-final.js` (não editar manualmente)
-- **Estilo markdown**: CSS em `.melody-column h1, h2, h3, p, strong`
+## 🤖 **Diretrizes para IA**
+- **Protocolo**: Seguir estritamente `ai-agent.md`.
+- **Fonte de Dados**: A verdade reside em `playlists/*.yml`. Não altere `song-data-final.js` manualmente.
+- **Estrutura**: Melodias residem em `arranjos/{fonte}/{musica}/{instrumento}.md`.
+- **Aparência**: O frontend utiliza Flexbox e um tema dinâmico de Carnaval. O CSS principal está em `style.css`.
+

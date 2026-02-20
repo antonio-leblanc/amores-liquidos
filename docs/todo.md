@@ -1,11 +1,8 @@
-apertou botao random
-select a primeira
+- apertou botao random select a primeira OK
+- lista de todas as musicas e melhorar gestao de playlists  OK
+- 1 melodia de musica carnaval OK
 
-lista de todas as musicas e melhorar gestao de playlistas
-
-o botao de share nao seleciona a playlist..
-
+- o botao de share nao seleciona a playlist..
 
 
 
-1 melodia de musica carnaval

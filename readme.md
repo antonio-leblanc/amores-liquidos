@@ -2,82 +2,71 @@
 
 > **Para IA:** Este README explica a estrutura e fluxo de trabalho do projeto para facilitar automações e manutenção.
 
-## 🎯 **Projeto e Contexto**
-- Esse player serve como guia de estudo para fanfarras de 
-- Ele comecou como projeto somente das musicas do bloco amores-liquidos e se expandiu para repertorios mais genericos do carnaval
+## 🎯 **Projeto e Visão**
 
-## Origem dos audios
-- normalmente eu descubro o tom que a musica e tocada na rua (que nao necessariamente corresponde ao tom da gravacao)
-- baixo o mp3 e transponho e adiciono na pasta music
+Este player serve como guia de estudo para fanfarras e blocos.
+1.  **Repertório Amores Líquidos**: Arranjos extraídos do Songbook oficial (Word).
+2.  **Repertório Carnaval**: Novos arranjos construídos manualmente em Markdown para expansão do bloco.
 
-## 🎯 **Origem dos arranhos**
-
-#### Repertorio amores liquidos
-- **`raw_songbook/songbook.docx`** - Documento Word com todas as partituras que eh baixado do drive
-- **`raw_songbook/songbook.md`** - Versão markdown (gerada via pandoc)
-#### Repertorio amores liquidos
-- a ideia vai ser escrever aqui neste repo os outros arranjos, diretamente em .md provavelmente e converter com algum script usando o promtp de arranjador
-
+**Objetivo**: Oferecer playlists inteligentes (Assinatura, Novas, GIG) e suporte a Medleys com renderização específica na interface.
 
 ## 🔄 **Fluxo de Trabalho Principal**
 
-O processo de atualizar o songbook, extrair as partituras e gerar os dados para o site foi automatizado em um único script que utiliza arquivos YAML como fonte de verdade para as playlists.
+O processo de atualização é automatizado:
 
-### **1. Atualizar Tudo**
-
-Após modificar o `raw_songbook/songbook.docx` ou os arquivos YAML em `arranjos/playlists/`, simplesmente execute o script `convert.ps1` na raiz do projeto:
-
+### **1. Sincronização Completa**
+Sempre que o Word oficial ou os arquivos YAML em `playlists/` forem alterados:
 ```ps1
 .\convert.ps1
 ```
 
-### **2. Adicionar Áudio ou Playlists**
-- Adicionar MP3 em `music/` (nomenclatura com underscore)
-- Atualizar os arquivos YAML em `arranjos/playlists/` (`amores.yml` ou `carnaval.yml`) para incluir a música na lista de `Songs` ou em `Playlists`/`Medleys`.
+### **2. Adicionar Novo Material**
+- **Áudio**: MP3 em `music/` (slug_com_underscore).
+- **Arranjos Carnaval**: Criar pasta em `arranjos/carnaval/{slug}/` com arquivos `.md` por instrumento.
+- **Playlists/Medleys**: Editar `playlists/amores.yml` ou `playlists/carnaval.yml`.
 
 ## 📁 **Estrutura do Repositório**
 
 ```
 amores-liquidos/
-├── index.html              # Aplicação principal
-├── script.js               # Lógica do player
-├── style.css               # Estilos
-├── song-data-final.js      # Dados unificados (GERADO AUTOMATICAMENTE)
-├── raw_songbook/           # Fonte da verdade (Amores)
-│   ├── songbook.docx       # Documento Word original
-│   └── songbook.md         # Markdown convertido
-├── arranjos/               # Melodias e Configurações
-│   ├── amores/             # Partituras do repertório Amores
-│   ├── carnaval/           # Partituras do repertório Carnaval
-│   └── playlists/          # Fonte da verdade das Playlists (YAML)
-│       ├── amores.yml      # Configuração Amores
-│       └── carnaval.yml    # Configuração Carnaval
-├── scripts/                # Automação
-│   ├── process.markdown.py # Extrai partituras (Amores)
-│   └── build_song_data_2.py # Gera song-data-final.js via YAML
-├── music/                  # Arquivos MP3
-└── prompts/                # Documentação para IA
+├── index.html              # Aplicação principal (Player & Partituras)
+├── script.js               # Inteligência do Front-end
+├── style.css               # Design System
+├── song-data-final.js      # Banco de dados unificado (GERADO AUTOMATICAMENTE)
+├── arranjos/               # Biblioteca de Arranjos
+│   ├── amores/             # Extraídos do Word
+│   └── carnaval/           # Criados manualmente (Expansão)
+├── playlists/              # Fonte da Verdade (YAML)
+│   ├── amores.yml          # Core Amores
+│   └── carnaval.yml        # Novos repertórios
+├── scripts/                # Motores de Automação (Python)
+│   ├── sync_amores_from_word.py # Word -> Markdown Amores
+│   └── compile_repertoire_data.py # YAML + MD -> JS Database
+├── music/                  # Biblioteca MP3
+└── raw_songbook/           # Fonte Primária (DOCX)
 ```
 
-## ⚙️ **Comandos Úteis**
+## ⚙️ **Manual de Operação**
 
 ```ps1
-# Setup inicial do ambiente Python
+# Setup de Ambiente
 cd scripts
 uv sync
 cd ..
 
-# Processamento completo
+# Sincronização e Geração de Dados
 .\convert.ps1
 
-# Servir o site localmente
+# Servidor Local
 npx http-server .
 ```
 
-## 🤖 **Para IA Assistente**
-- **Seguir prompt**: `ai-agent.md`
-- **Fonte de Verdade**: `arranjos/playlists/*.yml` (Songs, Playlists, Medleys)
-- **Script de Build**: `scripts/build_song_data_2.py` (V2)
-- **Arranjos**: Pastas `arranjos/amores/` e `arranjos/carnaval/`
-- **Output**: `song-data-final.js` (não editar manualmente)
-- **Estilo markdown**: CSS em `.melody-column h1, h2, h3, p, strong`
+## 🤖 **Diretrizes para IA**
+- **Protocolo**: Seguir estritamente `ai-agent.md`.
+- **Fonte de Verdade**: Toda configuração de playlists reside em `playlists/*.yml`.
+- **Scripts de Build**: 
+    - `scripts/sync_amores_from_word.py` processa o songbook fixo.
+    - `scripts/compile_repertoire_data.py` consolida tudo para o player.
+- **Aparência**: O frontend é premium, responsivo e possui tema dinâmico de Carnaval.
+
+

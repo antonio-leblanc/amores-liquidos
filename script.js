@@ -110,7 +110,7 @@ const player = {
 
   addEventListeners: function () {
     this.headerTitle.addEventListener('click', () => {
-      const carnivalDate = new Date('2026-02-14T00:00:00');
+      const carnivalDate = new Date('2027-02-06T00:00:00');
       const now = new Date();
       const diff = carnivalDate - now;
 
@@ -119,7 +119,7 @@ const player = {
       } else {
         const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
         const dayText = days === 1 ? 'dia' : 'dias';
-        alert(`Faltam ${days} ${dayText} para o Carnaval 2026! 🎭✨`);
+        alert(`Faltam ${days} ${dayText} para o Carnaval 2027! 🎭✨`);
       }
     });
 

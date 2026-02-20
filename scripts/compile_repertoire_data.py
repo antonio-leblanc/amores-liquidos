@@ -8,7 +8,7 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # --- CONFIGURAÇÃO ---
 PLAYLISTS_DIR = os.path.join(PROJECT_ROOT, 'playlists')
-OUTPUT_FILE = os.path.join(PROJECT_ROOT, 'song-data-final.js')
+OUTPUT_FILE = os.path.join(PROJECT_ROOT, 'repertoire-data.js')
 ARRANGEMENT_DIRS = {
     'amores': os.path.join(PROJECT_ROOT, 'arranjos', 'amores'),
     'carnaval': os.path.join(PROJECT_ROOT, 'arranjos', 'carnaval')
@@ -52,7 +52,7 @@ def format_instrument_name(filename_slug):
 
 # --- LÓGICA PRINCIPAL ---
 
-print("--- Iniciando build dos dados de músicas (YAML) ---")
+print("\n🚀 Iniciando build dos dados de músicas (YAML)...")
 
 # 1. Carregar dados
 all_songs_data = {} # slug -> { source: 'amores'|'carnaval', ... }
@@ -68,7 +68,7 @@ yaml_files = [f for f in os.listdir(PLAYLISTS_DIR) if f.endswith('.yml') or f.en
 
 for yf in yaml_files:
     path = os.path.join(PLAYLISTS_DIR, yf)
-    print(f"Lendo playlist: {yf}")
+    print(f"  📄 Lendo playlist: {yf}")
     with open(path, 'r', encoding='utf-8') as f:
         data = yaml.safe_load(f)
         
@@ -103,7 +103,7 @@ for k in songs_by_source:
     songs_by_source[k] = sorted(list(set(songs_by_source[k])))
 
 # 2. Construir objetos de música com caminhos de arquivo
-print("Construindo objetos de música...")
+print(f"\n🔨 Construindo objetos de música...")
 final_song_objects = []
 
 all_slugs = sorted(list(all_songs_data.keys()))
@@ -147,7 +147,7 @@ for slug in all_slugs:
     final_song_objects.append(song_obj)
 
 # 3. Construir Playlists Finais
-print("Organizando playlists...")
+print("\n📋 Organizando playlists...")
 
 # Define output order explicitly
 PLAYLIST_ORDER = [
@@ -187,7 +187,7 @@ for name, songs in temp_playlists.items():
         final_playlists[name] = songs
 
 # 4. Gerar JS output
-print(f"Gerando {OUTPUT_FILE}")
+print(f"\n💾 Gerando output: {os.path.basename(OUTPUT_FILE)}")
 
 js_content = ""
 js_content += f"const songData = {json.dumps(final_song_objects, indent=2, ensure_ascii=False)};\n\n"

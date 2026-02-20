@@ -16,7 +16,7 @@ if ($docxFile) {
 Write-Host "Executando scripts Python para processar partituras e gerar dados..."
 cd scripts
 uv run process.markdown.py
-uv run build_song_data.py
+uv run build_song_data_2.py
 cd ..
 
 Write-Host "Processo concluído com sucesso!"

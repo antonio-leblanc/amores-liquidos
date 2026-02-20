@@ -351,6 +351,13 @@ const songData = [
     }
   },
   {
+    "id": "gimme_gimme_gimme",
+    "title": "Gimme Gimme Gimme",
+    "melodies": {
+      "🎺 Trompete / Tenor": "arranjos/carnaval/gimme_gimme_gimme/trompete___tenor.md"
+    }
+  },
+  {
     "id": "hey_jude",
     "title": "Hey Jude",
     "melodies": {
@@ -398,6 +405,10 @@ const songData = [
       "📯 Trombone": "arranjos/carnaval/jovem/trombone.md",
       "🎺 Trompete / Tenor": "arranjos/carnaval/jovem/trompete___tenor.md"
     }
+  },
+  {
+    "id": "lepo_lepo",
+    "title": "Lepo Lepo"
   },
   {
     "id": "lua_de_cristal",
@@ -906,9 +917,11 @@ const playlists = {
     "desliza",
     "eu_so_quero_um_xodo",
     "fricote",
+    "gimme_gimme_gimme",
     "jesus_cristo",
     "jet_ski",
     "jovem",
+    "lepo_lepo",
     "mama_africa",
     "medo_bobo",
     "nao_me_entrego_pros_caretas",
@@ -981,6 +994,7 @@ const playlists = {
     "flor_do_reggae",
     "fricote",
     "gatas_extraordinarias",
+    "gimme_gimme_gimme",
     "hey_jude",
     "i_love_you_baby",
     "i_miss_her",
@@ -988,6 +1002,7 @@ const playlists = {
     "jesus_cristo",
     "jet_ski",
     "jovem",
+    "lepo_lepo",
     "lua_de_cristal",
     "lucro",
     "mal_acostumado",

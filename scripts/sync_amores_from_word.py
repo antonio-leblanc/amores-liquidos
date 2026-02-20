@@ -1,3 +1,4 @@
+import shutil
 import re
 import os
 from collections import defaultdict
@@ -41,10 +42,8 @@ OUTPUT_DIR = os.path.join(PROJECT_ROOT, "arranjos/amores")
 
 # 1. Preparar diretório de saída
 if os.path.exists(OUTPUT_DIR):
-    for filename in os.listdir(OUTPUT_DIR):
-        os.remove(os.path.join(OUTPUT_DIR, filename))
-else:
-    os.makedirs(OUTPUT_DIR)
+    shutil.rmtree(OUTPUT_DIR) # Recursively remove the directory and its contents
+os.makedirs(OUTPUT_DIR) # Create the directory (now it's guaranteed to be empty or new)
 
 with open(INPUT_FILE, 'r', encoding='utf-8') as f:
     full_text = f.read()

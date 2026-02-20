@@ -214,6 +214,10 @@ const songData = [
     "title": "Cobra"
   },
   {
+    "id": "coracao_partido",
+    "title": "Coracao Partido"
+  },
+  {
     "id": "danca_da_manivela",
     "title": "Danca Da Manivela"
   },
@@ -714,7 +718,10 @@ const songData = [
   },
   {
     "id": "vermelho",
-    "title": "Vermelho"
+    "title": "Vermelho",
+    "melodies": {
+      "🎺 Trompete / Tenor": "arranjos/carnaval/vermelho/trompete___tenor.md"
+    }
   },
   {
     "id": "voce_me_vira_a_cabeca",
@@ -881,6 +888,7 @@ const playlists = {
     "carinito",
     "cheguei",
     "cobra",
+    "coracao_partido",
     "danca_da_manivela",
     "desliza",
     "eu_so_quero_um_xodo",
@@ -941,6 +949,7 @@ const playlists = {
     "cheguei",
     "cilada",
     "cobra",
+    "coracao_partido",
     "danca_da_manivela",
     "de_ladinho",
     "depois_do_prazer",

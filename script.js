@@ -242,22 +242,25 @@ const player = {
     this.isShuffleMode = !this.isShuffleMode;
     this.randomBtn.classList.toggle('active', this.isShuffleMode);
 
-    const currentSongName = this.currentSongs[this.songIndex];
-
     if (this.isShuffleMode) {
       if (this.originalSongs.length === 0 || this.originalSongs.length !== this.currentSongs.length) {
         this.originalSongs = [...this.currentSongs];
       }
 
       this.shuffleArray(this.currentSongs);
+      this.songIndex = 0;
+
+      this.generatePlaylist(this.currentSongs);
+      this.loadSong(this.currentSongs[this.songIndex]);
+      this.playSong();
     } else {
+      const currentSongName = this.currentSongs[this.songIndex];
       this.currentSongs = [...this.originalSongs];
+      this.songIndex = this.currentSongs.findIndex(s => s === currentSongName);
+
+      this.generatePlaylist(this.currentSongs);
+      this.updatePlaylistHighlight();
     }
-
-    this.songIndex = this.currentSongs.findIndex(s => s === currentSongName);
-
-    this.generatePlaylist(this.currentSongs);
-    this.updatePlaylistHighlight();
   },
 
   shuffleArray: function (array) {

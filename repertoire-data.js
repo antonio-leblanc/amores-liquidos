@@ -391,6 +391,13 @@ const songData = [
     "title": "Jet Ski"
   },
   {
+    "id": "jovem",
+    "title": "Jovem",
+    "melodies": {
+      "🎺 Trompete / Tenor Copy": "arranjos/carnaval/jovem/trompete___tenor copy.md"
+    }
+  },
+  {
     "id": "lua_de_cristal",
     "title": "Lua De Cristal",
     "melodies": {
@@ -899,6 +906,7 @@ const playlists = {
     "fricote",
     "jesus_cristo",
     "jet_ski",
+    "jovem",
     "mama_africa",
     "medo_bobo",
     "nao_me_entrego_pros_caretas",
@@ -977,6 +985,7 @@ const playlists = {
     "ja_sei_namorar",
     "jesus_cristo",
     "jet_ski",
+    "jovem",
     "lua_de_cristal",
     "lucro",
     "mal_acostumado",

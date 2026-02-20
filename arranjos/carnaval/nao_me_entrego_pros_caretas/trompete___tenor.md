@@ -1,5 +1,7 @@
 # **Não Me Entrego Pros Caretas (Trompete/Tenor)**
 
+Tom: Em
+
 **Intro1**
 
 mi, mi, si, si, Mi, Re, Mi, Re, si
@@ -35,6 +37,7 @@ la sol sib, la sol sib, la sol sol mi,
 la sol sib, la sol sib, la sol Re si,
 
 **Refrão**
+
 mi sol mi sol mi sol mi si la
 
 sol si la, sol si.. sol.. mi

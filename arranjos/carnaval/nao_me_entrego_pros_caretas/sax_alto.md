@@ -1,7 +1,6 @@
 # **Não Me Entrego Pros Caretas (Sax Alto)**
 
-**Cálculo de Transposição:**
-Para transpor de **Trompete / Tenor (em Bb)** para **Sax Alto (em Eb)**, vou descer 5 semitons em cada nota.
+Tom: Bm
 
 **Intro1**
 

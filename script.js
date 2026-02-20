@@ -54,7 +54,7 @@ const player = {
     }
 
     let songHandledByUrl = false;
-    if (songId && songsAlphabetical.includes(songId)) {
+    if (songId && songsAmores.includes(songId)) {
       if (this.playlistSelector.value !== defaultPlaylistName) {
         this.playlistSelector.value = defaultPlaylistName;
         this.handlePlaylistChange();
@@ -408,7 +408,7 @@ const player = {
     this.playlistSelector.innerHTML = '';
 
     const playlistNames = Object.keys(playlists);
-    const carnavalName = '🎭 Outras Carnaval';
+    const carnavalName = '🎭 Carnaval';
     const signaturePlaylistName = '⭐ Assinatura';
 
     const signatureIndex = playlistNames.indexOf(signaturePlaylistName);
@@ -483,7 +483,7 @@ const player = {
     this.pauseSong();
 
 
-    if (selectedPlaylistName === '🎭 Outras Carnaval') {
+    if (selectedPlaylistName === '🎭 Carnaval') {
       document.body.classList.add('carnaval-theme');
       this.headerTitle.innerText = 'Carnaval';
     } else {

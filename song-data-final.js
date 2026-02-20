@@ -714,7 +714,10 @@ const songData = [
   },
   {
     "id": "vermelho",
-    "title": "Vermelho"
+    "title": "Vermelho",
+    "melodies": {
+      "🎺 Trompete / Tenor": "arranjos/carnaval/vermelho/trompete___tenor.md"
+    }
   },
   {
     "id": "voce_me_vira_a_cabeca",

@@ -1093,7 +1093,4 @@ const medleys = {
   ]
 };
 
-// Variáveis auxiliares para compatibilidade
-const songsAlphabetical = playlists['💕 Repertorio Amores'] || [];
-const songsAmores = songsAlphabetical;
 const defaultPlaylistName = "💕 Repertorio Amores";

@@ -24,6 +24,11 @@ Sempre que o Word oficial ou os arquivos YAML em `playlists/` forem alterados:
 - **Áudio**: MP3 em `music/` (slug_com_underscore).
 - **Arranjos Carnaval**: Criar pasta em `arranjos/carnaval/{slug}/` com arquivos `.md` por instrumento.
 - **Playlists/Medleys**: Editar `playlists/amores.yml` ou `playlists/carnaval.yml`.
+- **Transposição Automática** (Experimental): Se você tiver apenas um instrumento (ex: Tenor) e quiser os outros:
+    ```ps1
+    cd scripts
+    uv run transpose_melody.py [slug_da_musica]
+    ```
 
 ## 📁 **Estrutura do Repositório**
 
@@ -41,7 +46,9 @@ amores-liquidos/
 │   └── carnaval.yml        # Novos repertórios
 ├── scripts/                # Motores de Automação (Python)
 │   ├── sync_amores_from_word.py # Word -> Markdown Amores
-│   └── compile_repertoire_data.py # YAML + MD -> JS Database
+│   ├── compile_repertoire_data.py # YAML + MD -> JS Database
+│   ├── transpose_melody.py    # Automação de Transposição (Gemini)
+│   └── utils.py                # Lógica compartilhada (Slugs, Nomes)
 ├── music/                  # Biblioteca MP3
 └── raw_songbook/           # Fonte Primária (DOCX)
 ```

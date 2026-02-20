@@ -1,23 +1,7 @@
 import re
 import os
 from collections import defaultdict
-
-# --- FUNÇÕES DE NORMALIZAÇÃO E EXTRAÇÃO (As suas funções originais e robustas) ---
-
-def normalize_song_title(raw_title):
-    """
-    Limpa o título para criar uma "chave de agrupamento" (o nome da música sem o instrumento).
-    Esta função já lida com os '**' e outras variações.
-    """
-    title = re.sub(r'^#+\s*|\s*{.*}\s*$', '', raw_title).strip()
-    title = title.replace('**', '') # Linha crucial que o meu script simplificado esqueceu
-    title = title.lower()
-    
-    # Regex robusto para remover a parte do instrumento
-    instrument_regex = r'(\s*-\s*|\s*\()[\w\s/]*?(sax|alto|trombone|trompete|tenor)[\w\s/]*?\)?\s*$'
-    title = re.sub(instrument_regex, '', title, flags=re.IGNORECASE)
-    
-    return title.strip(' -\\')
+from utils import slugify, normalize_song_title
 
 def extract_instrument_name(raw_title):
     """
@@ -45,24 +29,6 @@ def extract_instrument_name(raw_title):
         return 'Sax Tenor'
         
     return "geral"
-
-def slugify(text):
-    """
-    Converte um texto em um nome de arquivo seguro.
-    (Sua função original, perfeita).
-    """
-    text = text.lower()
-    text = re.sub(r'[áàâã]', 'a', text)
-    text = re.sub(r'[éê]', 'e', text)
-    text = re.sub(r'[í]', 'i', text)
-    text = re.sub(r'[óôõ]', 'o', text)
-    text = re.sub(r'[úü]', 'u', text)
-    text = re.sub(r'[ç]', 'c', text)
-    text = text.replace('%', 'porcento')
-    text = re.sub(r'[^a-z0-9\s/|-]', '', text)
-    text = re.sub(r'[\s-]+', '_', text).strip('_')
-    text = text.replace('/', '_')
-    return text
 
 # Obtém o diretório do projeto (um nível acima do diretório do script)
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

@@ -27,10 +27,11 @@ sol \ la \ si \ Re \ Mi \ Fa# \ Sol \ La \ Si
 
 Mi, Mi Fa# Sol Fa# Mi Re Mi
 
-Mi Fa# Sol Fa# Mi si do, Si La
+Mi Fa# Sol Fa# Mi si do, La Sol
 
 Fa#, Fa# Fa# Sol Fa# Mi Re Mi
 
+**4**
 
 Mi Mi Fa# Sol Fa# Mi,
 

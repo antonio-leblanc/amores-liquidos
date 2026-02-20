@@ -23,8 +23,7 @@ MODEL_ID = "gemini-3-flash-preview"
 INSTRUMENTS = {
     "trombone": {"name": "Trombone (Tom Real C)", "files": ["trombone.md"]},
     "sax_alto": {"name": "Sax Alto (em Eb)", "files": ["sax_alto.md"]},
-    "sax_tenor": {"name": "Sax Tenor (em Bb)", "files": ["sax_tenor.md"]},
-    "trompete": {"name": "Trompete (em Bb)", "files": ["trompete.md", "trompete___tenor.md"]},
+    "trompete_tenor": {"name": "Trompete / Tenor (em Bb)", "files": ["trompete___tenor.md", "trompete.md", "sax_tenor.md"]},
 }
 
 def get_gemini_client():

@@ -69,7 +69,7 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # --- CONFIGURAÇÃO ---
 INPUT_FILE = os.path.join(PROJECT_ROOT, "raw_songbook/songbook.md")
-OUTPUT_DIR = os.path.join(PROJECT_ROOT, "markdown")
+OUTPUT_DIR = os.path.join(PROJECT_ROOT, "arranjos")
 
 # --- LÓGICA PRINCIPAL ---
 
@@ -131,8 +131,14 @@ for normalized_name, parts_list in songs_grouped.items():
             
         instrument_slug = slugify(instrument)
         
-        filename = f"{song_slug}_{instrument_slug}.md"
-        output_path = os.path.join(OUTPUT_DIR, filename)
+        # --- MUDANÇA: Criar pasta da música ---
+        song_dir = os.path.join(OUTPUT_DIR, song_slug)
+        if not os.path.exists(song_dir):
+            os.makedirs(song_dir)
+            
+        # Nome do arquivo agora é apenas o instrumento (ex: sax_alto.md) dentro da pasta da música
+        filename = f"{instrument_slug}.md"
+        output_path = os.path.join(song_dir, filename)
         
         with open(output_path, 'w', encoding='utf-8') as f:
             f.write(part_content)

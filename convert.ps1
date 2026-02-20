@@ -15,8 +15,8 @@ if ($docxFile) {
 # Passo 2: Entra no diretório de scripts e executa os scripts Python
 Write-Host "Executando scripts Python para processar partituras e gerar dados..."
 cd scripts
-uv run process.markdown.py
-uv run build_song_data_2.py
+uv run sync_amores_from_word.py
+uv run compile_repertoire_data.py
 cd ..
 
 Write-Host "Processo concluído com sucesso!"

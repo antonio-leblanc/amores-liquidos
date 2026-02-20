@@ -119,7 +119,7 @@ const player = {
       } else {
         const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
         const dayText = days === 1 ? 'dia' : 'dias';
-        alert(`Faltam ${days} ${dayText} para o Carnaval 2026! 🎭✨`);
+        alert(`Faltam ${days} ${dayText} para o Carnaval 2027! 🎭✨`);
       }
     });
 

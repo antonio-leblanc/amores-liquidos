@@ -214,6 +214,10 @@ const songData = [
     "title": "Cobra"
   },
   {
+    "id": "coracao_partido",
+    "title": "Coracao Partido"
+  },
+  {
     "id": "danca_da_manivela",
     "title": "Danca Da Manivela"
   },
@@ -884,6 +888,7 @@ const playlists = {
     "carinito",
     "cheguei",
     "cobra",
+    "coracao_partido",
     "danca_da_manivela",
     "desliza",
     "eu_so_quero_um_xodo",
@@ -944,6 +949,7 @@ const playlists = {
     "cheguei",
     "cilada",
     "cobra",
+    "coracao_partido",
     "danca_da_manivela",
     "de_ladinho",
     "depois_do_prazer",

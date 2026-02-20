@@ -7,7 +7,7 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # --- CONFIGURAÇÃO ---
 SONG_DATA_INPUT_FILE = os.path.join(PROJECT_ROOT, 'song-data.js')
-MARKDOWN_DIR = os.path.join(PROJECT_ROOT, 'arranjos')
+MARKDOWN_DIR = os.path.join(PROJECT_ROOT, 'arranjos', 'amores')
 SONG_DATA_OUTPUT_FILE = os.path.join(PROJECT_ROOT, 'song-data-final.js')
 
 def slug_to_title(slug):
@@ -97,7 +97,7 @@ for slug in song_slugs:
                     instrument_name = f"🎺 {instrument_name}"
 
                 # O caminho no JS final deve ser relativo à raiz do projeto
-                # Ex: arranjos/alo_paixao/sax_alto.md
+                # Ex: arranjos/amores/alo_paixao/sax_alto.md
                 file_path = os.path.join('arranjos', 'amores', slug, filename).replace('\\', '/')
                 melodies_for_this_song[instrument_name] = file_path
             

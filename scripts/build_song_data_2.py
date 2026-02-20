@@ -149,22 +149,42 @@ for slug in all_slugs:
 # 3. Construir Playlists Finais
 print("Organizando playlists...")
 
-final_playlists = {}
+# Define output order explicitly
+PLAYLIST_ORDER = [
+    "💕 Repertorio Amores",
+    "⭐ Assinatura",
+    "✨ Novas 2026",
+    "🥂 GIG",
+    "🎭 Carnaval",
+    "♾️ Todas as Músicas"
+]
+
+temp_playlists = {}
 
 # a) Playlists Padrão (Manuais do YAML)
-final_playlists.update(playlists_definitions)
+temp_playlists.update(playlists_definitions)
 
 # b) Playlists Automáticas "System"
-# Todas as músicas (Combinadas)
-final_playlists["♾️ Todas as Músicas"] = all_slugs
+temp_playlists["♾️ Todas as Músicas"] = all_slugs
 
-# Carnaval (Todas do Carnaval)
 if songs_by_source['carnaval']:
-    final_playlists["🎭 Carnaval"] = songs_by_source['carnaval']
+    temp_playlists["🎭 Carnaval"] = songs_by_source['carnaval']
 
-# Amores (Ordem Alfabética)
 if songs_by_source['amores']:
-    final_playlists["� Repertorio Amores"] = songs_by_source['amores']
+    temp_playlists["💕 Repertorio Amores"] = songs_by_source['amores']
+
+# Reorder specific playlists first, then others
+final_playlists = {}
+
+# 1. Add explicitly ordered playlists
+for name in PLAYLIST_ORDER:
+    if name in temp_playlists:
+        final_playlists[name] = temp_playlists[name]
+
+# 2. Add any remaining playlists not in the order list
+for name, songs in temp_playlists.items():
+    if name not in final_playlists:
+        final_playlists[name] = songs
 
 # 4. Gerar JS output
 print(f"Gerando {OUTPUT_FILE}")
@@ -176,12 +196,12 @@ js_content += f"const medleys = {json.dumps(medleys_definitions, indent=2, ensur
 
 # Variáveis legadas/auxiliares para garantir compatibilidade com script.js atual
 js_content += f"// Variáveis auxiliares para compatibilidade\n"
-js_content += f"const songsAlphabetical = playlists['� Repertorio Amores'] || [];\n"
+js_content += f"const songsAlphabetical = playlists['💕 Repertorio Amores'] || [];\n"
 js_content += f"const songsAmores = songsAlphabetical;\n"
 
 # Definir qual playlist abre por padrão
 # Se quisermos que "Ordem Alfabética" seja a padrão:
-js_content += f"const defaultPlaylistName = \"� Repertorio Amores\";\n"
+js_content += f"const defaultPlaylistName = \"💕 Repertorio Amores\";\n"
 
 with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
     f.write(js_content)

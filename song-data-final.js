@@ -3,262 +3,262 @@ const songData = [
     "id": "100_porcento_voce",
     "title": "100 Porcento Voce",
     "melodies": {
-      "🎷 Sax Alto": "markdown/100_porcento_voce_sax_alto.md",
-      "📯 Trombone": "markdown/100_porcento_voce_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/100_porcento_voce_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/100_porcento_voce/sax_alto.md",
+      "📯 Trombone": "arranjos/100_porcento_voce/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/100_porcento_voce/trompete___tenor.md"
     }
   },
   {
     "id": "acima_do_sol",
     "title": "Acima Do Sol",
     "melodies": {
-      "🎷 Sax Alto": "markdown/acima_do_sol_sax_alto.md",
-      "📯 Trombone": "markdown/acima_do_sol_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/acima_do_sol_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/acima_do_sol/sax_alto.md",
+      "📯 Trombone": "arranjos/acima_do_sol/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/acima_do_sol/trompete___tenor.md"
     }
   },
   {
     "id": "alo_paixao",
     "title": "Alo Paixao",
     "melodies": {
-      "🎷 Sax Alto": "markdown/alo_paixao_sax_alto.md",
-      "📯 Trombone": "markdown/alo_paixao_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/alo_paixao_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/alo_paixao/sax_alto.md",
+      "📯 Trombone": "arranjos/alo_paixao/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/alo_paixao/trompete___tenor.md"
     }
   },
   {
     "id": "amor_de_chocolate",
     "title": "Amor De Chocolate",
     "melodies": {
-      "🎷 Sax Alto": "markdown/amor_de_chocolate_sax_alto.md",
-      "📯 Trombone": "markdown/amor_de_chocolate_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/amor_de_chocolate_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/amor_de_chocolate/sax_alto.md",
+      "📯 Trombone": "arranjos/amor_de_chocolate/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/amor_de_chocolate/trompete___tenor.md"
     }
   },
   {
     "id": "amor_i_love_you",
     "title": "Amor I Love You",
     "melodies": {
-      "🎷 Sax Alto": "markdown/amor_i_love_you_sax_alto.md",
-      "📯 Trombone": "markdown/amor_i_love_you_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/amor_i_love_you_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/amor_i_love_you/sax_alto.md",
+      "📯 Trombone": "arranjos/amor_i_love_you/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/amor_i_love_you/trompete___tenor.md"
     }
   },
   {
     "id": "amor_perfeito",
     "title": "Amor Perfeito",
     "melodies": {
-      "🎷 Sax Alto": "markdown/amor_perfeito_sax_alto.md",
-      "📯 Trombone": "markdown/amor_perfeito_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/amor_perfeito_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/amor_perfeito/sax_alto.md",
+      "📯 Trombone": "arranjos/amor_perfeito/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/amor_perfeito/trompete___tenor.md"
     }
   },
   {
     "id": "andanca",
     "title": "Andanca",
     "melodies": {
-      "🎷 Sax Alto": "markdown/andanca_sax_alto.md",
-      "📯 Trombone": "markdown/andanca_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/andanca_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/andanca/sax_alto.md",
+      "📯 Trombone": "arranjos/andanca/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/andanca/trompete___tenor.md"
     }
   },
   {
     "id": "assim_caminha_a_humanidade_malhacao",
     "title": "Assim Caminha A Humanidade Malhacao",
     "melodies": {
-      "🎷 Sax Alto": "markdown/assim_caminha_a_humanidade_malhacao_sax_alto.md",
-      "📯 Trombone": "markdown/assim_caminha_a_humanidade_malhacao_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/assim_caminha_a_humanidade_malhacao_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/assim_caminha_a_humanidade_malhacao/sax_alto.md",
+      "📯 Trombone": "arranjos/assim_caminha_a_humanidade_malhacao/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/assim_caminha_a_humanidade_malhacao/trompete___tenor.md"
     }
   },
   {
     "id": "baianidade_nago",
     "title": "Baianidade Nago",
     "melodies": {
-      "🎷 Sax Alto": "markdown/baianidade_nago_sax_alto.md",
-      "📯 Trombone": "markdown/baianidade_nago_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/baianidade_nago_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/baianidade_nago/sax_alto.md",
+      "📯 Trombone": "arranjos/baianidade_nago/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/baianidade_nago/trompete___tenor.md"
     }
   },
   {
     "id": "bailao",
     "title": "Bailao",
     "melodies": {
-      "🎷 Sax Alto": "markdown/bailao_sax_alto.md",
-      "📯 Trombone": "markdown/bailao_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/bailao_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/bailao/sax_alto.md",
+      "📯 Trombone": "arranjos/bailao/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/bailao/trompete___tenor.md"
     }
   },
   {
     "id": "baile_da_gaiola",
     "title": "Baile Da Gaiola",
     "melodies": {
-      "🎷 Sax Alto": "markdown/baile_da_gaiola_sax_alto.md",
-      "📯 Trombone": "markdown/baile_da_gaiola_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/baile_da_gaiola_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/baile_da_gaiola/sax_alto.md",
+      "📯 Trombone": "arranjos/baile_da_gaiola/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/baile_da_gaiola/trompete___tenor.md"
     }
   },
   {
     "id": "beleza_rara",
     "title": "Beleza Rara",
     "melodies": {
-      "🎷 Sax Alto": "markdown/beleza_rara_sax_alto.md",
-      "📯 Trombone": "markdown/beleza_rara_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/beleza_rara_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/beleza_rara/sax_alto.md",
+      "📯 Trombone": "arranjos/beleza_rara/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/beleza_rara/trompete___tenor.md"
     }
   },
   {
     "id": "bola_de_sabao",
     "title": "Bola De Sabao",
     "melodies": {
-      "🎷 Sax Alto": "markdown/bola_de_sabao_sax_alto.md",
-      "📯 Trombone": "markdown/bola_de_sabao_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/bola_de_sabao_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/bola_de_sabao/sax_alto.md",
+      "📯 Trombone": "arranjos/bola_de_sabao/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/bola_de_sabao/trompete___tenor.md"
     }
   },
   {
     "id": "cilada",
     "title": "Cilada",
     "melodies": {
-      "🎷 Sax Alto": "markdown/cilada_sax_alto.md",
-      "📯 Trombone": "markdown/cilada_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/cilada_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/cilada/sax_alto.md",
+      "📯 Trombone": "arranjos/cilada/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/cilada/trompete___tenor.md"
     }
   },
   {
     "id": "de_ladinho",
     "title": "De Ladinho",
     "melodies": {
-      "🎷 Sax Alto": "markdown/de_ladinho_sax_alto.md",
-      "📯 Trombone": "markdown/de_ladinho_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/de_ladinho_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/de_ladinho/sax_alto.md",
+      "📯 Trombone": "arranjos/de_ladinho/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/de_ladinho/trompete___tenor.md"
     }
   },
   {
     "id": "depois_do_prazer",
     "title": "Depois Do Prazer",
     "melodies": {
-      "🎷 Sax Alto": "markdown/depois_do_prazer_sax_alto.md",
-      "🎷 Sax Tenor": "markdown/depois_do_prazer_sax_tenor.md",
-      "📯 Trombone": "markdown/depois_do_prazer_trombone.md",
-      "🎺 Trompete": "markdown/depois_do_prazer_trompete.md"
+      "🎷 Sax Alto": "arranjos/depois_do_prazer/sax_alto.md",
+      "🎷 Sax Tenor": "arranjos/depois_do_prazer/sax_tenor.md",
+      "📯 Trombone": "arranjos/depois_do_prazer/trombone.md",
+      "🎺 Trompete": "arranjos/depois_do_prazer/trompete.md"
     }
   },
   {
     "id": "deus_me_livre",
     "title": "Deus Me Livre",
     "melodies": {
-      "🎷 Sax Alto": "markdown/deus_me_livre_sax_alto.md",
-      "📯 Trombone": "markdown/deus_me_livre_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/deus_me_livre_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/deus_me_livre/sax_alto.md",
+      "📯 Trombone": "arranjos/deus_me_livre/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/deus_me_livre/trompete___tenor.md"
     }
   },
   {
     "id": "deusa_do_amor",
     "title": "Deusa Do Amor",
     "melodies": {
-      "🎷 Sax Alto": "markdown/deusa_do_amor_sax_alto.md",
-      "📯 Trombone": "markdown/deusa_do_amor_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/deusa_do_amor_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/deusa_do_amor/sax_alto.md",
+      "📯 Trombone": "arranjos/deusa_do_amor/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/deusa_do_amor/trompete___tenor.md"
     }
   },
   {
     "id": "do_seu_lado",
     "title": "Do Seu Lado",
     "melodies": {
-      "🎷 Sax Alto": "markdown/do_seu_lado_sax_alto.md",
-      "📯 Trombone": "markdown/do_seu_lado_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/do_seu_lado_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/do_seu_lado/sax_alto.md",
+      "📯 Trombone": "arranjos/do_seu_lado/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/do_seu_lado/trompete___tenor.md"
     }
   },
   {
     "id": "dont_stop_michael_jackson",
     "title": "Dont Stop Michael Jackson",
     "melodies": {
-      "🎷 Sax Alto": "markdown/dont_stop_michael_jackson_sax_alto.md",
-      "📯 Trombone": "markdown/dont_stop_michael_jackson_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/dont_stop_michael_jackson_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/dont_stop_michael_jackson/sax_alto.md",
+      "📯 Trombone": "arranjos/dont_stop_michael_jackson/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/dont_stop_michael_jackson/trompete___tenor.md"
     }
   },
   {
     "id": "eva",
     "title": "Eva",
     "melodies": {
-      "🎷 Sax Alto": "markdown/eva_sax_alto.md",
-      "📯 Trombone": "markdown/eva_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/eva_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/eva/sax_alto.md",
+      "📯 Trombone": "arranjos/eva/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/eva/trompete___tenor.md"
     }
   },
   {
     "id": "exagerado",
     "title": "Exagerado",
     "melodies": {
-      "🎷 Sax Alto": "markdown/exagerado_sax_alto.md",
-      "🎺 Trompete / Tenor": "markdown/exagerado_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/exagerado/sax_alto.md",
+      "🎺 Trompete / Tenor": "arranjos/exagerado/trompete___tenor.md"
     }
   },
   {
     "id": "festa",
     "title": "Festa",
     "melodies": {
-      "🎷 Sax Alto": "markdown/festa_sax_alto.md",
-      "📯 Trombone": "markdown/festa_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/festa_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/festa/sax_alto.md",
+      "📯 Trombone": "arranjos/festa/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/festa/trompete___tenor.md"
     }
   },
   {
     "id": "fico_assim_sem_voce",
     "title": "Fico Assim Sem Voce",
     "melodies": {
-      "🎷 Sax Alto": "markdown/fico_assim_sem_voce_sax_alto.md",
-      "📯 Trombone": "markdown/fico_assim_sem_voce_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/fico_assim_sem_voce_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/fico_assim_sem_voce/sax_alto.md",
+      "📯 Trombone": "arranjos/fico_assim_sem_voce/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/fico_assim_sem_voce/trompete___tenor.md"
     }
   },
   {
     "id": "final_feliz",
     "title": "Final Feliz",
     "melodies": {
-      "🎷 Sax Alto": "markdown/final_feliz_sax_alto.md",
-      "📯 Trombone": "markdown/final_feliz_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/final_feliz_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/final_feliz/sax_alto.md",
+      "📯 Trombone": "arranjos/final_feliz/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/final_feliz/trompete___tenor.md"
     }
   },
   {
     "id": "flor_do_reggae",
     "title": "Flor Do Reggae",
     "melodies": {
-      "🎷 Sax Alto": "markdown/flor_do_reggae_sax_alto.md",
-      "📯 Trombone": "markdown/flor_do_reggae_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/flor_do_reggae_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/flor_do_reggae/sax_alto.md",
+      "📯 Trombone": "arranjos/flor_do_reggae/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/flor_do_reggae/trompete___tenor.md"
     }
   },
   {
     "id": "gatas_extraordinarias",
     "title": "Gatas Extraordinarias",
     "melodies": {
-      "🎷 Sax Alto": "markdown/gatas_extraordinarias_sax_alto.md",
-      "📯 Trombone": "markdown/gatas_extraordinarias_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/gatas_extraordinarias_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/gatas_extraordinarias/sax_alto.md",
+      "📯 Trombone": "arranjos/gatas_extraordinarias/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/gatas_extraordinarias/trompete___tenor.md"
     }
   },
   {
     "id": "hey_jude",
     "title": "Hey Jude",
     "melodies": {
-      "🎷 Sax Alto": "markdown/hey_jude_sax_alto.md",
-      "📯 Trombone": "markdown/hey_jude_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/hey_jude_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/hey_jude/sax_alto.md",
+      "📯 Trombone": "arranjos/hey_jude/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/hey_jude/trompete___tenor.md"
     }
   },
   {
     "id": "i_love_you_baby",
     "title": "I Love You Baby",
     "melodies": {
-      "🎷 Sax Alto": "markdown/i_love_you_baby_sax_alto.md",
-      "🎷 Sax Tenor": "markdown/i_love_you_baby_sax_tenor.md",
-      "📯 Trombone": "markdown/i_love_you_baby_trombone.md",
-      "🎺 Trompete": "markdown/i_love_you_baby_trompete.md"
+      "🎷 Sax Alto": "arranjos/i_love_you_baby/sax_alto.md",
+      "🎷 Sax Tenor": "arranjos/i_love_you_baby/sax_tenor.md",
+      "📯 Trombone": "arranjos/i_love_you_baby/trombone.md",
+      "🎺 Trompete": "arranjos/i_love_you_baby/trompete.md"
     }
   },
   {
@@ -269,45 +269,45 @@ const songData = [
     "id": "ja_sei_namorar",
     "title": "Ja Sei Namorar",
     "melodies": {
-      "🎷 Sax Alto": "markdown/ja_sei_namorar_sax_alto.md",
-      "📯 Trombone": "markdown/ja_sei_namorar_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/ja_sei_namorar_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/ja_sei_namorar/sax_alto.md",
+      "📯 Trombone": "arranjos/ja_sei_namorar/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/ja_sei_namorar/trompete___tenor.md"
     }
   },
   {
     "id": "lua_de_cristal",
     "title": "Lua De Cristal",
     "melodies": {
-      "🎷 Sax Alto": "markdown/lua_de_cristal_sax_alto.md",
-      "📯 Trombone": "markdown/lua_de_cristal_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/lua_de_cristal_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/lua_de_cristal/sax_alto.md",
+      "📯 Trombone": "arranjos/lua_de_cristal/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/lua_de_cristal/trompete___tenor.md"
     }
   },
   {
     "id": "lucro",
     "title": "Lucro",
     "melodies": {
-      "🎷 Sax Alto": "markdown/lucro_sax_alto.md",
-      "📯 Trombone": "markdown/lucro_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/lucro_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/lucro/sax_alto.md",
+      "📯 Trombone": "arranjos/lucro/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/lucro/trompete___tenor.md"
     }
   },
   {
     "id": "mal_acostumado",
     "title": "Mal Acostumado",
     "melodies": {
-      "🎷 Sax Alto": "markdown/mal_acostumado_sax_alto.md",
-      "📯 Trombone": "markdown/mal_acostumado_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/mal_acostumado_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/mal_acostumado/sax_alto.md",
+      "📯 Trombone": "arranjos/mal_acostumado/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/mal_acostumado/trompete___tenor.md"
     }
   },
   {
     "id": "mania_de_voce",
     "title": "Mania De Voce",
     "melodies": {
-      "🎷 Sax Alto": "markdown/mania_de_voce_sax_alto.md",
-      "📯 Trombone": "markdown/mania_de_voce_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/mania_de_voce_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/mania_de_voce/sax_alto.md",
+      "📯 Trombone": "arranjos/mania_de_voce/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/mania_de_voce/trompete___tenor.md"
     }
   },
   {
@@ -318,161 +318,161 @@ const songData = [
     "id": "me_abraca_me_beija",
     "title": "Me Abraca Me Beija",
     "melodies": {
-      "🎷 Sax Alto": "markdown/me_abraca_me_beija_sax_alto.md",
-      "📯 Trombone": "markdown/me_abraca_me_beija_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/me_abraca_me_beija_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/me_abraca_me_beija/sax_alto.md",
+      "📯 Trombone": "arranjos/me_abraca_me_beija/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/me_abraca_me_beija/trompete___tenor.md"
     }
   },
   {
     "id": "me_deixa",
     "title": "Me Deixa",
     "melodies": {
-      "🎷 Sax Alto": "markdown/me_deixa_sax_alto.md",
-      "🎺 Trompete / Tenor": "markdown/me_deixa_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/me_deixa/sax_alto.md",
+      "🎺 Trompete / Tenor": "arranjos/me_deixa/trompete___tenor.md"
     }
   },
   {
     "id": "meia_lua_inteira",
     "title": "Meia Lua Inteira",
     "melodies": {
-      "🎷 Sax Alto": "markdown/meia_lua_inteira_sax_alto.md",
-      "📯 Trombone": "markdown/meia_lua_inteira_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/meia_lua_inteira_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/meia_lua_inteira/sax_alto.md",
+      "📯 Trombone": "arranjos/meia_lua_inteira/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/meia_lua_inteira/trompete___tenor.md"
     }
   },
   {
     "id": "meu_sangue_ferve_por_voce",
     "title": "Meu Sangue Ferve Por Voce",
     "melodies": {
-      "🎷 Sax Alto": "markdown/meu_sangue_ferve_por_voce_sax_alto.md",
-      "🎷 Sax Tenor": "markdown/meu_sangue_ferve_por_voce_sax_tenor.md",
-      "📯 Trombone": "markdown/meu_sangue_ferve_por_voce_trombone.md",
-      "🎺 Trompete": "markdown/meu_sangue_ferve_por_voce_trompete.md"
+      "🎷 Sax Alto": "arranjos/meu_sangue_ferve_por_voce/sax_alto.md",
+      "🎷 Sax Tenor": "arranjos/meu_sangue_ferve_por_voce/sax_tenor.md",
+      "📯 Trombone": "arranjos/meu_sangue_ferve_por_voce/trombone.md",
+      "🎺 Trompete": "arranjos/meu_sangue_ferve_por_voce/trompete.md"
     }
   },
   {
     "id": "milla",
     "title": "Milla",
     "melodies": {
-      "🎷 Sax Alto": "markdown/milla_sax_alto.md",
-      "📯 Trombone": "markdown/milla_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/milla_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/milla/sax_alto.md",
+      "📯 Trombone": "arranjos/milla/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/milla/trompete___tenor.md"
     }
   },
   {
     "id": "nao_precisa_mudar",
     "title": "Nao Precisa Mudar",
     "melodies": {
-      "🎷 Sax Alto": "markdown/nao_precisa_mudar_sax_alto.md",
-      "📯 Trombone": "markdown/nao_precisa_mudar_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/nao_precisa_mudar_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/nao_precisa_mudar/sax_alto.md",
+      "📯 Trombone": "arranjos/nao_precisa_mudar/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/nao_precisa_mudar/trompete___tenor.md"
     }
   },
   {
     "id": "nao_quero_dinheiro",
     "title": "Nao Quero Dinheiro",
     "melodies": {
-      "🎷 Sax Alto": "markdown/nao_quero_dinheiro_sax_alto.md",
-      "📯 Trombone": "markdown/nao_quero_dinheiro_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/nao_quero_dinheiro_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/nao_quero_dinheiro/sax_alto.md",
+      "📯 Trombone": "arranjos/nao_quero_dinheiro/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/nao_quero_dinheiro/trompete___tenor.md"
     }
   },
   {
     "id": "pintura_intima",
     "title": "Pintura Intima",
     "melodies": {
-      "🎷 Sax Alto": "markdown/pintura_intima_sax_alto.md",
-      "🎷 Sax Tenor": "markdown/pintura_intima_sax_tenor.md",
-      "📯 Trombone": "markdown/pintura_intima_trombone.md",
-      "🎺 Trompete": "markdown/pintura_intima_trompete.md"
+      "🎷 Sax Alto": "arranjos/pintura_intima/sax_alto.md",
+      "🎷 Sax Tenor": "arranjos/pintura_intima/sax_tenor.md",
+      "📯 Trombone": "arranjos/pintura_intima/trombone.md",
+      "🎺 Trompete": "arranjos/pintura_intima/trompete.md"
     }
   },
   {
     "id": "princesa",
     "title": "Princesa",
     "melodies": {
-      "🎷 Sax Alto": "markdown/princesa_sax_alto.md",
-      "📯 Trombone": "markdown/princesa_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/princesa_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/princesa/sax_alto.md",
+      "📯 Trombone": "arranjos/princesa/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/princesa/trompete___tenor.md"
     }
   },
   {
     "id": "sina",
     "title": "Sina",
     "melodies": {
-      "🎷 Sax Alto": "markdown/sina_sax_alto.md",
-      "📯 Trombone": "markdown/sina_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/sina_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/sina/sax_alto.md",
+      "📯 Trombone": "arranjos/sina/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/sina/trompete___tenor.md"
     }
   },
   {
     "id": "sinais_de_fogo",
     "title": "Sinais De Fogo",
     "melodies": {
-      "🎷 Sax Alto": "markdown/sinais_de_fogo_sax_alto.md",
-      "📯 Trombone": "markdown/sinais_de_fogo_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/sinais_de_fogo_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/sinais_de_fogo/sax_alto.md",
+      "📯 Trombone": "arranjos/sinais_de_fogo/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/sinais_de_fogo/trompete___tenor.md"
     }
   },
   {
     "id": "so_love",
     "title": "So Love",
     "melodies": {
-      "🎷 Sax Alto": "markdown/so_love_sax_alto.md",
-      "📯 Trombone": "markdown/so_love_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/so_love_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/so_love/sax_alto.md",
+      "📯 Trombone": "arranjos/so_love/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/so_love/trompete___tenor.md"
     }
   },
   {
     "id": "sombra_da_maldade",
     "title": "Sombra Da Maldade",
     "melodies": {
-      "🎷 Sax Alto": "markdown/sombra_da_maldade_sax_alto.md",
-      "🎺 Trompete / Tenor": "markdown/sombra_da_maldade_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/sombra_da_maldade/sax_alto.md",
+      "🎺 Trompete / Tenor": "arranjos/sombra_da_maldade/trompete___tenor.md"
     }
   },
   {
     "id": "sorte_grande",
     "title": "Sorte Grande",
     "melodies": {
-      "🎷 Sax Alto": "markdown/sorte_grande_sax_alto.md",
-      "📯 Trombone": "markdown/sorte_grande_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/sorte_grande_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/sorte_grande/sax_alto.md",
+      "📯 Trombone": "arranjos/sorte_grande/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/sorte_grande/trompete___tenor.md"
     }
   },
   {
     "id": "swing_da_cor",
     "title": "Swing Da Cor",
     "melodies": {
-      "🎷 Sax Alto": "markdown/swing_da_cor_sax_alto.md",
-      "📯 Trombone": "markdown/swing_da_cor_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/swing_da_cor_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/swing_da_cor/sax_alto.md",
+      "📯 Trombone": "arranjos/swing_da_cor/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/swing_da_cor/trompete___tenor.md"
     }
   },
   {
     "id": "tambem_quero_beijar_flor_do_maracuja",
     "title": "Tambem Quero Beijar Flor Do Maracuja",
     "melodies": {
-      "🎷 Sax Alto": "markdown/tambem_quero_beijar_flor_do_maracuja_sax_alto.md",
-      "📯 Trombone": "markdown/tambem_quero_beijar_flor_do_maracuja_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/tambem_quero_beijar_flor_do_maracuja_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/tambem_quero_beijar_flor_do_maracuja/sax_alto.md",
+      "📯 Trombone": "arranjos/tambem_quero_beijar_flor_do_maracuja/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/tambem_quero_beijar_flor_do_maracuja/trompete___tenor.md"
     }
   },
   {
     "id": "temporal",
     "title": "Temporal",
     "melodies": {
-      "🎷 Sax Alto": "markdown/temporal_sax_alto.md",
-      "📯 Trombone": "markdown/temporal_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/temporal_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/temporal/sax_alto.md",
+      "📯 Trombone": "arranjos/temporal/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/temporal/trompete___tenor.md"
     }
   },
   {
     "id": "tempos_modernos",
     "title": "Tempos Modernos",
     "melodies": {
-      "🎷 Sax Alto": "markdown/tempos_modernos_sax_alto.md",
-      "🎺 Trompete / Tenor": "markdown/tempos_modernos_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/tempos_modernos/sax_alto.md",
+      "🎺 Trompete / Tenor": "arranjos/tempos_modernos/trompete___tenor.md"
     }
   },
   {
@@ -483,27 +483,27 @@ const songData = [
     "id": "to_nem_ai",
     "title": "To Nem Ai",
     "melodies": {
-      "🎷 Sax Alto": "markdown/to_nem_ai_sax_alto.md",
-      "📯 Trombone": "markdown/to_nem_ai_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/to_nem_ai_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/to_nem_ai/sax_alto.md",
+      "📯 Trombone": "arranjos/to_nem_ai/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/to_nem_ai/trompete___tenor.md"
     }
   },
   {
     "id": "toda_forma_de_amor",
     "title": "Toda Forma De Amor",
     "melodies": {
-      "🎷 Sax Alto": "markdown/toda_forma_de_amor_sax_alto.md",
-      "📯 Trombone": "markdown/toda_forma_de_amor_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/toda_forma_de_amor_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/toda_forma_de_amor/sax_alto.md",
+      "📯 Trombone": "arranjos/toda_forma_de_amor/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/toda_forma_de_amor/trompete___tenor.md"
     }
   },
   {
     "id": "tremendo_vacilao",
     "title": "Tremendo Vacilao",
     "melodies": {
-      "🎷 Sax Alto": "markdown/tremendo_vacilao_sax_alto.md",
-      "📯 Trombone": "markdown/tremendo_vacilao_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/tremendo_vacilao_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/tremendo_vacilao/sax_alto.md",
+      "📯 Trombone": "arranjos/tremendo_vacilao/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/tremendo_vacilao/trompete___tenor.md"
     }
   },
   {
@@ -514,53 +514,53 @@ const songData = [
     "id": "uma_noite_e_meia",
     "title": "Uma Noite E Meia",
     "melodies": {
-      "🎷 Sax Alto": "markdown/uma_noite_e_meia_sax_alto.md",
-      "📯 Trombone": "markdown/uma_noite_e_meia_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/uma_noite_e_meia_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/uma_noite_e_meia/sax_alto.md",
+      "📯 Trombone": "arranjos/uma_noite_e_meia/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/uma_noite_e_meia/trompete___tenor.md"
     }
   },
   {
     "id": "vai_sacudir_vai_abalar",
     "title": "Vai Sacudir Vai Abalar",
     "melodies": {
-      "🎷 Sax Alto": "markdown/vai_sacudir_vai_abalar_sax_alto.md",
-      "📯 Trombone": "markdown/vai_sacudir_vai_abalar_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/vai_sacudir_vai_abalar_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/vai_sacudir_vai_abalar/sax_alto.md",
+      "📯 Trombone": "arranjos/vai_sacudir_vai_abalar/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/vai_sacudir_vai_abalar/trompete___tenor.md"
     }
   },
   {
     "id": "varias_queixas",
     "title": "Varias Queixas",
     "melodies": {
-      "🎷 Sax Alto": "markdown/varias_queixas_sax_alto.md",
-      "🎺 Trompete / Tenor": "markdown/varias_queixas_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/varias_queixas/sax_alto.md",
+      "🎺 Trompete / Tenor": "arranjos/varias_queixas/trompete___tenor.md"
     }
   },
   {
     "id": "vem_meu_amor",
     "title": "Vem Meu Amor",
     "melodies": {
-      "🎷 Sax Alto": "markdown/vem_meu_amor_sax_alto.md",
-      "📯 Trombone": "markdown/vem_meu_amor_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/vem_meu_amor_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/vem_meu_amor/sax_alto.md",
+      "📯 Trombone": "arranjos/vem_meu_amor/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/vem_meu_amor/trompete___tenor.md"
     }
   },
   {
     "id": "voce_me_vira_a_cabeca",
     "title": "Voce Me Vira A Cabeca",
     "melodies": {
-      "🎷 Sax Alto": "markdown/voce_me_vira_a_cabeca_sax_alto.md",
-      "📯 Trombone": "markdown/voce_me_vira_a_cabeca_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/voce_me_vira_a_cabeca_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/voce_me_vira_a_cabeca/sax_alto.md",
+      "📯 Trombone": "arranjos/voce_me_vira_a_cabeca/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/voce_me_vira_a_cabeca/trompete___tenor.md"
     }
   },
   {
     "id": "voce_nao_entende_nada",
     "title": "Voce Nao Entende Nada",
     "melodies": {
-      "🎷 Sax Alto": "markdown/voce_nao_entende_nada_sax_alto.md",
-      "📯 Trombone": "markdown/voce_nao_entende_nada_trombone.md",
-      "🎺 Trompete / Tenor": "markdown/voce_nao_entende_nada_trompete___tenor.md"
+      "🎷 Sax Alto": "arranjos/voce_nao_entende_nada/sax_alto.md",
+      "📯 Trombone": "arranjos/voce_nao_entende_nada/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/voce_nao_entende_nada/trompete___tenor.md"
     }
   }
 ];

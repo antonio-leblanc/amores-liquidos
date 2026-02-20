@@ -2,6 +2,7 @@ import os
 import re
 import json
 import yaml
+from utils import slug_to_title, format_instrument_name
 
 # Obtém o diretório do projeto
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -13,42 +14,6 @@ ARRANGEMENT_DIRS = {
     'amores': os.path.join(PROJECT_ROOT, 'arranjos', 'amores'),
     'carnaval': os.path.join(PROJECT_ROOT, 'arranjos', 'carnaval')
 }
-
-# Mapping specific filenames to instrument names if standard conversion fails or needs override
-INSTRUMENT_MAPPING = {
-    'sax_alto': '🎷 Sax Alto',
-    'sax_tenor': '🎷 Sax Tenor',
-    'trombone': '📯 Trombone',
-    'trompete': '🎺 Trompete',
-    'trompete___tenor': '🎺 Trompete / Tenor',
-    'base': '🎹 Base',
-    'bateria': '🥁 Bateria',
-}
-
-def slug_to_title(slug):
-    """Converte um slug_de_musica para um Título De Música."""
-    title = slug.replace('_', ' ').replace('pc', '%').title()
-    return title
-
-def format_instrument_name(filename_slug):
-    """Formata o nome do instrumento a partir do slug do arquivo."""
-    # Check explicit mapping first
-    if filename_slug in INSTRUMENT_MAPPING:
-        return INSTRUMENT_MAPPING[filename_slug]
-
-    # Generic formatting fallback
-    name = filename_slug.replace('___', ' / ').replace('_', ' ').title()
-    
-    if 'Sax' in name:
-        return f"🎷 {name}"
-    elif 'Trombone' in name:
-        return f"📯 {name}"
-    elif 'Trompete' in name:
-        return f"🎺 {name}"
-    elif 'Bateria' in name or 'Drums' in name:
-        return f"🥁 {name}"
-    
-    return name
 
 # --- LÓGICA PRINCIPAL ---
 
@@ -194,13 +159,10 @@ js_content += f"const songData = {json.dumps(final_song_objects, indent=2, ensur
 js_content += f"const playlists = {json.dumps(final_playlists, indent=2, ensure_ascii=False)};\n\n"
 js_content += f"const medleys = {json.dumps(medleys_definitions, indent=2, ensure_ascii=False)};\n\n"
 
-# Variáveis legadas/auxiliares para garantir compatibilidade com script.js atual
-js_content += f"// Variáveis auxiliares para compatibilidade\n"
-js_content += f"const songsAlphabetical = playlists['💕 Repertorio Amores'] || [];\n"
-js_content += f"const songsAmores = songsAlphabetical;\n"
+# Variáveis legadas/auxiliares removidas para limpeza. 
+# O frontend agora usa o objeto 'playlists' e 'songData' diretamente.
 
 # Definir qual playlist abre por padrão
-# Se quisermos que "Ordem Alfabética" seja a padrão:
 js_content += f"const defaultPlaylistName = \"💕 Repertorio Amores\";\n"
 
 with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:

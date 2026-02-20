@@ -214,6 +214,10 @@ const songData = [
     "title": "Cobra"
   },
   {
+    "id": "copo_de_vinho",
+    "title": "Copo De Vinho"
+  },
+  {
     "id": "coracao_partido",
     "title": "Coracao Partido"
   },
@@ -916,6 +920,7 @@ const playlists = {
     "carinito",
     "cheguei",
     "cobra",
+    "copo_de_vinho",
     "coracao_partido",
     "danca_da_manivela",
     "desliza",
@@ -981,6 +986,7 @@ const playlists = {
     "cheguei",
     "cilada",
     "cobra",
+    "copo_de_vinho",
     "coracao_partido",
     "danca_da_manivela",
     "de_ladinho",

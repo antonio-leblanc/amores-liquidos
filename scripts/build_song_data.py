@@ -98,7 +98,7 @@ for slug in song_slugs:
 
                 # O caminho no JS final deve ser relativo à raiz do projeto
                 # Ex: arranjos/alo_paixao/sax_alto.md
-                file_path = os.path.join('arranjos', slug, filename).replace('\\', '/')
+                file_path = os.path.join('arranjos', 'amores', slug, filename).replace('\\', '/')
                 melodies_for_this_song[instrument_name] = file_path
             
     # Se encontrou alguma melodia, adiciona o objeto ao song_object

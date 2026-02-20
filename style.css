@@ -299,6 +299,9 @@ body.carnaval-theme {
   cursor: pointer;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   text-transform: capitalize;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #playlist li:last-child {
@@ -313,6 +316,21 @@ body.carnaval-theme {
   background-color: #dfdbdf;
   font-weight: bold;
   color: #8c7894;
+}
+
+.song-indicators {
+  font-size: 0.9em;
+  opacity: 0.6;
+  filter: grayscale(0.5);
+  transition: all 0.3s ease;
+  margin-left: 10px;
+}
+
+#playlist li:hover .song-indicators,
+#playlist li.active .song-indicators {
+  opacity: 1;
+  filter: grayscale(0);
+  transform: scale(1.1);
 }
 
 /* --- ESTILOS DA MELODIA --- */

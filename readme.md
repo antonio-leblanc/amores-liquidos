@@ -1,10 +1,23 @@
-# Amores Líquidos - Music Player & Partituras
+# Amores Líquidos & Carnaval - Music Player & Partituras
 
 > **Para IA:** Este README explica a estrutura e fluxo de trabalho do projeto para facilitar automações e manutenção.
 
-## 🎯 **Fonte da Verdade**
-- **`raw_songbook/songbook.docx`** - Documento Word com todas as partituras
+## 🎯 **Projeto e Contexto**
+- Esse player serve como guia de estudo para fanfarras de 
+- Ele comecou como projeto somente das musicas do bloco amores-liquidos e se expandiu para repertorios mais genericos do carnaval
+
+## Origem dos audios
+- normalmente eu descubro o tom que a musica e tocada na rua (que nao necessariamente corresponde ao tom da gravacao)
+- baixo o mp3 e transponho e adiciono na pasta music
+
+## 🎯 **Origem dos arranhos**
+
+#### Repertorio amores liquidos
+- **`raw_songbook/songbook.docx`** - Documento Word com todas as partituras que eh baixado do drive
 - **`raw_songbook/songbook.md`** - Versão markdown (gerada via pandoc)
+#### Repertorio amores liquidos
+- a ideia vai ser escrever aqui neste repo os outros arranjos, diretamente em .md provavelmente e converter com algum script usando o promtp de arranjador
+
 
 ## 🔄 **Fluxo de Trabalho Principal**
 

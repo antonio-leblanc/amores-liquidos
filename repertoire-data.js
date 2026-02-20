@@ -720,6 +720,8 @@ const songData = [
     "id": "vermelho",
     "title": "Vermelho",
     "melodies": {
+      "🎷 Sax Alto": "arranjos/carnaval/vermelho/sax_alto.md",
+      "📯 Trombone": "arranjos/carnaval/vermelho/trombone.md",
       "🎺 Trompete / Tenor": "arranjos/carnaval/vermelho/trompete___tenor.md"
     }
   },

@@ -487,6 +487,8 @@ const songData = [
     "id": "nao_me_entrego_pros_caretas",
     "title": "Nao Me Entrego Pros Caretas",
     "melodies": {
+      "🎷 Sax Alto": "arranjos/carnaval/nao_me_entrego_pros_caretas/sax_alto.md",
+      "📯 Trombone": "arranjos/carnaval/nao_me_entrego_pros_caretas/trombone.md",
       "🎺 Trompete / Tenor": "arranjos/carnaval/nao_me_entrego_pros_caretas/trompete___tenor.md"
     }
   },

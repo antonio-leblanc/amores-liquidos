@@ -1,5 +1,5 @@
 // Song titles
-const songsAlphabetical = [
+const songsAmores = [
   "100_porcento_voce",
   "acima_do_sol",
   "alo_paixao",
@@ -70,7 +70,7 @@ const songsAlphabetical = [
 const defaultPlaylistName = "🔤 Ordem Alfabética";
 
 const playlists = {
-  "🔤 Ordem Alfabética": [...songsAlphabetical].sort(),
+  "🔤 Ordem Alfabética": [...songsAmores].sort(),
   "⭐ Assinatura": [
     "sombra_da_maldade",
     "tempos_modernos",

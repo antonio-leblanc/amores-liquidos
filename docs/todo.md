@@ -1,1 +1,2 @@
 - escrever musicas
+- script que printa musicas sem partitura e partituras sem musica?

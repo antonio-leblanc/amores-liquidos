@@ -67,10 +67,10 @@ const songsAmores = [
   "voce_nao_entende_nada",
 ];
 
-const defaultPlaylistName = "🔤 Ordem Alfabética";
+const defaultPlaylistName = "💕 Repertorio Amores";
 
 const playlists = {
-  "🔤 Ordem Alfabética": [...songsAmores].sort(),
+  "💕 Repertorio Amores": [...songsAmores].sort(),
   "⭐ Assinatura": [
     "sombra_da_maldade",
     "tempos_modernos",

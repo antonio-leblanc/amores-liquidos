@@ -358,6 +358,10 @@ const songData = [
     }
   },
   {
+    "id": "glamurosa",
+    "title": "Glamurosa"
+  },
+  {
     "id": "hey_jude",
     "title": "Hey Jude",
     "melodies": {
@@ -918,6 +922,7 @@ const playlists = {
     "eu_so_quero_um_xodo",
     "fricote",
     "gimme_gimme_gimme",
+    "glamurosa",
     "jesus_cristo",
     "jet_ski",
     "jovem",
@@ -995,6 +1000,7 @@ const playlists = {
     "fricote",
     "gatas_extraordinarias",
     "gimme_gimme_gimme",
+    "glamurosa",
     "hey_jude",
     "i_love_you_baby",
     "i_miss_her",

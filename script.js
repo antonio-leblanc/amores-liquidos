@@ -331,7 +331,8 @@ const player = {
     this.title.innerText = song.replace(/_/g, ' ');
 
     const currentPlaylist = this.playlistSelector.value;
-    const folder = currentPlaylist === '🎭 Outras Carnaval' ? 'music_carnaval' : 'music';
+    // --- MUDANÇA: Pasta única de música 'music/' para todos os arquivos ---
+    const folder = 'music';
     this.audio.src = `${folder}/${song}.mp3`;
     this.audio.playbackRate = this.playbackRate;
 

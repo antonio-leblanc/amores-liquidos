@@ -1,6 +1,6 @@
 # Este script automatiza todo o processo de conversao e geraçao de dados.
 
-# Passo 1: Encontrar o arquivo .docx mais recente
+# Passo 1: Encontrar o arquivo .docx mais recente e converte com pandoc para markdown
 $docxFile = Get-ChildItem "raw_songbook/*.docx" | Sort-Object LastWriteTime -Descending | Select-Object -First 1
 
 if ($docxFile) {

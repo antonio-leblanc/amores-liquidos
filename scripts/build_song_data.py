@@ -7,7 +7,7 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # --- CONFIGURAÇÃO ---
 SONG_DATA_INPUT_FILE = os.path.join(PROJECT_ROOT, 'song-data.js')
-MARKDOWN_DIR = os.path.join(PROJECT_ROOT, 'markdown')
+MARKDOWN_DIR = os.path.join(PROJECT_ROOT, 'arranjos', 'amores')
 SONG_DATA_OUTPUT_FILE = os.path.join(PROJECT_ROOT, 'song-data-final.js')
 
 def slug_to_title(slug):
@@ -76,12 +76,30 @@ for slug in song_slugs:
     melodies_for_this_song = {}
     
     # Itera sobre os arquivos encontrados e verifica se eles pertencem a este slug
-    for filename in markdown_files:
-        if filename.startswith(f"{slug}_"):
-            instrument_name = get_instrument_from_filename(filename, slug)
-            # O caminho no JS final deve ser relativo à raiz do projeto
-            file_path = os.path.join('markdown', filename).replace('\\', '/')
-            melodies_for_this_song[instrument_name] = file_path
+    # --- MUDANÇA: Procurar na pasta da música ---
+    song_dir = os.path.join(MARKDOWN_DIR, slug)
+    if os.path.exists(song_dir) and os.path.isdir(song_dir):
+        for filename in os.listdir(song_dir):
+            if filename.endswith('.md'):
+                # O nome do arquivo agora é apenas o instrumento (ex: sax_alto.md)
+                # Precisamos reconstruir o "instrument_slug" para a função auxiliar ou adaptar a função
+                # Vamos adaptar a lógica aqui mesmo para ser mais simples
+                
+                instrument_slug = filename.replace('.md', '')
+                instrument_name = instrument_slug.replace('___', ' / ').replace('_', ' ').title()
+                
+                # Adiciona o emoji correspondente
+                if 'Sax' in instrument_name:
+                    instrument_name = f"🎷 {instrument_name}"
+                elif 'Trombone' in instrument_name:
+                    instrument_name = f"📯 {instrument_name}"
+                elif 'Trompete' in instrument_name:
+                    instrument_name = f"🎺 {instrument_name}"
+
+                # O caminho no JS final deve ser relativo à raiz do projeto
+                # Ex: arranjos/amores/alo_paixao/sax_alto.md
+                file_path = os.path.join('arranjos', 'amores', slug, filename).replace('\\', '/')
+                melodies_for_this_song[instrument_name] = file_path
             
     # Se encontrou alguma melodia, adiciona o objeto ao song_object
     if melodies_for_this_song:

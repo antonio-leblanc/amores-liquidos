@@ -11,3 +11,4 @@ Thumbs.db
 #folders
 raw_songbook/
 
+__pycache__/

@@ -301,7 +301,24 @@ const player = {
       songs.forEach((song) => {
         const li = document.createElement('li');
         li.dataset.songName = song;
-        li.textContent = song.replace(/_/g, ' ');
+
+        const melodyData = this.getMelodyData(song);
+        let icons = '';
+        if (melodyData && melodyData.melodies) {
+          // Extract emojis from instrument names
+          const emojis = Object.keys(melodyData.melodies)
+            .map(name => {
+              const match = name.match(/[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}]/u);
+              return match ? match[0] : '';
+            })
+            .filter((v, i, a) => v && a.indexOf(v) === i); // Unique emojis
+
+          if (emojis.length > 0) {
+            icons = `<span class="song-indicators">${emojis.join('')}</span>`;
+          }
+        }
+
+        li.innerHTML = `<span>${song.replace(/_/g, ' ')}</span>${icons}`;
         this.playlist.appendChild(li);
       });
     }

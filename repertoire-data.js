@@ -394,7 +394,9 @@ const songData = [
     "id": "jovem",
     "title": "Jovem",
     "melodies": {
-      "🎺 Trompete / Tenor Copy": "arranjos/carnaval/jovem/trompete___tenor copy.md"
+      "🎷 Sax Alto": "arranjos/carnaval/jovem/sax_alto.md",
+      "📯 Trombone": "arranjos/carnaval/jovem/trombone.md",
+      "🎺 Trompete / Tenor": "arranjos/carnaval/jovem/trompete___tenor.md"
     }
   },
   {

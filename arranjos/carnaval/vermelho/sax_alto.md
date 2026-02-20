@@ -1,6 +1,6 @@
 # Vermelho (Sax Alto)
 
-**Cálculo de Transposição:** Para transpor de Trompete (Bb) para Sax Alto (Eb), vou descer 5 semitons em cada nota (o que equivale a descer 2 semitons para chegar ao Tom Real e, em seguida, descer mais 3 semitons para atingir a transposição do Sax Alto).
+**Cálculo de Transposição:** Para transpor de Trompete/Tenor (Bb) para Sax Alto (Eb), vou descer 5 semitons em cada nota (ou subir 7 semitons), visto que o Trompete está 2 semitons acima do Tom Real e o Sax Alto está 3 semitons abaixo do Tom Real.
 
 **Tom:** Bm
 
@@ -28,10 +28,11 @@ re \ mi \ fa# \ La \ Si \ Do# \ Re \ Mi \ Fa#
 
 Si, Si Do# Re Do# Si La Si
 
-Si Do# Re Do# Si fa# sol, Fa# Mi
+Si Do# Re Do# Si fa# sol, Mi Re
 
 Do#, Do# Do# Re Do# Si La Si
 
+**4**
 
 Si Si Do# Re Do# Si,
 

@@ -19,6 +19,7 @@ Sempre que o Word oficial ou os arquivos YAML em `playlists/` forem alterados:
 ```ps1
 .\convert.ps1
 ```
+*Nota: A pasta `arranjos/amores/` é limpa e recriada do zero a cada execução deste script.*
 
 ### **2. Adicionar Novo Material**
 - **Áudio**: MP3 em `music/` (slug_com_underscore).
@@ -37,18 +38,18 @@ amores-liquidos/
 ├── index.html              # Aplicação principal (Player & Partituras)
 ├── script.js               # Inteligência do Front-end
 ├── style.css               # Design System
-├── song-data-final.js      # Banco de dados unificado (GERADO AUTOMATICAMENTE)
+├── repertoire-data.js      # Banco de dados unificado (GERADO AUTOMATICAMENTE)
 ├── arranjos/               # Biblioteca de Arranjos
-│   ├── amores/             # Extraídos do Word
-│   └── carnaval/           # Criados manualmente (Expansão)
+│   ├── amores/             # Extraídos do Word (Gerado)
+│   └── carnaval/           # Criados manualmente (Fonte)
 ├── playlists/              # Fonte da Verdade (YAML)
 │   ├── amores.yml          # Core Amores
 │   └── carnaval.yml        # Novos repertórios
 ├── scripts/                # Motores de Automação (Python)
-│   ├── sync_amores_from_word.py # Word -> Markdown Amores
+│   ├── sync_amores_from_word.py   # Word -> Markdown Amores
 │   ├── compile_repertoire_data.py # YAML + MD -> JS Database
-│   ├── transpose_melody.py    # Automação de Transposição (Gemini)
-│   └── utils.py                # Lógica compartilhada (Slugs, Nomes)
+│   ├── transpose_melody.py        # Automação de Transposição (Gemini)
+│   └── utils.py                   # Lógica compartilhada (Slugs, Nomes)
 ├── music/                  # Biblioteca MP3
 └── raw_songbook/           # Fonte Primária (DOCX)
 ```
@@ -56,6 +57,8 @@ amores-liquidos/
 ## ⚙️ **Manual de Operação**
 
 ```ps1
+# Requisitos: Python (uv), Pandoc (para conversão Word)
+
 # Setup de Ambiente
 cd scripts
 uv sync

@@ -222,6 +222,10 @@ const songData = [
     "title": "Coracao Partido"
   },
   {
+    "id": "coracao_radiante",
+    "title": "Coracao Radiante"
+  },
+  {
     "id": "danca_da_manivela",
     "title": "Danca Da Manivela"
   },
@@ -265,6 +269,10 @@ const songData = [
       "📯 Trombone": "arranjos/amores/deusa_do_amor/trombone.md",
       "🎺 Trompete / Tenor": "arranjos/amores/deusa_do_amor/trompete___tenor.md"
     }
+  },
+  {
+    "id": "diga_que_valeu",
+    "title": "Diga Que Valeu"
   },
   {
     "id": "do_seu_lado",
@@ -721,6 +729,10 @@ const songData = [
     }
   },
   {
+    "id": "vai_novinha",
+    "title": "Vai Novinha"
+  },
+  {
     "id": "vai_sacudir_vai_abalar",
     "title": "Vai Sacudir Vai Abalar",
     "melodies": {
@@ -754,6 +766,10 @@ const songData = [
       "📯 Trombone": "arranjos/carnaval/vermelho/trombone.md",
       "🎺 Trompete / Tenor": "arranjos/carnaval/vermelho/trompete___tenor.md"
     }
+  },
+  {
+    "id": "voa_voa",
+    "title": "Voa Voa"
   },
   {
     "id": "voce_me_vira_a_cabeca",
@@ -922,8 +938,10 @@ const playlists = {
     "cobra",
     "copo_de_vinho",
     "coracao_partido",
+    "coracao_radiante",
     "danca_da_manivela",
     "desliza",
+    "diga_que_valeu",
     "eu_so_quero_um_xodo",
     "fricote",
     "gimme_gimme_gimme",
@@ -945,7 +963,9 @@ const playlists = {
     "ta_escrito",
     "tristeza",
     "uma_brasileira",
+    "vai_novinha",
     "vermelho",
+    "voa_voa",
     "whats_up",
     "whenever_wherever"
   ],
@@ -988,12 +1008,14 @@ const playlists = {
     "cobra",
     "copo_de_vinho",
     "coracao_partido",
+    "coracao_radiante",
     "danca_da_manivela",
     "de_ladinho",
     "depois_do_prazer",
     "desliza",
     "deus_me_livre",
     "deusa_do_amor",
+    "diga_que_valeu",
     "do_seu_lado",
     "dont_stop_michael_jackson",
     "eu_so_quero_um_xodo",
@@ -1057,10 +1079,12 @@ const playlists = {
     "tu_ta_na_gaiola",
     "uma_brasileira",
     "uma_noite_e_meia",
+    "vai_novinha",
     "vai_sacudir_vai_abalar",
     "varias_queixas",
     "vem_meu_amor",
     "vermelho",
+    "voa_voa",
     "voce_me_vira_a_cabeca",
     "voce_nao_entende_nada",
     "whats_up",

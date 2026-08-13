@@ -1,14 +1,54 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
+/* --- VARIÁVEIS DE TEMA (DESIGN TOKENS) --- */
+:root {
+  /* Gradiente de marca */
+  --color-brand-blue: #00c6ff;
+  --color-brand-purple: #7000ff;
+  --color-brand-pink: #ff00d4;
+  --gradient-brand: linear-gradient(135deg, var(--color-brand-blue) 0%, var(--color-brand-purple) 50%, var(--color-brand-pink) 100%);
+
+  /* Texto */
+  --color-text-dark: #5c5261;
+  --color-text-muted: #8c7894;
+  --color-white: #fff;
+
+  /* Componentes RGB do acento, para uso em rgba() com opacidade variável */
+  --color-accent-purple-rgb: 112, 0, 255;
+  --color-accent-pink-rgb: 255, 0, 212;
+
+  /* Fundos "vidro" (glassmorphism) */
+  --glass-bg-40: rgba(255, 255, 255, 0.4);
+  --glass-bg-50: rgba(255, 255, 255, 0.5);
+  --glass-bg-60: rgba(255, 255, 255, 0.6);
+  --glass-bg-80: rgba(255, 255, 255, 0.8);
+  --glass-border-50: rgba(255, 255, 255, 0.5);
+  --glass-border-60: rgba(255, 255, 255, 0.6);
+
+  /* Sombras neutras */
+  --shadow-black-05: rgba(0, 0, 0, 0.05);
+  --shadow-black-10: rgba(0, 0, 0, 0.1);
+  --shadow-black-20: rgba(0, 0, 0, 0.2);
+
+  /* Brilho do container do player */
+  --shadow-container-glow: rgba(194, 72, 255, 0.2);
+
+  /* Playlist ativa */
+  --color-active-bg: #dfdbdf;
+
+  /* Fundo do body: troca no tema Carnaval (ver body.carnaval-theme) */
+  --gradient-body-default: linear-gradient(0deg, rgb(255, 148, 216) 23.8%, rgba(252, 221, 221, 1) 92%);
+  --gradient-body-carnaval: linear-gradient(to right, #00c6ff, #0072ff);
+  --gradient-body-active: var(--gradient-body-default);
+}
+
 * {
   box-sizing: border-box;
 }
 
 /* --- ESTRUTURA PRINCIPAL E LAYOUT --- */
 body {
-  background-image: linear-gradient(0deg,
-      rgb(255, 148, 216) 23.8%,
-      rgba(252, 221, 221, 1) 92%);
+  background-image: var(--gradient-body-active);
   height: 100vh;
 
   display: flex;
@@ -21,8 +61,7 @@ body {
 }
 
 body.carnaval-theme {
-  background-image: linear-gradient(to right, #00c6ff, #0072ff);
-
+  --gradient-body-active: var(--gradient-body-carnaval);
 }
 
 .header {
@@ -42,7 +81,7 @@ body.carnaval-theme {
   font-family: 'Outfit', sans-serif;
   font-weight: 800;
   font-size: 3rem;
-  background: linear-gradient(135deg, #00c6ff 0%, #7000ff 50%, #ff00d4 100%);
+  background: var(--gradient-brand);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -85,16 +124,16 @@ body.carnaval-theme {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: var(--glass-bg-40);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--glass-border-50);
   border-radius: 12px;
   flex-grow: 1;
 
   overflow-y: auto;
 
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 15px var(--shadow-black-05);
 }
 
 /* --- Barra de Controles com Dropdowns Lado a Lado --- */
@@ -117,44 +156,44 @@ body.carnaval-theme {
   width: 100%;
   padding: 10px;
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--glass-border-60);
   font-size: 16px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--glass-bg-50);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 10px var(--shadow-black-05);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 #playlist-selector:hover,
 #instrument-selector:hover {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: var(--glass-bg-80);
 }
 
 /* --- COLUNA DA DIREITA (MELODIA) --- */
 .melody-column {
   flex: 1.8;
 
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: var(--glass-bg-40);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--glass-border-50);
   border-radius: 20px;
   padding: 24px;
   overflow-y: auto;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 32px var(--shadow-black-05);
   height: 100%;
 }
 
 /* --- COMPONENTES DO PLAYER --- */
 .music-container {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--glass-bg-50);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--glass-border-60);
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(194, 72, 255, 0.2);
+  box-shadow: 0 10px 30px var(--shadow-container-glow);
   padding: 20px;
   margin-bottom: 20px;
   flex-shrink: 0;
@@ -186,7 +225,7 @@ body.carnaval-theme {
 .action-btn {
   background-color: transparent;
   border: 0;
-  color: #5c5261;
+  color: var(--color-text-dark);
   font-size: 20px;
   cursor: pointer;
   padding: 10px;
@@ -201,23 +240,23 @@ body.carnaval-theme {
 }
 
 .action-btn:hover {
-  background-color: rgba(112, 0, 255, 0.1);
-  color: #7000ff;
+  background-color: rgba(var(--color-accent-purple-rgb), 0.1);
+  color: var(--color-brand-purple);
   transform: scale(1.1);
 }
 
 .action-btn.action-btn-big {
   color: #fff;
-  background: linear-gradient(135deg, #00c6ff 0%, #7000ff 50%, #ff00d4 100%);
+  background: var(--gradient-brand);
   font-size: 26px;
   width: 56px;
   height: 56px;
-  box-shadow: 0 4px 15px rgba(112, 0, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(var(--color-accent-purple-rgb), 0.3);
 }
 
 .action-btn.action-btn-big:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(112, 0, 255, 0.4);
+  box-shadow: 0 6px 20px rgba(var(--color-accent-purple-rgb), 0.4);
   filter: brightness(1.1);
   color: #fff;
 }
@@ -227,9 +266,9 @@ body.carnaval-theme {
 }
 
 .action-btn.active {
-  color: #ff00d4;
-  background-color: rgba(255, 0, 212, 0.1);
-  text-shadow: 0 0 10px rgba(255, 0, 212, 0.3);
+  color: var(--color-brand-pink);
+  background-color: rgba(var(--color-accent-pink-rgb), 0.1);
+  text-shadow: 0 0 10px rgba(var(--color-accent-pink-rgb), 0.3);
 }
 
 #speed-btn {
@@ -237,11 +276,11 @@ body.carnaval-theme {
   font-weight: 600;
   font-size: 14px;
   min-width: 44px;
-  color: #5c5261;
+  color: var(--color-text-dark);
 }
 
 .progress-container {
-  background: rgba(0, 0, 0, 0.05);
+  background: var(--shadow-black-05);
   border-radius: 5px;
   cursor: pointer;
   margin: 10px 0;
@@ -250,7 +289,7 @@ body.carnaval-theme {
 }
 
 .progress {
-  background: linear-gradient(135deg, #00c6ff 0%, #7000ff 50%, #ff00d4 100%);
+  background: var(--gradient-brand);
   border-radius: 5px;
   position: relative;
   height: 100%;
@@ -267,37 +306,37 @@ body.carnaval-theme {
   width: 12px;
   height: 12px;
   background-color: #fff;
-  border: 2px solid #7000ff;
+  border: 2px solid var(--color-brand-purple);
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(112, 0, 255, 0.4);
+  box-shadow: 0 0 10px rgba(var(--color-accent-purple-rgb), 0.4);
 }
 
 /* --- OUTROS ESTILOS (Busca, Toggle, Playlist Items) --- */
 #search-input {
   width: 100%;
   padding: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--glass-border-60);
   border-radius: 10px;
   margin-bottom: 10px;
   font-size: 16px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--glass-bg-50);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 10px var(--shadow-black-05);
   outline: none;
   transition: all 0.3s ease;
 }
 
 #search-input:focus {
-  background-color: rgba(255, 255, 255, 0.8);
-  border-color: #7000ff;
+  background-color: var(--glass-bg-80);
+  border-color: var(--color-brand-purple);
 }
 
 
 #playlist li {
   padding: 12px 15px;
   cursor: pointer;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--shadow-black-10);
   text-transform: capitalize;
   display: flex;
   justify-content: space-between;
@@ -309,13 +348,13 @@ body.carnaval-theme {
 }
 
 #playlist li:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: var(--shadow-black-05);
 }
 
 #playlist li.active {
-  background-color: #dfdbdf;
+  background-color: var(--color-active-bg);
   font-weight: bold;
-  color: #8c7894;
+  color: var(--color-text-muted);
 }
 
 .song-indicators {
@@ -339,7 +378,7 @@ body.carnaval-theme {
   align-items: center;
   justify-content: center;
   height: 100%;
-  color: #8c7894;
+  color: var(--color-text-muted);
   font-style: italic;
 }
 
@@ -359,7 +398,7 @@ body.carnaval-theme {
 }
 
 .melody-column strong {
-  color: #5c5261 !important;
+  color: var(--color-text-dark) !important;
   font-weight: 600 !important;
 }
 
@@ -408,9 +447,9 @@ body.carnaval-theme {
     border-radius: 15px 15px 0 0;
 
     z-index: 1000;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 -2px 10px var(--shadow-black-20);
     padding: 10px;
-    background-color: #fff;
+    background-color: var(--color-white);
     transition: transform 0.4s ease-in-out;
 
   }
@@ -429,13 +468,13 @@ body.carnaval-theme {
     width: 50px;
     height: 20px;
     border-radius: 10px 10px 0 0;
-    background-color: #fff;
+    background-color: var(--color-white);
     border: none;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -2px 5px var(--shadow-black-10);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #8c7894;
+    color: var(--color-text-muted);
     font-size: 16px;
   }
 
@@ -500,15 +539,15 @@ body.carnaval-theme {
     border: 1px solid #eee;
     border-radius: 10px;
     padding: 10px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: var(--glass-bg-50);
   }
 }
 
 /* --- ESTILOS DOS MEDLEYS --- */
 #playlist li.medley-title {
   font-weight: bold;
-  color: #5c5261;
-  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--color-text-dark);
+  background-color: var(--shadow-black-05);
   cursor: default;
   text-align: center;
   font-style: italic;
@@ -526,13 +565,6 @@ body.carnaval-theme {
 
 #playlist li.medley-group-0:hover,
 #playlist li.medley-group-1:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: var(--shadow-black-05);
 
-}
-
-
-#playlist li.active {
-  background-color: #dfdbdf;
-  font-weight: bold;
-  color: #8c7894;
 }

@@ -2,22 +2,18 @@
 
 > Atualizado após análise geral do projeto (2026-08-13). Itens já concluídos foram removidos — ver histórico do git se precisar consultar o plano antigo.
 >
-> **2026-08-13**: CSS (variáveis de tema) e JS (modularização) concluídos via subagentes. `style.css` agora usa custom properties em `:root`; `script.js` virou orquestrador que importa `js/audio-player.js`, `js/melody-viewer.js` e `js/playlist-ui.js`.
+> **2026-08-13**: CSS (variáveis de tema) e JS (modularização) concluídos via subagentes. `style.css` agora usa custom properties em `:root`; `script.js` virou orquestrador que importa `js/audio-player.js`, `js/melody-viewer.js` e `js/playlist-ui.js`. Pasta `deprecated/` (arquivos órfãos não referenciados) removida. `scripts/tests/test_utils.py` criado, cobrindo `slugify`, `normalize_song_title`, `slug_to_title` e `format_instrument_name` (roda com `uv run python -m unittest tests.test_utils -v` de dentro de `scripts/`).
 
-## Pendências
+## Pendências (baixa prioridade — nice-to-have, não bloqueiam nada)
 
-### 1. Limpeza de arquivos órfãos
-- Remover `deprecated/build_song_data.py` e `deprecated/song-data_deprecated.js` — não são referenciados em nenhum lugar do projeto (confirmado via grep), e já estão preservados no histórico do git.
-- Revisar `music/verificar_tom/` — tem um mp3 avulso fora do padrão `slug.mp3`, parece arquivo de trabalho esquecido.
+### 1. Revisar `music/verificar_tom/`
+- Tem um mp3 avulso (`Mulú, Duda Beat, Lux & Tróia - Meu Jeito de Amar.mp3`) fora do padrão `slug.mp3` — parece arquivo de trabalho pra conferir tom de uma música candidata ao repertório, não conteúdo do site em si.
 
 ### 2. Acessibilidade (frontend)
-- Botões de ícone em `index.html` (`play`, `prev`, `next`, `random`) não têm `aria-label`/`title`. Apenas `share` e `speed-btn` têm. Adicionar em todos para leitores de tela.
+- Botões de ícone em `index.html` (`play`, `prev`, `next`, `random`) não têm `aria-label`/`title`. Apenas `share` e `speed-btn` têm.
 
 ### 3. Supply chain / CDNs
-- `marked.js` e Font Awesome são carregados via CDN sem atributo `integrity` (SRI). Adicionar hashes ou considerar self-host para reduzir risco de supply chain.
-
-### 4. Testes
-- `scripts/utils.py` tem regexes frágeis (remoção de acentos, extração do nome do instrumento a partir do título) sem nenhum teste unitário. Uma regressão nessas regras passa despercebida até quebrar um caso específico de música. Vale um `tests/test_utils.py` simples cobrindo os casos conhecidos (acentos, `%`, nomes com instrumento embutido).
+- `marked.js` e Font Awesome são carregados via CDN sem atributo `integrity` (SRI).
 
 ---
 

@@ -65,10 +65,6 @@ const songData = [
     }
   },
   {
-    "id": "amor_maior",
-    "title": "Amor Maior"
-  },
-  {
     "id": "amor_perfeito",
     "title": "Amor Perfeito",
     "melodies": {
@@ -919,7 +915,6 @@ const playlists = {
     "ai_que_saudade_d_oce",
     "alma_boemia",
     "amor_de_que",
-    "amor_maior",
     "andei_so",
     "anunciacao",
     "ara_ketu_bom_demais",
@@ -985,7 +980,6 @@ const playlists = {
     "amor_de_chocolate",
     "amor_de_que",
     "amor_i_love_you",
-    "amor_maior",
     "amor_perfeito",
     "andanca",
     "andei_so",

@@ -20,17 +20,16 @@ _Nenhuma._
 
 ## Carnaval
 
-- Músicas na playlist: **54**
+- Músicas na playlist: **53**
 - Pastas de arranjo: **4**
 
-### ❌ Sem partitura (50)
+### ❌ Sem partitura (49)
 
 - `a_francesa`
 - `agua_de_chuva_no_mar`
 - `ai_que_saudade_d_oce`
 - `alma_boemia`
 - `amor_de_que`
-- `amor_maior`
 - `andei_so`
 - `anunciacao`
 - `ara_ketu_bom_demais`

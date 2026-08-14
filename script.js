@@ -40,6 +40,7 @@ const player = {
   headerTitle: document.querySelector('.header h1'),
   togglePlayerBtn: document.getElementById('toggle-player-btn'),
   speedBtn: document.getElementById('speed-btn'),
+  mobileSearchFab: document.getElementById('mobile-search-fab'),
 
   currentSongs: playlists[defaultPlaylistName],
   songIndex: 0,
@@ -242,6 +243,11 @@ function addEventListeners() {
   player.togglePlayerBtn.addEventListener('click', () => {
     player.musicContainer.classList.toggle('player-recolhido');
     document.body.classList.toggle('player-is-recolhido');
+  });
+
+  player.mobileSearchFab.addEventListener('click', () => {
+    player.searchInput.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    player.searchInput.focus();
   });
 
   player.playlist.addEventListener('click', (e) => {

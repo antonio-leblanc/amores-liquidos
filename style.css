@@ -359,8 +359,8 @@ body.carnaval-theme {
 
 .song-indicators {
   font-size: 0.9em;
-  opacity: 0.6;
-  filter: grayscale(0.5);
+  opacity: 0.9;
+  filter: grayscale(0.1);
   transition: all 0.3s ease;
   margin-left: 10px;
 }
@@ -405,6 +405,10 @@ body.carnaval-theme {
 #toggle-player-btn {
   display: none;
 
+}
+
+.mobile-search-fab {
+  display: none;
 }
 
 @media (max-width: 768px) {
@@ -540,6 +544,28 @@ body.carnaval-theme {
     border-radius: 10px;
     padding: 10px;
     background-color: var(--glass-bg-50);
+  }
+
+  /* --- ATALHO PRA BUSCAR MÚSICA (a partitura vem antes da lista nessa ordem) --- */
+  .mobile-search-fab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1001;
+
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+
+    background: var(--gradient-brand);
+    color: #fff;
+    font-size: 18px;
+    box-shadow: 0 4px 15px rgba(var(--color-accent-purple-rgb), 0.4);
   }
 }
 

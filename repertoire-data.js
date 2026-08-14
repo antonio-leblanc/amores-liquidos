@@ -877,7 +877,7 @@ const playlists = {
     "dont_stop_michael_jackson",
     "i_love_you_baby"
   ],
-  "✨ Novas 2026": [
+  "✨ Novas": [
     "sinais_de_fogo",
     "to_nem_ai",
     "amor_i_love_you",
@@ -968,6 +968,11 @@ const playlists = {
     "voa_voa",
     "whats_up",
     "whenever_wherever"
+  ],
+  "✨ Novas Carnaval": [
+    "gimme_gimme_gimme",
+    "azul",
+    "vermelho"
   ],
   "♾️ Todas as Músicas": [
     "100_porcento_voce",

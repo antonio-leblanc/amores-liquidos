@@ -64,52 +64,56 @@ export function updatePlaylistHighlight(player) {
   });
 }
 
+// Ordem fixa de exibição dentro de cada grupo do dropdown.
+// Cada entrada é o nome (chave em `playlists`) ou { key, label } quando o texto
+// exibido precisa diferir da chave (ex.: duas playlists "Novas" com o mesmo rótulo).
+// 'Medleys' é sintética (não existe em playlists), tratada à parte.
+const PLAYLIST_GROUPS = [
+  {
+    label: 'Amores',
+    entries: ['💕 Repertorio Amores', '⭐ Assinatura', 'Medleys', '🥂 GIG', '✨ Novas'],
+  },
+  {
+    label: 'Crack Líquido',
+    entries: ['🎭 Carnaval', { key: '✨ Novas Carnaval', label: '✨ Novas' }, '♾️ Todas as Músicas'],
+  },
+];
+
 export function populatePlaylistSelector(player) {
   player.playlistSelector.innerHTML = '';
 
-  const playlistNames = Object.keys(playlists);
-  const carnavalName = '🎭 Carnaval';
-  const signaturePlaylistName = '⭐ Assinatura';
+  const hasMedleys = typeof medleys !== 'undefined' && Object.keys(medleys).length > 0;
 
-  const signatureIndex = playlistNames.indexOf(signaturePlaylistName);
+  PLAYLIST_GROUPS.forEach(group => {
+    const optgroup = document.createElement('optgroup');
+    optgroup.label = group.label;
+    let hasOptions = false;
 
-  // Add playlists up to and including 'Assinatura'
-  for (let i = 0; i <= signatureIndex; i++) {
-    const name = playlistNames[i];
-    if (name && name !== carnavalName) {
+    group.entries.forEach(entry => {
+      if (entry === 'Medleys') {
+        if (!hasMedleys) return;
+        const option = document.createElement('option');
+        option.value = 'Medleys';
+        option.innerText = '🧩 Medleys';
+        optgroup.appendChild(option);
+        hasOptions = true;
+        return;
+      }
+
+      const key = typeof entry === 'string' ? entry : entry.key;
+      const label = typeof entry === 'string' ? entry : entry.label;
+      if (!playlists[key]) return;
       const option = document.createElement('option');
-      option.value = name;
-      option.innerText = name;
-      player.playlistSelector.appendChild(option);
+      option.value = key;
+      option.innerText = label;
+      optgroup.appendChild(option);
+      hasOptions = true;
+    });
+
+    if (hasOptions) {
+      player.playlistSelector.appendChild(optgroup);
     }
-  }
-
-  // Add Medleys as the third item
-  if (typeof medleys !== 'undefined' && Object.keys(medleys).length > 0) {
-    const option = document.createElement('option');
-    option.value = 'Medleys';
-    option.innerText = '🧩 Medleys';
-    player.playlistSelector.appendChild(option);
-  }
-
-  // Add the rest of the playlists
-  for (let i = signatureIndex + 1; i < playlistNames.length; i++) {
-    const name = playlistNames[i];
-    if (name && name !== carnavalName) {
-      const option = document.createElement('option');
-      option.value = name;
-      option.innerText = name;
-      player.playlistSelector.appendChild(option);
-    }
-  }
-
-  // Add Carnaval at the end
-  if (playlistNames.includes(carnavalName)) {
-    const option = document.createElement('option');
-    option.value = carnavalName;
-    option.innerText = carnavalName;
-    player.playlistSelector.appendChild(option);
-  }
+  });
 
   player.playlistSelector.value = defaultPlaylistName;
 }

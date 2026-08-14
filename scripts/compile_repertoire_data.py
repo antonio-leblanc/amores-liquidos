@@ -118,9 +118,10 @@ print("\n📋 Organizando playlists...")
 PLAYLIST_ORDER = [
     "💕 Repertorio Amores",
     "⭐ Assinatura",
-    "✨ Novas 2026",
+    "✨ Novas",
     "🥂 GIG",
     "🎭 Carnaval",
+    "✨ Novas Carnaval",
     "♾️ Todas as Músicas"
 ]
 

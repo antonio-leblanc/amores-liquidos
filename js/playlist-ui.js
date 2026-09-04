@@ -74,8 +74,8 @@ const PLAYLIST_GROUPS = [
     entries: ['💕 Repertorio Amores', '⭐ Assinatura', 'Medleys', '🥂 GIG', '✨ Novas'],
   },
   {
-    label: 'Crack Líquido',
-    entries: ['🎭 Carnaval', { key: '✨ Novas Carnaval', label: '✨ Novas' }, '♾️ Todas as Músicas'],
+    label: 'CARNAVAL',
+    entries: ['🎭 Carnaval', { key: '✨ Novas Carnaval', label: '🥤 Crack Líquido' }, '♾️ Todas as Músicas'],
   },
 ];
 

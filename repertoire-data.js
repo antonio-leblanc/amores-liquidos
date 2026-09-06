@@ -965,9 +965,14 @@ const playlists = {
     "whenever_wherever"
   ],
   "✨ Novas Carnaval": [
-    "gimme_gimme_gimme",
     "azul",
-    "vermelho"
+    "baba_baby",
+    "ara_ketu_bom_demais",
+    "bate_lata",
+    "gimme_gimme_gimme",
+    "vermelho",
+    "lepo_lepo",
+    "nao_me_entrego_pros_caretas"
   ],
   "♾️ Todas as Músicas": [
     "100_porcento_voce",

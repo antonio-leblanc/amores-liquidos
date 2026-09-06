@@ -1,20 +1,11 @@
-// Escolhe, uma única vez no carregamento, qual experiência montar:
-// desktop (duas colunas, script.js de sempre) ou mobile (Home -> Lista -> Partitura,
-// mobile-home.js). Cada template só existe como DocumentFragment inerte até ser
-// clonado aqui — por isso os dois podem reusar os mesmos ids (#audio, #playlist, ...)
-// sem colidir: só um dos dois é inserido no documento de fato.
+// App agora é sempre o fluxo mobile (Home -> Lista -> Partitura, mobile-home.js),
+// em qualquer tamanho de tela — em telas largas o CSS (css/mobile-home.css) exibe
+// esse fluxo como um "celular" centralizado. O desktop-template e o script.js
+// antigos ficam no repo sem uso, não são mais clonados/importados.
 
-const MOBILE_BREAKPOINT = 768;
-const isMobile = window.innerWidth <= MOBILE_BREAKPOINT;
-
-const templateId = isMobile ? 'mobile-template' : 'desktop-template';
-const template = document.getElementById(templateId);
+const template = document.getElementById('mobile-template');
 const mount = document.getElementById('app-mount');
 mount.appendChild(template.content.cloneNode(true));
 
-if (isMobile) {
-  document.body.classList.add('mobile-home-body');
-  import('./mobile-home.js');
-} else {
-  import('../script.js');
-}
+document.body.classList.add('mobile-home-body');
+import('./mobile-home.js');

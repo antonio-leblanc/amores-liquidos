@@ -88,43 +88,11 @@ body.carnaval-theme {
   letter-spacing: -1px;
 }
 
-/* Wrapper onde js/app-init.js clona o template certo (desktop ou mobile).
+/* Wrapper onde js/app-init.js clona o mobile-template.
    display:contents faz o filho dele virar item direto do flex do body,
    como se o wrapper não existisse. */
 #app-mount {
   display: contents;
-}
-
-.main-container {
-  display: flex;
-  gap: 30px;
-  width: 100%;
-  max-width: 1400px;
-  flex-grow: 1;
-
-  min-height: 0;
-
-  height: 90vh;
-
-}
-
-/* --- COLUNA DA ESQUERDA (PLAYER & PLAYLIST) --- */
-.player-column {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-
-  min-width: 0;
-
-}
-
-.playlist-search-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-
-  min-height: 0;
 }
 
 #playlist {
@@ -143,22 +111,6 @@ body.carnaval-theme {
   box-shadow: 0 4px 15px var(--shadow-black-05);
 }
 
-/* --- Barra de Controles com Dropdowns Lado a Lado --- */
-.controls-bar {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-.playlist-selector-container {
-  flex: 1;
-}
-
-.instrument-selector-container {
-  flex: 1;
-}
-
-#playlist-selector,
 #instrument-selector {
   width: 100%;
   padding: 10px;
@@ -173,7 +125,6 @@ body.carnaval-theme {
   transition: all 0.3s ease;
 }
 
-#playlist-selector:hover,
 #instrument-selector:hover {
   background-color: var(--glass-bg-80);
 }
@@ -407,173 +358,6 @@ body.carnaval-theme {
 .melody-column strong {
   color: var(--color-text-dark) !important;
   font-weight: 600 !important;
-}
-
-#toggle-player-btn {
-  display: none;
-
-}
-
-.mobile-search-fab {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  body {
-    padding: 10px;
-    padding-bottom: 150px;
-
-    height: auto;
-    transition: padding-bottom 0.4s ease-in-out;
-
-  }
-
-  body.player-is-recolhido {
-    padding-bottom: 40px;
-
-  }
-
-  .header {
-    height: auto;
-    margin-bottom: 10px;
-  }
-
-  .header h1 {
-    font-size: 1.8rem;
-  }
-
-  .main-container {
-    flex-direction: column;
-    height: auto;
-    gap: 15px;
-  }
-
-  /* --- PLAYER FIXO NO RODAPÉ --- */
-  .music-container {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    margin: 0;
-    border-radius: 15px 15px 0 0;
-
-    z-index: 1000;
-    box-shadow: 0 -2px 10px var(--shadow-black-20);
-    padding: 10px;
-    background-color: var(--color-white);
-    transition: transform 0.4s ease-in-out;
-
-  }
-
-
-  .music-container.player-recolhido {
-    transform: translateY(calc(100% - 40px));
-
-  }
-
-  #toggle-player-btn {
-    position: absolute;
-    top: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 20px;
-    border-radius: 10px 10px 0 0;
-    background-color: var(--color-white);
-    border: none;
-    box-shadow: 0 -2px 5px var(--shadow-black-10);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-text-muted);
-    font-size: 16px;
-  }
-
-
-  .music-container.player-recolhido #toggle-player-btn i {
-    transform: rotate(180deg);
-  }
-
-  .music-info {
-    margin-bottom: 0;
-  }
-
-  .navigation {
-    margin-top: 0;
-  }
-
-  .action-btn {
-    margin: 0 5px;
-    font-size: 18px;
-    width: 38px;
-    height: 38px;
-  }
-
-  .action-btn.action-btn-big {
-    font-size: 22px;
-    width: 48px;
-    height: 48px;
-  }
-
-  #speed-btn {
-    font-size: 11px;
-  }
-
-  /* --- AJUSTES DE LAYOUT DAS COLUNAS --- */
-  .player-column {
-    order: 2;
-
-    margin-bottom: 20px;
-  }
-
-  .melody-column {
-    order: 1;
-
-    flex: 1 1 auto;
-    min-height: 50vh;
-
-    max-height: none;
-
-    overflow-y: visible;
-
-  }
-
-  .melody-column p {
-    margin: 6px 0 !important;
-    line-height: 1.2 !important;
-  }
-
-  .playlist-search-container {
-    max-height: 400px;
-
-    overflow-y: auto;
-    border: 1px solid #eee;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: var(--glass-bg-50);
-  }
-
-  /* --- ATALHO PRA BUSCAR MÚSICA (a partitura vem antes da lista nessa ordem) --- */
-  .mobile-search-fab {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    z-index: 1001;
-
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border: none;
-
-    background: var(--gradient-brand);
-    color: #fff;
-    font-size: 18px;
-    box-shadow: 0 4px 15px rgba(var(--color-accent-purple-rgb), 0.4);
-  }
 }
 
 /* --- ESTILOS DOS MEDLEYS --- */

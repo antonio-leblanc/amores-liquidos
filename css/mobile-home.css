@@ -1,7 +1,8 @@
-/* Fluxo mobile do index.html (viewport <= 768px, ver js/app-init.js) — 3 telas em
-   pilha (Home / Lista / Partitura), navegadas via History API. Cada `.view` ocupa
+/* Único fluxo do index.html, em qualquer tamanho de tela — 3 telas em pilha
+   (Home / Lista / Partitura), navegadas via History API. Cada `.view` ocupa
    a tela toda; só uma fica visível por vez (a escondida usa [hidden], que aqui
-   ganha prioridade sobre o `display` do `.view` por ser mais específico). */
+   ganha prioridade sobre o `display` do `.view` por ser mais específico). Acima
+   do breakpoint em MOLDURA DE "CELULAR", isso aparece como um cartão centralizado. */
 
 body.mobile-home-body {
   padding: 0;
@@ -15,6 +16,30 @@ body.mobile-home-body {
   max-width: 600px;
   margin: 0 auto;
   position: relative;
+}
+
+/* --- MOLDURA DE "CELULAR" EM TELAS LARGAS ---
+   Acima do breakpoint, o app fica com tamanho fixo de celular, centralizado,
+   com o fundo (gradiente do body) preenchendo a margem ao redor. */
+@media (min-width: 700px) {
+  body.mobile-home-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-app {
+    width: 400px;
+    height: 860px;
+    max-height: 92vh;
+    border-radius: 40px;
+    box-shadow: 0 25px 60px var(--shadow-black-20);
+    overflow: hidden;
+  }
+
+  .view {
+    border-radius: inherit;
+  }
 }
 
 .view {

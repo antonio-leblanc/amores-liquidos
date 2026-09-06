@@ -22,80 +22,8 @@
 
   <div id="app-mount"></div>
 
-  <!-- Desktop (>768px): duas colunas lado a lado, fluxo de sempre — não mexer. -->
-  <template id="desktop-template">
-    <div class="main-container">
-
-
-      <div class="player-column">
-        <div class="header">
-          <h1>Carnaval</h1>
-        </div>
-
-
-        <div class="music-container" id="music-container">
-          <button id="toggle-player-btn" class="action-btn">
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="music-info">
-            <h4 id="title"></h4>
-            <div class="progress-container" id="progress-container">
-              <div class="progress" id="progress"></div>
-            </div>
-          </div>
-          <audio src="music/acima_do_sol.mp3" id="audio"></audio>
-
-          <div class="navigation">
-            <button id="random" class="action-btn">
-              <i class="fas fa-random"></i>
-            </button>
-            <button id="prev" class="action-btn">
-              <i class="fas fa-backward"></i>
-            </button>
-            <button id="play" class="action-btn action-btn-big">
-              <i class="fas fa-play"></i>
-            </button>
-            <button id="next" class="action-btn">
-              <i class="fas fa-forward"></i>
-            </button>
-            <button id="share" class="action-btn" title="Gerar link">
-              <i class="fas fa-share-alt"></i>
-            </button>
-            <button id="speed-btn" class="action-btn" title="Velocidade de reprodução">1x</button>
-          </div>
-        </div>
-
-
-        <div class="playlist-search-container">
-          <div class="controls-bar">
-            <div class="playlist-selector-container">
-              <select id="playlist-selector"></select>
-            </div>
-            <div class="instrument-selector-container">
-              <select id="instrument-selector" style="display: none;"></select>
-            </div>
-          </div>
-          <input type="text" id="search-input" placeholder="Buscar música...">
-          <ul id="playlist"></ul>
-        </div>
-
-      </div>
-
-
-      <div class="melody-column" id="melody-display-container">
-        <div class="placeholder">
-          <p>Selecione uma música com melodia disponível para vê-la aqui.</p>
-        </div>
-      </div>
-
-    </div>
-
-    <button id="mobile-search-fab" class="mobile-search-fab" title="Buscar música" aria-label="Buscar música">
-      <i class="fas fa-search"></i>
-    </button>
-  </template>
-
-  <!-- Mobile (<=768px): navegação em 3 níveis via History API — Home -> Lista -> Partitura. -->
+  <!-- Único fluxo, sempre montado: navegação em 3 níveis via History API — Home -> Lista -> Partitura.
+       Em telas largas, css/mobile-home.css exibe isso como um "celular" centralizado. -->
   <template id="mobile-template">
     <div class="mobile-app" id="mobile-app">
 

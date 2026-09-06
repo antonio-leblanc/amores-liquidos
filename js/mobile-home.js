@@ -24,6 +24,26 @@ import {
   PLAYLIST_GROUPS,
 } from './playlist-ui.js';
 
+// Grupos exibidos na Home mobile e na página "Amores" — próprios do mobile,
+// desacoplados de PLAYLIST_GROUPS (que também alimenta o <select> do desktop,
+// esse sim "não mexer"). As chaves de playlist são as mesmas de PLAYLIST_GROUPS.
+const MOBILE_HOME_GROUPS = [
+  {
+    label: 'Playlists',
+    entries: [
+      '🎭 Carnaval',
+      { key: '✨ Novas Carnaval', label: '🥤 Crack Líquido' },
+      '♾️ Todas as Músicas',
+      { type: 'link', view: 'amoresHub', label: '💕 Amores' },
+    ],
+  },
+];
+
+const AMORES_HUB_GROUP = {
+  label: 'Amores',
+  entries: ['💕 Repertorio Amores', '⭐ Assinatura', 'Medleys', '🥂 GIG', '✨ Novas'],
+};
+
 const player = {
   musicContainer: document.getElementById('music-container'),
   playBtn: document.getElementById('play'),
@@ -53,13 +73,16 @@ const player = {
 
 const views = {
   home: document.getElementById('view-home'),
+  amoresHub: document.getElementById('view-amores-hub'),
   list: document.getElementById('view-list'),
   score: document.getElementById('view-score'),
 };
 
 const playlistGroupsContainer = document.getElementById('playlist-groups');
+const amoresHubGroupsContainer = document.getElementById('amores-hub-groups');
 const listTitle = document.getElementById('list-title');
 const listBackBtn = document.getElementById('list-back-btn');
+const amoresHubBackBtn = document.getElementById('amores-hub-back-btn');
 const scoreCloseBtn = document.getElementById('score-close-btn');
 
 let currentPlaylistKey = null;
@@ -116,24 +139,30 @@ function openSong(songId) {
   playSong(player);
 }
 
-// --- Home ---
+// --- Home / Amores (hub) ---
 
-function renderHome() {
-  playlistGroupsContainer.innerHTML = '';
+function resolveGroupCards(group, hasMedleys) {
+  return group.entries
+    .map(entry => {
+      if (entry === 'Medleys') {
+        return hasMedleys ? { key: 'Medleys', label: '🧩 Medleys' } : null;
+      }
+      if (typeof entry === 'object' && entry.type === 'link') {
+        return entry;
+      }
+      const key = typeof entry === 'string' ? entry : entry.key;
+      const label = typeof entry === 'string' ? entry : entry.label;
+      return playlists[key] ? { key, label } : null;
+    })
+    .filter(Boolean);
+}
+
+function renderGroups(container, groups, onCardClick) {
+  container.innerHTML = '';
   const hasMedleys = typeof medleys !== 'undefined' && Object.keys(medleys).length > 0;
 
-  PLAYLIST_GROUPS.forEach(group => {
-    const cards = group.entries
-      .map(entry => {
-        if (entry === 'Medleys') {
-          return hasMedleys ? { key: 'Medleys', label: '🧩 Medleys' } : null;
-        }
-        const key = typeof entry === 'string' ? entry : entry.key;
-        const label = typeof entry === 'string' ? entry : entry.label;
-        return playlists[key] ? { key, label } : null;
-      })
-      .filter(Boolean);
-
+  groups.forEach(group => {
+    const cards = resolveGroupCards(group, hasMedleys);
     if (cards.length === 0) return;
 
     const section = document.createElement('section');
@@ -147,18 +176,32 @@ function renderHome() {
     const cardsWrap = document.createElement('div');
     cardsWrap.className = 'playlist-cards';
 
-    cards.forEach(({ key, label }) => {
-      const card = document.createElement('button');
-      card.type = 'button';
-      card.className = 'playlist-card';
-      card.textContent = label;
-      card.addEventListener('click', () => openPlaylist(key));
-      cardsWrap.appendChild(card);
+    cards.forEach(card => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'playlist-card';
+      button.textContent = card.label;
+      button.addEventListener('click', () => onCardClick(card));
+      cardsWrap.appendChild(button);
     });
 
     section.appendChild(cardsWrap);
-    playlistGroupsContainer.appendChild(section);
+    container.appendChild(section);
   });
+}
+
+function renderHome() {
+  renderGroups(playlistGroupsContainer, MOBILE_HOME_GROUPS, (card) => {
+    if (card.type === 'link') {
+      navigate({ view: card.view });
+    } else {
+      openPlaylist(card.key);
+    }
+  });
+}
+
+function renderAmoresHub() {
+  renderGroups(amoresHubGroupsContainer, [AMORES_HUB_GROUP], (card) => openPlaylist(card.key));
 }
 
 function playlistLabel(key) {
@@ -302,6 +345,7 @@ function addEventListeners() {
   });
 
   listBackBtn.addEventListener('click', () => history.back());
+  amoresHubBackBtn.addEventListener('click', () => history.back());
   scoreCloseBtn.addEventListener('click', () => history.back());
 }
 
@@ -310,6 +354,7 @@ function addEventListeners() {
 function init() {
   addEventListeners();
   renderHome();
+  renderAmoresHub();
 
   const params = new URLSearchParams(window.location.search);
   const songId = params.get('song');

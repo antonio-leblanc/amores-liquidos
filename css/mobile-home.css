@@ -1,0 +1,157 @@
+/* Fluxo mobile do index.html (viewport <= 768px, ver js/app-init.js) — 3 telas em
+   pilha (Home / Lista / Partitura), navegadas via History API. Cada `.view` ocupa
+   a tela toda; só uma fica visível por vez (a escondida usa [hidden], que aqui
+   ganha prioridade sobre o `display` do `.view` por ser mais específico). */
+
+body.mobile-home-body {
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.mobile-app {
+  width: 100%;
+  height: 100vh;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.view {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 15px;
+}
+
+.view[hidden] {
+  display: none;
+}
+
+/* --- HOME --- */
+
+.view-home .header {
+  height: auto;
+  margin-bottom: 15px;
+  flex-shrink: 0;
+}
+
+.playlist-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.playlist-group-label {
+  margin: 0 0 10px 0;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--color-text-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.playlist-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.playlist-card {
+  text-align: left;
+  padding: 18px 20px;
+  border-radius: 16px;
+  border: 1px solid var(--glass-border-50);
+  background-color: var(--glass-bg-50);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px var(--shadow-black-05);
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: 'Lato', sans-serif;
+  color: var(--color-text-dark);
+  cursor: pointer;
+}
+
+.playlist-card:active {
+  transform: scale(0.98);
+  background-color: var(--glass-bg-80);
+}
+
+/* --- TOPBAR (Lista e Partitura) --- */
+
+.view-topbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-shrink: 0;
+}
+
+.view-title {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: var(--color-text-dark);
+}
+
+.back-btn {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--glass-bg-50);
+  color: var(--color-text-dark);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* --- LISTA --- */
+
+#view-list #search-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--glass-border-60);
+  font-size: 16px;
+  background-color: var(--glass-bg-50);
+  flex-shrink: 0;
+}
+
+/* --- PARTITURA (tela cheia) --- */
+
+.view-score {
+  padding-top: 65px;
+}
+
+.score-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+}
+
+#view-score .music-container {
+  position: static;
+  flex-shrink: 0;
+  margin-bottom: 15px;
+}
+
+#view-score .instrument-selector-container {
+  flex: 0 0 auto;
+  margin-bottom: 15px;
+}
+
+#view-score .melody-column {
+  flex: 1 1 auto;
+  height: auto;
+}

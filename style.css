@@ -88,6 +88,13 @@ body.carnaval-theme {
   letter-spacing: -1px;
 }
 
+/* Wrapper onde js/app-init.js clona o template certo (desktop ou mobile).
+   display:contents faz o filho dele virar item direto do flex do body,
+   como se o wrapper não existisse. */
+#app-mount {
+  display: contents;
+}
+
 .main-container {
   display: flex;
   gap: 30px;

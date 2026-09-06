@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/mobile-home.css" />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;800&display=swap" rel="stylesheet">
   <title>Amores Liquidos</title>
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
@@ -19,79 +20,153 @@
 
 <body>
 
-  <div class="main-container">
+  <div id="app-mount"></div>
+
+  <!-- Desktop (>768px): duas colunas lado a lado, fluxo de sempre — não mexer. -->
+  <template id="desktop-template">
+    <div class="main-container">
 
 
-    <div class="player-column">
-      <div class="header">
-        <h1>Amores Liquidos</h1>
+      <div class="player-column">
+        <div class="header">
+          <h1>Amores Liquidos</h1>
+        </div>
+
+
+        <div class="music-container" id="music-container">
+          <button id="toggle-player-btn" class="action-btn">
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="music-info">
+            <h4 id="title"></h4>
+            <div class="progress-container" id="progress-container">
+              <div class="progress" id="progress"></div>
+            </div>
+          </div>
+          <audio src="music/acima_do_sol.mp3" id="audio"></audio>
+
+          <div class="navigation">
+            <button id="random" class="action-btn">
+              <i class="fas fa-random"></i>
+            </button>
+            <button id="prev" class="action-btn">
+              <i class="fas fa-backward"></i>
+            </button>
+            <button id="play" class="action-btn action-btn-big">
+              <i class="fas fa-play"></i>
+            </button>
+            <button id="next" class="action-btn">
+              <i class="fas fa-forward"></i>
+            </button>
+            <button id="share" class="action-btn" title="Gerar link">
+              <i class="fas fa-share-alt"></i>
+            </button>
+            <button id="speed-btn" class="action-btn" title="Velocidade de reprodução">1x</button>
+          </div>
+        </div>
+
+
+        <div class="playlist-search-container">
+          <div class="controls-bar">
+            <div class="playlist-selector-container">
+              <select id="playlist-selector"></select>
+            </div>
+            <div class="instrument-selector-container">
+              <select id="instrument-selector" style="display: none;"></select>
+            </div>
+          </div>
+          <input type="text" id="search-input" placeholder="Buscar música...">
+          <ul id="playlist"></ul>
+        </div>
+
       </div>
 
 
-      <div class="music-container" id="music-container">
-        <button id="toggle-player-btn" class="action-btn">
-          <i class="fas fa-chevron-down"></i>
-        </button>
-        <div class="music-info">
-          <h4 id="title"></h4>
-          <div class="progress-container" id="progress-container">
-            <div class="progress" id="progress"></div>
-          </div>
-        </div>
-        <audio src="music/acima_do_sol.mp3" id="audio"></audio>
-
-        <div class="navigation">
-          <button id="random" class="action-btn">
-            <i class="fas fa-random"></i>
-          </button>
-          <button id="prev" class="action-btn">
-            <i class="fas fa-backward"></i>
-          </button>
-          <button id="play" class="action-btn action-btn-big">
-            <i class="fas fa-play"></i>
-          </button>
-          <button id="next" class="action-btn">
-            <i class="fas fa-forward"></i>
-          </button>
-          <button id="share" class="action-btn" title="Gerar link">
-            <i class="fas fa-share-alt"></i>
-          </button>
-          <button id="speed-btn" class="action-btn" title="Velocidade de reprodução">1x</button>
+      <div class="melody-column" id="melody-display-container">
+        <div class="placeholder">
+          <p>Selecione uma música com melodia disponível para vê-la aqui.</p>
         </div>
       </div>
 
+    </div>
 
-      <div class="playlist-search-container">
-        <div class="controls-bar">
-          <div class="playlist-selector-container">
-            <select id="playlist-selector"></select>
-          </div>
-          <div class="instrument-selector-container">
-            <select id="instrument-selector" style="display: none;"></select>
-          </div>
+    <button id="mobile-search-fab" class="mobile-search-fab" title="Buscar música" aria-label="Buscar música">
+      <i class="fas fa-search"></i>
+    </button>
+  </template>
+
+  <!-- Mobile (<=768px): navegação em 3 níveis via History API — Home -> Lista -> Partitura. -->
+  <template id="mobile-template">
+    <div class="mobile-app" id="mobile-app">
+
+      <section class="view view-home" id="view-home">
+        <div class="header">
+          <h1>Amores Liquidos</h1>
+        </div>
+        <div class="playlist-groups" id="playlist-groups"></div>
+      </section>
+
+      <section class="view view-list" id="view-list" hidden>
+        <div class="view-topbar">
+          <button class="back-btn" id="list-back-btn" aria-label="Voltar">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <h2 class="view-title" id="list-title"></h2>
         </div>
         <input type="text" id="search-input" placeholder="Buscar música...">
         <ul id="playlist"></ul>
-      </div>
+      </section>
+
+      <section class="view view-score" id="view-score" hidden>
+        <button class="back-btn score-close-btn" id="score-close-btn" aria-label="Fechar">
+          <i class="fas fa-times"></i>
+        </button>
+
+        <div class="music-container" id="music-container">
+          <div class="music-info">
+            <h4 id="title"></h4>
+            <div class="progress-container" id="progress-container">
+              <div class="progress" id="progress"></div>
+            </div>
+          </div>
+
+          <div class="navigation">
+            <button id="random" class="action-btn">
+              <i class="fas fa-random"></i>
+            </button>
+            <button id="prev" class="action-btn">
+              <i class="fas fa-backward"></i>
+            </button>
+            <button id="play" class="action-btn action-btn-big">
+              <i class="fas fa-play"></i>
+            </button>
+            <button id="next" class="action-btn">
+              <i class="fas fa-forward"></i>
+            </button>
+            <button id="share" class="action-btn" title="Gerar link">
+              <i class="fas fa-share-alt"></i>
+            </button>
+            <button id="speed-btn" class="action-btn" title="Velocidade de reprodução">1x</button>
+          </div>
+        </div>
+
+        <div class="instrument-selector-container" style="display: none;"></div>
+
+        <div class="melody-column" id="melody-display-container">
+          <div class="placeholder">
+            <p>Selecione uma música com melodia disponível para vê-la aqui.</p>
+          </div>
+        </div>
+      </section>
 
     </div>
 
-
-    <div class="melody-column" id="melody-display-container">
-      <div class="placeholder">
-        <p>Selecione uma música com melodia disponível para vê-la aqui.</p>
-      </div>
-    </div>
-
-  </div>
-
-  <button id="mobile-search-fab" class="mobile-search-fab" title="Buscar música" aria-label="Buscar música">
-    <i class="fas fa-search"></i>
-  </button>
+    <audio src="" id="audio"></audio>
+  </template>
 
   <!-- <script src="song-data.js"></script> -->
   <script src="repertoire-data.js"></script>
-  <script type="module" src="script.js"></script>
+  <script type="module" src="js/app-init.js"></script>
 </body>
 
 </html>

@@ -31,10 +31,10 @@ const MOBILE_HOME_GROUPS = [
   {
     label: 'Playlists',
     entries: [
-      '🎭 Carnaval',
-      { key: '✨ Novas Carnaval', label: '🥤 Crack Líquido' },
-      '♾️ Todas as Músicas',
       { type: 'link', view: 'amoresHub', label: '💕 Amores' },
+      { key: '✨ Novas Carnaval', label: '🥤 Crack Líquido' },
+      '🎭 Carnaval',
+      '♾️ Todas as Músicas',
     ],
   },
 ];

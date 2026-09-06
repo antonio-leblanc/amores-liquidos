@@ -202,7 +202,7 @@ function handlePlaylistChange() {
     player.headerTitle.innerText = selectedPlaylistName.includes('Carnaval') ? 'Carnaval' : 'Todas as Músicas';
   } else {
     document.body.classList.remove('carnaval-theme');
-    player.headerTitle.innerText = 'Amores Liquidos';
+    player.headerTitle.innerText = 'Carnaval';
   }
 }
 

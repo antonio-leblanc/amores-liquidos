@@ -1,6 +1,6 @@
 # Plano — Home Mobile & Leitura de Partitura
 
-> Depende das decisões em aberto no `specs.md`. Este plano assume as respostas mais prováveis (home como tela separada; modal substitui a coluna no mobile; fecha modal volta pra lista) — ajustar depois que você confirmar.
+> Decisões fechadas em `specs.md`: navegação em 3 níveis (Home → Lista → Partitura) via History API (`pushState`/`popstate`), fechar a partitura volta pra lista, `index2.html` é cópia paralela completa.
 
 ## Abordagem geral
 
@@ -9,19 +9,21 @@ Construir em paralelo, sem tocar em `index.html`/`script.js` de produção, até
 ## Fase 0 — Setup do entry point paralelo
 
 - Criar `index2.html` a partir de uma cópia de `index.html`, apontando pros mesmos `style.css`, `repertoire-data.js` e módulos JS existentes.
-- Novo módulo `js/mobile-home.js` pra concentrar a lógica da home e do modal, sem misturar com `script.js` atual.
+- Novo módulo `js/mobile-home.js` pra concentrar a lógica da home, da lista e da partitura, sem misturar com `script.js` atual.
+- Exportar `PLAYLIST_GROUPS` de `js/playlist-ui.js` (hoje é `const` interno) pra reaproveitar na home.
 
-## Fase 1 — Home de escolha de playlist
+## Fase 1 — Navegação em 3 níveis (Home → Lista → Partitura)
 
-- Tela inicial com os grupos de playlist como cards grandes, tocáveis — reaproveitando `PLAYLIST_GROUPS` de `js/playlist-ui.js`.
-- O `init()` do `index2.html` não chama `loadSong()` automaticamente: só popula a home e espera o toque numa playlist.
-- Ao escolher, aplica o equivalente ao `handlePlaylistChange` atual e só aí mostra o player + lista de músicas daquela playlist (fluxo de hoje, reaproveitado).
+- **Home** (`#view-home`): seções por grupo (Amores / CARNAVAL) com cards tocáveis por playlist, reaproveitando `PLAYLIST_GROUPS`. `init()` não chama `loadSong()` automaticamente — só popula a home e espera o toque.
+- **Lista** (`#view-list`): ao tocar num card, aplica o equivalente ao `handlePlaylistChange` atual (inclui modo Medley) e mostra a lista de músicas da playlist escolhida, com busca.
+- Cada transição (Home→Lista, Lista→Partitura) chama `history.pushState()` com um estado `{view, playlistKey?, songId?}`; um listener de `popstate` re-renderiza a view a partir do estado, sem empurrar de novo.
+- Deep link (`?song=`/`?playlist=`) reconstrói a pilha de histórico (`replaceState` pra home + `pushState` pra lista + `pushState` pra partitura), assim o botão voltar do celular funciona igual mesmo em quem abriu direto num link.
 
-## Fase 2 — Modal de partitura em tela cheia
+## Fase 2 — Partitura em tela cheia
 
-- Novo elemento fixed, full-screen, escondido por padrão (`#score-modal`).
-- Ao tocar numa música na lista: carrega o áudio e abre o modal com a partitura, usando `renderMelodyMarkdown` (`js/melody-viewer.js`) apontado pro conteúdo do modal em vez da coluna lateral.
-- Botão de fechar óbvio (X grande, canto superior) — fecha o modal e volta pra lista/player.
+- **Partitura** (`#view-score`): view full-screen com player compacto (play/pause/prev/next/shuffle/velocidade/share) + a melodia, usando `renderMelodyMarkdown` (`js/melody-viewer.js`) apontado pro container da view.
+- Ao tocar numa música na lista: carrega o áudio (`loadSong`) e navega pra partitura.
+- Botão de fechar (X) chama `history.back()` — some junto com o botão físico/gesto de voltar do celular, sem handler duplicado.
 
 ## Fase 3 — Validação
 

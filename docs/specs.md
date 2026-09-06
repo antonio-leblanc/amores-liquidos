@@ -20,9 +20,13 @@
 
 Não quebrar o site em produção. Construir e validar num entry point separado (`index2.html`), reaproveitando os módulos já existentes (`js/audio-player.js`, `js/melody-viewer.js`, `js/playlist-ui.js`) e os dados gerados (`repertoire-data.js`). Só promove pra `index.html` depois de validado no celular de verdade.
 
-## Em aberto — preciso da sua decisão antes de fechar o plano
+## Decisões
 
-- A home é uma tela/estado novo antes de qualquer player aparecer, ou é só adiar o carregamento automático da música (mostrando o seletor de playlist já aberto/em destaque, sem tela separada)?
-- O modal de partitura **substitui** a coluna de melodia no mobile, ou é uma ação extra (ex: botão "tela cheia") mantendo a visão atual como estava?
-- Ao fechar o modal, volta pra lista da playlist atual ou pra home de escolha de playlist?
-- `index2.html` vai ser uma cópia paralela completa (duplica head/scripts) ou o mesmo `index.html` com um "modo mobile" ativado por JS (`innerWidth <= 768` + ainda sem playlist escolhida na sessão)?
+- **Navegação em 3 níveis via History API**, não modal simples por cima do conteúdo:
+  1. **Home** → cards dos grupos de playlist (reaproveitando `PLAYLIST_GROUPS`, `js/playlist-ui.js:71`).
+  2. **Lista** → músicas da playlist escolhida.
+  3. **Partitura** → tela cheia com player + melodia da música escolhida.
+- Cada transição chama `history.pushState()`. Botão de fechar (X) chama `history.back()`; o botão físico/gesto de voltar do celular funciona de graça, sem precisar interceptar manualmente pra "consertar" o comportamento padrão.
+- Fechar a partitura (X ou voltar do celular) volta pra lista da playlist atual (não pra home).
+- No mobile, a partitura **substitui** a coluna de melodia — não é uma ação opcional, é o próximo nível da navegação.
+- `index2.html` é uma cópia paralela completa (arquivo novo, head/scripts próprios), sem tocar no `index.html` de produção.

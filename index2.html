@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="description"
+    content="Player de música e partituras do bloco de carnaval Amores Líquidos. músicas com partituras para Sax Alto, Trombone, Trompete e Sax Tenor." />
+  <meta name="theme-color" content="#ff94d8" />
+  <meta name="keywords" content="carnaval, bloco, música, partituras, sax, trombone, trompete, amores líquidos" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/mobile-home.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;800&display=swap" rel="stylesheet">
+  <title>Amores Liquidos (mobile - protótipo)</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+
+<body class="mobile-home-body">
+
+  <div class="mobile-app" id="mobile-app">
+
+    <!-- VIEW: HOME — escolha de playlist, nenhuma música carrega antes disso -->
+    <section class="view view-home" id="view-home">
+      <div class="header">
+        <h1>Amores Liquidos</h1>
+      </div>
+      <div class="playlist-groups" id="playlist-groups"></div>
+    </section>
+
+    <!-- VIEW: LISTA — músicas da playlist escolhida -->
+    <section class="view view-list" id="view-list" hidden>
+      <div class="view-topbar">
+        <button class="back-btn" id="list-back-btn" aria-label="Voltar">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <h2 class="view-title" id="list-title"></h2>
+      </div>
+      <input type="text" id="search-input" placeholder="Buscar música...">
+      <ul id="playlist"></ul>
+    </section>
+
+    <!-- VIEW: PARTITURA — tela cheia, player + melodia -->
+    <section class="view view-score" id="view-score" hidden>
+      <button class="back-btn score-close-btn" id="score-close-btn" aria-label="Fechar">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <div class="music-container" id="music-container">
+        <div class="music-info">
+          <h4 id="title"></h4>
+          <div class="progress-container" id="progress-container">
+            <div class="progress" id="progress"></div>
+          </div>
+        </div>
+
+        <div class="navigation">
+          <button id="random" class="action-btn">
+            <i class="fas fa-random"></i>
+          </button>
+          <button id="prev" class="action-btn">
+            <i class="fas fa-backward"></i>
+          </button>
+          <button id="play" class="action-btn action-btn-big">
+            <i class="fas fa-play"></i>
+          </button>
+          <button id="next" class="action-btn">
+            <i class="fas fa-forward"></i>
+          </button>
+          <button id="share" class="action-btn" title="Gerar link">
+            <i class="fas fa-share-alt"></i>
+          </button>
+          <button id="speed-btn" class="action-btn" title="Velocidade de reprodução">1x</button>
+        </div>
+      </div>
+
+      <div class="instrument-selector-container" style="display: none;"></div>
+
+      <div class="melody-column" id="melody-display-container">
+        <div class="placeholder">
+          <p>Selecione uma música com melodia disponível para vê-la aqui.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <audio src="" id="audio"></audio>
+
+  <script src="repertoire-data.js"></script>
+  <script type="module" src="js/mobile-home.js"></script>
+</body>
+
+</html>

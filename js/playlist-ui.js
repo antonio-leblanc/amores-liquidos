@@ -68,7 +68,7 @@ export function updatePlaylistHighlight(player) {
 // Cada entrada é o nome (chave em `playlists`) ou { key, label } quando o texto
 // exibido precisa diferir da chave (ex.: duas playlists "Novas" com o mesmo rótulo).
 // 'Medleys' é sintética (não existe em playlists), tratada à parte.
-const PLAYLIST_GROUPS = [
+export const PLAYLIST_GROUPS = [
   {
     label: 'Amores',
     entries: ['💕 Repertorio Amores', '⭐ Assinatura', 'Medleys', '🥂 GIG', '✨ Novas'],

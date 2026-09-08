@@ -36,9 +36,9 @@
   /* Playlist ativa */
   --color-active-bg: #dfdbdf;
 
-  /* Fundo do body: troca no tema Carnaval (ver body.carnaval-theme) */
-  --gradient-body-default: linear-gradient(0deg, rgb(255, 148, 216) 23.8%, rgba(252, 221, 221, 1) 92%);
-  --gradient-body-carnaval: linear-gradient(to right, #00c6ff, #0072ff);
+  /* Fundo do body: azul (Carnaval) é o padrão do site; rosa só dentro de Amores (ver body.amores-theme) */
+  --gradient-body-default: linear-gradient(0deg, #0072ff 23.8%, #00c6ff 92%);
+  --gradient-body-amores: linear-gradient(0deg, rgb(255, 148, 216) 23.8%, rgba(252, 221, 221, 1) 92%);
   --gradient-body-active: var(--gradient-body-default);
 }
 
@@ -60,8 +60,8 @@ body {
   padding: 15px;
 }
 
-body.carnaval-theme {
-  --gradient-body-active: var(--gradient-body-carnaval);
+body.amores-theme {
+  --gradient-body-active: var(--gradient-body-amores);
 }
 
 .header {
@@ -81,10 +81,7 @@ body.carnaval-theme {
   font-family: 'Outfit', sans-serif;
   font-weight: 800;
   font-size: 3rem;
-  background: var(--gradient-brand);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--color-white);
   letter-spacing: -1px;
 }
 
@@ -348,11 +345,6 @@ body.carnaval-theme {
   margin-bottom: 5px !important;
   border-bottom: 2px solid #e8e2ea !important;
   padding-bottom: 5px !important;
-}
-
-.melody-column p {
-  /* margin: 6px 0 !important; */
-  /* line-height: 1 !important; */
 }
 
 .melody-column strong {

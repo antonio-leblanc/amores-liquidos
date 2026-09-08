@@ -103,8 +103,23 @@ function buildUrl(state) {
   return query ? `${window.location.pathname}?${query}` : window.location.pathname;
 }
 
+function isAmoresPlaylistKey(key) {
+  if (key === 'Medleys') return true;
+  return AMORES_HUB_GROUP.entries.some(entry => {
+    if (entry === 'Medleys') return false;
+    const entryKey = typeof entry === 'string' ? entry : entry.key;
+    return entryKey === key;
+  });
+}
+
+function isAmoresView(state) {
+  if (state.view === 'amoresHub') return true;
+  return (state.view === 'list' || state.view === 'score') && isAmoresPlaylistKey(state.playlistKey);
+}
+
 function applyState(state) {
   showView(state.view);
+  document.body.classList.toggle('amores-theme', isAmoresView(state));
 
   if (state.view === 'list') {
     ensurePlaylist(state.playlistKey);

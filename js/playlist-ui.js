@@ -64,7 +64,7 @@ export function updatePlaylistHighlight(player) {
   });
 }
 
-// Ordem fixa de exibição dentro de cada grupo do dropdown.
+// Fonte dos rótulos de exibição de cada playlist (usada por playlistLabel em mobile-home.js).
 // Cada entrada é o nome (chave em `playlists`) ou { key, label } quando o texto
 // exibido precisa diferir da chave (ex.: duas playlists "Novas" com o mesmo rótulo).
 // 'Medleys' é sintética (não existe em playlists), tratada à parte.
@@ -79,41 +79,3 @@ export const PLAYLIST_GROUPS = [
   },
 ];
 
-export function populatePlaylistSelector(player) {
-  player.playlistSelector.innerHTML = '';
-
-  const hasMedleys = typeof medleys !== 'undefined' && Object.keys(medleys).length > 0;
-
-  PLAYLIST_GROUPS.forEach(group => {
-    const optgroup = document.createElement('optgroup');
-    optgroup.label = group.label;
-    let hasOptions = false;
-
-    group.entries.forEach(entry => {
-      if (entry === 'Medleys') {
-        if (!hasMedleys) return;
-        const option = document.createElement('option');
-        option.value = 'Medleys';
-        option.innerText = '🧩 Medleys';
-        optgroup.appendChild(option);
-        hasOptions = true;
-        return;
-      }
-
-      const key = typeof entry === 'string' ? entry : entry.key;
-      const label = typeof entry === 'string' ? entry : entry.label;
-      if (!playlists[key]) return;
-      const option = document.createElement('option');
-      option.value = key;
-      option.innerText = label;
-      optgroup.appendChild(option);
-      hasOptions = true;
-    });
-
-    if (hasOptions) {
-      player.playlistSelector.appendChild(optgroup);
-    }
-  });
-
-  player.playlistSelector.value = defaultPlaylistName;
-}

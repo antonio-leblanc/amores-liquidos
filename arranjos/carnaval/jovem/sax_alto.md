@@ -1,7 +1,5 @@
 # **Jovem (Sax Alto)**
 
-**Cálculo de Transposição:** Para transpor de Trompete/Tenor (em Bb) para Sax Alto (em Eb), vou descer 5 semitons em cada nota.
-
 Tom: D
 Estrutura: Intro2x - 1 - 2 - Intro - 1 - 2
 

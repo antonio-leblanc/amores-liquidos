@@ -1,7 +1,5 @@
 # Vermelho (Trombone)
 
-**Cálculo de Transposição:** Para transpor de Trompete/Tenor (Bb) para Trombone (Tom Real C), vou descer 2 semitons em cada nota.
-
 **Tom Real:** Re Menor (Dm)
 
 **1**

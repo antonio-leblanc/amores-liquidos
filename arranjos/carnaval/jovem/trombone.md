@@ -1,7 +1,5 @@
 # **Jovem (Trombone)**
 
-**Cálculo de Transposição:** Para transpor de Trompete/Tenor (Bb) para Trombone (Tom Real C), vou descer 2 semitones em cada nota.
-
 **Tom Real:** Fa
 
 **Intro**

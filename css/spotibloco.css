@@ -1,0 +1,569 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap');
+
+:root {
+  --bg: #0a0a0c;
+  --surface: #181818;
+  --surface-2: #232323;
+  --surface-hover: #2a2a2a;
+  --text: #ffffff;
+  --text-muted: #a3a3a3;
+  --text-faint: #6b6b6b;
+  --accent: #ff2fc0;
+  --accent-2: #7000ff;
+  --border: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  font-family: 'Lato', sans-serif;
+  color: var(--text);
+}
+
+.app {
+  width: 100%;
+  max-width: 480px;
+  height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+@media (min-width: 700px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .app {
+    width: 400px;
+    height: 860px;
+    max-height: 92vh;
+    border-radius: 32px;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+}
+
+/* --- VIEWS --- */
+.view {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 20px 16px 16px;
+}
+
+.view[hidden] {
+  display: none;
+}
+
+.view::-webkit-scrollbar {
+  width: 0;
+}
+
+/* --- HOME --- */
+.topbar h1 {
+  margin: 0 0 20px;
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--text-muted);
+  margin: 18px 0 10px;
+}
+
+.section-label:first-of-type {
+  margin-top: 0;
+}
+
+.card-row {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  margin: 0 -16px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.card-row::-webkit-scrollbar {
+  height: 0;
+}
+
+.playlist-card {
+  flex: 0 0 auto;
+  width: 128px;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+}
+
+.playlist-card-art {
+  width: 128px;
+  height: 128px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.playlist-card-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: block;
+  line-height: 1.25;
+}
+
+/* --- LISTAS DE FAIXA --- */
+.track-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.track-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  color: var(--text);
+  font-family: inherit;
+}
+
+.track-row:hover,
+.track-row:active {
+  background: var(--surface);
+}
+
+.track-row.is-playing .track-title {
+  color: var(--accent);
+}
+
+.track-art {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+}
+
+.track-text {
+  min-width: 0;
+}
+
+.track-title {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-subtitle {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* --- LISTA (topo com busca) --- */
+.list-topbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  flex-shrink: 0;
+}
+
+.list-topbar h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.icon-btn {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.icon-btn:hover {
+  background: var(--surface-hover);
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  flex-shrink: 0;
+}
+
+.search-box i {
+  color: var(--text-faint);
+  font-size: 14px;
+}
+
+.search-box input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-size: 0.9rem;
+  width: 100%;
+  font-family: inherit;
+}
+
+.search-box input::placeholder {
+  color: var(--text-faint);
+}
+
+/* --- MINI PLAYER --- */
+.mini-player {
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.mini-player[hidden] {
+  display: none;
+}
+
+.mini-player-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: var(--accent);
+}
+
+.mini-player-art {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, var(--accent-2), var(--accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+}
+
+.mini-player-info {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.mini-player-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mini-player-subtitle {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.mini-player-play {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--text);
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+
+.mini-player-play i.fa-pause {
+  font-size: 12px;
+}
+
+/* --- NOW PLAYING --- */
+.view-nowplaying {
+  padding: 16px 20px 12px;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.np-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  margin-bottom: 24px;
+}
+
+.np-kicker {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+}
+
+.np-header-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  flex-shrink: 0;
+}
+
+.np-art-sm {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.np-header-text {
+  min-width: 0;
+}
+
+.np-header-text h2 {
+  margin: 0 0 2px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: capitalize;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.np-header-text p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.np-progress-container {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 5px;
+  cursor: pointer;
+  height: 4px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.np-progress {
+  background: var(--text);
+  border-radius: 5px;
+  height: 100%;
+  width: 0%;
+  position: relative;
+}
+
+.np-progress::after {
+  content: '';
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 11px;
+  height: 11px;
+  background: var(--text);
+  border-radius: 50%;
+}
+
+.np-time-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  margin: 6px 0 14px;
+  flex-shrink: 0;
+}
+
+.np-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.np-controls .icon-btn {
+  background: transparent;
+  width: 40px;
+  height: 40px;
+  font-size: 17px;
+  flex-shrink: 0;
+}
+
+.np-controls .icon-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.np-skip {
+  font-size: 20px !important;
+}
+
+#np-speed-btn {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+#np-speed-btn.active {
+  color: var(--accent);
+}
+
+.np-play-btn {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: none;
+  background: var(--text);
+  color: #000;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.np-play-btn:hover {
+  transform: scale(1.05);
+}
+
+.np-play-btn i.fa-pause {
+  font-size: 20px;
+}
+
+/* --- SELETOR DE INSTRUMENTO + PARTITURA (o songbook em si) --- */
+.instrument-selector-container {
+  flex-shrink: 0;
+  margin: 14px 0 10px;
+}
+
+#instrument-selector {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.9rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.np-melody {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 4px;
+}
+
+.np-melody .placeholder {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-faint);
+  font-size: 0.9rem;
+}
+
+.np-melody h1,
+.np-melody h2,
+.np-melody h3 {
+  color: var(--text);
+  font-size: 1rem;
+  margin: 0 0 12px;
+}
+
+.np-melody p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0 0 10px;
+}
+
+.np-melody strong {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 800;
+  margin: 14px 0 4px;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spotibloco — Amores Líquidos (estilo Spotify)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/spotibloco.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <div class="app">
+
+    <!-- HOME -->
+    <section class="view view-home" id="view-home">
+      <header class="topbar">
+        <h1>Amores Líquidos</h1>
+      </header>
+
+      <div class="section-label">Playlists</div>
+      <div class="card-row" id="playlist-cards"></div>
+
+      <div class="section-label">Tocadas recentemente</div>
+      <ul class="track-list" id="recent-list"></ul>
+    </section>
+
+    <!-- LISTA DE UMA PLAYLIST -->
+    <section class="view view-list" id="view-list" hidden>
+      <header class="list-topbar">
+        <button class="icon-btn" id="list-back-btn" aria-label="Voltar"><i class="fas fa-arrow-left"></i></button>
+        <h2 id="list-title">Playlist</h2>
+      </header>
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" id="search-input" placeholder="Buscar música" />
+      </div>
+      <ul class="track-list" id="track-list"></ul>
+    </section>
+
+    <!-- MINI-PLAYER (barra fixa) -->
+    <button class="mini-player" id="mini-player" hidden>
+      <div class="mini-player-progress" id="mini-progress"></div>
+      <div class="mini-player-art"><i class="fas fa-music"></i></div>
+      <div class="mini-player-info">
+        <span class="mini-player-title" id="mini-title"></span>
+        <span class="mini-player-subtitle">Amores Líquidos</span>
+      </div>
+      <span class="mini-player-play" id="mini-play-btn" aria-label="Tocar">
+        <i class="fas fa-play"></i>
+      </span>
+    </button>
+
+    <!-- NOW PLAYING (tela cheia) -->
+    <section class="view view-nowplaying" id="view-nowplaying" hidden>
+      <header class="np-topbar">
+        <button class="icon-btn" id="np-close-btn" aria-label="Fechar"><i class="fas fa-chevron-down"></i></button>
+        <span class="np-kicker">Tocando de Amores Líquidos</span>
+        <button class="icon-btn" id="np-share-btn" aria-label="Compartilhar"><i class="fas fa-share-alt"></i></button>
+      </header>
+
+      <div class="np-header-row">
+        <div class="np-art-sm" id="np-art-sm"><i class="fas fa-music"></i></div>
+        <div class="np-header-text">
+          <h2 id="np-title"></h2>
+          <p>Amores Líquidos</p>
+        </div>
+      </div>
+
+      <div class="np-progress-container" id="np-progress-container">
+        <div class="np-progress" id="np-progress"></div>
+      </div>
+      <div class="np-time-row">
+        <span id="np-time-current">0:00</span>
+        <span id="np-time-total">0:00</span>
+      </div>
+
+      <div class="np-controls">
+        <button class="icon-btn" id="np-random-btn"><i class="fas fa-random"></i></button>
+        <button class="icon-btn np-skip" id="np-prev-btn"><i class="fas fa-step-backward"></i></button>
+        <button class="np-play-btn" id="np-play-btn"><i class="fas fa-play"></i></button>
+        <button class="icon-btn np-skip" id="np-next-btn"><i class="fas fa-step-forward"></i></button>
+        <button class="icon-btn" id="np-speed-btn">1x</button>
+      </div>
+
+      <div class="instrument-selector-container"></div>
+
+      <div class="np-melody" id="np-melody">
+        <div class="placeholder">
+          <p>Selecione uma música com melodia disponível para vê-la aqui.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <audio id="audio"></audio>
+
+  <script src="repertoire-data.js"></script>
+  <script type="module" src="js/spotibloco.js"></script>
+</body>
+</html>

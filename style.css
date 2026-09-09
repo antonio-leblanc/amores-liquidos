@@ -184,9 +184,10 @@ body.amores-theme {
   font-size: 20px;
   cursor: pointer;
   padding: 10px;
-  margin: 0 10px;
+  margin: 0 6px;
   width: 44px;
   height: 44px;
+  flex-shrink: 0;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -202,7 +203,7 @@ body.amores-theme {
 
 .action-btn.action-btn-big {
   color: #fff;
-  background: var(--gradient-brand);
+  background: var(--color-brand-purple);
   font-size: 26px;
   width: 56px;
   height: 56px;

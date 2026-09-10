@@ -112,14 +112,27 @@ function isAmoresPlaylistKey(key) {
   });
 }
 
-function isAmoresView(state) {
-  if (state.view === 'amoresHub') return true;
-  return (state.view === 'list' || state.view === 'score') && isAmoresPlaylistKey(state.playlistKey);
+// Tema de fundo por playlist (ver body[data-theme] em style.css). Cada chave abaixo
+// herda o tema do card correspondente na Home; as subplaylists de Amores usam
+// isAmoresPlaylistKey (já cobrem o hub inteiro, incl. Medleys).
+const PLAYLIST_THEMES = {
+  '✨ Novas Carnaval': 'crack',
+  '🎭 Carnaval': 'carnaval',
+  '♾️ Todas as Músicas': 'todas',
+};
+
+function resolveTheme(state) {
+  if (state.view === 'amoresHub') return 'amores';
+  if (state.view === 'list' || state.view === 'score') {
+    if (isAmoresPlaylistKey(state.playlistKey)) return 'amores';
+    return PLAYLIST_THEMES[state.playlistKey] || 'home';
+  }
+  return 'home';
 }
 
 function applyState(state) {
   showView(state.view);
-  document.body.classList.toggle('amores-theme', isAmoresView(state));
+  document.body.dataset.theme = resolveTheme(state);
 
   if (state.view === 'list') {
     ensurePlaylist(state.playlistKey);
